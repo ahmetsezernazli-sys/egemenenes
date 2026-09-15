@@ -113,10 +113,18 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── tilki-macerasi/     ← Tilki Macerası, Enes için 8 bölümlük platform oyunu
+├── tilki-macerasi/     ← Tilki Macerası, Enes için 8 bölümlük platform oyunu
+│   ├── index.html
+│   ├── style.css
+│   ├── levels.js       ← bölüm haritaları (harf açıklamaları dosyanın başında)
+│   └── game.js
+├── ag-kahramani/       ← Ağ Kahramanı, Egemen için süper kahraman oyunu
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── dort-islem/         ← Dört İşlem, Enes için hız turu ve hedef sayı
     ├── index.html
     ├── style.css
-    ├── levels.js       ← bölüm haritaları (harf açıklamaları dosyanın başında)
     └── game.js
 ```
 

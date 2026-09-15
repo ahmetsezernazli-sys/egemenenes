@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Dört İşlem · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Toplama, çıkarma, çarpma, bölme: 60 saniyelik hız turu ve 6 sayıyla hedefe ulaşma oyunu.">
+  <meta name="theme-color" content="#F7F4EA">
+  <meta property="og:title" content="Dört İşlem">
+  <meta property="og:description" content="Hız turunda rekor kır, hedef sayı turunda 6 sayıyla 3 basamaklı hedefi yakala.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231B2A4A'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='%23FFD166' font-family='monospace'%3E%C3%B7%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Chivo+Mono:wght@500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Dört <span>İşlem</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="home-btn" type="button" aria-label="Ana menü" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/></svg>
+      </button>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ana menü -->
+  <main class="screen" id="home">
+    <section class="card mode">
+      <div class="mode-head"><span class="badge">⚡</span><div><h2>Hız Turu</h2><p>60 saniyede olabildiğince çok işlem. Üst üste doğrular puanı katlar.</p></div></div>
+      <fieldset>
+        <legend>İşlemler</legend>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" id="op-add" checked><span>+ toplama</span></label>
+          <label class="chip"><input type="checkbox" id="op-sub" checked><span>− çıkarma</span></label>
+          <label class="chip"><input type="checkbox" id="op-mul" checked><span>× çarpma</span></label>
+          <label class="chip"><input type="checkbox" id="op-div" checked><span>÷ bölme</span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Zorluk</legend>
+        <div class="seg">
+          <label><input type="radio" name="lvl" id="lvl-0" value="0"><span>Kolay<small>çarpım tablosu</small></span></label>
+          <label><input type="radio" name="lvl" id="lvl-1" value="1" checked><span>Orta<small>iki basamak</small></span></label>
+          <label><input type="radio" name="lvl" id="lvl-2" value="2"><span>Zor<small>üç basamak</small></span></label>
+        </div>
+      </fieldset>
+      <p class="record" id="speed-record"></p>
+      <button class="btn primary" id="speed-start" type="button">Hız turunu başlat</button>
+    </section>
+
+    <section class="card mode">
+      <div class="mode-head"><span class="badge">🎯</span><div><h2>Hedef Sayı</h2><p>6 sayı ve dört işlemle 3 basamaklı hedefe ulaş. Her sayı bir kez kullanılır. 5 tur.</p></div></div>
+      <fieldset>
+        <legend>Tur süresi</legend>
+        <div class="seg">
+          <label><input type="radio" name="tlim" id="tlim-60" value="60"><span>60 sn</span></label>
+          <label><input type="radio" name="tlim" id="tlim-120" value="120" checked><span>120 sn</span></label>
+          <label><input type="radio" name="tlim" id="tlim-0" value="0"><span>Süresiz</span></label>
+        </div>
+      </fieldset>
+      <p class="rules">Tam isabet <b>10</b> · 1–5 fark <b>7</b> · 6–10 fark <b>5</b> · 11–20 fark <b>2</b> puan</p>
+      <p class="record" id="target-record"></p>
+      <button class="btn primary" id="target-start" type="button">Hedef sayıya başla</button>
+    </section>
+  </main>
+
+  <!-- hız turu -->
+  <main class="screen" id="speed" hidden>
+    <div class="speed-top">
+      <div class="stat"><small>Puan</small><b id="sp-score">0</b></div>
+      <div class="timer"><div class="timer-fill" id="sp-timer"></div><span id="sp-time">60</span></div>
+      <div class="stat"><small>Seri</small><b id="sp-streak">×1</b></div>
+    </div>
+    <div class="question" id="sp-q" aria-live="polite">
+      <span class="expr" id="sp-expr">7 × 8</span><span class="eq">=</span><span class="answer" id="sp-answer" aria-label="Cevabın"></span>
+    </div>
+    <p class="feedback" id="sp-feedback" aria-live="polite"></p>
+    <div class="keypad" id="keypad">
+      <button type="button" data-k="7">7</button><button type="button" data-k="8">8</button><button type="button" data-k="9">9</button>
+      <button type="button" data-k="4">4</button><button type="button" data-k="5">5</button><button type="button" data-k="6">6</button>
+      <button type="button" data-k="1">1</button><button type="button" data-k="2">2</button><button type="button" data-k="3">3</button>
+      <button type="button" data-k="del" class="soft" aria-label="Sil">⌫</button><button type="button" data-k="0">0</button><button type="button" data-k="ok" class="ok" aria-label="Onayla">✓</button>
+    </div>
+    <p class="hint">Klavye: rakamlar, <kbd>Enter</kbd> onay, <kbd>Boşluk</kbd> geç · doğru cevap yazılınca kendiliğinden geçer</p>
+  </main>
+
+  <main class="screen" id="speed-end" hidden>
+    <section class="card result">
+      <p class="eyebrow" id="se-level">Orta</p>
+      <h2 class="big" id="se-score">0 puan</h2>
+      <p class="note" id="se-note"></p>
+      <div class="kpis">
+        <div><small>Doğru</small><b id="se-correct">0</b></div>
+        <div><small>Yanlış</small><b id="se-wrong">0</b></div>
+        <div><small>İsabet</small><b id="se-acc">0%</b></div>
+        <div><small>En uzun seri</small><b id="se-streak">0</b></div>
+      </div>
+      <div class="table-wrap"><table class="ops" id="se-ops"></table></div>
+      <div id="se-mistakes"></div>
+      <div class="row">
+        <button class="btn primary" id="se-again" type="button">Tekrar</button>
+        <button class="btn" id="se-home" type="button">Menü</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- hedef sayı -->
+  <main class="screen" id="target" hidden>
+    <div class="t-top">
+      <div class="stat"><small>Tur</small><b id="tg-round">1/5</b></div>
+      <div class="target-box"><small>Hedef</small><b id="tg-target">000</b></div>
+      <div class="stat"><small>Süre</small><b id="tg-time">2:00</b></div>
+    </div>
+    <p class="closest" id="tg-closest">En yakın: —</p>
+    <div class="tiles" id="tg-tiles"></div>
+    <div class="ops-row" id="tg-ops">
+      <button type="button" data-op="+" aria-label="Topla">+</button>
+      <button type="button" data-op="-" aria-label="Çıkar">−</button>
+      <button type="button" data-op="*" aria-label="Çarp">×</button>
+      <button type="button" data-op="/" aria-label="Böl">÷</button>
+    </div>
+    <p class="feedback" id="tg-feedback" aria-live="polite">Bir sayı seç, sonra işlem, sonra ikinci sayı.</p>
+    <ol class="steps" id="tg-steps"></ol>
+    <div class="row">
+      <button class="btn" id="tg-undo" type="button">↶ Geri al</button>
+      <button class="btn" id="tg-reset" type="button">Sıfırla</button>
+      <button class="btn primary" id="tg-done" type="button">Bitir</button>
+    </div>
+  </main>
+
+  <main class="screen" id="target-end" hidden>
+    <section class="card result">
+      <p class="eyebrow" id="te-round">1. tur</p>
+      <h2 class="big" id="te-title">Tam isabet!</h2>
+      <p class="note" id="te-note"></p>
+      <div class="solution"><small>Senin en yakının</small><b id="te-mine">—</b></div>
+      <div class="solution"><small>Bilgisayarın çözümü</small><b id="te-solution">—</b></div>
+      <div class="row">
+        <button class="btn primary" id="te-next" type="button">Sonraki tur</button>
+        <button class="btn" id="te-home" type="button">Menü</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
