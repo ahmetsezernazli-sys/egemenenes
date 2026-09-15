@@ -15,6 +15,8 @@
   const RM = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   const EMOJI_FONT = '"Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif';
   const INK = "#1F1B33", TAU = Math.PI*2;
+  // kostüm: kırmızı gövde, sarı eldiven, bot ve arma (mavi ve maskede ağ deseni yok, kendi kahramanımız)
+  const SUIT = "#E63946", SUIT_DARK = "#B81D2B", TRIM = "#FFC53D";
 
   const $ = id => document.getElementById(id);
   const stage = $("stage"), cv = $("cv"), ctx = cv.getContext("2d");
@@ -389,27 +391,25 @@
     const leg = run ? Math.sin(hero.anim)*12 : sw ? 10 : 0;
     ctx.lineCap = "round";
     // bacaklar
-    ctx.strokeStyle = "#1E9E5A"; ctx.lineWidth = 10;
+    ctx.strokeStyle = SUIT_DARK; ctx.lineWidth = 10;
     ctx.beginPath(); ctx.moveTo(-6, -22); ctx.lineTo(-6 + leg, -4); ctx.stroke();
     ctx.beginPath(); ctx.moveTo(6, -22); ctx.lineTo(6 - leg, -4); ctx.stroke();
-    ctx.fillStyle = "#FF8A3D"; ctx.beginPath(); ctx.ellipse(-6 + leg + 3, -2, 8, 5, 0, 0, TAU); ctx.ellipse(6 - leg + 3, -2, 8, 5, 0, 0, TAU); ctx.fill();
+    ctx.fillStyle = TRIM; ctx.beginPath(); ctx.ellipse(-6 + leg + 3, -2, 8, 5, 0, 0, TAU); ctx.ellipse(6 - leg + 3, -2, 8, 5, 0, 0, TAU); ctx.fill();
     // gövde
-    ctx.fillStyle = "#2BB673"; ctx.beginPath(); ctx.roundRect(-15, -52, 30, 34, 10); ctx.fill();
+    ctx.fillStyle = SUIT; ctx.beginPath(); ctx.roundRect(-15, -52, 30, 34, 10); ctx.fill();
     // göğüs amblemi: sarı daire ve küçük örümcek
     ctx.fillStyle = "#FFD23F"; ctx.beginPath(); ctx.arc(0, -36, 9, 0, TAU); ctx.fill();
     ctx.strokeStyle = INK; ctx.lineWidth = 1.6;
     for (const s of [-1, 1]) for (const k of [-1, 0, 1]){ ctx.beginPath(); ctx.moveTo(0, -36); ctx.lineTo(s*6, -36 + k*4); ctx.stroke(); }
     ctx.fillStyle = INK; ctx.beginPath(); ctx.arc(0, -36, 2.6, 0, TAU); ctx.fill();
     // kollar
-    ctx.strokeStyle = "#2BB673"; ctx.lineWidth = 8;
+    ctx.strokeStyle = SUIT; ctx.lineWidth = 8;
     const armUp = sw || hero.state === "wait" || hero.state === "rescue" || webs.some(w => w.t < w.dur + .1);
     ctx.beginPath(); ctx.moveTo(12, -48); ctx.lineTo(armUp ? 16 : 20, armUp ? -66 : -30 + (run ? Math.sin(hero.anim + 1)*6 : 0)); ctx.stroke();
     ctx.beginPath(); ctx.moveTo(-12, -48); ctx.lineTo(-20, -30 - (run ? Math.sin(hero.anim)*6 : 0)); ctx.stroke();
-    ctx.fillStyle = "#FF8A3D"; ctx.beginPath(); ctx.arc(armUp ? 16 : 20, armUp ? -68 : -28, 5, 0, TAU); ctx.fill();
+    ctx.fillStyle = TRIM; ctx.beginPath(); ctx.arc(armUp ? 16 : 20, armUp ? -68 : -28, 5, 0, TAU); ctx.fill();
     // baş
-    ctx.fillStyle = "#2BB673"; ctx.beginPath(); ctx.arc(0, -68, 18, 0, TAU); ctx.fill();
-    ctx.strokeStyle = "rgba(0,0,0,.18)"; ctx.lineWidth = 1.2;
-    for (let k = 0; k < 4; k++){ ctx.beginPath(); ctx.arc(0, -68, 6 + k*4, Math.PI*1.1, Math.PI*1.9); ctx.stroke(); }
+    ctx.fillStyle = SUIT; ctx.beginPath(); ctx.arc(0, -68, 18, 0, TAU); ctx.fill();
     for (const s of [-1, 1]){
       ctx.fillStyle = "#FFFFFF"; ctx.strokeStyle = INK; ctx.lineWidth = 2.5;
       ctx.beginPath(); ctx.ellipse(s*8, -70, 6.5, 8.5, s*.35, 0, TAU); ctx.fill(); ctx.stroke();
@@ -437,8 +437,8 @@
     const px = 300, pw = 400, py = 38;
     ctx.fillStyle = "rgba(255,255,255,.7)"; ctx.beginPath(); ctx.roundRect(px, py - 8, pw, 16, 8); ctx.fill();
     const prog = clamp(hero.x/(city.kitten.x), 0, 1);
-    ctx.fillStyle = "#2BB673"; ctx.beginPath(); ctx.roundRect(px, py - 8, pw*prog, 16, 8); ctx.fill();
-    ctx.fillStyle = "#2BB673"; ctx.beginPath(); ctx.arc(px + pw*prog, py, 14, 0, TAU); ctx.fill();
+    ctx.fillStyle = SUIT; ctx.beginPath(); ctx.roundRect(px, py - 8, pw*prog, 16, 8); ctx.fill();
+    ctx.fillStyle = SUIT; ctx.beginPath(); ctx.arc(px + pw*prog, py, 14, 0, TAU); ctx.fill();
     ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.ellipse(px + pw*prog - 5, py - 1, 4, 5, -.3, 0, TAU); ctx.ellipse(px + pw*prog + 5, py - 1, 4, 5, .3, 0, TAU); ctx.fill();
     emoji("🐱", px + pw + 24, py, 30);
     for (let i = 0; i < CITIES.length; i++){ ctx.fillStyle = i < ciNow ? "#FFD23F" : i === ciNow ? "#FFFFFF" : "rgba(255,255,255,.4)"; ctx.beginPath(); ctx.arc(px + pw/2 - 36 + i*24, py + 26, 7, 0, TAU); ctx.fill(); }
