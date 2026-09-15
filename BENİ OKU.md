@@ -105,7 +105,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── kizma-birader/      ← Kızma Birader, 2-4 kişilik aile kutu oyunu
+├── kizma-birader/      ← Kızma Birader, 2-4 kişilik aile kutu oyunu
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── oto-yikama/         ← Oto Yıkama, Egemen için dokunarak araç yıkama
     ├── index.html
     ├── style.css
     └── game.js
