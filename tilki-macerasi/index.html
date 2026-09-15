@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tilki Macerası · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="8 bölümlük platform oyunu: tilkiyle koş, zıpla, böceklere bas, yıldızları topla, bayrağa ulaş.">
+  <meta name="theme-color" content="#16281F">
+  <meta property="og:title" content="Tilki Macerası">
+  <meta property="og:description" content="Koş, zıpla, böceklere bas, her bölümdeki 3 yıldızı bul.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%8A%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@600;700;800;900&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Tilki <span>Macerası</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="pause" type="button" aria-label="Duraklat">
+        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      </button>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Oyun alanı"></canvas>
+
+    <div class="touch" id="touch" hidden>
+      <div class="pad">
+        <button class="tbtn" id="t-left" type="button" aria-label="Sola"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="tbtn" id="t-right" type="button" aria-label="Sağa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+      <button class="tbtn jump" id="t-jump" type="button" aria-label="Zıpla"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15l7-7 7 7"/></svg></button>
+    </div>
+
+    <div class="overlay" id="menu">
+      <p class="eyebrow">Enes için</p>
+      <h2 class="big-title">Tilki <span>Macerası</span></h2>
+      <div class="levels" id="levels"></div>
+      <ul class="how">
+        <li><kbd>←</kbd><kbd>→</kbd> ya da <kbd>A</kbd><kbd>D</kbd> koş, <kbd>↑</kbd> / <kbd>W</kbd> / <kbd>Boşluk</kbd> zıpla (uzun basınca daha yükseğe)</li>
+        <li>Böceklerin üstüne zıplayarak bas. Dikenlere değme, boşluğa düşme. 🚩 kontrol noktasından devam edersin.</li>
+      </ul>
+    </div>
+
+    <div class="overlay" id="paused" hidden>
+      <h2 class="big-title small">Duraklatıldı</h2>
+      <div class="row">
+        <button class="btn primary" id="resume" type="button">Devam et</button>
+        <button class="btn" id="restart" type="button">Bölümü baştan başlat</button>
+        <button class="btn" id="to-menu" type="button">Bölümler</button>
+      </div>
+    </div>
+
+    <div class="overlay" id="result" hidden>
+      <p class="eyebrow" id="res-level">1. bölüm</p>
+      <h2 class="big-title small" id="res-title">Bölüm tamam!</h2>
+      <div class="res-stars" id="res-stars"></div>
+      <dl class="res-grid">
+        <div><dt>Süre</dt><dd id="res-time">0:00</dd></div>
+        <div><dt>Altın</dt><dd id="res-coins">0/0</dd></div>
+        <div><dt>Düşme</dt><dd id="res-deaths">0</dd></div>
+      </dl>
+      <p class="res-note" id="res-note"></p>
+      <div class="row">
+        <button class="btn primary" id="next" type="button">Sonraki bölüm</button>
+        <button class="btn" id="again" type="button">Tekrar</button>
+        <button class="btn" id="res-menu" type="button">Bölümler</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="levels.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

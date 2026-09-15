@@ -109,9 +109,14 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── oto-yikama/         ← Oto Yıkama, Egemen için dokunarak araç yıkama
+├── oto-yikama/         ← Oto Yıkama, Egemen için dokunarak araç yıkama
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── tilki-macerasi/     ← Tilki Macerası, Enes için 8 bölümlük platform oyunu
     ├── index.html
     ├── style.css
+    ├── levels.js       ← bölüm haritaları (harf açıklamaları dosyanın başında)
     └── game.js
 ```
 
