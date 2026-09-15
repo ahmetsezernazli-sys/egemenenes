@@ -122,7 +122,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── dort-islem/         ← Dört İşlem, Enes için hız turu ve hedef sayı
+├── dort-islem/         ← Dört İşlem, Enes için hız turu ve hedef sayı
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── penalti/            ← Penaltı Atışları, ikisi birlikte ya da bilgisayara karşı
     ├── index.html
     ├── style.css
     └── game.js

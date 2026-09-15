@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Penaltı Atışları · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="İki kişilik penaltı atışları: biri şut çeker, öbürü kaleci. 5'er atış, eşitlikte seri penaltılar. Bilgisayara karşı da oynanır.">
+  <meta name="theme-color" content="#0F2A1D">
+  <meta property="og:title" content="Penaltı Atışları">
+  <meta property="og:description" content="Nişanı yakala, şutu çek, kalede uç. 2 kişi ya da bilgisayara karşı.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%BD%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Nunito:wght@600;700;800;900&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Penaltı <span>Atışları</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Ayarlar</button>
+    </div>
+  </header>
+
+  <section class="board" aria-label="Skor tablosu">
+    <div class="team" id="team-0"><span class="av" id="av-0">🚀</span><span class="nm" id="nm-0">Enes</span><span class="dots" id="dots-0"></span><b class="sc" id="sc-0">0</b></div>
+    <div class="team" id="team-1"><span class="av" id="av-1">🎈</span><span class="nm" id="nm-1">Egemen</span><span class="dots" id="dots-1"></span><b class="sc" id="sc-1">0</b></div>
+  </section>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Penaltı sahası. Şutta nişan istenen yerdeyken dokun, kalecide topun gittiği yere dokun."></canvas>
+    <div class="banner" id="banner" hidden></div>
+    <p class="role" id="role" hidden></p>
+  </main>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Penaltı Atışları</h2>
+    <fieldset>
+      <legend>Mod</legend>
+      <div class="seg wide">
+        <label><input type="radio" name="mode" id="mode-2p" value="2p" checked><span>👥 İki kişi</span></label>
+        <label><input type="radio" name="mode" id="mode-cpu" value="cpu"><span>🤖 Bilgisayara karşı</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Oyuncular</legend>
+      <div class="p-row">
+        <span class="av" style="background:#3D6BF2">🚀</span>
+        <input type="text" id="pn-0" maxlength="12" aria-label="1. oyuncunun adı">
+        <div class="seg" role="radiogroup" aria-label="1. oyuncunun seviyesi">
+          <label><input type="radio" name="lv-0" id="lv-0-0" value="0"><span>Kolay</span></label>
+          <label><input type="radio" name="lv-0" id="lv-0-1" value="1"><span>Normal</span></label>
+          <label><input type="radio" name="lv-0" id="lv-0-2" value="2"><span>Zor</span></label>
+        </div>
+      </div>
+      <div class="p-row">
+        <span class="av" style="background:#FF7A2F" id="av2">🎈</span>
+        <input type="text" id="pn-1" maxlength="12" aria-label="2. oyuncunun adı">
+        <div class="seg" role="radiogroup" aria-label="2. oyuncunun seviyesi">
+          <label><input type="radio" name="lv-1" id="lv-1-0" value="0"><span>Kolay</span></label>
+          <label><input type="radio" name="lv-1" id="lv-1-1" value="1"><span>Normal</span></label>
+          <label><input type="radio" name="lv-1" id="lv-1-2" value="2"><span>Zor</span></label>
+        </div>
+      </div>
+      <p class="help">Kolay seviyede: şut atarken nişan yavaş gezer ve hep kaleye gider; kaleciyken top daha yavaş gelir, eldivenler daha geniştir.</p>
+    </fieldset>
+    <button class="btn primary big" type="submit">Maça başla</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title">Enes kazandı!</p>
+    <p class="end-score" id="end-score">4 – 3</p>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Rövanş</button>
+      <button class="btn light" id="end-setup" type="button">Ayarlar</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
