@@ -1,6 +1,6 @@
 # Egemen ve Enes'in Oyunları
 
-Site adresi: **www.egemenenes.com** (15.09.2026'da kontrol edildi: kayıtlı değildi, alınabilir durumdaydı)
+Site adresi: **https://egemenenes.com** (GitHub Pages: github.com/ahmetsezernazli-sys/egemenenes, alan adı ve DNS Netlify'da)
 
 Tarayıcıda çalışan oyunlar. Hepsi düz HTML, CSS ve JavaScript. Derleme, sunucu ya da kurulum gerekmez.
 
@@ -101,7 +101,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js         ← delikler dosyanın başındaki HOLES listesinde
-└── gokdelen/           ← Gökdelen, ikisi birlikte kule yapma (takım ya da yarış)
+├── gokdelen/           ← Gökdelen, ikisi birlikte kule yapma (takım ya da yarış)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── kizma-birader/      ← Kızma Birader, 2-4 kişilik aile kutu oyunu
     ├── index.html
     ├── style.css
     └── game.js
