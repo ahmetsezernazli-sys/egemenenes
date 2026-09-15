@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hava Hokeyi · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="İki kişilik hava hokeyi: tablette karşılıklı oturup parmakla oynayın ya da bilgisayara karşı maç yapın.">
+  <meta name="theme-color" content="#13263A">
+  <meta property="og:title" content="Hava Hokeyi">
+  <meta property="og:description" content="Tablette karşılıklı oturup parmakla oynanan iki kişilik hava hokeyi.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%92%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Hava Hokeyi</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="pause" type="button" aria-label="Duraklat">
+        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      </button>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Yeni maç</button>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Hava hokeyi masası"></canvas>
+  </main>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Maç ayarları</h2>
+
+    <fieldset>
+      <legend>Kim oynuyor?</legend>
+      <div class="choices two">
+        <label class="choice">
+          <input type="radio" name="mode" id="mode-pvp" value="pvp" checked>
+          <span class="choice-body"><b>İki kişi</b><small>Aynı tablette karşılıklı ya da aynı klavyede.</small></span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="mode" id="mode-ai" value="ai">
+          <span class="choice-body"><b>Bilgisayara karşı</b><small>Tek başına antrenman maçı.</small></span>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset id="ai-level" hidden>
+      <legend>Bilgisayar ne kadar iyi oynasın?</legend>
+      <div class="choices three">
+        <label class="choice"><input type="radio" name="ai" id="ai-kolay" value="kolay"><span class="choice-body"><b>Kolay</b></span></label>
+        <label class="choice"><input type="radio" name="ai" id="ai-orta" value="orta" checked><span class="choice-body"><b>Orta</b></span></label>
+        <label class="choice"><input type="radio" name="ai" id="ai-zor" value="zor"><span class="choice-body"><b>Zor</b></span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Oyuncular ve kale boyu</legend>
+      <div class="player-rows">
+        <div class="player-row p0" id="row-0">
+          <span class="avatar" id="avatar-0" aria-hidden="true">🚀</span>
+          <input type="text" id="name-0" maxlength="12" value="Enes" aria-label="1. oyuncunun adı" autocomplete="off">
+          <div class="seg" role="radiogroup" aria-label="1. oyuncunun kale boyu">
+            <label><input type="radio" name="goal0" id="goal0-small" value="small"><span>Küçük</span></label>
+            <label><input type="radio" name="goal0" id="goal0-normal" value="normal"><span>Normal</span></label>
+            <label><input type="radio" name="goal0" id="goal0-large" value="large" checked><span>Büyük</span></label>
+          </div>
+        </div>
+        <div class="player-row p1">
+          <span class="avatar" aria-hidden="true">🎈</span>
+          <input type="text" id="name-1" maxlength="12" value="Egemen" aria-label="2. oyuncunun adı" autocomplete="off">
+          <div class="seg" role="radiogroup" aria-label="2. oyuncunun kale boyu">
+            <label><input type="radio" name="goal1" id="goal1-small" value="small"><span>Küçük</span></label>
+            <label><input type="radio" name="goal1" id="goal1-normal" value="normal" checked><span>Normal</span></label>
+            <label><input type="radio" name="goal1" id="goal1-large" value="large"><span>Büyük</span></label>
+          </div>
+        </div>
+      </div>
+      <p class="note">Kale boyu, oyuncunun <b>koruduğu</b> kaledir. Küçük oyuncuya kolaylık için büyük oyuncunun kalesini büyütün.</p>
+    </fieldset>
+
+    <div class="two-col">
+      <fieldset>
+        <legend>Kaç golde biter?</legend>
+        <div class="choices three compact">
+          <label class="choice"><input type="radio" name="target" id="target-5" value="5"><span class="choice-body"><b>5</b></span></label>
+          <label class="choice"><input type="radio" name="target" id="target-7" value="7" checked><span class="choice-body"><b>7</b></span></label>
+          <label class="choice"><input type="radio" name="target" id="target-10" value="10"><span class="choice-body"><b>10</b></span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Pak hızı</legend>
+        <div class="choices three compact">
+          <label class="choice"><input type="radio" name="speed" id="speed-slow" value="slow"><span class="choice-body"><b>Yavaş</b></span></label>
+          <label class="choice"><input type="radio" name="speed" id="speed-normal" value="normal" checked><span class="choice-body"><b>Normal</b></span></label>
+          <label class="choice"><input type="radio" name="speed" id="speed-fast" value="fast"><span class="choice-body"><b>Hızlı</b></span></label>
+        </div>
+      </fieldset>
+    </div>
+
+    <p class="keys"><b>Tablet:</b> Herkes kendi yarısında parmağıyla tokmağı sürükler, aynı anda oynanır.<br><b>Klavye:</b> 1. oyuncu <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>, 2. oyuncu ok tuşları. <kbd>P</kbd> duraklatır.</p>
+
+    <button class="btn primary big" id="start" type="submit">Maça başla</button>
+  </form>
+</div>
+
+<div class="overlay" id="paused" hidden>
+  <div class="sheet center">
+    <h2>Duraklatıldı</h2>
+    <div class="row">
+      <button class="btn primary" id="resume" type="button">Devam et</button>
+      <button class="btn" id="pause-setup" type="button">Yeni maç</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <p class="res-title" id="res-title">Enes kazandı!</p>
+    <div class="res-score" id="res-score"></div>
+    <p class="res-sub" id="res-sub"></p>
+    <div class="row">
+      <button class="btn primary" id="rematch" type="button">Rövanş</button>
+      <button class="btn" id="over-setup" type="button">Ayarları değiştir</button>
+    </div>
+  </div>
+</div>
+
+<div id="confetti" aria-hidden="true"></div>
+
+<script src="game.js"></script>
+</body>
+</html>

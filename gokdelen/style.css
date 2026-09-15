@@ -1,0 +1,97 @@
+:root{
+  --night:#1D2440;
+  --night-2:#2A3358;
+  --ink:#F5F7FF;
+  --muted:#AEB7DA;
+  --paper:#FFFFFF;
+  --paper-ink:#1D2440;
+  --paper-muted:#636B8C;
+  --crane:#FFC23D;
+  --crane-dark:#D19500;
+  --display:"Bungee", "Arial Black", "Segoe UI", sans-serif;
+  --body:"Nunito", "Segoe UI", system-ui, sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--night)}
+body{margin:0;color:var(--ink);font:16px/1.4 var(--body);padding-inline:16px;padding-block:8px 12px;-webkit-tap-highlight-color:transparent}
+.app{max-width:1200px;margin-inline:auto;height:calc(100vh - 20px);height:calc(100dvh - 20px);min-height:480px;display:grid;grid-template-rows:auto 1fr;gap:8px}
+
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px}
+.back{color:var(--muted);text-decoration:none;font-weight:800;font-size:15px}
+.back:hover{color:var(--ink)}
+.title{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(1.1rem,3.4vw,1.7rem);letter-spacing:.02em}
+.title span{color:var(--crane)}
+.bar-actions{display:flex;gap:8px;align-items:center}
+.icon-btn{width:42px;height:42px;border-radius:12px;border:0;background:var(--night-2);color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0}
+.icon-btn span{display:grid;place-items:center}
+.icon-btn span[hidden]{display:none}
+.icon-btn svg{width:22px;height:22px}
+
+.stage{position:relative;min-height:0;border-radius:20px;overflow:hidden;background:#8FD3FF;
+  box-shadow:inset 0 0 0 4px rgba(255,194,61,.0), 0 10px 30px rgba(0,0,0,.35)}
+canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;user-select:none;-webkit-user-select:none}
+.turn{position:absolute;left:50%;top:14px;translate:-50% 0;display:flex;align-items:center;gap:10px;padding:6px 18px 6px 6px;border-radius:999px;background:var(--c, #3D7BF2);color:#fff;font-weight:900;font-size:1.15rem;box-shadow:0 5px 0 rgba(0,0,0,.25);pointer-events:none;white-space:nowrap}
+.turn[hidden]{display:none}
+.turn .av{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.3);display:grid;place-items:center;font-size:22px}
+.turn.bump{animation:bump .4s ease-out}
+@keyframes bump{40%{scale:1.15}}
+
+button{font:inherit;cursor:pointer}
+.btn{border:0;border-radius:14px;background:#E6E9F5;color:var(--paper-ink);font-weight:900;padding:10px 18px;box-shadow:0 4px 0 rgba(0,0,0,.18)}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.18)}
+.btn:disabled{opacity:.45}
+.btn.small{padding:7px 14px;font-size:15px}
+.btn.primary{background:var(--crane);box-shadow:0 4px 0 var(--crane-dark)}
+.btn.big{font-size:1.2rem;padding:12px 30px;width:100%}
+.btn.light{background:#EEF0F8}
+:focus-visible{outline:3px solid var(--crane);outline-offset:3px}
+
+.overlay{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding-inline:16px;padding-block:16px;background:rgba(12,16,34,.68);overflow-y:auto}
+.overlay[hidden]{display:none}
+.sheet{width:100%;max-width:520px;background:var(--paper);color:var(--paper-ink);border-radius:24px;padding:20px 22px 22px;display:grid;gap:14px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.sheet.center{text-align:center;justify-items:center;max-width:440px}
+.sheet h2{margin:0;font-family:var(--display);font-weight:400;font-size:1.8rem;text-align:center;text-wrap:balance}
+.lead{margin:-6px 0 0;text-align:center;color:var(--paper-muted);font-weight:700}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:8px;justify-items:start}
+fieldset[hidden]{display:none}
+legend{font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--paper-muted);margin-bottom:6px;padding:0}
+.seg{display:flex;border:3px solid rgba(29,36,64,.12);border-radius:12px;overflow:hidden}
+.seg label{position:relative;cursor:pointer;flex:1}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:block;padding:6px 10px;font-size:14px;font-weight:800;color:var(--paper-muted);text-align:center;height:100%}
+.seg span small{display:block;font-size:12px;font-weight:700;opacity:.8}
+.seg label + label span{border-left:2px solid rgba(29,36,64,.1)}
+.seg input:checked + span{background:var(--paper-ink);color:#fff}
+.seg input:focus-visible + span{outline:3px solid var(--crane-dark);outline-offset:-3px}
+.wide-seg{width:100%}
+.wide-seg span{font-size:1rem;padding:8px 10px}
+.p-rows{display:grid;gap:8px;width:100%}
+.p-row{display:grid;grid-template-columns:36px 1fr auto 36px;gap:8px;align-items:center}
+.p-row .av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:20px}
+.p-row input[type="text"]{min-width:0;font:800 1.05rem var(--body);color:var(--paper-ink);padding:8px 12px;border-radius:12px;border:3px solid rgba(29,36,64,.12);background:#F3F4FA}
+.p-row input[type="text"]:focus{border-color:var(--crane-dark);outline:none}
+.p-row .rm{width:36px;height:36px;border-radius:10px;border:0;background:#F3F4FA;color:var(--paper-muted);font-size:20px;font-weight:900}
+.p-row .rm:disabled{visibility:hidden}
+.records{margin:0;font-size:14px;color:var(--paper-muted);font-weight:700;background:#F3F4FA;border-radius:14px;padding:8px 12px;width:100%}
+.records[hidden]{display:none}
+.records b{color:var(--paper-ink)}
+.row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.trophy{font-size:64px;line-height:1}
+.end-note{margin:-6px 0 0;font-weight:800;color:var(--paper-muted)}
+.end-note:empty{display:none}
+.end-note strong{color:#D9432F}
+.stats{list-style:none;margin:0;padding:0;display:grid;gap:6px;width:100%}
+.stats li{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;background:#F3F4FA;border-radius:14px;padding:6px 12px;font-weight:800;text-align:left}
+.stats .av{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:18px}
+.stats small{display:block;color:var(--paper-muted);font-weight:700;font-size:12px}
+.stats b{font-family:var(--display);font-weight:400;font-variant-numeric:tabular-nums}
+
+@media (max-width:520px){
+  .p-row{grid-template-columns:36px 1fr 36px}
+  .p-row .seg{grid-column:1 / -1;grid-row:2}
+  .turn{font-size:1rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .turn.bump{animation:none}
+}

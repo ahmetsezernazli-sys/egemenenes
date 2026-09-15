@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Çiftini Bul · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="İki kişilik hafıza oyunu: kartları çevir, aynı hayvanları eşleştir. Birlikte ya da yarışarak oynanır.">
+  <meta name="theme-color" content="#DDF3EA">
+  <meta property="og:title" content="Çiftini Bul">
+  <meta property="og:description" content="İki kişilik hafıza oyunu. Birlikte ya da yarışarak oynanır.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%83%8F%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Çiftini Bul</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Yeni oyun</button>
+    </div>
+  </header>
+
+  <div class="table">
+    <section class="player" id="p0" data-p="0">
+      <span class="avatar" aria-hidden="true">🚀</span>
+      <div class="p-info">
+        <span class="p-name">Enes</span>
+        <span class="p-turn">Sıra sende</span>
+      </div>
+      <div class="p-score"><b>0</b><span>çift</span></div>
+      <button class="hint" type="button" hidden>İpucu <span>3</span></button>
+    </section>
+
+    <main class="board-wrap" id="boardWrap">
+      <div class="board" id="board"></div>
+    </main>
+
+    <section class="player" id="p1" data-p="1">
+      <span class="avatar" aria-hidden="true">🎈</span>
+      <div class="p-info">
+        <span class="p-name">Egemen</span>
+        <span class="p-turn">Sıra sende</span>
+      </div>
+      <div class="p-score"><b>0</b><span>çift</span></div>
+      <button class="hint" type="button" hidden>İpucu <span>3</span></button>
+    </section>
+  </div>
+
+  <p class="status" id="status" role="status">Oyun türünü seç ve başla.</p>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Nasıl oynayalım?</h2>
+
+    <fieldset>
+      <legend>Oyun türü</legend>
+      <div class="choices two">
+        <label class="choice">
+          <input type="radio" name="mode" id="mode-coop" value="coop" checked>
+          <span class="choice-body"><b>Birlikte</b><small>Aynı takımdasınız. Sırayla oynayıp tüm çiftleri en az hamlede bulun.</small></span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="mode" id="mode-race" value="race">
+          <span class="choice-body"><b>Yarışma</b><small>En çok çift bulan kazanır. Çift bulan bir daha oynar.</small></span>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Kart sayısı</legend>
+      <div class="choices three">
+        <label class="choice"><input type="radio" name="pairs" id="pairs-6" value="6"><span class="choice-body"><b>Kolay</b><small>12 kart</small></span></label>
+        <label class="choice"><input type="radio" name="pairs" id="pairs-8" value="8" checked><span class="choice-body"><b>Orta</b><small>16 kart</small></span></label>
+        <label class="choice"><input type="radio" name="pairs" id="pairs-12" value="12"><span class="choice-body"><b>Zor</b><small>24 kart</small></span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Oyuncular</legend>
+      <div class="player-rows">
+        <div class="player-row p0">
+          <span class="avatar sm" aria-hidden="true">🚀</span>
+          <input type="text" id="name-0" maxlength="12" value="Enes" aria-label="1. oyuncunun adı" autocomplete="off">
+          <label class="toggle"><input type="checkbox" id="help-0"><span>Yardım</span></label>
+        </div>
+        <div class="player-row p1">
+          <span class="avatar sm" aria-hidden="true">🎈</span>
+          <input type="text" id="name-1" maxlength="12" value="Egemen" aria-label="2. oyuncunun adı" autocomplete="off">
+          <label class="toggle"><input type="checkbox" id="help-1" checked><span>Yardım</span></label>
+        </div>
+      </div>
+      <p class="note"><b>Yardım</b> açık olan oyuncu yanlış kartlara daha uzun bakar ve 3 ipucu hakkı alır. İpucu bir çifti kısa süre gösterir.</p>
+    </fieldset>
+
+    <button class="btn primary big" id="start" type="submit">Başla</button>
+  </form>
+</div>
+
+<div class="overlay" id="result" hidden>
+  <div class="sheet result">
+    <p class="res-title" id="res-title">Takım başardı!</p>
+    <div class="res-stars" id="res-stars" aria-hidden="true"></div>
+    <p class="res-sub" id="res-sub"></p>
+    <div class="res-players" id="res-players"></div>
+    <p class="res-best" id="res-best"></p>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Tekrar oyna</button>
+      <button class="btn" id="to-setup" type="button">Ayarları değiştir</button>
+    </div>
+  </div>
+</div>
+
+<div id="confetti" aria-hidden="true"></div>
+
+<script src="game.js"></script>
+</body>
+</html>

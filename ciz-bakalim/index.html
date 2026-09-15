@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Çiz Bakalım! · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Aile çizim tahmin oyunu: biri gizli kelimeyi kara tahtaya çizer, diğerleri bilmeye çalışır. Resimli kelimeler ve pandomim modu.">
+  <meta name="theme-color" content="#1B3B30">
+  <meta property="og:title" content="Çiz Bakalım!">
+  <meta property="og:description" content="Biri çizer, herkes tahmin eder. Resimli kelimeler, pandomim modu.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%96%8D%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Nunito:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Çiz Bakalım!</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Ayarlar</button>
+    </div>
+  </header>
+
+  <section class="hud">
+    <div class="timer" id="timer" aria-label="Kalan süre"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="19" class="track"/><circle cx="22" cy="22" r="19" class="ring" id="timer-ring"/></svg><b id="timer-num">60</b></div>
+    <div class="who"><span class="lbl" id="who-lbl">Çizen</span><b id="who-name">—</b></div>
+    <button class="btn peek" id="peek" type="button">👁 Kelime</button>
+    <div class="hud-actions">
+      <button class="btn pass" id="pass" type="button">Pas</button>
+      <button class="btn got" id="got" type="button">Bildi! ✓</button>
+    </div>
+  </section>
+
+  <main class="board-wrap" id="boardWrap">
+    <div class="frame">
+      <canvas id="board" aria-label="Çizim tahtası"></canvas>
+      <div class="mime" id="mime" hidden><span aria-hidden="true">🎭</span><p>Pandomim zamanı! Kelimeyi konuşmadan anlat.</p></div>
+    </div>
+  </main>
+
+  <div class="tools" id="tools">
+    <div class="colors" id="colors" role="radiogroup" aria-label="Tebeşir rengi"></div>
+    <div class="sizes" role="radiogroup" aria-label="Kalınlık">
+      <button class="size" data-size="4" type="button" role="radio" aria-label="İnce"><i style="width:6px;height:6px"></i></button>
+      <button class="size" data-size="9" type="button" role="radio" aria-label="Orta"><i style="width:12px;height:12px"></i></button>
+      <button class="size" data-size="18" type="button" role="radio" aria-label="Kalın"><i style="width:20px;height:20px"></i></button>
+    </div>
+    <button class="btn tool" id="undo" type="button">↩ Geri</button>
+    <button class="btn tool" id="clear" type="button">🧽 Sil</button>
+  </div>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Kimler oynuyor?</h2>
+    <div class="p-rows" id="p-rows"></div>
+    <div class="row">
+      <button class="btn light" id="add-player" type="button">+ Oyuncu</button>
+      <button class="btn light" id="remove-player" type="button">− Oyuncu</button>
+    </div>
+    <fieldset>
+      <legend>Oyun türü</legend>
+      <div class="choices">
+        <label class="choice"><input type="radio" name="mode" id="mode-draw" value="draw" checked><span>🖍️ Çizim</span></label>
+        <label class="choice"><input type="radio" name="mode" id="mode-mime" value="mime"><span>🎭 Pandomim</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Kelimeler</legend>
+      <div class="choices">
+        <label class="choice"><input type="radio" name="words" id="words-kolay" value="kolay" checked><span>Kolay (resimli)</span></label>
+        <label class="choice"><input type="radio" name="words" id="words-zor" value="zor"><span>Zor</span></label>
+        <label class="choice"><input type="radio" name="words" id="words-karisik" value="karisik"><span>Karışık</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Süre ve tur</legend>
+      <div class="choices">
+        <label class="choice"><input type="radio" name="time" id="time-45" value="45"><span>45 sn</span></label>
+        <label class="choice"><input type="radio" name="time" id="time-60" value="60" checked><span>60 sn</span></label>
+        <label class="choice"><input type="radio" name="time" id="time-90" value="90"><span>90 sn</span></label>
+        <span class="sep"></span>
+        <label class="choice"><input type="radio" name="rounds" id="rounds-1" value="1"><span>1 tur</span></label>
+        <label class="choice"><input type="radio" name="rounds" id="rounds-2" value="2" checked><span>2 tur</span></label>
+        <label class="choice"><input type="radio" name="rounds" id="rounds-3" value="3"><span>3 tur</span></label>
+      </div>
+    </fieldset>
+    <p class="note">Her turda herkes bir kez çizer. Bilen de çizen de 1 puan alır. Her çizimde bir kez pas geçilebilir.</p>
+    <button class="btn primary big" id="start" type="submit">Başla</button>
+  </form>
+</div>
+
+<div class="overlay" id="handoff" hidden>
+  <div class="sheet center">
+    <p class="kicker" id="handoff-round">1. tur</p>
+    <p class="hand-title" id="handoff-title">Sıra Enes'te!</p>
+    <p class="note" id="handoff-note">Tableti Enes'e ver. Diğerleri ekrana bakmasın 🙈</p>
+    <button class="btn primary big" id="reveal" type="button">Kelimeyi gör</button>
+  </div>
+</div>
+
+<div class="overlay" id="secret" hidden>
+  <div class="sheet center">
+    <p class="kicker" id="secret-kicker">Bunu çiz</p>
+    <div class="secret-emo" id="secret-emo">🐱</div>
+    <p class="secret-word" id="secret-word">KEDİ</p>
+    <p class="note">Harf ya da rakam yazmak yok!</p>
+    <button class="btn primary big" id="go" type="button">Başla ▶</button>
+  </div>
+</div>
+
+<div class="overlay" id="credit" hidden>
+  <div class="sheet center">
+    <p class="hand-title">Kim bildi?</p>
+    <div class="chips" id="credit-chips"></div>
+    <button class="btn light" id="credit-cancel" type="button">Vazgeç</button>
+  </div>
+</div>
+
+<div class="overlay" id="result" hidden>
+  <div class="sheet center">
+    <p class="kicker" id="result-kicker">Süre bitti!</p>
+    <div class="secret-emo" id="result-emo">🐱</div>
+    <p class="secret-word" id="result-word">KEDİ</p>
+    <p class="note" id="result-note"></p>
+    <div class="scoreboard" id="result-scores"></div>
+    <button class="btn primary big" id="next-turn" type="button">Sıradaki</button>
+  </div>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="hand-title" id="end-title">Egemen kazandı!</p>
+    <div class="scoreboard" id="end-scores"></div>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Tekrar oyna</button>
+      <button class="btn light" id="end-setup" type="button">Ayarlar</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

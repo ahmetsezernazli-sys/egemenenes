@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Yılan Merdiven · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Klasik yılan merdiven oyunu: 2-4 oyuncu, bilgisayar rakip, adım adım sayma ve küçükler için kısa yılan seçeneği.">
+  <meta name="theme-color" content="#2F6B4F">
+  <meta property="og:title" content="Yılan Merdiven">
+  <meta property="og:description" content="Zarı at, merdivenden çık, yılandan kay. 2-4 oyuncu.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B2%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Titan+One&family=Nunito:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Yılan <span>Merdiven</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Ayarlar</button>
+    </div>
+  </header>
+
+  <div class="play">
+    <main class="board-wrap" id="boardWrap">
+      <canvas id="cv" aria-label="Oyun tahtası"></canvas>
+    </main>
+    <aside class="side">
+      <div class="players" id="players"></div>
+      <p class="msg" id="msg" role="status">Zarı at!</p>
+      <button class="dice" id="dice" type="button" aria-label="Zarı at">
+        <span class="face" id="face"></span>
+      </button>
+      <p class="hint">Zara dokun ya da <kbd>Boşluk</kbd></p>
+    </aside>
+  </div>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Yılan Merdiven</h2>
+    <div class="p-rows" id="p-rows"></div>
+    <div class="row">
+      <button class="btn light" id="add-player" type="button">+ Oyuncu</button>
+      <button class="btn light" id="remove-player" type="button">− Oyuncu</button>
+    </div>
+    <fieldset>
+      <legend>Kurallar</legend>
+      <label class="toggle"><input type="checkbox" id="short-snakes" checked><span>🐍 Yılanlar kısa olsun <small>(en fazla 10 kare geri)</small></span></label>
+      <label class="toggle"><input type="checkbox" id="exact"><span>🎯 100'e tam atışla varılsın</span></label>
+      <label class="toggle"><input type="checkbox" id="six-again" checked><span>🎲 6 atan bir daha atsın</span></label>
+    </fieldset>
+    <button class="btn primary big" id="start" type="submit">Oyunu başlat</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title">Egemen kazandı!</p>
+    <ol class="podium" id="podium"></ol>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Tekrar oyna</button>
+      <button class="btn light" id="end-setup" type="button">Ayarlar</button>
+    </div>
+  </div>
+</div>
+
+<div id="confetti" aria-hidden="true"></div>
+
+<script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gökdelen · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Vinçten katları doğru anda bırak, gökdeleni uzaya kadar yükselt. Takım ya da yarış, 1-4 oyuncu.">
+  <meta name="theme-color" content="#1D2440">
+  <meta property="og:title" content="Gökdelen">
+  <meta property="og:description" content="Katları üst üste diz, taşan kısım kesilir. Birlikte ya da yarışarak en yüksek kuleyi yap.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%97%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@600;700;800;900&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Gök<span>delen</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="menu" type="button" aria-label="Ayarlara dön">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="İnşaat alanı: vinçteki katı doğru anda bırakmak için ekrana dokun"></canvas>
+    <div class="turn" id="turn" hidden><span class="av" id="turn-av"></span><span id="turn-name"></span></div>
+  </main>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Gökdelen</h2>
+    <p class="lead">Kat sallanırken dokun, alttaki katın tam üstüne bırak.</p>
+    <fieldset>
+      <legend>Mod</legend>
+      <div class="seg wide-seg" role="radiogroup" aria-label="Mod">
+        <label><input type="radio" name="mode" id="mode-team" value="team" checked><span>🤝 Takım<small>Aynı kule, sırayla</small></span></label>
+        <label><input type="radio" name="mode" id="mode-race" value="race"><span>🏁 Yarış<small>İki kule, aynı anda</small></span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Oyuncular</legend>
+      <div class="p-rows" id="p-rows"></div>
+      <button class="btn light small" id="add-player" type="button">+ Oyuncu ekle</button>
+    </fieldset>
+    <fieldset id="target-set" hidden>
+      <legend>Hedef</legend>
+      <div class="seg" role="radiogroup" aria-label="Hedef kat">
+        <label><input type="radio" name="target" id="target-15" value="15"><span>15 kat</span></label>
+        <label><input type="radio" name="target" id="target-25" value="25" checked><span>25 kat</span></label>
+        <label><input type="radio" name="target" id="target-40" value="40"><span>40 kat</span></label>
+      </div>
+    </fieldset>
+    <p class="records" id="records" hidden></p>
+    <button class="btn primary big" type="submit">İnşaata başla</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" id="end-icon">🏙️</div>
+    <h2 id="end-title">32 kat!</h2>
+    <p class="end-note" id="end-note"></p>
+    <ul class="stats" id="end-stats"></ul>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Yeniden oyna</button>
+      <button class="btn light" id="change" type="button">Ayarlar</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Çatı Koşusu · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Şehrin çatılarında koş: boşluklardan atla, tabelaların altından kay, altınları topla, rekorunu kır.">
+  <meta name="theme-color" content="#2A2140">
+  <meta property="og:title" content="Çatı Koşusu">
+  <meta property="og:description" content="Çatılarda koş, atla, kay, rekorunu kır.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%83%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Çatı Koşusu</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="pause" type="button" aria-label="Duraklat">
+        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      </button>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Oyun alanı"></canvas>
+
+    <div class="touch" id="touch" hidden>
+      <button class="tbtn slide" id="t-slide" type="button" aria-label="Kay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg><span>Kay</span>
+      </button>
+      <button class="tbtn jump" id="t-jump" type="button" aria-label="Zıpla">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg><span>Zıpla</span>
+      </button>
+    </div>
+
+    <div class="overlay" id="intro">
+      <p class="eyebrow">Enes için</p>
+      <h2 class="big-title">Çatı <span>Koşusu</span></h2>
+      <ul class="how">
+        <li><kbd>Boşluk</kbd> / <kbd>↑</kbd> ya da ekrana dokun: <b>zıpla</b>. Havadayken bir kez daha basarsan <b>çift zıplama</b>.</li>
+        <li><kbd>↓</kbd> ya da aşağı kaydır: tabelaların altından <b>kay</b>.</li>
+        <li>Kasalara çarpma, boşluğa düşme. Kalkan 🛡️ bir çarpmayı affeder.</li>
+      </ul>
+      <button class="btn primary" id="start" type="button">Koşmaya başla</button>
+      <p class="best">Rekor: <b id="intro-best">0 m</b></p>
+    </div>
+
+    <div class="overlay" id="paused" hidden>
+      <h2 class="big-title small">Duraklatıldı</h2>
+      <button class="btn primary" id="resume" type="button">Devam et</button>
+    </div>
+
+    <div class="overlay" id="over" hidden>
+      <h2 class="big-title small" id="over-title">Düştün!</h2>
+      <div class="result">
+        <div><span>Mesafe</span><b id="r-dist">0 m</b></div>
+        <div><span>Altın</span><b id="r-coins">0</b></div>
+        <div><span>Puan</span><b id="r-score">0</b></div>
+      </div>
+      <p class="best" id="r-best">Rekor: 0 m</p>
+      <button class="btn primary" id="again" type="button">Tekrar koş</button>
+    </div>
+  </main>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

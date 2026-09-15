@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Yapboz · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Çocuklar için yapboz: 8 renkli resim, 4 ile 12 parça arası, ipucu modu ve sesli kutlama.">
+  <meta name="theme-color" content="#CDE7F0">
+  <meta property="og:title" content="Yapboz">
+  <meta property="og:description" content="Parçaları sürükle, resmi tamamla. 4 ile 12 parça.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%A9%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title" id="title">Yapboz</h1>
+    <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+      <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+      <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+    </button>
+  </header>
+
+  <div class="toolbar">
+    <button class="tbtn" id="open-pics" type="button"><span aria-hidden="true">🖼️</span><b>Resimler</b></button>
+    <div class="counts" role="radiogroup" aria-label="Parça sayısı">
+      <button class="cnt" data-n="4" type="button" role="radio">4</button>
+      <button class="cnt" data-n="6" type="button" role="radio">6</button>
+      <button class="cnt" data-n="9" type="button" role="radio">9</button>
+      <button class="cnt" data-n="12" type="button" role="radio">12</button>
+    </div>
+    <button class="tbtn" id="hint" type="button" aria-pressed="true"><span aria-hidden="true">💡</span><b>İpucu</b></button>
+    <button class="tbtn" id="shuffle" type="button"><span aria-hidden="true">🔀</span><b>Karıştır</b></button>
+  </div>
+
+  <main class="table" id="table">
+    <div class="board" id="board"><div class="ghost" id="ghost"></div><div class="slots" id="slots"></div></div>
+  </main>
+</div>
+
+<div class="overlay" id="pics" hidden>
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2>Hangi resim?</h2>
+      <button class="icon-btn light" id="close-pics" type="button" aria-label="Kapat">✕</button>
+    </div>
+    <div class="pic-grid" id="pic-grid"></div>
+  </div>
+</div>
+
+<div class="overlay clear" id="done" hidden>
+  <div class="done-card">
+    <p class="done-title" id="done-title">Aferin Egemen!</p>
+    <div class="row">
+      <button class="big-btn" id="next-pic" type="button" aria-label="Sıradaki resim">
+        <svg viewBox="0 0 100 100"><path d="M38 26 L76 50 L38 74 Z" fill="#fff" stroke="#fff" stroke-width="10" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="confetti" aria-hidden="true"></div>
+
+<script src="game.js"></script>
+</body>
+</html>

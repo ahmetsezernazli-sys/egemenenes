@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Renkli Ksilofon · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Dokunarak çalınan renkli ksilofon: serbest çal, parlayan tuşlarla şarkı öğren ya da nota dizisini ezberle.">
+  <meta name="theme-color" content="#EEE8FF">
+  <meta property="og:title" content="Renkli Ksilofon">
+  <meta property="og:description" content="Serbest çal, şarkı öğren, hafıza oyunu. Tablette parmakla çalınır.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B5%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Renkli Ksilofon</h1>
+    <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+      <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+      <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+    </button>
+  </header>
+
+  <nav class="modes" role="tablist" aria-label="Oyun modu">
+    <button class="mode" role="tab" id="tab-free" data-mode="free" aria-selected="true" type="button"><span aria-hidden="true">🎈</span> Serbest çal</button>
+    <button class="mode" role="tab" id="tab-song" data-mode="song" aria-selected="false" type="button"><span aria-hidden="true">🎶</span> Şarkı öğren</button>
+    <button class="mode" role="tab" id="tab-memory" data-mode="memory" aria-selected="false" type="button"><span aria-hidden="true">🧠</span> Hafıza</button>
+  </nav>
+
+  <section class="panel" id="panel-free">
+    <p class="hint">Tuşlara dokun ya da parmağını üstlerinde kaydır. Klavyede <kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><kbd>F</kbd><kbd>G</kbd><kbd>H</kbd><kbd>J</kbd><kbd>K</kbd>.</p>
+    <div class="chips" role="radiogroup" aria-label="Ses">
+      <label class="chip"><input type="radio" name="timbre" id="timbre-xylo" value="xylo" checked><span>🪵 Ksilofon</span></label>
+      <label class="chip"><input type="radio" name="timbre" id="timbre-bell" value="bell"><span>🔔 Zil</span></label>
+      <label class="chip"><input type="radio" name="timbre" id="timbre-robot" value="robot"><span>🤖 Robot</span></label>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-song" hidden>
+    <div class="chips" role="radiogroup" aria-label="Şarkı" id="song-list"></div>
+    <div class="song-row">
+      <button class="btn" id="song-listen" type="button">▶ Dinle</button>
+      <button class="btn primary" id="song-play" type="button">Sen çal</button>
+      <div class="progress" id="song-progress" aria-label="İlerleme"><i id="song-bar"></i></div>
+    </div>
+    <p class="status" id="song-status" role="status">Bir şarkı seç, önce dinle, sonra parlayan tuşlara bas.</p>
+  </section>
+
+  <section class="panel" id="panel-memory" hidden>
+    <div class="mem-row">
+      <div class="chips" role="radiogroup" aria-label="Tuş sayısı">
+        <label class="chip"><input type="radio" name="memkeys" id="memkeys-4" value="4" checked><span>4 tuş</span></label>
+        <label class="chip"><input type="radio" name="memkeys" id="memkeys-8" value="8"><span>8 tuş</span></label>
+      </div>
+      <dl class="mem-stats">
+        <div><dt>Dizi</dt><dd id="mem-score">0</dd></div>
+        <div><dt>Rekor</dt><dd id="mem-best">0</dd></div>
+      </dl>
+      <button class="btn primary" id="mem-start" type="button">Başla</button>
+    </div>
+    <p class="status" id="mem-status" role="status">Ksilofon notaları çalar, sen aynı sırayla tekrar et. Her turda bir nota eklenir.</p>
+  </section>
+
+  <main class="xylo">
+    <div class="frame">
+      <div class="bars" id="bars"></div>
+    </div>
+  </main>
+</div>
+
+<div id="notes" aria-hidden="true"></div>
+
+<script src="game.js"></script>
+</body>
+</html>

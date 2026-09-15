@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Harf Bahçesi · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Türk alfabesinin 29 harfini resimli kelimelerle öğreten sesli oyun: harfleri keşfet, baş harfi bul, kelime kur.">
+  <meta name="theme-color" content="#DFF5E8">
+  <meta property="og:title" content="Harf Bahçesi">
+  <meta property="og:description" content="29 harfi resimlerle öğren: keşfet, baş harfi bul, kelime kur.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%A4%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Harf Bahçesi</h1>
+    <div class="bar-actions">
+      <span class="learned" id="learned" title="Öğrenilen harfler">🌱 0/29</span>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="modes" role="tablist" aria-label="Oyun">
+    <button class="mode" role="tab" data-mode="explore" id="tab-explore" aria-selected="true" type="button"><span aria-hidden="true">🔤</span><b>Harfler</b></button>
+    <button class="mode" role="tab" data-mode="quiz" id="tab-quiz" aria-selected="false" type="button"><span aria-hidden="true">🔎</span><b>Harfi bul</b></button>
+    <button class="mode" role="tab" data-mode="build" id="tab-build" aria-selected="false" type="button"><span aria-hidden="true">🧩</span><b>Kelime kur</b></button>
+  </nav>
+
+  <main class="content">
+    <section class="view" id="v-explore">
+      <div class="grid" id="letter-grid"></div>
+    </section>
+
+    <section class="view" id="v-quiz" hidden>
+      <div class="stars" id="quiz-stars" aria-label="Yıldızlar"></div>
+      <div class="q-card">
+        <button class="pic" id="quiz-pic" type="button" aria-label="Soruyu tekrar dinle">🐝</button>
+        <p class="q-text" id="quiz-text">Arı hangi harfle başlar?</p>
+      </div>
+      <div class="options" id="quiz-options"></div>
+    </section>
+
+    <section class="view" id="v-build" hidden>
+      <div class="stars" id="build-stars" aria-label="Yıldızlar"></div>
+      <div class="q-card">
+        <button class="pic" id="build-pic" type="button" aria-label="Kelimeyi tekrar dinle">🐱</button>
+        <div class="slots" id="build-slots"></div>
+      </div>
+      <div class="options tiles" id="build-tiles"></div>
+    </section>
+  </main>
+</div>
+
+<div class="overlay" id="card" hidden>
+  <div class="letter-card" id="letter-card">
+    <button class="nav prev" id="card-prev" type="button" aria-label="Önceki harf">‹</button>
+    <div class="card-body">
+      <div class="big-letter" id="card-letter"><span>A</span><small>a</small></div>
+      <div class="card-emo" id="card-emo">🐝</div>
+      <p class="card-word" id="card-word"></p>
+      <p class="card-note" id="card-note" hidden></p>
+      <button class="btn listen" id="card-listen" type="button">🔊 Dinle</button>
+    </div>
+    <button class="nav next" id="card-next" type="button" aria-label="Sonraki harf">›</button>
+    <button class="close" id="card-close" type="button" aria-label="Kapat">✕</button>
+  </div>
+</div>
+
+<div class="overlay" id="party" hidden>
+  <div class="party-card">
+    <p class="party-title">Aferin Egemen!</p>
+    <div class="party-stars" id="party-stars">⭐⭐⭐</div>
+    <button class="big-btn" id="party-again" type="button" aria-label="Tekrar oyna">
+      <svg viewBox="0 0 100 100" fill="none"><path d="M50 22 A28 28 0 1 0 76 42" stroke="#fff" stroke-width="11" stroke-linecap="round"/><path d="M46 8 L66 22 L46 36 Z" fill="#fff" stroke="#fff" stroke-width="4" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</div>
+
+<div id="confetti" aria-hidden="true"></div>
+
+<script src="game.js"></script>
+</body>
+</html>

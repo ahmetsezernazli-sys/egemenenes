@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mars Üssü · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Kule savunması: uzaylı istilacılar üsse ilerliyor. Lazer, buz ve roket kuleleri kur, geliştir, 30 dalgaya dayan.">
+  <meta name="theme-color" content="#1E1320">
+  <meta property="og:title" content="Mars Üssü">
+  <meta property="og:description" content="Kuleleri kur, geliştir, Mars üssünü 30 dalga boyunca savun.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%B8%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Audiowide&family=Rubik:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Mars <span>Üssü</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hud">
+    <div class="stat"><span>❤️</span><b id="lives">20</b></div>
+    <div class="stat"><span>🪙</span><b id="coins">150</b></div>
+    <div class="stat"><span>Dalga</span><b id="wave">0/30</b></div>
+    <div class="hud-btns">
+      <button class="btn" id="speed" type="button" aria-pressed="false">⏩ 1×</button>
+      <button class="btn" id="pause" type="button">⏸</button>
+      <button class="btn primary" id="next-wave" type="button">▶ Dalgayı başlat</button>
+    </div>
+  </section>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Mars haritası"></canvas>
+    <div class="popup" id="build" hidden></div>
+    <div class="popup" id="tower-panel" hidden></div>
+
+    <div class="overlay" id="intro">
+      <p class="eyebrow">Enes için</p>
+      <h2 class="big">Mars <span>Üssü</span></h2>
+      <ul class="how">
+        <li>Uzaylılar soldan gelip yol boyunca üsse ilerliyor. Üsse ulaşan her uzaylı bir can götürür.</li>
+        <li>Yolun dışındaki bir kareye dokun, kule kur: <b>🔴 Lazer</b> hızlı ve tek hedefli, <b>🔵 Buz</b> yavaşlatır, <b>🟠 Roket</b> alan hasarı verir.</li>
+        <li>Kuleye dokunup geliştir ya da sat. Dalgayı hazır olunca sen başlatırsın.</li>
+        <li>30 dalgaya dayan! Her 10 dalgada bir ana gemi gelir.</li>
+      </ul>
+      <button class="btn primary big-btn" id="start" type="button">Savunmayı kur</button>
+      <p class="best">En uzak dalga: <b id="best">0</b></p>
+    </div>
+
+    <div class="overlay" id="paused" hidden>
+      <h2 class="big small">Duraklatıldı</h2>
+      <button class="btn primary big-btn" id="resume" type="button">Devam et</button>
+    </div>
+
+    <div class="overlay" id="over" hidden>
+      <h2 class="big small" id="over-title">Üs düştü!</h2>
+      <p class="over-sub" id="over-sub"></p>
+      <button class="btn primary big-btn" id="again" type="button">Tekrar dene</button>
+    </div>
+  </main>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

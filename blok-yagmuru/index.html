@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Blok Yağmuru · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Düşen blokları çevir, yerleştir, sıraları tamamla. Seviyeler hızlanır, rekorunu kır.">
+  <meta name="theme-color" content="#0B2A30">
+  <meta property="og:title" content="Blok Yağmuru">
+  <meta property="og:description" content="Düşen blokları yerleştir, sıraları tamamla, rekorunu kır.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%B1%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;700;800;900&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Blok <span>Yağmuru</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="pause" type="button" aria-label="Duraklat">
+        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      </button>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="play">
+    <aside class="side left">
+      <section class="box">
+        <h2>Tut <kbd>C</kbd></h2>
+        <canvas id="hold" width="120" height="80" aria-label="Tutulan blok"></canvas>
+      </section>
+      <section class="box stats">
+        <div><span>Puan</span><b id="score">0</b></div>
+        <div><span>Seviye</span><b id="level">1</b></div>
+        <div><span>Sıra</span><b id="lines">0</b></div>
+        <div><span>Rekor</span><b id="best">0</b></div>
+      </section>
+    </aside>
+
+    <main class="well" id="well">
+      <canvas id="board" aria-label="Oyun alanı"></canvas>
+      <div class="overlay" id="intro">
+        <p class="eyebrow">Enes için</p>
+        <h2 class="big">Blok <span>Yağmuru</span></h2>
+        <ul class="keys">
+          <li><kbd>←</kbd> <kbd>→</kbd> kaydır · <kbd>↓</kbd> hızlandır</li>
+          <li><kbd>↑</kbd> / <kbd>X</kbd> çevir · <kbd>Z</kbd> ters çevir</li>
+          <li><kbd>Boşluk</kbd> bırak · <kbd>C</kbd> tut · <kbd>P</kbd> duraklat</li>
+          <li class="touch-note">Tablette: kaydır, dokun = çevir, aşağı fırlat = bırak</li>
+        </ul>
+        <button class="btn primary" id="start" type="button">Başla</button>
+      </div>
+      <div class="overlay" id="paused" hidden>
+        <h2 class="big small">Duraklatıldı</h2>
+        <button class="btn primary" id="resume" type="button">Devam et</button>
+      </div>
+      <div class="overlay" id="over" hidden>
+        <h2 class="big small" id="over-title">Oyun bitti</h2>
+        <p class="over-score"><b id="over-score">0</b> puan · <span id="over-lines">0</span> sıra</p>
+        <button class="btn primary" id="again" type="button">Tekrar oyna</button>
+      </div>
+    </main>
+
+    <aside class="side right">
+      <section class="box">
+        <h2>Sıradaki</h2>
+        <canvas id="next" width="120" height="240" aria-label="Sıradaki bloklar"></canvas>
+      </section>
+    </aside>
+  </div>
+
+  <div class="pad" id="pad">
+    <button class="pb" data-act="hold" type="button" aria-label="Tut">⇄</button>
+    <button class="pb" data-act="left" type="button" aria-label="Sola">◀</button>
+    <button class="pb" data-act="rotate" type="button" aria-label="Çevir">↻</button>
+    <button class="pb" data-act="right" type="button" aria-label="Sağa">▶</button>
+    <button class="pb" data-act="soft" type="button" aria-label="Hızlandır">▼</button>
+    <button class="pb drop" data-act="hard" type="button" aria-label="Bırak">⤓</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Egemen ve Enes'in oyunları: tarayıcıda, kurulum olmadan oynanan küçük oyunlar.">
+  <meta property="og:title" content="Egemen ve Enes'in Oyunları">
+  <meta property="og:description" content="Tarayıcıda, kurulum olmadan oynanan küçük oyunlar.">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0F2427">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%B2%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Yeseva+One&display=swap">
+  <style>
+    :root{
+      --ground:#0F2427; --ground-2:#163238; --line:rgba(241,230,210,.14);
+      --ink:#F1E6D2; --muted:#9FB5AF; --brass:#D9A441; --tea:#E0613F;
+      --display:"Yeseva One", Georgia, serif;
+      --body:"Onest", "Segoe UI", system-ui, sans-serif;
+      color-scheme:dark;
+    }
+    *{box-sizing:border-box}
+    html,body{background:var(--ground)}
+    body{margin:0;color:var(--ink);font:15px/1.5 var(--body);padding-inline:16px;padding-block:40px 56px;min-height:100vh}
+    .wrap{max-width:960px;margin-inline:auto;display:grid;gap:32px}
+    header{display:grid;gap:8px;border-bottom:1px solid var(--line);padding-bottom:24px}
+    h1{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,7vw,4rem);line-height:1.05;margin:0;text-wrap:balance}
+    h1 .and{color:var(--brass)}
+    h1 .games{display:block;color:var(--tea)}
+    header p{margin:0;color:var(--muted);max-width:52ch}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+    .game{display:grid;grid-template-rows:auto 1fr;background:var(--ground-2);border:1px solid var(--line);color:inherit;text-decoration:none;transition:border-color .15s, transform .15s}
+    .game:hover{border-color:var(--brass);transform:translateY(-2px)}
+    .game:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+    .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
+      background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
+    .cover svg{width:34%;height:auto}
+    .cover-sky{background:linear-gradient(#5DB8EE, #D4F1FF)}
+    .cover-sky svg{width:62%}
+    .cover-space{background:radial-gradient(ellipse 70% 80% at 30% 30%, rgba(107,42,122,.5), transparent 70%), #140F2E}
+    .cover-space svg{width:62%}
+    .cover-mint{background:#DDF3EA}
+    .cover-mint svg{width:62%}
+    .cover-rink{background:#13263A}
+    .cover-rink svg{width:70%}
+    .cover-crate{background:#1B2029}
+    .cover-crate svg{width:70%}
+    .cover-train{background:linear-gradient(#9FD8F2, #FFF1D6)}
+    .cover-train svg{width:74%}
+    .cover-quiz{background:radial-gradient(ellipse 60% 70% at 50% 0%, rgba(255,200,61,.35), transparent 70%), #231A5C}
+    .cover-quiz svg{width:70%}
+    .cover-xylo{background:#EEE8FF}
+    .cover-xylo svg{width:70%}
+    .cover-paint{background:#E6F2F1}
+    .cover-paint svg{width:70%}
+    .cover-run{background:linear-gradient(#5B3F8C, #F08A6C 70%, #FFC78F)}
+    .cover-run svg{width:100%;height:100%}
+    .cover-four{background:#F1EEFF}
+    .cover-four svg{width:66%}
+    .cover-quick{background:#1F2A44}
+    .cover-quick svg{width:74%}
+    .cover-abc{background:linear-gradient(#CFEFFF, #DFF5E8)}
+    .cover-abc svg{width:100%;height:100%}
+    .cover-blocks{background:#0B2A30}
+    .cover-blocks svg{width:100%;height:100%}
+    .cover-chalk{background:#16261F}
+    .cover-chalk svg{width:80%}
+    .cover-pond{background:#2E97B0}
+    .cover-pond svg{width:100%;height:100%}
+    .cover-puzzle{background:#CDE7F0}
+    .cover-puzzle svg{width:80%}
+    .cover-mars{background:#C0633B}
+    .cover-mars svg{width:100%;height:100%}
+    .cover-ladder{background:#2F6B4F}
+    .cover-ladder svg{width:90%}
+    .cover-mix{background:#FFE6C7}
+    .cover-mix svg{width:90%}
+    .cover-golf{background:#127A8F}
+    .cover-golf svg{width:92%}
+    .cover-tower{background:#7CC8F7}
+    .cover-tower svg{width:92%}
+    .info{padding:14px 16px 18px;display:grid;gap:6px;align-content:start}
+    .info h2{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.1;margin:0}
+    .info p{margin:0;color:var(--muted);font-size:14px}
+    .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+    .tags span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);border:1px solid rgba(217,164,65,.4);padding:1px 7px}
+    .soon{border:1px dashed var(--line);display:grid;place-content:center;text-align:center;color:var(--muted);padding:24px;min-height:200px}
+    footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+    @media (prefers-reduced-motion:reduce){ .game{transition:none} .game:hover{transform:none} }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Egemen <span class="and">ve</span> Enes'in <span class="games">Oyunları</span></h1>
+    <p>Tarayıcıda, kurulum olmadan oynanan küçük oyunlar. Telefonda da çalışır.</p>
+  </header>
+
+  <main class="grid">
+    <a class="game" href="tavsan-kani/index.html">
+      <div class="cover" aria-hidden="true">
+        <svg viewBox="0 0 120 150" fill="none">
+          <ellipse cx="60" cy="138" rx="56" ry="10" fill="#EDE5D6"/>
+          <ellipse cx="60" cy="138" rx="52" ry="8" stroke="#B8321A" stroke-width="2"/>
+          <path d="M40 132 C30 110 34 96 44 84 C48 78 47 70 42 60 C36 48 34 36 36 22 L84 22 C86 36 84 48 78 60 C73 70 72 78 76 84 C86 96 90 110 80 132 Z" fill="rgba(241,230,210,.06)" stroke="rgba(241,230,210,.6)" stroke-width="1.5"/>
+          <path d="M43 129 C34 110 37 97 46 86 C50 79 50 71 45 61 C40 51 38 42 38 34 L82 34 C82 42 80 51 75 61 C70 71 70 79 74 86 C83 97 86 110 77 129 Z" fill="#AA3216"/>
+          <ellipse cx="60" cy="22" rx="24" ry="3" stroke="rgba(241,230,210,.6)" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Tavşan Kanı</h2>
+        <p>Demlik ve suyu doğru oranda dök, on müşteriye istedikleri kıvamda çay götür.</p>
+        <div class="tags"><span>Beceri</span><span>1 oyuncu</span><span>~5 dk</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="balon-bahcesi/index.html">
+      <div class="cover cover-sky" aria-hidden="true">
+        <svg viewBox="0 0 160 120" fill="none">
+          <path d="M52 70 C50 88 58 96 54 112" stroke="#1E3A5F" stroke-opacity=".45" stroke-width="1.5"/>
+          <path d="M84 56 C86 76 78 90 82 112" stroke="#1E3A5F" stroke-opacity=".45" stroke-width="1.5"/>
+          <path d="M116 76 C114 92 120 100 116 112" stroke="#1E3A5F" stroke-opacity=".45" stroke-width="1.5"/>
+          <ellipse cx="52" cy="48" rx="20" ry="24" fill="#F0453A" stroke="#B8281F" stroke-width="2"/>
+          <ellipse cx="84" cy="32" rx="22" ry="26" fill="#FFC529" stroke="#C98F00" stroke-width="2"/>
+          <ellipse cx="116" cy="54" rx="20" ry="24" fill="#2F80ED" stroke="#1B5BB8" stroke-width="2"/>
+          <ellipse cx="45" cy="38" rx="4" ry="7" fill="#fff" fill-opacity=".7" transform="rotate(-25 45 38)"/>
+          <ellipse cx="76" cy="21" rx="4" ry="7" fill="#fff" fill-opacity=".7" transform="rotate(-25 76 21)"/>
+          <ellipse cx="109" cy="44" rx="4" ry="7" fill="#fff" fill-opacity=".7" transform="rotate(-25 109 44)"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Balon Bahçesi</h2>
+        <p>Buluttaki renkte balonları patlat, sayarak 12 yıldız topla. Okuma bilmeden oynanır.</p>
+        <div class="tags"><span>Egemen için</span><span>5 yaş</span><span>Renkler</span><span>Sayılar</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="yildiz-devriyesi/index.html">
+      <div class="cover cover-space" aria-hidden="true">
+        <svg viewBox="0 0 160 120" fill="none">
+          <circle cx="20" cy="18" r="1.2" fill="#EDE7FF"/><circle cx="130" cy="30" r="1" fill="#EDE7FF"/><circle cx="60" cy="10" r="1.4" fill="#EDE7FF"/><circle cx="145" cy="90" r="1.2" fill="#EDE7FF"/><circle cx="12" cy="80" r="1" fill="#EDE7FF"/>
+          <path d="M40 22 L57 26 L52 12 Z" fill="#FF5D73"/>
+          <path d="M112 30 L128 22 L120 40 L106 38 Z" fill="#4A3E66" stroke="#8C7AA8" stroke-width="1.5"/>
+          <rect x="79" y="38" width="2.5" height="12" fill="#FFD166"/><rect x="71" y="56" width="2.5" height="12" fill="#FFD166"/><rect x="87" y="56" width="2.5" height="12" fill="#FFD166"/>
+          <path d="M80 70 L96 102 L86 98 L80 104 L74 98 L64 102 Z" fill="#F5F1E8"/>
+          <ellipse cx="80" cy="86" rx="3" ry="6" fill="#3DD6C6"/>
+          <path d="M76 104 L84 104 L80 116 Z" fill="#FF8A3D"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Yıldız Devriyesi</h2>
+        <p>Göktaşlarını ve düşman gemilerini vur, her 5 dalgada bir ana gemiyle savaş, rekorunu kır.</p>
+        <div class="tags"><span>Enes için</span><span>12 yaş</span><span>Aksiyon</span><span>Rekor</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="ciftini-bul/index.html">
+      <div class="cover cover-mint" aria-hidden="true">
+        <svg viewBox="0 0 160 120" fill="none">
+          <rect x="22" y="26" width="34" height="44" rx="6" fill="#17324D" transform="rotate(-8 39 48)"/>
+          <rect x="63" y="20" width="34" height="44" rx="6" fill="#FFFFFF" stroke="#3D6BF2" stroke-width="3"/>
+          <rect x="104" y="26" width="34" height="44" rx="6" fill="#FFFFFF" stroke="#FF7A2F" stroke-width="3" transform="rotate(8 121 48)"/>
+          <rect x="42" y="64" width="34" height="44" rx="6" fill="#17324D" transform="rotate(4 59 86)"/>
+          <rect x="84" y="64" width="34" height="44" rx="6" fill="#17324D" transform="rotate(-5 101 86)"/>
+          <text x="80" y="50" font-size="22" text-anchor="middle">🦁</text>
+          <text x="121" y="56" font-size="22" text-anchor="middle" transform="rotate(8 121 48)">🦁</text>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Çiftini Bul</h2>
+        <p>İki kişilik hafıza oyunu. Aynı hayvanları eşleştirin, birlikte ya da yarışarak.</p>
+        <div class="tags"><span>İkisi birlikte</span><span>2 oyuncu</span><span>Hafıza</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="hava-hokeyi/index.html">
+      <div class="cover cover-rink" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect x="6" y="10" width="148" height="80" rx="14" fill="#0B1B2B"/>
+          <rect x="6" y="36" width="6" height="28" fill="#3D6BF2"/>
+          <rect x="148" y="36" width="6" height="28" fill="#FF7A2F"/>
+          <rect x="12" y="16" width="136" height="68" rx="9" fill="#F4FBFE"/>
+          <line x1="80" y1="16" x2="80" y2="84" stroke="#17324D" stroke-opacity=".22" stroke-width="2"/>
+          <circle cx="80" cy="50" r="14" stroke="#17324D" stroke-opacity=".22" stroke-width="1.5"/>
+          <circle cx="40" cy="44" r="10" fill="#2A4FC0"/><circle cx="40" cy="44" r="8" fill="#3D6BF2"/><circle cx="40" cy="44" r="4.5" fill="#E3EAFE"/>
+          <circle cx="122" cy="58" r="10" fill="#D65A14"/><circle cx="122" cy="58" r="8" fill="#FF7A2F"/><circle cx="122" cy="58" r="4.5" fill="#FFEADF"/>
+          <circle cx="94" cy="40" r="6" fill="#17324D"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Hava Hokeyi</h2>
+        <p>Tablette karşılıklı oturup parmakla oynanan hızlı maç. Bilgisayara karşı da oynanır.</p>
+        <div class="tags"><span>İkisi birlikte</span><span>2 oyuncu</span><span>Aksiyon</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="kutu-ustasi/index.html">
+      <div class="cover cover-crate" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect x="20" y="14" width="120" height="72" fill="#2B3240"/>
+          <rect x="20" y="14" width="120" height="12" fill="#5A667C"/>
+          <rect x="20" y="26" width="12" height="60" fill="#475166"/><rect x="128" y="26" width="12" height="60" fill="#475166"/>
+          <rect x="20" y="78" width="120" height="8" fill="#353D4D"/>
+          <circle cx="112" cy="56" r="10" stroke="#5BD68A" stroke-width="3"/>
+          <rect x="70" y="42" width="24" height="24" rx="3" fill="#F2A541" stroke="#A8651F" stroke-width="2"/>
+          <path d="M75 47l14 14M89 47L75 61" stroke="#A8651F" stroke-width="2" opacity=".6"/>
+          <circle cx="52" cy="54" r="11" fill="#E8EDF3"/>
+          <rect x="44" y="49" width="16" height="7" rx="3.5" fill="#1B2433"/>
+          <circle cx="50" cy="52.5" r="1.6" fill="#5BE0E6"/><circle cx="56" cy="52.5" r="1.6" fill="#5BE0E6"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Kutu Ustası</h2>
+        <p>Robotla kutuları yeşil hedeflere it. 30 bölüm, gittikçe zorlaşan bir zekâ oyunu.</p>
+        <div class="tags"><span>Enes için</span><span>Zekâ</span><span>30 bölüm</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="hayvan-treni/index.html">
+      <div class="cover cover-train" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect x="0" y="78" width="160" height="4" fill="#6D6F80"/>
+          <rect x="8" y="42" width="44" height="30" rx="5" fill="#3D8BFD"/>
+          <rect x="12" y="48" width="36" height="18" rx="4" fill="#FFF8E7"/>
+          <text x="22" y="62" font-size="12">🐶</text>
+          <circle cx="30" cy="32" r="9" fill="#fff" stroke="#2A64C0" stroke-width="2.5"/>
+          <text x="30" y="36" font-size="12" font-weight="800" text-anchor="middle" fill="#2A2540" font-family="sans-serif">3</text>
+          <rect x="56" y="42" width="44" height="30" rx="5" fill="#FFC529"/>
+          <rect x="60" y="48" width="36" height="18" rx="4" fill="#FFF8E7"/>
+          <rect x="104" y="30" width="18" height="42" rx="4" fill="#C73A2F"/>
+          <rect x="118" y="48" width="36" height="24" rx="8" fill="#E4483B"/>
+          <rect x="138" y="36" width="7" height="13" fill="#2B2B3A"/>
+          <circle cx="20" cy="76" r="5" fill="#2B2B3A"/><circle cx="40" cy="76" r="5" fill="#2B2B3A"/>
+          <circle cx="68" cy="76" r="5" fill="#2B2B3A"/><circle cx="88" cy="76" r="5" fill="#2B2B3A"/>
+          <circle cx="114" cy="76" r="6" fill="#2B2B3A"/><circle cx="142" cy="76" r="5" fill="#2B2B3A"/>
+          <circle cx="142" cy="28" r="5" fill="#fff" opacity=".9"/><circle cx="134" cy="20" r="6" fill="#fff" opacity=".7"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Hayvan Treni</h2>
+        <p>Vagondaki sayı kadar hayvanı trene bindir, düdüğü çal. Okuma bilmeden sayı saymayı öğretir.</p>
+        <div class="tags"><span>Egemen için</span><span>5 yaş</span><span>Sayılar</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="bilgi-kupasi/index.html">
+      <div class="cover cover-quiz" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect x="30" y="14" width="100" height="72" rx="12" fill="#FFFFFF"/>
+          <rect x="40" y="24" width="80" height="10" rx="5" fill="#231A5C"/>
+          <rect x="40" y="42" width="37" height="16" rx="5" fill="#DDF5E5" stroke="#2DB75A" stroke-width="2"/>
+          <rect x="83" y="42" width="37" height="16" rx="5" fill="#F6F4FD" stroke="#D9D4EE" stroke-width="2"/>
+          <rect x="40" y="63" width="37" height="16" rx="5" fill="#F6F4FD" stroke="#D9D4EE" stroke-width="2"/>
+          <rect x="83" y="63" width="37" height="16" rx="5" fill="#F6F4FD" stroke="#D9D4EE" stroke-width="2"/>
+          <text x="140" y="36" font-size="26" text-anchor="middle">🏆</text>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Bilgi Kupası</h2>
+        <p>Aile bilgi yarışması. Herkese kendi seviyesinde soru: Egemen'e resimli, Enes'e zor sorular.</p>
+        <div class="tags"><span>Tüm aile</span><span>1–4 oyuncu</span><span>Bilgi</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="renkli-ksilofon/index.html">
+      <div class="cover cover-xylo" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect x="14" y="30" width="132" height="6" rx="3" fill="#8A5530"/>
+          <rect x="14" y="68" width="132" height="6" rx="3" fill="#8A5530"/>
+          <rect x="18" y="14" width="13" height="72" rx="4" fill="#E5484D"/>
+          <rect x="34" y="16" width="13" height="68" rx="4" fill="#FF8A3D"/>
+          <rect x="50" y="18" width="13" height="64" rx="4" fill="#F2B51E"/>
+          <rect x="66" y="20" width="13" height="60" rx="4" fill="#6FBF3E"/>
+          <rect x="82" y="22" width="13" height="56" rx="4" fill="#22A99A"/>
+          <rect x="98" y="24" width="13" height="52" rx="4" fill="#3D8BFD"/>
+          <rect x="114" y="26" width="13" height="48" rx="4" fill="#7C5CFF"/>
+          <rect x="130" y="28" width="13" height="44" rx="4" fill="#E4508F"/>
+          <text x="128" y="16" font-size="16" fill="#2B2350" font-weight="800" font-family="sans-serif">♫</text>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Renkli Ksilofon</h2>
+        <p>Serbest çal, parlayan tuşlarla şarkı öğren ya da uzayan nota dizisini ezberle.</p>
+        <div class="tags"><span>İkisi için</span><span>Müzik</span><span>Hafıza</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="boyama-defteri/index.html">
+      <div class="cover cover-paint" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect x="44" y="8" width="84" height="84" rx="10" fill="#FFFFFF"/>
+          <rect x="52" y="16" width="68" height="68" rx="6" fill="#9FD8F2" stroke="#2B2350" stroke-width="2"/>
+          <path d="M52 66 Q86 56 120 66 V84 H52 Z" fill="#F2D38A" stroke="#2B2350" stroke-width="2"/>
+          <polygon points="72,50 58,40 62,50 58,60" fill="#FF8A3D" stroke="#2B2350" stroke-width="2"/>
+          <ellipse cx="88" cy="50" rx="20" ry="13" fill="#FFD23F" stroke="#2B2350" stroke-width="2"/>
+          <circle cx="97" cy="47" r="3" fill="#2B2350"/>
+          <circle cx="18" cy="30" r="9" fill="#E5484D"/><circle cx="18" cy="54" r="9" fill="#3D8BFD"/><circle cx="18" cy="78" r="9" fill="#2DB75A"/>
+          <text x="142" y="40" font-size="20" text-anchor="middle">⭐</text>
+          <text x="142" y="74" font-size="20" text-anchor="middle">🦋</text>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Boyama Defteri</h2>
+        <p>Renk seç, resmin parçalarına dokun, çıkartma yapıştır. Bitince resmini kaydet.</p>
+        <div class="tags"><span>Egemen için</span><span>Resim</span><span>Renkler</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="cati-kosusu/index.html">
+      <div class="cover cover-run" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <circle cx="118" cy="42" r="14" fill="#FFECBE" opacity=".9"/>
+          <rect x="0" y="54" width="22" height="46" fill="#4A3566"/><rect x="26" y="44" width="18" height="56" fill="#4A3566"/><rect x="130" y="50" width="30" height="50" fill="#4A3566"/>
+          <rect x="0" y="70" width="62" height="30" fill="#241C38"/><rect x="0" y="68" width="62" height="3" fill="#FFB86B"/>
+          <rect x="92" y="62" width="68" height="38" fill="#241C38"/><rect x="92" y="60" width="68" height="3" fill="#FFB86B"/>
+          <rect x="120" y="50" width="10" height="10" fill="#C98B4E"/>
+          <path d="M70 40 Q80 22 92 38" stroke="#FFF4E6" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <circle cx="84" cy="30" r="3" fill="#FFD23F"/><circle cx="76" cy="33" r="3" fill="#FFD23F"/>
+          <rect x="62" y="36" width="8" height="12" rx="2" fill="#3ED3C4"/>
+          <circle cx="67" cy="32" r="4" fill="#FFD9B3"/>
+          <path d="M64 48 L60 56 M68 48 L73 54" stroke="#2A2140" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Çatı Koşusu</h2>
+        <p>Şehrin çatılarında koş: boşluklardan atla, tabelaların altından kay, altınları topla.</p>
+        <div class="tags"><span>Enes için</span><span>Aksiyon</span><span>Rekor</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="dort-tas/index.html">
+      <div class="cover cover-four" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect x="30" y="10" width="100" height="84" rx="10" fill="#2B2350"/>
+          <g fill="#F1EEFF">
+            <circle cx="44" cy="23" r="6"/><circle cx="58" cy="23" r="6"/><circle cx="72" cy="23" r="6"/><circle cx="86" cy="23" r="6"/><circle cx="100" cy="23" r="6"/><circle cx="116" cy="23" r="6"/>
+            <circle cx="44" cy="39" r="6"/><circle cx="58" cy="39" r="6"/><circle cx="72" cy="39" r="6"/><circle cx="100" cy="39" r="6"/><circle cx="116" cy="39" r="6"/>
+            <circle cx="44" cy="55" r="6"/><circle cx="58" cy="55" r="6"/><circle cx="116" cy="55" r="6"/>
+            <circle cx="44" cy="71" r="6"/><circle cx="116" cy="71" r="6"/>
+          </g>
+          <circle cx="86" cy="39" r="6" fill="#FF7A2F" stroke="#FFD23F" stroke-width="2"/>
+          <circle cx="72" cy="55" r="6" fill="#FF7A2F" stroke="#FFD23F" stroke-width="2"/><circle cx="86" cy="55" r="6" fill="#3D6BF2"/><circle cx="100" cy="55" r="6" fill="#3D6BF2"/>
+          <circle cx="58" cy="71" r="6" fill="#FF7A2F" stroke="#FFD23F" stroke-width="2"/><circle cx="72" cy="71" r="6" fill="#3D6BF2"/><circle cx="86" cy="71" r="6" fill="#FF7A2F"/><circle cx="100" cy="71" r="6" fill="#3D6BF2"/>
+          <circle cx="44" cy="87" r="6" fill="#FF7A2F" stroke="#FFD23F" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Dört Taş</h2>
+        <p>Dört taşı yan yana, alt alta ya da çapraz dizen kazanır. İki kişi ya da bilgisayara karşı.</p>
+        <div class="tags"><span>İkisi birlikte</span><span>2 oyuncu</span><span>Strateji</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="cabuk-bas/index.html">
+      <div class="cover cover-quick" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect x="10" y="8" width="140" height="22" rx="8" fill="#FF7A2F"/>
+          <rect x="10" y="70" width="140" height="22" rx="8" fill="#3D6BF2"/>
+          <rect x="30" y="34" width="100" height="32" rx="10" fill="#FFFFFF"/>
+          <rect x="36" y="38" width="24" height="24" rx="6" fill="#FFF6CC" stroke="#D9A800" stroke-width="1.5" stroke-dasharray="3 2"/>
+          <text x="48" y="55" font-size="14" text-anchor="middle">🐸</text>
+          <text x="96" y="58" font-size="22" text-anchor="middle">🐸</text>
+          <text x="140" y="24" font-size="12" text-anchor="middle">⚡</text>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Çabuk Bas!</h2>
+        <p>Aranan resim çıkınca ilk basan kazanır. 2–4 kişi tek tablette, küçüklere avantaj ayarlı.</p>
+        <div class="tags"><span>Tüm aile</span><span>2–4 oyuncu</span><span>Hız</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="harf-bahcesi/index.html">
+      <div class="cover cover-abc" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect x="22" y="40" width="34" height="34" rx="7" fill="#FF7A6B"/><rect x="22" y="70" width="34" height="5" rx="2" fill="#D95243"/>
+          <rect x="63" y="28" width="34" height="34" rx="7" fill="#FFB23F"/><rect x="63" y="58" width="34" height="5" rx="2" fill="#D98A12"/>
+          <rect x="104" y="40" width="34" height="34" rx="7" fill="#3DA5F5"/><rect x="104" y="70" width="34" height="5" rx="2" fill="#1F7FCC"/>
+          <text x="39" y="66" font-size="24" font-weight="800" text-anchor="middle" fill="#fff" font-family="sans-serif">A</text>
+          <text x="80" y="54" font-size="24" font-weight="800" text-anchor="middle" fill="#fff" font-family="sans-serif">Ç</text>
+          <text x="121" y="66" font-size="24" font-weight="800" text-anchor="middle" fill="#fff" font-family="sans-serif">Ş</text>
+          <text x="80" y="22" font-size="14" text-anchor="middle">🐝</text>
+          <rect x="0" y="86" width="160" height="14" fill="#8BD46E"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Harf Bahçesi</h2>
+        <p>29 harfi resimlerle öğren: harfleri keşfet, resmin baş harfini bul, harflerden kelime kur.</p>
+        <div class="tags"><span>Egemen için</span><span>5 yaş</span><span>Harfler</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="blok-yagmuru/index.html">
+      <div class="cover cover-blocks" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect x="50" y="4" width="60" height="92" rx="4" fill="#071C20" stroke="#1E4E57" stroke-width="2"/>
+          <g stroke="#071C20" stroke-width="1">
+            <rect x="74" y="12" width="10" height="10" fill="#A06BFF"/><rect x="64" y="22" width="10" height="10" fill="#A06BFF"/><rect x="74" y="22" width="10" height="10" fill="#A06BFF"/><rect x="84" y="22" width="10" height="10" fill="#A06BFF"/>
+            <rect x="54" y="84" width="10" height="10" fill="#4C7DFF"/><rect x="64" y="84" width="10" height="10" fill="#4C7DFF"/><rect x="74" y="84" width="10" height="10" fill="#FFD23F"/><rect x="84" y="84" width="10" height="10" fill="#FFD23F"/><rect x="94" y="84" width="10" height="10" fill="#FF5A6E"/>
+            <rect x="54" y="74" width="10" height="10" fill="#4C7DFF"/><rect x="74" y="74" width="10" height="10" fill="#FFD23F"/><rect x="84" y="74" width="10" height="10" fill="#FFD23F"/><rect x="94" y="74" width="10" height="10" fill="#FF5A6E"/><rect x="94" y="64" width="10" height="10" fill="#4FD17A"/>
+            <rect x="54" y="64" width="10" height="10" fill="#3ED6E8"/><rect x="54" y="54" width="10" height="10" fill="#3ED6E8"/>
+          </g>
+          <rect x="64" y="72" width="10" height="10" fill="none" stroke="#3ED6E8" stroke-width="1.5" opacity=".6"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Blok Yağmuru</h2>
+        <p>Düşen blokları çevir, yerleştir, sıraları tamamla. Seviyeler hızlanır, rekorunu kır.</p>
+        <div class="tags"><span>Enes için</span><span>Zekâ</span><span>Rekor</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="ciz-bakalim/index.html">
+      <div class="cover cover-chalk" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect x="18" y="8" width="124" height="84" rx="8" fill="#B3814F"/>
+          <rect x="24" y="14" width="112" height="72" rx="5" fill="#23413A"/>
+          <path d="M50 64 C46 48 58 36 72 44 C80 30 104 34 104 50 C116 50 116 66 102 66 Z" stroke="#F3F1E7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M60 74 L58 80 M76 74 L74 80 M92 74 L90 80" stroke="#7FD3FF" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="116" cy="28" r="7" stroke="#FFD25A" stroke-width="3"/>
+          <text x="40" y="34" font-size="16" fill="#FF8FB1" font-family="cursive">?</text>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Çiz Bakalım!</h2>
+        <p>Biri gizli kelimeyi kara tahtaya çizer, herkes tahmin eder. Resimli kelimeler ve pandomim modu.</p>
+        <div class="tags"><span>Tüm aile</span><span>2–6 oyuncu</span><span>Çizim</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="balik-tutma/index.html">
+      <div class="cover cover-pond" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect x="0" y="0" width="160" height="18" fill="#9B6B43"/>
+          <rect x="0" y="82" width="160" height="18" fill="#9B6B43"/>
+          <rect x="0" y="18" width="160" height="64" fill="#2E97B0"/>
+          <path d="M30 88 Q60 70 58 54" stroke="#fff" stroke-width="1.2"/>
+          <circle cx="58" cy="54" r="4" fill="#fff"/><path d="M54 54 A4 4 0 0 1 62 54 Z" fill="#E5484D"/>
+          <path d="M130 12 Q110 30 108 36" stroke="#fff" stroke-width="1.2"/>
+          <circle cx="108" cy="36" r="4" fill="#fff"/><path d="M104 36 A4 4 0 0 0 112 36 Z" fill="#E5484D"/>
+          <text x="80" y="52" font-size="16" text-anchor="middle">🐟</text>
+          <text x="118" y="68" font-size="14" text-anchor="middle">🐠</text>
+          <text x="26" y="40" font-size="12" text-anchor="middle">🦀</text>
+          <circle cx="108" cy="26" r="6" fill="#FF7A2F"/><text x="108" y="29" font-size="8" font-weight="700" text-anchor="middle" fill="#fff" font-family="sans-serif">!</text>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Balık Tutma</h2>
+        <p>Karşılıklı oturup göle olta atın, balık ısırınca dokunun. Yarış ya da takım olarak oynanır.</p>
+        <div class="tags"><span>İkisi birlikte</span><span>1–2 oyuncu</span><span>Refleks</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="yapboz/index.html">
+      <div class="cover cover-puzzle" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect x="20" y="10" width="80" height="80" rx="8" fill="#FFFFFF"/>
+          <rect x="26" y="16" width="34" height="34" fill="#8FD3F7"/><rect x="60" y="16" width="34" height="34" fill="#BDE8FF"/>
+          <rect x="26" y="50" width="34" height="34" fill="#7CC96A"/>
+          <rect x="60" y="50" width="34" height="34" fill="none" stroke="#233A48" stroke-opacity=".25" stroke-width="2" stroke-dasharray="4 3"/>
+          <text x="43" y="40" font-size="18" text-anchor="middle">🏠</text>
+          <text x="43" y="74" font-size="18" text-anchor="middle">🐄</text>
+          <g transform="rotate(12 128 60)"><rect x="110" y="42" width="36" height="36" rx="4" fill="#8BD46E" stroke="#fff" stroke-width="3"/><text x="128" y="66" font-size="18" text-anchor="middle">🐑</text></g>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Yapboz</h2>
+        <p>Parçaları sürükle, resmi tamamla. 8 renkli resim, 4 ile 12 parça arası, ipucu modu.</p>
+        <div class="tags"><span>Egemen için</span><span>5 yaş</span><span>Yapboz</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="mars-ussu/index.html">
+      <div class="cover cover-mars" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect width="160" height="100" fill="#C0633B"/>
+          <path d="M0 30 H40 V76 H84 V20 H124 V60 H160" stroke="#5E2F22" stroke-width="16" stroke-linejoin="round"/>
+          <circle cx="62" cy="50" r="9" fill="#2C1D2E"/><rect x="62" y="47" width="12" height="6" fill="#FF4D5E" transform="rotate(-30 62 50)"/><circle cx="62" cy="50" r="5" fill="#FF4D5E"/>
+          <circle cx="104" cy="44" r="9" fill="#2C1D2E"/><rect x="104" y="41" width="12" height="6" fill="#4FC3F7"/><circle cx="104" cy="44" r="5" fill="#4FC3F7"/>
+          <line x1="62" y1="50" x2="84" y2="30" stroke="#FF4D5E" stroke-width="2"/>
+          <ellipse cx="84" cy="30" rx="7" ry="6" fill="#7DDB6F"/>
+          <ellipse cx="40" cy="62" rx="6" ry="5" fill="#F4E04D"/>
+          <path d="M140 70 A12 12 0 0 1 156 70 Z" fill="#9FE3FF"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Mars Üssü</h2>
+        <p>Kule savunması: lazer, buz ve roket kuleleri kur, geliştir, üssü 30 dalga boyunca savun.</p>
+        <div class="tags"><span>Enes için</span><span>Strateji</span><span>30 dalga</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="yilan-merdiven/index.html">
+      <div class="cover cover-ladder" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <g>
+            <rect x="30" y="4" width="92" height="92" rx="6" fill="#FFE9A8"/>
+            <rect x="30" y="4" width="23" height="23" fill="#C9EBD9"/><rect x="76" y="4" width="23" height="23" fill="#C9EBD9"/><rect x="53" y="27" width="23" height="23" fill="#C8E3FA"/><rect x="99" y="27" width="23" height="23" fill="#C8E3FA"/>
+            <rect x="30" y="50" width="23" height="23" fill="#FFD0B5"/><rect x="76" y="50" width="23" height="23" fill="#FFD0B5"/><rect x="53" y="73" width="23" height="23" fill="#E6D6FA"/><rect x="99" y="73" width="23" height="23" fill="#E6D6FA"/>
+          </g>
+          <path d="M44 88 L96 22 M54 92 L106 26" stroke="#A8703F" stroke-width="3" stroke-linecap="round"/>
+          <path d="M58 76 L66 80 M70 60 L78 64 M82 44 L90 48" stroke="#C58B5A" stroke-width="2.5"/>
+          <path d="M112 16 C92 30 124 44 100 58 C80 70 108 80 88 90" stroke="#8E5CF5" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="112" cy="16" r="5" fill="#8E5CF5"/>
+          <rect x="130" y="40" width="24" height="24" rx="6" fill="#FFFBEF"/><circle cx="137" cy="47" r="2.5" fill="#22362C"/><circle cx="147" cy="57" r="2.5" fill="#22362C"/><circle cx="142" cy="52" r="2.5" fill="#22362C"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Yılan Merdiven</h2>
+        <p>Zarı at, merdivenden çık, yılandan kay. 2–4 oyuncu, bilgisayar rakip ve kısa yılan seçeneği.</p>
+        <div class="tags"><span>Tüm aile</span><span>2–4 oyuncu</span><span>Kutu oyunu</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="renk-kazani/index.html">
+      <div class="cover cover-mix" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <circle cx="80" cy="56" r="30" fill="#FFFFFF" stroke="#3B3040" stroke-width="3"/>
+          <path d="M51 62 Q65 56 80 62 T109 62 A30 30 0 0 1 51 62 Z" fill="#FB8C00"/>
+          <rect x="60" y="23" width="40" height="7" rx="3.5" fill="#B3E5FC" stroke="#3B3040" stroke-width="2.5"/>
+          <rect x="14" y="60" width="26" height="24" rx="6" fill="#E53935" stroke="#3B3040" stroke-width="2.5"/>
+          <rect x="120" y="60" width="26" height="24" rx="6" fill="#FDD835" stroke="#3B3040" stroke-width="2.5"/>
+          <path d="M38 34 q-4 6 0 9 q4 -3 0 -9 Z" fill="#E53935" stroke="#3B3040" stroke-width="2"/>
+          <path d="M122 34 q-4 6 0 9 q4 -3 0 -9 Z" fill="#FDD835" stroke="#3B3040" stroke-width="2"/>
+          <path d="M40 50 Q50 28 66 36" stroke="#3B3040" stroke-width="2" stroke-dasharray="3 3"/>
+          <path d="M120 50 Q110 28 94 36" stroke="#3B3040" stroke-width="2" stroke-dasharray="3 3"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Renk Kazanı</h2>
+        <p>Kırmızı ile sarı ne olur? Boyaları kazana dök, doğru rengi bul, resimleri boya. Serbest karıştırma modu da var.</p>
+        <div class="tags"><span>Egemen için</span><span>5 yaş</span><span>Renkler</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="golf-adasi/index.html">
+      <div class="cover cover-golf" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect x="14" y="16" width="132" height="70" rx="6" fill="#F2D48B"/>
+          <rect x="20" y="22" width="120" height="58" rx="3" fill="#58B846" stroke="#FFF6DF" stroke-width="3"/>
+          <rect x="64" y="22" width="8" height="34" fill="#FFF6DF"/>
+          <path d="M92 40 h26 v18 h-26 z" fill="#2E9FD0"/>
+          <circle cx="104" cy="70" r="6" fill="#E84A3C"/><circle cx="104" cy="70" r="3" fill="#FFF6DF"/>
+          <circle cx="128" cy="36" r="4.5" fill="#18241A"/>
+          <path d="M128 36 V14" stroke="#FFF6DF" stroke-width="2"/><path d="M129 14 L141 18 L129 22 Z" fill="#E84A3C"/>
+          <circle cx="36" cy="64" r="3.5" fill="#FFFFFF"/>
+          <path d="M42 60 Q60 46 58 64" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="2 4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Golf Adası</h2>
+        <p>9 delikli mini golf: su, kum, tamponlar, yel değirmeni ve kayan kapılar. Tek başına ya da 4 kişiye kadar sırayla, rekor tablosuyla.</p>
+        <div class="tags"><span>Enes için</span><span>1-4 oyuncu</span><span>Beceri</span></div>
+      </div>
+    </a>
+
+    <a class="game" href="gokdelen/index.html">
+      <div class="cover cover-tower" aria-hidden="true">
+        <svg viewBox="0 0 160 100" fill="none">
+          <rect width="160" height="100" fill="#7CC8F7"/>
+          <circle cx="30" cy="24" r="9" fill="#fff"/><circle cx="42" cy="20" r="11" fill="#fff"/><circle cx="54" cy="25" r="8" fill="#fff"/>
+          <rect x="0" y="90" width="160" height="10" fill="#5C6378"/>
+          <rect x="56" y="80" width="48" height="10" fill="#8E97AD"/>
+          <rect x="58" y="70" width="44" height="10" fill="#3D7BF2"/>
+          <rect x="60" y="60" width="42" height="10" fill="#FF8A1F"/>
+          <rect x="62" y="50" width="40" height="10" fill="#3D7BF2"/>
+          <rect x="62" y="40" width="36" height="10" fill="#FF8A1F"/>
+          <g fill="#DCF0FF"><rect x="62" y="73" width="4" height="4"/><rect x="72" y="73" width="4" height="4"/><rect x="82" y="73" width="4" height="4"/><rect x="92" y="73" width="4" height="4"/><rect x="66" y="53" width="4" height="4"/><rect x="76" y="53" width="4" height="4"/><rect x="86" y="53" width="4" height="4"/><rect x="96" y="53" width="4" height="4"/></g>
+          <g fill="#FFF3DA"><rect x="64" y="63" width="4" height="4"/><rect x="74" y="63" width="4" height="4"/><rect x="84" y="63" width="4" height="4"/><rect x="94" y="63" width="4" height="4"/><rect x="66" y="43" width="4" height="4"/><rect x="76" y="43" width="4" height="4"/><rect x="86" y="43" width="4" height="4"/></g>
+          <path d="M110 0 V14" stroke="#2B2F3F" stroke-width="1.5"/><path d="M102 22 L110 14 L118 22" stroke="#2B2F3F" stroke-width="1.5"/>
+          <rect x="100" y="22" width="36" height="10" fill="#3D7BF2"/>
+          <rect x="102" y="0" width="16" height="5" fill="#FFC23D"/>
+          <path d="M136 36 l3 6 M144 40 l-2 5 M130 42 l4 3" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="info">
+        <h2>Gökdelen</h2>
+        <p>Vinçteki katı doğru anda bırak, kuleyi uzaya kadar yükselt. Birlikte aynı kuleyi yapın ya da ekranı bölüp yarışın.</p>
+        <div class="tags"><span>İkisi birlikte</span><span>Takım ya da yarış</span><span>Zamanlama</span></div>
+      </div>
+    </a>
+
+    <div class="soon">Sıradaki oyun yakında</div>
+  </main>
+
+  <footer>egemenenes.com · Rekorlar yalnızca bu cihazdaki tarayıcıda saklanır.</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tavşan Kanı · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Çay ocağı oyunu: demlik ve suyu doğru oranda dökerek on müşteriye istedikleri kıvamda çay servis et.">
+  <meta name="theme-color" content="#0F2427">
+  <meta property="og:title" content="Tavşan Kanı">
+  <meta property="og:description" content="Demlik ve suyu doğru oranda dök, müşteriye tam kıvamında çay götür.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AB%96%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Onest:wght@400;500;700&family=Yeseva+One&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../index.html">← Egemen ve Enes'in Oyunları</a>
+
+  <header class="top">
+    <div class="brand">
+      <h1>Tavşan <em>Kanı</em></h1>
+      <p>Çay ocağında mesai. On müşteri geliyor, her biri çayını kendi bildiği gibi istiyor.</p>
+    </div>
+    <dl class="stats">
+      <div><dt>Müşteri</dt><dd id="st-round">1/10</dd></div>
+      <div><dt>Puan</dt><dd id="st-score">0</dd></div>
+      <div><dt>Rekor</dt><dd id="st-best">—</dd></div>
+    </dl>
+  </header>
+
+  <main class="table">
+    <aside class="slip" aria-live="polite">
+      <div class="slip-head"><span>Adisyon</span><span id="slip-no">No. 01</span></div>
+      <p class="who" id="who">—</p>
+      <p class="note" id="note">—</p>
+      <div class="order-row">
+        <span class="swatch" id="target-swatch"></span>
+        <div><span class="lbl">Sipariş</span><strong id="order-label">—</strong><span class="recipe" id="recipe">—</span></div>
+      </div>
+      <div class="patience"><span class="lbl">Müşterinin sabrı</span><div class="bar"><i id="patience"></i></div></div>
+      <ul class="howto">
+        <li><b>Demlik</b><span>Basılı tut, koyu demi koy.</span></li>
+        <li><b>Su</b><span>Basılı tut, sıcak suyla aç.</span></li>
+        <li><b>Çizgi</b><span>Dudak payı bırak, taşırma.</span></li>
+        <li><b>Servis</b><span>Rengi tuttuysan götür.</span></li>
+      </ul>
+    </aside>
+
+    <section class="stage">
+      <div class="canvas-box">
+        <canvas id="cv" aria-label="Çay bardağı"></canvas>
+        <div class="overlay" id="result" hidden></div>
+      </div>
+      <div class="gauge">
+        <div class="gauge-head">
+          <span><span class="glbl">Dem ölçer</span> <b id="ro-ratio">%0</b> <span class="gmuted">/ istenen <span id="ro-target">%33</span></span></span>
+          <span class="gmuted">Doluluk <b id="ro-level">%0</b> / %85</span>
+        </div>
+        <div class="strip" id="strip">
+          <i class="band" id="band"></i>
+          <i class="needle" id="needle"></i>
+        </div>
+        <div class="scale"><span>açık</span><span>tavşan kanı</span><span>koyu</span></div>
+        <p class="advice" id="advice">Demlikle başla, sonra suyla aç.</p>
+      </div>
+      <div class="controls">
+        <button class="pour tea" id="btn-tea" type="button"><span class="dot"></span>Demlik <kbd>D</kbd></button>
+        <button class="pour water" id="btn-water" type="button"><span class="dot"></span>Su <kbd>S</kbd></button>
+        <button class="serve" id="btn-serve" type="button">Servis et <kbd>Boşluk</kbd></button>
+      </div>
+      <p class="toast" id="toast" role="status"></p>
+    </section>
+  </main>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

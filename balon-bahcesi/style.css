@@ -1,0 +1,56 @@
+:root{
+  --sky:#5DB8EE;
+  --sky-2:#D4F1FF;
+  --ink:#1E3A5F;
+  --sun:#FFC529;
+  --sun-dark:#D99A00;
+  --paper:rgba(255,255,255,.85);
+  --font:"Baloo 2", "Comic Sans MS", "Segoe UI", system-ui, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{background:var(--sky-2)}
+body{
+  margin:0;font-family:var(--font);color:var(--ink);
+  padding-inline:16px;padding-block:10px 16px;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+}
+.app{max-width:1200px;margin-inline:auto;height:calc(100dvh - 26px);min-height:460px;display:grid;grid-template-rows:auto 1fr;gap:10px}
+
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.back{color:var(--ink);text-decoration:none;font-weight:700;font-size:15px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.7)}
+.bar-title{font-weight:800;font-size:18px}
+.icon-btn{width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.7);display:grid;place-items:center;cursor:pointer;color:var(--ink);padding:0}
+.icon-btn span{display:grid;place-items:center}
+.icon-btn span[hidden]{display:none}
+.icon-btn svg{width:24px;height:24px}
+
+.stage{position:relative;border-radius:28px;overflow:hidden;background:var(--sky);box-shadow:0 12px 30px rgba(30,58,95,.18), inset 0 0 0 4px rgba(255,255,255,.6)}
+canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+
+.overlay{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:22px;text-align:center;padding:24px;background:rgba(255,255,255,.25)}
+.overlay[hidden]{display:none}
+.rainbow{margin:0;font-weight:800;font-size:clamp(2.6rem,9vw,5rem);line-height:1;text-wrap:balance;text-shadow:0 3px 0 #fff, 0 -2px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff, 0 10px 20px rgba(30,58,95,.2)}
+.rainbow.big{font-size:clamp(2.8rem,10vw,5.5rem)}
+
+.big-btn{
+  width:150px;height:150px;border-radius:50%;border:8px solid #fff;background:var(--sun);padding:0;
+  box-shadow:0 10px 0 var(--sun-dark),0 22px 34px rgba(30,58,95,.25);
+  cursor:pointer;display:grid;place-items:center;
+  transition:transform .08s, box-shadow .08s;animation:breathe 1.6s ease-in-out infinite;
+}
+.big-btn svg{width:62%;height:62%}
+.big-btn:active{transform:translateY(8px);box-shadow:0 2px 0 var(--sun-dark),0 10px 20px rgba(30,58,95,.2)}
+.big-btn:focus-visible,.icon-btn:focus-visible,.back:focus-visible{outline:4px solid var(--ink);outline-offset:4px}
+@keyframes breathe{50%{scale:1.06}}
+
+.parent{max-width:46ch;margin:0;font-size:14px;line-height:1.45;background:var(--paper);padding:10px 14px;border-radius:14px}
+
+@media (max-width:480px){
+  .big-btn{width:120px;height:120px}
+  .bar-title{display:none}
+  .parent{font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){
+  .big-btn{animation:none;transition:none}
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hayvan Treni · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="5 yaş için sayma oyunu: vagonun üstündeki sayı kadar hayvanı trene bindir, düdüğü çal.">
+  <meta name="theme-color" content="#BDE6F7">
+  <meta property="og:title" content="Hayvan Treni">
+  <meta property="og:description" content="Vagondaki sayı kadar hayvanı trene bindir. Okuma gerektirmeyen sayma oyunu.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%82%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <span class="bar-title">Hayvan Treni</span>
+    <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+      <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+      <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+    </button>
+  </header>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Tren istasyonu"></canvas>
+
+    <button class="whistle" id="whistle" type="button" aria-label="Düdüğü çal, tren kalksın" hidden>
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect x="8" y="24" width="34" height="20" rx="10" fill="#fff"/>
+        <rect x="38" y="20" width="16" height="12" rx="4" fill="#fff"/>
+        <circle cx="22" cy="34" r="5" fill="#2DB75A"/>
+        <path d="M50 12c3 2 4 5 3 8M56 10c4 3 5 8 3 12" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <div class="overlay" id="intro">
+      <h1 class="rainbow" data-rainbow>Hayvan Treni</h1>
+      <button class="big-btn" id="play" type="button" aria-label="Oyuna başla">
+        <svg viewBox="0 0 100 100"><path d="M38 26 L76 50 L38 74 Z" fill="#fff" stroke="#fff" stroke-width="10" stroke-linejoin="round"/></svg>
+      </button>
+      <p class="parent"><b>Ebeveyn notu:</b> Vagonun üstündeki sayı kadar hayvana dokunup trene bindirilir, sonra yeşil düdüğe basılır. İlk trende düdük gerekmez, sonraki trenlerde sayılar büyür. Yanlışta ceza yok, oyun kaç hayvan eksik ya da fazla olduğunu söyler. Sesli yönlendirme için cihazda Türkçe konuşma sesi yüklü olmalı.</p>
+    </div>
+
+    <div class="overlay" id="party" hidden>
+      <p class="rainbow big" data-rainbow>Aferin Egemen!</p>
+      <button class="big-btn" id="again" type="button" aria-label="Tekrar oyna">
+        <svg viewBox="0 0 100 100" fill="none"><path d="M50 22 A28 28 0 1 0 76 42" stroke="#fff" stroke-width="11" stroke-linecap="round"/><path d="M46 8 L66 22 L46 36 Z" fill="#fff" stroke="#fff" stroke-width="4" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </main>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

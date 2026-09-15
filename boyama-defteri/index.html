@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Boyama Defteri · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Dokunarak boyama: renk seç, resmin parçalarına dokun, çıkartma yapıştır, bitince resmini kaydet.">
+  <meta name="theme-color" content="#E6F2F1">
+  <meta property="og:title" content="Boyama Defteri">
+  <meta property="og:description" content="Renk seç, dokun, boya. 8 resim, çıkartmalar ve kaydetme.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%A8%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title" id="pic-title">Boyama Defteri</h1>
+    <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+      <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+      <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+    </button>
+  </header>
+
+  <div class="studio">
+    <div class="palette" id="palette" role="radiogroup" aria-label="Renkler"></div>
+
+    <main class="paper-wrap">
+      <div class="paper" id="paper"></div>
+    </main>
+
+    <div class="tools">
+      <div class="tool-toggle" role="radiogroup" aria-label="Araç">
+        <button class="tool" id="tool-paint" type="button" role="radio" aria-checked="true"><span aria-hidden="true">🖌️</span><b>Boya</b></button>
+        <button class="tool" id="tool-sticker" type="button" role="radio" aria-checked="false"><span aria-hidden="true">⭐</span><b>Çıkartma</b></button>
+      </div>
+      <div class="stickers" id="stickers" hidden></div>
+      <button class="tool" id="undo" type="button"><span aria-hidden="true">↩️</span><b>Geri al</b></button>
+      <button class="tool" id="clear" type="button"><span aria-hidden="true">🧽</span><b>Temizle</b></button>
+      <button class="tool" id="open-pics" type="button"><span aria-hidden="true">🖼️</span><b>Resimler</b></button>
+      <button class="tool" id="save" type="button"><span aria-hidden="true">💾</span><b>Kaydet</b></button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="pics" hidden>
+  <div class="sheet">
+    <div class="sheet-head">
+      <h2>Hangi resmi boyayalım?</h2>
+      <button class="icon-btn light" id="close-pics" type="button" aria-label="Kapat">✕</button>
+    </div>
+    <div class="pic-grid" id="pic-grid"></div>
+  </div>
+</div>
+
+<div id="sparkles" aria-hidden="true"></div>
+
+<script src="pictures.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

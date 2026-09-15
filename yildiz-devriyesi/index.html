@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Yıldız Devriyesi · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Uzay nişancı oyunu: göktaşlarını ve düşman gemilerini vur, her 5 dalgada bir ana gemiyle savaş, rekorunu kır.">
+  <meta name="theme-color" content="#0D0A20">
+  <meta property="og:title" content="Yıldız Devriyesi">
+  <meta property="og:description" content="Göktaşlarını ve düşman gemilerini vur, her 5 dalgada bir ana gemiyle savaş.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=Russo+One&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <span class="bar-title">Yıldız Devriyesi</span>
+    <div class="bar-actions">
+      <button class="icon-btn" id="pause" type="button" aria-label="Duraklat">
+        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      </button>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="main">
+    <main class="stage" id="stage">
+      <canvas id="cv" aria-label="Oyun alanı"></canvas>
+
+      <button class="bomb-btn" id="bomb" type="button" aria-label="Bomba at" hidden>
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="14" r="7" fill="currentColor"/><path d="M15 8l3-3M18 5l1.5-1.5M19 7h2M17 3V1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span id="bomb-count">2</span>
+      </button>
+
+      <div class="overlay" id="intro">
+        <p class="eyebrow">Enes için</p>
+        <h1 class="title">Yıldız <span>Devriyesi</span></h1>
+        <p class="lead">Göktaşlarını ve düşman gemilerini vur. Her 5 dalgada bir ana gemi geliyor.</p>
+        <button class="primary" id="start" type="button">Göreve başla</button>
+        <p class="rec">Rekor <b id="intro-best">0</b> · En uzak dalga <b id="intro-wave">0</b></p>
+        <p class="keys"><kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> veya <kbd>WASD</kbd> hareket · <kbd>B</kbd> bomba · <kbd>P</kbd> duraklat<br>Dokunmatikte parmağını ekranda sürükle. Ateş otomatik.</p>
+      </div>
+
+      <div class="overlay" id="paused" hidden>
+        <h2 class="title small">Duraklatıldı</h2>
+        <button class="primary" id="resume" type="button">Devam et</button>
+        <button class="ghost" id="restart" type="button">Baştan başla</button>
+      </div>
+
+      <div class="overlay" id="over" hidden>
+        <h2 class="title small">Gemi düştü</h2>
+        <p class="newrec" id="newrec" hidden>Yeni rekor!</p>
+        <div class="score-big" id="over-score">0</div>
+        <p class="rec">Dalga <b id="over-wave">1</b> · Rekor <b id="over-best">0</b></p>
+        <button class="primary" id="again" type="button">Tekrar dene</button>
+      </div>
+    </main>
+
+    <aside class="panel">
+      <section>
+        <h2>Güçlendirmeler</h2>
+        <ul class="legend">
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#FFD166" stroke-width="2"/><path d="M7 14l5-5 5 5" stroke="#FFD166" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Silah gücü</b> Atışın 4 seviyeye kadar genişler. Vurulursan bir seviye düşer.</span></li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#3DD6C6" stroke-width="2"/><path d="M7 13a5 5 0 0 1 10 0" stroke="#3DD6C6" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span><b>Kalkan</b> 8 saniye boyunca hiçbir şey sana zarar veremez.</span></li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#FF8A3D" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="#FF8A3D"/></svg><span><b>Bomba</b> Ekrandaki tüm mermileri siler, düşmanlara ağır hasar verir.</span></li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#FF5D73" stroke-width="2"/><path d="M12 17s-5-3-5-6.5A2.5 2.5 0 0 1 12 9a2.5 2.5 0 0 1 5 1.5C17 14 12 17 12 17z" fill="#FF5D73"/></svg><span><b>Can</b> Bir can daha. En fazla 5.</span></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Düşmanlar</h2>
+        <ul class="plain">
+          <li><b>Göktaşı</b> Vurunca ikiye bölünür.</li>
+          <li><b>Avcı</b> Sana nişan alıp ateş eder. Hareket etmeyi bırakma.</li>
+          <li><b>Dalgıç</b> Önünde kırmızı çizgi belirince kenara kaç, dümdüz dalar.</li>
+          <li><b>Ana gemi</b> Her 5 dalgada gelir. Canı yarıya inince öfkelenir.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Puan çarpanı</h2>
+        <p>Art arda vurdukça çarpan <b>x5</b>'e kadar çıkar. 2 saniye kimseyi vurmazsan ya da vurulursan sıfırlanır.</p>
+      </section>
+    </aside>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
