@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kurabiye Dükkânı · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Unu dök, yumurtayı kır, hamuru karıştır, kurabiyeleri kes, fırında pişir, şekerle süsle ve müşteriye ver. 5 yaş için, okuma gerekmez.">
+  <meta name="theme-color" content="#3A2118">
+  <meta property="og:title" content="Kurabiye Dükkânı">
+  <meta property="og:description" content="Hamuru karıştır, kurabiyeleri kes, fırında pişir, süsle ve müşteriye ver.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='52' r='38' fill='%23D89A57'/%3E%3Ccircle cx='38' cy='42' r='7' fill='%235B3418'/%3E%3Ccircle cx='62' cy='38' r='6' fill='%235B3418'/%3E%3Ccircle cx='58' cy='66' r='7' fill='%235B3418'/%3E%3Ccircle cx='34' cy='66' r='5' fill='%235B3418'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Kurabiye <span>Dükkânı</span></h1>
+    <div class="bar-actions">
+      <span class="count" id="made" aria-label="Yapılan sipariş">🍪 0</span>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="icon-btn" id="restart" type="button" aria-label="Yeni sipariş">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Kurabiye mutfağı. Parlayan yere dokun."></canvas>
+    <p class="role" id="role" hidden></p>
+  </main>
+  <p class="tip">📱 Telefonu yan çevirirsen mutfak büyür.</p>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

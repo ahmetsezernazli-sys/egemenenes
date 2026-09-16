@@ -142,7 +142,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── ne-degisti/         ← Ne Değişti?, 1-6 kişilik dikkat oyunu
+├── ne-degisti/         ← Ne Değişti?, 1-6 kişilik dikkat oyunu
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── kurabiye/           ← Kurabiye Dükkânı, Egemen için mutfak oyunu
     ├── index.html
     ├── style.css
     └── game.js
