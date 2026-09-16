@@ -150,7 +150,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── mayin-tarlasi/      ← Mayın Tarlası, Enes için, tahmin gerektirmeyen tahtalar
+├── mayin-tarlasi/      ← Mayın Tarlası, Enes için, tahmin gerektirmeyen tahtalar
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── el-ele/             ← El Ele Labirent, ikisi birlikte tek topu süren işbirliği oyunu
     ├── index.html
     ├── style.css
     └── game.js
