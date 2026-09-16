@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mancınık Düellosu · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Karşılıklı iki mancınık, arada tepe, üstünde rüzgâr. Parmağınla çek bırak, taşı at, karşı tarafın canını bitir.">
+  <meta name="theme-color" content="#132433">
+  <meta property="og:title" content="Mancınık Düellosu">
+  <meta property="og:description" content="Sırayla taş at, rüzgârı hesapla, tepeyi del. İki kişi ya da bilgisayara karşı.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M12 78h56l-8 10H20z' fill='%238B5E3C'/%3E%3Cpath d='M22 78 62 26' stroke='%23A9713F' stroke-width='9' stroke-linecap='round'/%3E%3Ccircle cx='66' cy='22' r='13' fill='%236B7A85'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Mancınık <span>Düellosu</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Ayarlar</button>
+    </div>
+  </header>
+
+  <section class="board" aria-label="Can ve skor">
+    <div class="team" id="team-0">
+      <span class="av" id="av-0">🚀</span>
+      <span class="nm" id="nm-0">Enes</span>
+      <span class="hp" id="hp-0"></span>
+      <b class="sc" id="sc-0">0</b>
+    </div>
+    <div class="team" id="team-1">
+      <span class="av" id="av-1">🎈</span>
+      <span class="nm" id="nm-1">Egemen</span>
+      <span class="hp" id="hp-1"></span>
+      <b class="sc" id="sc-1">0</b>
+    </div>
+  </section>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Savaş alanı. Kendi mancınığından atmak için ekranı parmağınla çek ve bırak."></canvas>
+    <p class="role" id="role" hidden></p>
+    <div class="banner" id="banner" hidden></div>
+  </main>
+  <p class="tip">📱 Telefonu yan çevirirsen saha büyür.</p>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Mancınık Düellosu</h2>
+    <fieldset>
+      <legend>Mod</legend>
+      <div class="seg wide">
+        <label><input type="radio" name="mode" id="mode-2p" value="2p" checked><span>👥 İki kişi</span></label>
+        <label><input type="radio" name="mode" id="mode-cpu" value="cpu"><span>🤖 Bilgisayara karşı</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Oyuncular</legend>
+      <div class="p-row">
+        <span class="av" style="background:#3D8BFD">🚀</span>
+        <input type="text" id="pn-0" maxlength="12" aria-label="1. oyuncunun adı">
+        <div class="seg" role="radiogroup" aria-label="1. oyuncunun yardımı">
+          <label><input type="radio" name="lv0" value="0"><span>Kolay</span></label>
+          <label><input type="radio" name="lv0" value="1" checked><span>Normal</span></label>
+          <label><input type="radio" name="lv0" value="2"><span>Zor</span></label>
+        </div>
+      </div>
+      <div class="p-row">
+        <span class="av" style="background:#FF7A2F">🎈</span>
+        <input type="text" id="pn-1" maxlength="12" aria-label="2. oyuncunun adı">
+        <div class="seg" role="radiogroup" aria-label="2. oyuncunun yardımı">
+          <label><input type="radio" name="lv1" value="0" checked><span>Kolay</span></label>
+          <label><input type="radio" name="lv1" value="1"><span>Normal</span></label>
+          <label><input type="radio" name="lv1" value="2"><span>Zor</span></label>
+        </div>
+      </div>
+      <p class="help"><b>Kolay:</b> taşın gideceği yol baştan sona noktalarla gösterilir. <b>Normal:</b> yolun yalnızca başı görünür. <b>Zor:</b> nişan oku dışında yardım yok.</p>
+    </fieldset>
+    <button class="btn primary big" type="submit">Başla</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title">Enes kazandı!</p>
+    <p class="end-score" id="end-score">1 – 0</p>
+    <p class="help" id="end-note">Rüzgâr ve tepe her raunt yeniden kurulur.</p>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Yeni raunt</button>
+      <button class="btn light" id="end-setup" type="button">Ayarlar</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

@@ -134,7 +134,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── tombala/            ← Tombala, 2-6 kişilik aile tombalası
+├── tombala/            ← Tombala, 2-6 kişilik aile tombalası
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── mancinik/           ← Mancınık Düellosu, ikisi birlikte ya da bilgisayara karşı
     ├── index.html
     ├── style.css
     └── game.js
