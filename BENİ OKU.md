@@ -126,7 +126,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── penalti/            ← Penaltı Atışları, ikisi birlikte ya da bilgisayara karşı
+├── penalti/            ← Penaltı Atışları, ikisi birlikte ya da bilgisayara karşı
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── kart-karnavali/     ← Kart Karnavalı, 2-4 kişilik aile kart oyunu
     ├── index.html
     ├── style.css
     └── game.js
