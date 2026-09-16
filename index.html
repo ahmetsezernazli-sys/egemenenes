@@ -110,7 +110,9 @@
     .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
     .tags span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);border:1px solid rgba(217,164,65,.4);padding:1px 7px}
     .soon{border:1px dashed var(--line);display:grid;place-content:center;text-align:center;color:var(--muted);padding:24px;min-height:200px}
-    footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+    footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .hits{display:inline-flex;line-height:0}
+    .hits img{height:26px;width:auto;border-radius:6px}
     @media (prefers-reduced-motion:reduce){ .game{transition:none} .game:hover{transform:none} }
   </style>
 </head>
@@ -925,7 +927,12 @@
     <div class="soon">Sıradaki oyun yakında</div>
   </main>
 
-  <footer>egemenenes.com · Rekorlar yalnızca bu cihazdaki tarayıcıda saklanır.</footer>
+  <footer>
+    <a class="hits" href="https://hits.sh/egemenenes.com/oyunlar/" target="_blank" rel="noopener" title="Ziyaret sayısı — dokununca günlük döküm açılır">
+      <img src="https://hits.sh/egemenenes.com/oyunlar.svg?style=flat-square&amp;label=ziyaret&amp;color=2E6F78&amp;labelColor=163238" alt="Ziyaret sayısı" onerror="this.parentNode.remove()">
+    </a>
+    <span>egemenenes.com · Rekorlar yalnızca bu cihazdaki tarayıcıda saklanır.</span>
+  </footer>
 </div>
 </body>
 </html>
