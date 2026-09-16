@@ -146,7 +146,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── kurabiye/           ← Kurabiye Dükkânı, Egemen için mutfak oyunu
+├── kurabiye/           ← Kurabiye Dükkânı, Egemen için mutfak oyunu
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── mayin-tarlasi/      ← Mayın Tarlası, Enes için, tahmin gerektirmeyen tahtalar
     ├── index.html
     ├── style.css
     └── game.js

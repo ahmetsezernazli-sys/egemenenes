@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mayın Tarlası · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Klasik mayın tarlası: sayılara bakarak mayınları bul. Tahtalar tahmin gerektirmeyecek şekilde üretilir, ilk tıklama her zaman güvenli.">
+  <meta name="theme-color" content="#151A24">
+  <meta property="og:title" content="Mayın Tarlası">
+  <meta property="og:description" content="Sayılara bak, mayınları bayrakla. Tahmin gerektirmeyen tahtalar, üç zorluk, rekor süreler.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23223047'/%3E%3Ccircle cx='50' cy='54' r='24' fill='%23E9EDF5'/%3E%3Cpath d='M50 16v18M50 74v12M16 54h18M66 54h18M26 30l13 13M74 30L61 43' stroke='%23E9EDF5' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@500;700&family=Outfit:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Mayın <span>Tarlası</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Ayarlar</button>
+    </div>
+  </header>
+
+  <section class="hud">
+    <span class="chip" id="mines" aria-label="Kalan mayın">💣 <b id="mines-n">10</b></span>
+    <button class="btn face" id="restart" type="button" aria-label="Yeni oyun"><span id="face">🙂</span></button>
+    <button class="btn mode" id="mode" type="button" aria-pressed="false" aria-label="Bayrak modu">
+      <span id="mode-ic">⛏️</span><span id="mode-tx">Kaz</span>
+    </button>
+    <span class="chip" id="clock" aria-label="Süre">⏱ <b id="clock-n">0:00</b></span>
+  </section>
+
+  <main class="wrap" id="wrap">
+    <canvas id="cv" aria-label="Mayın tarlası. Kareye dokununca açılır, bayrak modunda bayrak koyar."></canvas>
+  </main>
+
+  <p class="tip" id="tip">Kareye dokun: aç · Basılı tut: bayrak · Açık sayıya dokun: etrafını aç</p>
+</div>
+
+<div class="overlay" id="setup" hidden>
+  <form class="sheet" id="setup-form">
+    <h2>Mayın Tarlası</h2>
+    <fieldset>
+      <legend>Zorluk</legend>
+      <div class="seg wide" role="radiogroup" aria-label="Zorluk">
+        <label><input type="radio" name="lv" value="0"><span>Kolay<small>9×9 · 10</small></span></label>
+        <label><input type="radio" name="lv" value="1" checked><span>Orta<small>16×16 · 40</small></span></label>
+        <label><input type="radio" name="lv" value="2"><span>Zor<small>30×16 · 99</small></span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Kurallar</legend>
+      <label class="toggle"><input type="checkbox" id="noguess" checked><span>🧠 Tahmin gerekmesin — tahta hep mantıkla çözülebilsin</span></label>
+      <label class="toggle"><input type="checkbox" id="autoflag" checked><span>🚩 Kalan kareler hep mayınsa kendiliğinden bayraklansın</span></label>
+    </fieldset>
+    <p class="help">İlk dokunduğun kare her zaman güvenlidir ve etrafı açılır. Açık bir sayının etrafındaki bayrak sayısı sayıya eşitse, sayıya dokunmak kalan kareleri açar.</p>
+    <button class="btn primary big" type="submit">Yeni oyun</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" id="end-emoji" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title">Tarlayı temizledin!</p>
+    <p class="end-time" id="end-time">1:24</p>
+    <p class="lead" id="end-note"></p>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Yeniden</button>
+      <button class="btn light" id="end-setup" type="button">Zorluk</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
