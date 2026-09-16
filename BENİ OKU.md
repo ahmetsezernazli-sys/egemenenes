@@ -130,7 +130,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── kart-karnavali/     ← Kart Karnavalı, 2-4 kişilik aile kart oyunu
+├── kart-karnavali/     ← Kart Karnavalı, 2-4 kişilik aile kart oyunu
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── tombala/            ← Tombala, 2-6 kişilik aile tombalası
     ├── index.html
     ├── style.css
     └── game.js
