@@ -154,7 +154,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── el-ele/             ← El Ele Labirent, ikisi birlikte tek topu süren işbirliği oyunu
+├── el-ele/             ← El Ele Labirent, ikisi birlikte tek topu süren işbirliği oyunu
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── domino/             ← Domino, 2-4 kişilik klasik domino
     ├── index.html
     ├── style.css
     └── game.js

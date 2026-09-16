@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Domino · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="2-4 kişilik domino: noktaları eşleştir, taşlarını ilk bitiren kazanır. Bilgisayar rakip, okuma gerekmez.">
+  <meta name="theme-color" content="#14322C">
+  <meta property="og:title" content="Domino">
+  <meta property="og:description" content="Noktaları eşleştir, taşlarını ilk bitir. 2-4 oyuncu, bilgisayar rakip, hile yok.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='18' y='6' width='64' height='88' rx='12' fill='%23FFF8EC'/%3E%3Crect x='24' y='48' width='52' height='4' rx='2' fill='%2314322C'/%3E%3Ccircle cx='40' cy='26' r='7' fill='%2314322C'/%3E%3Ccircle cx='60' cy='26' r='7' fill='%2314322C'/%3E%3Ccircle cx='50' cy='72' r='7' fill='%2314322C'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Do<span>mino</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Ayarlar</button>
+    </div>
+  </header>
+
+  <section class="seats" id="seats"></section>
+
+  <main class="table">
+    <div class="chain-wrap">
+      <span class="endtag" id="tag-l" hidden>◀ <b id="tag-l-n">0</b></span>
+      <div class="chain" id="chain"></div>
+      <span class="endtag" id="tag-r" hidden><b id="tag-r-n">0</b> ▶</span>
+    </div>
+    <p class="msg" id="msg">Hazır mısınız?</p>
+    <div class="actions">
+      <button class="btn" id="draw" type="button">Desteden çek <b id="pile">14</b></button>
+      <button class="btn" id="pass" type="button" disabled>Pas</button>
+    </div>
+    <section class="hand-wrap">
+      <div class="hand-head"><span class="who" id="hand-who">Enes</span><span id="hand-count">7 taş</span></div>
+      <div class="hand" id="hand"></div>
+    </section>
+  </main>
+</div>
+
+<div class="overlay" id="curtain" hidden>
+  <div class="sheet center">
+    <div class="av big" id="curtain-av">🚀</div>
+    <p class="end-title" id="curtain-name">Enes'in sırası</p>
+    <p class="lead">Taşlarını başkası görmesin. Hazırsan dokun.</p>
+    <button class="btn primary big" id="curtain-go" type="button">Taşlarımı gör</button>
+  </div>
+</div>
+
+<div class="overlay" id="side" hidden>
+  <div class="sheet center">
+    <p class="end-title">Hangi uca koyalım?</p>
+    <div class="row">
+      <button class="btn primary" id="side-l" type="button">◀ Sol uç</button>
+      <button class="btn primary" id="side-r" type="button">Sağ uç ▶</button>
+    </div>
+    <button class="btn light" id="side-cancel" type="button">Vazgeç</button>
+  </div>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Domino</h2>
+    <div class="p-rows" id="p-rows"></div>
+    <div class="row">
+      <button class="btn light" id="add-player" type="button">+ Oyuncu</button>
+      <button class="btn light" id="remove-player" type="button">− Oyuncu</button>
+    </div>
+    <fieldset>
+      <legend>Kaç puana?</legend>
+      <div class="seg wide" role="radiogroup" aria-label="Hedef puan">
+        <label><input type="radio" name="target" value="0"><span>Tek raunt</span></label>
+        <label><input type="radio" name="target" value="50" checked><span>50 puan</span></label>
+        <label><input type="radio" name="target" value="100"><span>100 puan</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Kurallar</legend>
+      <label class="toggle"><input type="checkbox" id="hint" checked><span>✨ Oynanabilen taşlar parlasın</span></label>
+      <label class="toggle"><input type="checkbox" id="curtain-on" checked><span>🙈 Sıra değişince taşları gizle</span></label>
+    </fieldset>
+    <p class="help">Uçlardaki noktalarla aynı olan taşı koyabilirsin. Koyacak taşın yoksa desteden çekersin. Taşlarını ilk bitiren raundu kazanır, ötekilerin elinde kalan noktalar ona puan yazılır.</p>
+    <button class="btn primary big" type="submit">Oyunu başlat</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" id="end-emoji" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title">Enes raundu kazandı!</p>
+    <p class="lead" id="end-note"></p>
+    <ol class="podium" id="podium"></ol>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Devam</button>
+      <button class="btn light" id="end-setup" type="button">Ayarlar</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
