@@ -945,7 +945,9 @@
     var say = function(o){ return parseInt((o && (o.count_unique || o.count)) || "0", 10) || 0; };
     Promise.all([get(base), get(base + "?start=" + today)]).then(function(r){
       if (!r[0]) return;                       // servis yanıt vermezse satır hiç görünmez
-      tot.textContent = say(r[0]).toLocaleString("tr-TR");
+      var n = say(r[0]);
+      if (n < 1) return;                       // sayı daha oluşmadıysa "0 kişi" yazmasın
+      tot.textContent = n.toLocaleString("tr-TR");
       var t = say(r[1]);
       if (t > 0) td.textContent = " · bugün " + t.toLocaleString("tr-TR");
       box.hidden = false;
