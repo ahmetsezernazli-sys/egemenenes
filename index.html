@@ -111,8 +111,9 @@
     .tags span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);border:1px solid rgba(217,164,65,.4);padding:1px 7px}
     .soon{border:1px dashed var(--line);display:grid;place-content:center;text-align:center;color:var(--muted);padding:24px;min-height:200px}
     footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-    .hits{display:inline-flex;line-height:0}
-    .hits img{height:26px;width:auto;border-radius:6px}
+    .hits{margin:0;background:var(--ground-2);border:1px solid var(--line);border-radius:999px;padding:6px 16px;color:var(--ink);font-size:13px;white-space:nowrap}
+    .hits b{color:var(--brass);font-variant-numeric:tabular-nums}
+    .hits[hidden]{display:none}
     @media (prefers-reduced-motion:reduce){ .game{transition:none} .game:hover{transform:none} }
   </style>
 </head>
@@ -928,11 +929,29 @@
   </main>
 
   <footer>
-    <a class="hits" href="https://hits.sh/egemenenes.com/oyunlar/" target="_blank" rel="noopener" title="Sayfa görüntülenme sayısı — dokununca günlük döküm açılır">
-      <img src="https://hits.sh/egemenenes.com/oyunlar.svg?style=flat-square&amp;label=g%C3%B6r%C3%BCnt%C3%BClenme&amp;color=2E6F78&amp;labelColor=163238" alt="Görüntülenme sayısı" onerror="this.parentNode.remove()">
-    </a>
+    <p class="hits" id="hits" hidden>👋 <b id="hits-total">—</b> kişi geldi<span id="hits-today"></span></p>
     <span>egemenenes.com · Rekorlar yalnızca bu cihazdaki tarayıcıda saklanır.</span>
   </footer>
 </div>
+
+<script>
+  // ziyaretçi sayısı: GoatCounter aynı kişiyi gün içinde bir kez sayar
+  (function(){
+    var box = document.getElementById("hits"), tot = document.getElementById("hits-total"), td = document.getElementById("hits-today");
+    var base = "https://egemenenes.goatcounter.com/counter/TOTAL.json";
+    var d = new Date(), pad = function(n){ return (n < 10 ? "0" : "") + n; };
+    var today = d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+    var get = function(u){ return fetch(u, {cache:"no-store"}).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }); };
+    var say = function(o){ return parseInt((o && (o.count_unique || o.count)) || "0", 10) || 0; };
+    Promise.all([get(base), get(base + "?start=" + today)]).then(function(r){
+      if (!r[0]) return;                       // servis yanıt vermezse satır hiç görünmez
+      tot.textContent = say(r[0]).toLocaleString("tr-TR");
+      var t = say(r[1]);
+      if (t > 0) td.textContent = " · bugün " + t.toLocaleString("tr-TR");
+      box.hidden = false;
+    });
+  })();
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
