@@ -929,29 +929,27 @@
   </main>
 
   <footer>
-    <p class="hits" id="hits" hidden>👋 <b id="hits-total">—</b> kişi geldi<span id="hits-today"></span></p>
+    <p class="hits" id="hits" hidden>👋 <b id="hits-total">—</b> ziyaret</p>
     <span>egemenenes.com · Rekorlar yalnızca bu cihazdaki tarayıcıda saklanır.</span>
   </footer>
 </div>
 
 <script>
-  // ziyaretçi sayısı: GoatCounter aynı kişiyi gün içinde bir kez sayar
+  // ziyaretçi sayısı — GoatCounter aynı kişiyi gün içinde bir kez sayar.
+  // Genel sayı ucu yanıtı 4 saat önbelleğe alındığı için adrese 15 dakikada bir değişen bir ek koyuyoruz.
   (function(){
-    var box = document.getElementById("hits"), tot = document.getElementById("hits-total"), td = document.getElementById("hits-today");
-    var base = "https://egemenenes.goatcounter.com/counter/TOTAL.json";
-    var d = new Date(), pad = function(n){ return (n < 10 ? "0" : "") + n; };
-    var today = d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
-    var get = function(u){ return fetch(u, {cache:"no-store"}).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }); };
-    var say = function(o){ return parseInt((o && (o.count_unique || o.count)) || "0", 10) || 0; };
-    Promise.all([get(base), get(base + "?start=" + today)]).then(function(r){
-      if (!r[0]) return;                       // servis yanıt vermezse satır hiç görünmez
-      var n = say(r[0]);
-      if (n < 1) return;                       // sayı daha oluşmadıysa "0 kişi" yazmasın
-      tot.textContent = n.toLocaleString("tr-TR");
-      var t = say(r[1]);
-      if (t > 0) td.textContent = " · bugün " + t.toLocaleString("tr-TR");
-      box.hidden = false;
-    });
+    var box = document.getElementById("hits"), tot = document.getElementById("hits-total");
+    var url = "https://egemenenes.goatcounter.com/counter/TOTAL.json?start=2026-01-01&_=" + Math.floor(Date.now()/9e5);
+    fetch(url, {cache:"no-store"})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(d){
+        if (!d) return;                                   // servis yanıt vermezse satır hiç görünmez
+        var n = parseInt((d.count_unique || d.count || "0"), 10) || 0;
+        if (n < 1) return;
+        tot.textContent = n.toLocaleString("tr-TR");
+        box.hidden = false;
+      })
+      .catch(function(){});
   })();
 </script>
 <script>
