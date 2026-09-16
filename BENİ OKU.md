@@ -138,7 +138,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── mancinik/           ← Mancınık Düellosu, ikisi birlikte ya da bilgisayara karşı
+├── mancinik/           ← Mancınık Düellosu, ikisi birlikte ya da bilgisayara karşı
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── ne-degisti/         ← Ne Değişti?, 1-6 kişilik dikkat oyunu
     ├── index.html
     ├── style.css
     └── game.js

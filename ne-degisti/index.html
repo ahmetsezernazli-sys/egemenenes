@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ne Değişti? · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Resme iyi bak, göz kırpınca bir şey değişir. Değişen şeyi ilk bulan puanı alır. 1-6 oyuncu, okuma gerekmez.">
+  <meta name="theme-color" content="#1C2340">
+  <meta property="og:title" content="Ne Değişti?">
+  <meta property="og:description" content="Resme bak, ezberle, değişeni bul. Herkes kendi seviyesinde oynar.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='34' cy='34' r='22' fill='%23FFC93C'/%3E%3Ccircle cx='68' cy='64' r='22' fill='%2306D6A0'/%3E%3Cpath d='M60 24l5 11 11 5-11 5-5 11-5-11-11-5 11-5z' fill='%23EF476F'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <h1 class="title">Ne <span>Değişti?</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Ayarlar</button>
+    </div>
+  </header>
+
+  <section class="board" id="board" aria-label="Puanlar"></section>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Resim. Değişen şeye dokun."></canvas>
+    <p class="role" id="role" hidden></p>
+    <div class="meter" id="meter" hidden><i id="meter-fill"></i></div>
+    <div class="banner" id="banner" hidden></div>
+  </main>
+</div>
+
+<div class="overlay" id="ready" hidden>
+  <div class="sheet center">
+    <div class="av big" id="ready-av">🚀</div>
+    <p class="end-title" id="ready-name">Sıra Enes'te</p>
+    <p class="lead" id="ready-note">Resme iyi bak. Göz kırpınca bir şey değişecek.</p>
+    <button class="btn primary big" id="ready-go" type="button">Hazırım</button>
+  </div>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Ne Değişti?</h2>
+    <div class="p-rows" id="p-rows"></div>
+    <div class="row">
+      <button class="btn light" id="add-player" type="button">+ Oyuncu</button>
+      <button class="btn light" id="remove-player" type="button">− Oyuncu</button>
+    </div>
+    <fieldset>
+      <legend>Kaç tur?</legend>
+      <div class="seg wide" role="radiogroup" aria-label="Tur sayısı">
+        <label><input type="radio" name="rounds" value="3" checked><span>3 tur</span></label>
+        <label><input type="radio" name="rounds" value="5"><span>5 tur</span></label>
+        <label><input type="radio" name="rounds" value="8"><span>8 tur</span></label>
+      </div>
+    </fieldset>
+    <p class="help"><b>Kolay:</b> 6 şey, uzun bakma süresi, kayboldu ya da renk değişti. <b>Normal:</b> 10 şey, büyüme ve yer değiştirme de var. <b>Zor:</b> 14 şey, minik kaymalar ve renk takasları da var.</p>
+    <button class="btn primary big" type="submit">Oyunu başlat</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title">Enes kazandı!</p>
+    <ol class="podium" id="podium"></ol>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Tekrar oyna</button>
+      <button class="btn light" id="end-setup" type="button">Ayarlar</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
