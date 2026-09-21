@@ -162,7 +162,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── roket/              ← Roket Atölyesi, Egemen için roket yapıp gezegene uçma
+├── roket/              ← Roket Atölyesi, Egemen için roket yapıp gezegene uçma
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── pist/               ← Pist Rekoru, Enes için tur rekoru ve hayalet araba
     ├── index.html
     ├── style.css
     └── game.js
@@ -185,7 +189,7 @@ Oyunlar/
 
 1. `Oyunlar` içinde yeni bir klasör açın (ör. `yeni-oyun/`), içine en az bir `index.html` koyun.
 2. Oyunun başına ana sayfaya dönüş bağlantısı ekleyin: `<a href="../index.html">← Tüm oyunlar</a>`
-3. Ana `index.html` içinde "Sıradaki oyun yakında" kutusunun hemen üstüne Tavşan Kanı kartını kopyalayıp adını, açıklamasını ve bağlantısını değiştirin.
+3. Ana `index.html` dört gruba ayrılmıştır (Egemen, Enes, İkisi birlikte, Tüm aile). Yeni kartı ilgili grubun `<!-- …:yeni oyun buraya, en üste -->` işaretinin hemen altına koyun; "Yeni" etiketini son eklenen oyuna taşıyın ve grup sayılarını güncelleyin.
 
 ## Tavşan Kanı ayarları
 

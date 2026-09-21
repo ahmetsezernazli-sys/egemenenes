@@ -112,6 +112,8 @@
     .cover-domino svg{width:100%;height:100%}
     .cover-rocket{background:#0E1433}
     .cover-rocket svg{width:100%;height:100%}
+    .cover-race{background:#3E8E41}
+    .cover-race svg{width:100%;height:100%}
     .info{padding:14px 16px 18px;display:grid;gap:6px;align-content:start}
     .info h3{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.1;margin:0}
     .info p{margin:0;color:var(--muted);font-size:14px}
@@ -157,7 +159,7 @@
 
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>10</b></a>
-    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>10</b></a>
+    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>11</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>9</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>9</b></a>
   </nav>
@@ -168,8 +170,7 @@
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
         <a class="game" href="roket/index.html">
-          <div class="cover is-new cover-rocket" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-rocket" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#0E1433"/>
               <g fill="#fff" opacity=".8">
@@ -408,9 +409,30 @@
     </section>
 
     <section class="group g-enes" id="enes" aria-labelledby="h-enes">
-      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 10 oyun</p></div>
+      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 11 oyun</p></div>
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
+        <a class="game" href="pist/index.html">
+          <div class="cover is-new cover-race" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#3E8E41"/>
+              <g fill="#fff" opacity=".05"><rect x="0" y="0" width="10" height="102"/><rect x="20" y="0" width="10" height="102"/><rect x="40" y="0" width="10" height="102"/><rect x="60" y="0" width="10" height="102"/><rect x="80" y="0" width="10" height="102"/><rect x="100" y="0" width="10" height="102"/><rect x="120" y="0" width="10" height="102"/><rect x="140" y="0" width="10" height="102"/></g>
+              <path d="M34 22H130Q148 22 148 40V62Q148 80 130 80H34Q16 80 16 62V40Q16 22 34 22Z" stroke="#F2F2F2" stroke-width="20"/>
+              <path d="M34 22H130Q148 22 148 40V62Q148 80 130 80H34Q16 80 16 62V40Q16 22 34 22Z" stroke="#D62828" stroke-width="20" stroke-dasharray="5 5"/>
+              <path d="M34 22H130Q148 22 148 40V62Q148 80 130 80H34Q16 80 16 62V40Q16 22 34 22Z" stroke="#3A3F47" stroke-width="15"/>
+              <path d="M34 22H130Q148 22 148 40V62Q148 80 130 80H34Q16 80 16 62V40Q16 22 34 22Z" stroke="#fff" stroke-opacity=".4" stroke-width="1" stroke-dasharray="6 7"/>
+              <g><rect x="46" y="14.5" width="3" height="3" fill="#fff"/><rect x="49" y="14.5" width="3" height="3" fill="#111"/><rect x="46" y="17.5" width="3" height="3" fill="#111"/><rect x="49" y="17.5" width="3" height="3" fill="#fff"/><rect x="46" y="20.5" width="3" height="3" fill="#fff"/><rect x="49" y="20.5" width="3" height="3" fill="#111"/><rect x="46" y="23.5" width="3" height="3" fill="#111"/><rect x="49" y="23.5" width="3" height="3" fill="#fff"/><rect x="46" y="26.5" width="3" height="3" fill="#fff"/><rect x="49" y="26.5" width="3" height="3" fill="#111"/></g>
+              <g transform="translate(96 22)"><rect x="-9" y="-5.5" width="18" height="11" rx="3" fill="#E63946"/><rect x="1" y="-4" width="5" height="8" rx="1" fill="#9AD1F5"/></g>
+              <g transform="translate(74 22)" opacity=".45"><rect x="-9" y="-5.5" width="18" height="11" rx="3" fill="#fff"/></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Pist Rekoru</h3>
+            <p>Yukarıdan görünen araba yarışı: üç pist, üçer tur. En iyi turun hayalet araba olarak seninle yarışır. Altın madalya için tur süreni düşür.</p>
+            <div class="tags"><span>Enes için</span><span>12 yaş</span><span>Yarış</span></div>
+          </div>
+        </a>
         <a class="game" href="mayin-tarlasi/index.html">
           <div class="cover cover-mine" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

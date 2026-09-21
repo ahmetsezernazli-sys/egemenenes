@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pist Rekoru · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Yukarıdan görünen araba yarışı: üç pist, üçer tur, tur rekoru ve kendi en iyi turunla yarışan hayalet araba. Madalyaları topla.">
+  <meta name="theme-color" content="#1B1F24">
+  <meta property="og:title" content="Pist Rekoru">
+  <meta property="og:description" content="Üç pist, tur rekoru, hayalet araba ve madalyalar.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%231B1F24'/%3E%3Crect x='30' y='16' width='40' height='68' rx='12' fill='%23E63946'/%3E%3Crect x='36' y='30' width='28' height='18' rx='4' fill='%239AD1F5'/%3E%3Crect x='22' y='24' width='10' height='18' rx='3' fill='%23111'/%3E%3Crect x='68' y='24' width='10' height='18' rx='3' fill='%23111'/%3E%3Crect x='22' y='58' width='10' height='18' rx='3' fill='%23111'/%3E%3Crect x='68' y='58' width='10' height='18' rx='3' fill='%23111'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Pist <span>Rekoru</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Pistler</button>
+    </div>
+  </header>
+
+  <section class="hud" aria-live="off">
+    <div class="cell"><span>Pist</span><b id="h-track">Oval</b></div>
+    <div class="cell"><span>Tur</span><b id="h-lap">1/3</b></div>
+    <div class="cell"><span>Bu tur</span><b id="h-cur">0:00.0</b></div>
+    <div class="cell"><span>En iyi tur</span><b id="h-best">–</b></div>
+    <div class="cell"><span>Toplam</span><b id="h-total">0:00.0</b></div>
+  </section>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Yarış pisti. Ok tuşları ya da ekrandaki düğmelerle sür."></canvas>
+    <p class="lights" id="lights" hidden></p>
+    <p class="toast" id="toast" hidden></p>
+  </main>
+
+  <section class="pads" id="pads">
+    <div class="pad">
+      <button class="key" id="k-left" type="button" aria-label="Sola">◀</button>
+      <button class="key" id="k-right" type="button" aria-label="Sağa">▶</button>
+    </div>
+    <p class="tip">📱 Telefonu yan çevir, pist büyüsün.</p>
+    <div class="pad">
+      <button class="key brake" id="k-brake" type="button" aria-label="Fren">FREN</button>
+      <button class="key gas" id="k-gas" type="button" aria-label="Gaz">GAZ</button>
+    </div>
+  </section>
+</div>
+
+<div class="overlay" id="setup">
+  <div class="sheet">
+    <h2>Pist seç</h2>
+    <div class="tracks" id="tracks"></div>
+    <p class="help">Her yarış 3 tur. Madalya en iyi tur süresine göre verilir. Bir pistte en iyi turunu attığında, sonraki yarışlarda o tur <b>hayalet araba</b> olarak seninle birlikte sürer — onu geçmeye çalış.</p>
+    <p class="help">Klavye: <b>↑</b> gaz · <b>↓</b> fren/geri · <b>← →</b> direksiyon. Çimde araba yavaşlar.</p>
+  </div>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="medal" id="end-medal" aria-hidden="true">🥇</div>
+    <p class="end-title" id="end-title">Yarış bitti!</p>
+    <div class="results">
+      <div><span>Toplam</span><b id="end-total">1:02.4</b></div>
+      <div><span>En iyi tur</span><b id="end-best">0:20.1</b></div>
+    </div>
+    <p class="lead" id="end-note"></p>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Tekrar yarış</button>
+      <button class="btn light" id="end-setup" type="button">Pist seç</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
