@@ -170,7 +170,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── amiral-batti/       ← Amiral Battı, ikisi birlikte ya da bilgisayara karşı
+├── amiral-batti/       ← Amiral Battı, ikisi birlikte ya da bilgisayara karşı
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── hayvan-korosu/      ← Hayvan Korosu, tüm aile için sırayla şarkı hafıza oyunu
     ├── index.html
     ├── style.css
     └── game.js

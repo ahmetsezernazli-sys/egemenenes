@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hayvan Korosu · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Aile hafıza oyunu: koronun şarkısını sırayla tekrar et, sonuna bir hayvan ekle. Küçükler için şarkıyı önce çalan yardım, 2-6 oyuncu.">
+  <meta name="theme-color" content="#2B1B3D">
+  <meta property="og:title" content="Hayvan Korosu">
+  <meta property="og:description" content="Şarkıyı tekrar et, sonuna bir hayvan ekle. 2-6 kişilik aile hafıza oyunu.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%232B1B3D'/%3E%3Ccircle cx='38' cy='66' r='14' fill='%23FFC53D'/%3E%3Crect x='48' y='22' width='8' height='46' fill='%23FFC53D'/%3E%3Cpath d='M56 22c10 2 16 8 18 18-6-5-11-6-18-6z' fill='%23FFC53D'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Hayvan <span>Korosu</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Ayarlar</button>
+    </div>
+  </header>
+
+  <ul class="players" id="players" aria-label="Oyuncular"></ul>
+
+  <p class="status" id="status" aria-live="polite">Hazır mısınız?</p>
+
+  <main class="choir" id="choir" aria-label="Koro"></main>
+
+  <div class="song" aria-label="Şarkının uzunluğu">
+    <span class="song-label">🎵 Şarkı</span>
+    <div class="notes" id="notes"></div>
+    <b id="song-len">0</b>
+  </div>
+</div>
+
+<div class="overlay" id="curtain" hidden>
+  <div class="sheet center">
+    <div class="av big" id="curtain-av">🐯</div>
+    <p class="end-title" id="curtain-name">Enes'in sırası</p>
+    <p class="lead" id="curtain-note">Şarkıyı tekrar et, sonuna bir hayvan ekle.</p>
+    <button class="btn primary big" id="curtain-go" type="button">Hazırım</button>
+  </div>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Hayvan Korosu</h2>
+    <p class="help">Sırası gelen, koronun şarkısını baştan <b>aynen tekrar eder</b>, sonra sonuna <b>bir hayvan ekler</b>. Yanlış hayvana basan bir kalp kaybeder. Kalbi en son biten kazanır.</p>
+    <fieldset>
+      <legend>Oyuncu sayısı</legend>
+      <div class="seg wide" id="count" role="radiogroup" aria-label="Oyuncu sayısı">
+        <label><input type="radio" name="count" value="2"><span>2</span></label>
+        <label><input type="radio" name="count" value="3"><span>3</span></label>
+        <label><input type="radio" name="count" value="4" checked><span>4</span></label>
+        <label><input type="radio" name="count" value="5"><span>5</span></label>
+        <label><input type="radio" name="count" value="6"><span>6</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Oyuncular</legend>
+      <div id="rows" class="rows"></div>
+      <p class="help"><b>🎧 dinle:</b> sırası gelince şarkı ona önce baştan çalınır, sonra tekrar eder. Küçük oyuncuya açık bırakın. Kapalı olan, şarkıyı aklında tutar.</p>
+    </fieldset>
+    <fieldset>
+      <legend>Koro</legend>
+      <div class="seg wide" role="radiogroup" aria-label="Hayvan sayısı">
+        <label><input type="radio" name="pads" value="4" checked><span>4 hayvan<small>daha kolay</small></span></label>
+        <label><input type="radio" name="pads" value="6"><span>6 hayvan<small>daha zor</small></span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Kalp</legend>
+      <div class="seg wide" role="radiogroup" aria-label="Kalp sayısı">
+        <label><input type="radio" name="hearts" value="1"><span>❤️ 1</span></label>
+        <label><input type="radio" name="hearts" value="2"><span>❤️ 2</span></label>
+        <label><input type="radio" name="hearts" value="3" checked><span>❤️ 3</span></label>
+      </div>
+    </fieldset>
+    <button class="btn primary big" type="submit">Koroyu başlat</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title">Enes kazandı!</p>
+    <p class="lead" id="end-note"></p>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Tekrar oyna</button>
+      <button class="btn light" id="end-setup" type="button">Ayarlar</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
