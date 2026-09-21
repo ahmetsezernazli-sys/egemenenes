@@ -166,7 +166,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── pist/               ← Pist Rekoru, Enes için tur rekoru ve hayalet araba
+├── pist/               ← Pist Rekoru, Enes için tur rekoru ve hayalet araba
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── amiral-batti/       ← Amiral Battı, ikisi birlikte ya da bilgisayara karşı
     ├── index.html
     ├── style.css
     └── game.js
