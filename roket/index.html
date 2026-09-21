@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Roket Atölyesi · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Roketini kendin yap: burnunu, rengini, kanatlarını seç. Geri sayımla fırlat, yıldız topla, Ay'a, Mars'a ya da Satürn'e kon. 5 yaş için, kaybetmek yok.">
+  <meta name="theme-color" content="#0E1433">
+  <meta property="og:title" content="Roket Atölyesi">
+  <meta property="og:description" content="Roketini yap, fırlat, yıldız topla, gezegene kon.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 6c14 12 20 30 20 52H30C30 36 36 18 50 6z' fill='%23FF5A5F'/%3E%3Ccircle cx='50' cy='40' r='9' fill='%23BDE7FF'/%3E%3Cpath d='M30 58l-14 20h14zM70 58l14 20H70z' fill='%23FFC53D'/%3E%3Cpath d='M40 78h20l-10 18z' fill='%23FF9F1C'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app" id="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Roket <span>Atölyesi</span></h1>
+    <div class="bar-actions">
+      <span class="chip" id="album" aria-label="Gidilen gezegenler">🌙 0 · 🔴 0 · 🪐 0</span>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Roket. Uçarken parmağınla sağa sola götür, yıldızları topla."></canvas>
+    <p class="count" id="countdown" hidden>5</p>
+  </main>
+
+  <section class="workshop" id="workshop">
+    <div class="tabs" role="tablist" aria-label="Roket parçaları">
+      <button class="tab on" type="button" data-part="nose" aria-label="Burun">🔺</button>
+      <button class="tab" type="button" data-part="color" aria-label="Renk">🎨</button>
+      <button class="tab" type="button" data-part="fins" aria-label="Kanat">✈️</button>
+      <button class="tab" type="button" data-part="window" aria-label="Pencere">⭕</button>
+      <button class="tab" type="button" data-part="pattern" aria-label="Desen">✨</button>
+    </div>
+    <div class="options" id="options"></div>
+    <div class="launch-row">
+      <div class="planets" role="radiogroup" aria-label="Nereye gidelim?">
+        <button class="planet on" type="button" data-dest="0" aria-label="Ay">🌙</button>
+        <button class="planet" type="button" data-dest="1" aria-label="Mars">🔴</button>
+        <button class="planet" type="button" data-dest="2" aria-label="Satürn">🪐</button>
+      </div>
+      <button class="go" id="go" type="button">🚀 Kalkış!</button>
+    </div>
+  </section>
+
+  <section class="landed" id="landed" hidden>
+    <button class="go small" id="again" type="button">🔧 Yeni roket</button>
+    <button class="go small alt" id="fly-again" type="button">🚀 Bir daha uç</button>
+  </section>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

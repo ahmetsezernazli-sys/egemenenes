@@ -158,7 +158,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── domino/             ← Domino, 2-4 kişilik klasik domino
+├── domino/             ← Domino, 2-4 kişilik klasik domino
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── roket/              ← Roket Atölyesi, Egemen için roket yapıp gezegene uçma
     ├── index.html
     ├── style.css
     └── game.js
