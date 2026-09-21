@@ -118,6 +118,8 @@
     .cover-navy svg{width:100%;height:100%}
     .cover-choir{background:#2B1B3D}
     .cover-choir svg{width:100%;height:100%}
+    .cover-shapes{background:#BFE6F7}
+    .cover-shapes svg{width:100%;height:100%}
     .info{padding:14px 16px 18px;display:grid;gap:6px;align-content:start}
     .info h3{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.1;margin:0}
     .info p{margin:0;color:var(--muted);font-size:14px}
@@ -162,7 +164,7 @@
   </header>
 
   <nav class="groups" aria-label="Oyun grupları">
-    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>10</b></a>
+    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>11</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>11</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>10</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>10</b></a>
@@ -170,9 +172,33 @@
 
   <main class="groups-main">
     <section class="group g-egemen" id="egemen" aria-labelledby="h-egemen">
-      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 10 oyun</p></div>
+      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 11 oyun</p></div>
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
+        <a class="game" href="sekil-kutusu/index.html">
+          <div class="cover is-new cover-shapes" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#BFE6F7"/>
+              <rect y="66" width="164" height="36" fill="#F6C98B"/>
+              <rect x="30" y="18" width="104" height="48" rx="8" fill="#7A4A22"/>
+              <rect x="30" y="14" width="104" height="48" rx="8" fill="#C98B4F"/>
+              <rect x="26" y="10" width="112" height="8" rx="4" fill="#B37538"/>
+              <circle cx="54" cy="39" r="11" fill="#5B3A1F"/>
+              <path d="M72 29h20v20H72z" fill="#5B3A1F"/>
+              <path d="M112 28l12 22h-24z" fill="#5B3A1F"/>
+              <circle cx="36" cy="84" r="10" fill="#22C55E"/>
+              <path d="M70 74h18v18H70z" fill="#3B82F6" transform="rotate(-10 79 83)"/>
+              <path d="M118 72l11 20h-22z" fill="#A855F7"/>
+              <path d="M104 26l12 22h-24z" fill="#EF4444" transform="rotate(8 104 38)" opacity=".95"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Şekil Kutusu</h3>
+            <p>Renkli şekilleri kutudaki doğru deliğe sürükle. Kutu dolunca içinden bir oyuncak çıkar, oyuncaklar rafta birikir. Şekil ve renk adlarını sesli söyler.</p>
+            <div class="tags"><span>Egemen için</span><span>Şekiller</span><span>Okuma yok</span></div>
+          </div>
+        </a>
         <a class="game" href="roket/index.html">
           <div class="cover cover-rocket" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
@@ -902,8 +928,7 @@
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
         <a class="game" href="hayvan-korosu/index.html">
-          <div class="cover is-new cover-choir" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-choir" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#2B1B3D"/>
               <ellipse cx="82" cy="0" rx="90" ry="44" fill="#4A2E68"/>

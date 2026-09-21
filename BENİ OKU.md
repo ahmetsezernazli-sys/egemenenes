@@ -174,7 +174,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── hayvan-korosu/      ← Hayvan Korosu, tüm aile için sırayla şarkı hafıza oyunu
+├── hayvan-korosu/      ← Hayvan Korosu, tüm aile için sırayla şarkı hafıza oyunu
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── sekil-kutusu/       ← Şekil Kutusu, Egemen için şekilleri deliğe yerleştirme
     ├── index.html
     ├── style.css
     └── game.js

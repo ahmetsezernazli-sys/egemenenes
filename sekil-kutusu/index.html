@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Şekil Kutusu · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Egemen için şekil kutusu: renkli şekilleri doğru deliğe sürükle, kutu dolunca içinden bir oyuncak çıksın. Okuma gerekmez, şekil ve renk adlarını sesli söyler.">
+  <meta name="theme-color" content="#BFE6F7">
+  <meta property="og:title" content="Şekil Kutusu">
+  <meta property="og:description" content="Şekilleri doğru deliğe yerleştir, kutudan oyuncak çıksın.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23C98B4F'/%3E%3Ccircle cx='30' cy='34' r='14' fill='%235B3A1F'/%3E%3Cpath d='M58 20h26v26H58z' fill='%235B3A1F'/%3E%3Cpath d='M50 56l20 32H30z' fill='%23EF4444'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Şekil <span>Kutusu</span></h1>
+    <div class="bar-actions">
+      <button class="shelf-btn" id="shelf-btn" type="button" aria-label="Oyuncak rafı"><span aria-hidden="true">🧸</span><b id="toy-count">0</b></button>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="stage" id="stage" aria-label="Şekil kutusu">
+    <div class="box" id="box"><div class="lid" id="lid"></div></div>
+    <div class="toy" id="toy" hidden></div>
+    <button class="next" id="next" type="button" aria-label="Yeni kutu" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z" fill="currentColor"/></svg>
+    </button>
+  </main>
+</div>
+
+<div class="overlay" id="shelf" hidden>
+  <div class="sheet">
+    <p class="sheet-title">🧸 Oyuncak rafı</p>
+    <div class="toys" id="toys"></div>
+    <button class="close" id="shelf-close" type="button" aria-label="Kapat">✕</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
