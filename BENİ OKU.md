@@ -178,7 +178,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── sekil-kutusu/       ← Şekil Kutusu, Egemen için şekilleri deliğe yerleştirme
+├── sekil-kutusu/       ← Şekil Kutusu, Egemen için şekilleri deliğe yerleştirme
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── tugla-kirici/       ← Tuğla Kırıcı, Enes için 8 bölümlük arcade, skor rekoru
     ├── index.html
     ├── style.css
     └── game.js

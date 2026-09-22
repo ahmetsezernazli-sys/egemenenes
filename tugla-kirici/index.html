@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tuğla Kırıcı · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için tuğla kırıcı: 8 bölüm, çok vuruşluk ve çelik tuğlalar, güçlendirmeler, skor ve bölüm rekoru.">
+  <meta name="theme-color" content="#0D1B2A">
+  <meta property="og:title" content="Tuğla Kırıcı">
+  <meta property="og:description" content="Topu raketle karşıla, tuğlaları kır, 8 bölümü bitir. Skor rekoru tutulur.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%230D1B2A'/%3E%3Crect x='12' y='18' width='22' height='12' fill='%23F35B04'/%3E%3Crect x='39' y='18' width='22' height='12' fill='%23F7B801'/%3E%3Crect x='66' y='18' width='22' height='12' fill='%234CC9F0'/%3E%3Ccircle cx='56' cy='58' r='7' fill='%23fff'/%3E%3Crect x='30' y='78' width='40' height='8' rx='4' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Tuğla <span>Kırıcı</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="pause" type="button" aria-label="Duraklat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg>
+      </button>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="hud">
+    <div class="cell"><span>Skor</span><b id="score">0</b></div>
+    <div class="cell"><span>Rekor</span><b id="best">0</b></div>
+    <div class="cell"><span>Bölüm</span><b id="level">1</b></div>
+    <div class="cell"><span>Can</span><b id="lives">3</b></div>
+  </div>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Oyun alanı"></canvas>
+    <p class="toast" id="toast" hidden></p>
+  </main>
+  <p class="tip">Parmağını sağa sola kaydır, topu atmak için dokun · Klavye: ← → ve boşluk</p>
+</div>
+
+<div class="overlay" id="menu">
+  <div class="sheet">
+    <h2>Tuğla <span>Kırıcı</span></h2>
+    <p class="help">Topu raketle karşıla, bütün tuğlaları kır. <b>Rakamlı</b> tuğla o kadar vuruşta kırılır, <b>gri çelik</b> hiç kırılmaz. Düşen kapsüller:</p>
+    <ul class="caps">
+      <li><i style="background:#2EC4B6">G</i>Geniş raket</li>
+      <li><i style="background:#4CC9F0">3</i>Üç top</li>
+      <li><i style="background:#9B5DE5">Y</i>Yavaş top</li>
+      <li><i style="background:#F15BB5">+</i>Can</li>
+      <li><i style="background:#E63946">K</i>Küçük raket (tuzak)</li>
+    </ul>
+    <p class="lbl">Bölüm seç</p>
+    <div class="levels" id="levels"></div>
+    <p class="help small" id="menu-best"></p>
+  </div>
+</div>
+
+<div class="overlay" id="paused" hidden>
+  <div class="sheet center">
+    <p class="big-title">Durdu</p>
+    <div class="row">
+      <button class="btn primary" id="resume" type="button">Devam</button>
+      <button class="btn" id="to-menu" type="button">Menü</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <p class="big-title" id="over-title">Oyun bitti</p>
+    <div class="results">
+      <div><span>Skor</span><b id="over-score">0</b></div>
+      <div><span>Bölüm</span><b id="over-level">1</b></div>
+    </div>
+    <p class="lead" id="over-note"></p>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Tekrar</button>
+      <button class="btn" id="over-menu" type="button">Menü</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
