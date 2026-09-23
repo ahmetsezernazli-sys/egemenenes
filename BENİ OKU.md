@@ -182,7 +182,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── tugla-kirici/       ← Tuğla Kırıcı, Enes için 8 bölümlük arcade, skor rekoru
+├── tugla-kirici/       ← Tuğla Kırıcı, Enes için 8 bölümlük arcade, skor rekoru
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── isik-duvari/        ← Işık Duvarı, ikisi birlikte ışık motosikleti düellosu
     ├── index.html
     ├── style.css
     └── game.js
