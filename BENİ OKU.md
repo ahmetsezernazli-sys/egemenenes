@@ -186,7 +186,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── isik-duvari/        ← Işık Duvarı, ikisi birlikte ışık motosikleti düellosu
+├── isik-duvari/        ← Işık Duvarı, ikisi birlikte ışık motosikleti düellosu
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── bowling/            ← Bowling, tüm aile için 10 çerçevelik sıralı oyun
     ├── index.html
     ├── style.css
     └── game.js

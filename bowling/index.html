@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bowling · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Aile bowlingi: 1-6 oyuncu sırayla atar, 10 çerçeve, strike ve spare puanlaması. Küçükler için kenar bariyeri ve yavaş nişan.">
+  <meta name="theme-color" content="#1A2233">
+  <meta property="og:title" content="Bowling">
+  <meta property="og:description" content="Nişan al, gücü ayarla, 10 labutu devir. 1-6 oyuncu, gerçek bowling puanlaması.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%231A2233'/%3E%3Cellipse cx='34' cy='30' rx='9' ry='13' fill='%23F4F7FB'/%3E%3Cellipse cx='58' cy='26' rx='9' ry='13' fill='%23F4F7FB'/%3E%3Cellipse cx='82' cy='30' rx='9' ry='13' fill='%23F4F7FB'/%3E%3Ccircle cx='46' cy='72' r='18' fill='%23E5484D'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Bow<span>ling</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Ayarlar</button>
+    </div>
+  </header>
+
+  <ul class="players" id="players" aria-label="Oyuncular"></ul>
+  <div class="frames" id="frames" aria-label="Çerçeveler"></div>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Bowling pisti"></canvas>
+    <p class="toast" id="toast" hidden></p>
+    <button class="throw" id="throw" type="button">Nişan al</button>
+  </main>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Bowling</h2>
+    <p class="help">Önce <b>yön</b>, sonra <b>güç</b>: gidip gelen çizgi istediğin yerdeyken düğmeye bas. Her çerçevede iki atış hakkın var. Hepsini ilk atışta devirirsen <b>strike</b>, ikincide bitirirsen <b>spare</b>.</p>
+    <fieldset>
+      <legend>Oyuncu sayısı</legend>
+      <div class="seg wide" id="count" role="radiogroup" aria-label="Oyuncu sayısı">
+        <label><input type="radio" name="count" value="1"><span>1</span></label>
+        <label><input type="radio" name="count" value="2"><span>2</span></label>
+        <label><input type="radio" name="count" value="3"><span>3</span></label>
+        <label><input type="radio" name="count" value="4" checked><span>4</span></label>
+        <label><input type="radio" name="count" value="5"><span>5</span></label>
+        <label><input type="radio" name="count" value="6"><span>6</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Oyuncular</legend>
+      <div id="rows" class="rows"></div>
+      <p class="help"><b>🚧 bariyer:</b> top oluğa düşmez, kenardan seker. <b>🐢 yavaş nişan:</b> çizgi daha ağır gider, denk getirmesi kolaydır. Küçük oyuncuya açık bırakın.</p>
+    </fieldset>
+    <button class="btn primary big" type="submit">Oyunu başlat</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title">Enes kazandı!</p>
+    <div class="board" id="board"></div>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Tekrar oyna</button>
+      <button class="btn light" id="end-setup" type="button">Ayarlar</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
