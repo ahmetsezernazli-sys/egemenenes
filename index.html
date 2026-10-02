@@ -126,6 +126,8 @@
     .cover-grid svg{width:100%;height:100%}
     .cover-bowl{background:#1A2233}
     .cover-bowl svg{width:100%;height:100%}
+    .cover-garden{background:#8ED6F5}
+    .cover-garden svg{width:100%;height:100%}
     .info{padding:14px 16px 18px;display:grid;gap:6px;align-content:start}
     .info h3{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.1;margin:0}
     .info p{margin:0;color:var(--muted);font-size:14px}
@@ -170,7 +172,7 @@
   </header>
 
   <nav class="groups" aria-label="Oyun grupları">
-    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>11</b></a>
+    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>12</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>12</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>11</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>11</b></a>
@@ -178,9 +180,34 @@
 
   <main class="groups-main">
     <section class="group g-egemen" id="egemen" aria-labelledby="h-egemen">
-      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 11 oyun</p></div>
+      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 12 oyun</p></div>
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
+        <a class="game" href="sebze-bahcesi/index.html">
+          <div class="cover is-new cover-garden" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#8ED6F5"/>
+              <circle cx="136" cy="20" r="14" fill="#FDB813"/>
+              <g fill="#FDB813"><rect x="134" y="-2" width="4" height="8" rx="2"/><rect x="134" y="34" width="4" height="8" rx="2"/><rect x="114" y="18" width="8" height="4" rx="2"/><rect x="150" y="18" width="8" height="4" rx="2"/></g>
+              <ellipse cx="34" cy="22" rx="14" ry="8" fill="#FFFFFF"/><ellipse cx="46" cy="24" rx="10" ry="6" fill="#FFFFFF"/>
+              <rect y="58" width="164" height="44" fill="#8B5A2B"/>
+              <rect y="54" width="164" height="6" fill="#4CAF50"/>
+              <path d="M34 58V34" stroke="#2E7D32" stroke-width="4"/><path d="M34 58L26 40h16z" fill="#F97316"/>
+              <path d="M34 40c-6-4-12-4-12-4s3 7 12 4z" fill="#3FA34D"/>
+              <path d="M82 58V32" stroke="#2E7D32" stroke-width="4"/><circle cx="82" cy="28" r="11" fill="#EF4444"/>
+              <path d="M82 40c-7-3-13-3-13-3s3 7 13 3z" fill="#3FA34D"/>
+              <path d="M124 58V40" stroke="#2E7D32" stroke-width="4"/>
+              <path d="M124 70c-9-7-12-12-9-16 2-3 7-3 9 0 2-3 7-3 9 0 3 4 0 9-9 16z" fill="#F43F5E" transform="translate(0,-32)"/>
+              <path d="M12 96h26l-4 -14H16z" fill="#B5762F"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Sebze Bahçesi</h3>
+            <p>Çukur kaz, tohumu ek, sula, güneşi çağır ve büyüyen sebzeleri sepete topla. Altı sebze çeşidi, her adımı Türkçe sesli anlatır, sayıları birlikte sayar.</p>
+            <div class="tags"><span>Egemen için</span><span>Okuma yok</span><span>Sayma</span></div>
+          </div>
+        </a>
         <a class="game" href="sekil-kutusu/index.html">
           <div class="cover cover-shapes" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
@@ -969,8 +996,7 @@
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
         <a class="game" href="bowling/index.html">
-          <div class="cover is-new cover-bowl" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-bowl" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#1A2233"/>
               <path d="M34 102 L58 6 H106 L130 102 Z" fill="#D9A257"/>

@@ -190,7 +190,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── bowling/            ← Bowling, tüm aile için 10 çerçevelik sıralı oyun
+├── bowling/            ← Bowling, tüm aile için 10 çerçevelik sıralı oyun
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── sebze-bahcesi/      ← Sebze Bahçesi, Egemen için ek-sula-büyüt-topla
     ├── index.html
     ├── style.css
     └── game.js
