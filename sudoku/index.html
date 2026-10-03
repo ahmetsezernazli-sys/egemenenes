@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sudoku · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için sudoku: kolaydan ustaya dört seviye, tek çözümü garantili bulmacalar, not kalemi, ipucu ve seviye başına süre rekoru.">
+  <meta name="theme-color" content="#101826">
+  <meta property="og:title" content="Sudoku">
+  <meta property="og:description" content="Dört seviye, tek çözümlü bulmacalar, not kalemi ve süre rekoru.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23101826'/%3E%3Cg stroke='%2338BDF8' stroke-width='4'%3E%3Cpath d='M14 38h72M14 62h72M38 14v72M62 14v72'/%3E%3C/g%3E%3Crect x='18' y='18' width='16' height='16' fill='%2338BDF8'/%3E%3Crect x='66' y='66' width='16' height='16' fill='%23F59E0B'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Su<span>doku</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-menu" type="button">Yeni oyun</button>
+    </div>
+  </header>
+
+  <div class="hud">
+    <div class="cell"><span>Seviye</span><b id="lv">Kolay</b></div>
+    <div class="cell"><span>Süre</span><b id="time">0:00</b></div>
+    <div class="cell"><span>Hata</span><b id="errs">0</b></div>
+    <div class="cell"><span>Rekor</span><b id="best">—</b></div>
+  </div>
+
+  <main class="board-wrap">
+    <div class="board" id="board" role="grid" aria-label="Sudoku tahtası"></div>
+  </main>
+
+  <div class="pad" id="pad"></div>
+  <div class="tools">
+    <button class="tool" id="note" type="button" aria-pressed="false"><span>✏️</span>Not</button>
+    <button class="tool" id="erase" type="button"><span>🩹</span>Sil</button>
+    <button class="tool" id="undo" type="button"><span>↩️</span>Geri</button>
+    <button class="tool" id="hint" type="button"><span>💡</span>İpucu</button>
+  </div>
+</div>
+
+<div class="overlay" id="menu">
+  <div class="sheet">
+    <h2>Sudoku</h2>
+    <p class="help">Her satırda, her sütunda ve her 3×3 kutuda <b>1–9</b> rakamları birer kez bulunur. Her bulmacanın <b>tek bir çözümü</b> vardır, tahmine gerek yok.</p>
+    <p class="lbl">Seviye seç</p>
+    <div class="levels" id="levels"></div>
+    <p class="help small" id="menu-note">Yükleniyor…</p>
+  </div>
+</div>
+
+<div class="overlay" id="win" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="win-title">Bitti!</p>
+    <div class="results">
+      <div><span>Süre</span><b id="win-time">0:00</b></div>
+      <div><span>Hata</span><b id="win-errs">0</b></div>
+    </div>
+    <p class="lead" id="win-note"></p>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Yeni bulmaca</button>
+      <button class="btn light" id="win-menu" type="button">Seviye seç</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

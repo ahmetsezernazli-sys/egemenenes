@@ -128,6 +128,8 @@
     .cover-bowl svg{width:100%;height:100%}
     .cover-garden{background:#8ED6F5}
     .cover-garden svg{width:100%;height:100%}
+    .cover-sudoku{background:#101826}
+    .cover-sudoku svg{width:100%;height:100%}
     .info{padding:14px 16px 18px;display:grid;gap:6px;align-content:start}
     .info h3{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.1;margin:0}
     .info p{margin:0;color:var(--muted);font-size:14px}
@@ -173,7 +175,7 @@
 
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>12</b></a>
-    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>12</b></a>
+    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>13</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>11</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>11</b></a>
   </nav>
@@ -184,8 +186,7 @@
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
         <a class="game" href="sebze-bahcesi/index.html">
-          <div class="cover is-new cover-garden" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-garden" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#8ED6F5"/>
               <circle cx="136" cy="20" r="14" fill="#FDB813"/>
@@ -471,9 +472,25 @@
     </section>
 
     <section class="group g-enes" id="enes" aria-labelledby="h-enes">
-      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 12 oyun</p></div>
+      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 13 oyun</p></div>
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
+        <a class="game" href="sudoku/index.html">
+          <div class="cover is-new cover-sudoku" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#101826"/>
+              <rect x="54.7" y="45.3" width="18.2" height="11.3" fill="#34536E"/>
+              <path d="M18.2 0V102" stroke="#5B7794" stroke-opacity="0.35" stroke-width="1"/><path d="M0 11.3H164" stroke="#5B7794" stroke-opacity="0.35" stroke-width="1"/><path d="M36.4 0V102" stroke="#5B7794" stroke-opacity="0.35" stroke-width="1"/><path d="M0 22.7H164" stroke="#5B7794" stroke-opacity="0.35" stroke-width="1"/><path d="M54.7 0V102" stroke="#5B7794" stroke-opacity="1" stroke-width="2"/><path d="M0 34.0H164" stroke="#5B7794" stroke-opacity="1" stroke-width="2"/><path d="M72.9 0V102" stroke="#5B7794" stroke-opacity="0.35" stroke-width="1"/><path d="M0 45.3H164" stroke="#5B7794" stroke-opacity="0.35" stroke-width="1"/><path d="M91.1 0V102" stroke="#5B7794" stroke-opacity="0.35" stroke-width="1"/><path d="M0 56.7H164" stroke="#5B7794" stroke-opacity="0.35" stroke-width="1"/><path d="M109.3 0V102" stroke="#5B7794" stroke-opacity="1" stroke-width="2"/><path d="M0 68.0H164" stroke="#5B7794" stroke-opacity="1" stroke-width="2"/><path d="M127.6 0V102" stroke="#5B7794" stroke-opacity="0.35" stroke-width="1"/><path d="M0 79.3H164" stroke="#5B7794" stroke-opacity="0.35" stroke-width="1"/><path d="M145.8 0V102" stroke="#5B7794" stroke-opacity="0.35" stroke-width="1"/><path d="M0 90.7H164" stroke="#5B7794" stroke-opacity="0.35" stroke-width="1"/>
+              <text x="9.1" y="9.7" font-family="Rubik, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text><text x="45.6" y="21.0" font-family="Rubik, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text><text x="82.0" y="9.7" font-family="Rubik, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">7</text><text x="27.3" y="43.7" font-family="Rubik, sans-serif" font-size="12" font-weight="700" fill="#38BDF8" text-anchor="middle">8</text><text x="118.4" y="32.3" font-family="Rubik, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text><text x="63.8" y="66.3" font-family="Rubik, sans-serif" font-size="12" font-weight="700" fill="#38BDF8" text-anchor="middle">4</text><text x="136.7" y="77.7" font-family="Rubik, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">9</text><text x="100.2" y="89.0" font-family="Rubik, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">6</text><text x="154.9" y="55.0" font-family="Rubik, sans-serif" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="middle">2</text><text x="45.6" y="100.3" font-family="Rubik, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">7</text><text x="118.4" y="100.3" font-family="Rubik, sans-serif" font-size="12" font-weight="700" fill="#38BDF8" text-anchor="middle">3</text>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Sudoku</h3>
+            <p>Kolaydan ustaya dört seviye. Her bulmacanın tek çözümü var, tahmine gerek yok. Not kalemi, geri alma, ipucu ve seviye başına süre rekoru.</p>
+            <div class="tags"><span>Enes için</span><span>4 seviye</span><span>Rekor</span></div>
+          </div>
+        </a>
         <a class="game" href="tugla-kirici/index.html">
           <div class="cover cover-brick" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

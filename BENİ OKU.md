@@ -194,7 +194,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── sebze-bahcesi/      ← Sebze Bahçesi, Egemen için ek-sula-büyüt-topla
+├── sebze-bahcesi/      ← Sebze Bahçesi, Egemen için ek-sula-büyüt-topla
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── sudoku/             ← Sudoku, Enes için 4 seviye, süre rekoru
     ├── index.html
     ├── style.css
     └── game.js
