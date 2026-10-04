@@ -214,7 +214,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── su-yolu/            ← Su Yolu, Enes için boru çevirme bulmacası
+├── su-yolu/            ← Su Yolu, Enes için boru çevirme bulmacası
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── mangala/            ← Mangala, ikisi birlikte ya da bilgisayara karşı
     ├── index.html
     ├── style.css
     └── game.js
