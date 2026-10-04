@@ -132,6 +132,8 @@
     .cover-sudoku svg{width:100%;height:100%}
     .cover-kite{background:#2B1B4D}
     .cover-kite svg{width:100%;height:100%}
+    .cover-pisti{background:#14432C}
+    .cover-pisti svg{width:100%;height:100%}
     .info{padding:14px 16px 18px;display:grid;gap:6px;align-content:start}
     .info h3{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.1;margin:0}
     .info p{margin:0;color:var(--muted);font-size:14px}
@@ -179,7 +181,7 @@
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>12</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>13</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>12</b></a>
-    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>11</b></a>
+    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>12</b></a>
   </nav>
 
   <main class="groups-main">
@@ -745,8 +747,7 @@
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
         <a class="game" href="ucurtma-yarisi/index.html">
-          <div class="cover is-new cover-kite" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-kite" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <defs><linearGradient id="kgs" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0" stop-color="#2B1B4D"/><stop offset=".45" stop-color="#7A3B86"/><stop offset=".78" stop-color="#E8705A"/><stop offset="1" stop-color="#FFC478"/>
@@ -1039,9 +1040,34 @@
     </section>
 
     <section class="group g-aile" id="aile" aria-labelledby="h-aile">
-      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 11 oyun</p></div>
+      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 12 oyun</p></div>
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
+        <a class="game" href="pisti/index.html">
+          <div class="cover is-new cover-pisti" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#14432C"/>
+              <ellipse cx="82" cy="52" rx="86" ry="48" fill="#1C5C3C"/>
+              <g transform="rotate(-14 44 54)"><rect x="24" y="30" width="40" height="54" rx="6" fill="#FFF8EC"/>
+                <text x="30" y="46" font-family="Rubik, sans-serif" font-size="13" font-weight="800" fill="#14432C">J</text>
+                <path d="M44 50c5-7 14-2 0 11-14-13-5-18 0-11z" fill="#14432C"/></g>
+              <g transform="rotate(6 86 52)"><rect x="66" y="26" width="40" height="54" rx="6" fill="#FFFDF7"/>
+                <text x="72" y="42" font-family="Rubik, sans-serif" font-size="13" font-weight="800" fill="#E5484D">A</text>
+                <path d="M86 46c5-7 14-2 0 11-14-13-5-18 0-11z" fill="#E5484D"/></g>
+              <g transform="rotate(18 124 56)"><rect x="104" y="30" width="40" height="54" rx="6" fill="#FFF8EC"/>
+                <text x="110" y="46" font-family="Rubik, sans-serif" font-size="13" font-weight="800" fill="#E5484D">10</text>
+                <path d="M124 52l6 8-6 8-6-8z" fill="#E5484D"/></g>
+              <rect x="8" y="10" width="26" height="36" rx="5" fill="#175436" stroke="#2C7A52" stroke-width="2"/>
+              <rect x="130" y="56" width="26" height="36" rx="5" fill="#175436" stroke="#2C7A52" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Pişti</h3>
+            <p>Klasik pişti: yerdeki kartla aynı sayıyı ya da vale at, hepsini topla. Tek kartı tutturmak pişti, 10 puan. 2-4 oyuncu, boş koltuğa bilgisayar, 101 puana kadar.</p>
+            <div class="tags"><span>Tüm aile</span><span>2-4 oyuncu</span><span>Kart oyunu</span></div>
+          </div>
+        </a>
         <a class="game" href="bowling/index.html">
           <div class="cover cover-bowl" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

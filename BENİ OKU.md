@@ -202,7 +202,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── ucurtma-yarisi/     ← Uçurtma Yarışı, ikisi birlikte gün batımı yarışı
+├── ucurtma-yarisi/     ← Uçurtma Yarışı, ikisi birlikte gün batımı yarışı
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── pisti/              ← Pişti, tüm aile için klasik kart oyunu
     ├── index.html
     ├── style.css
     └── game.js
