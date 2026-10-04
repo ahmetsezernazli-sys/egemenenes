@@ -230,7 +230,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── birlestir/          ← 2048, Enes için kaydır-birleştir, skor rekoru
+├── birlestir/          ← 2048, Enes için kaydır-birleştir, skor rekoru
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── dama/               ← Dama, ikisi birlikte ya da bilgisayara karşı
     ├── index.html
     ├── style.css
     └── game.js
