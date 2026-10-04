@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>2048 · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için 2048: kaydır, aynı sayıları birleştir, 2048 karosuna ulaş. 4×4 ve 5×5, geri alma ve skor rekoru.">
+  <meta name="theme-color" content="#1A1A2E">
+  <meta property="og:title" content="2048">
+  <meta property="og:description" content="Kaydır, birleştir, 2048'e ulaş. Skor rekoru tutulur.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%231A1A2E'/%3E%3Crect x='12' y='12' width='34' height='34' rx='7' fill='%23F2B179'/%3E%3Crect x='54' y='12' width='34' height='34' rx='7' fill='%23F67C5F'/%3E%3Crect x='12' y='54' width='34' height='34' rx='7' fill='%23EDCF72'/%3E%3Crect x='54' y='54' width='34' height='34' rx='7' fill='%23EDC22E'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">20<span>48</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-menu" type="button">Yeni oyun</button>
+    </div>
+  </header>
+
+  <div class="hud">
+    <div class="cell"><span>Skor</span><b id="score">0</b></div>
+    <div class="cell"><span>Rekor</span><b id="best">0</b></div>
+    <div class="cell"><span>En büyük</span><b id="max">2</b></div>
+    <div class="cell"><span>Hamle</span><b id="moves">0</b></div>
+  </div>
+
+  <main class="board-wrap">
+    <div class="board" id="board">
+      <div class="grid" id="grid"></div>
+      <div class="tiles" id="tiles"></div>
+    </div>
+  </main>
+
+  <div class="tools">
+    <button class="tool" id="undo" type="button"><span>↩️</span>Geri al</button>
+    <button class="tool" id="restart" type="button"><span>🔄</span>Yeniden</button>
+    <p class="hintline" id="hintline">Parmağını kaydır ya da ok tuşlarını kullan.</p>
+  </div>
+</div>
+
+<div class="overlay" id="menu">
+  <div class="sheet">
+    <h2>20<span>48</span></h2>
+    <p class="help">Kaydırdığında bütün karolar o yöne gider. <b>Aynı sayıdaki iki karo çarpışınca birleşir</b> ve iki katı olur. Her hamleden sonra boş bir yere yeni karo düşer. Hedef <b>2048</b> karosunu yapmak; sonrasında da devam edebilirsin.</p>
+    <p class="lbl">Tahta boyutu</p>
+    <div class="levels" id="levels"></div>
+    <p class="help small">Rekor her boyut için ayrı tutulur.</p>
+  </div>
+</div>
+
+<div class="overlay" id="win" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🎉</div>
+    <p class="end-title">2048 yaptın!</p>
+    <p class="lead" id="win-note"></p>
+    <div class="row">
+      <button class="btn primary" id="keep" type="button">Devam et</button>
+      <button class="btn light" id="win-new" type="button">Yeni oyun</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🧱</div>
+    <p class="end-title" id="over-title">Hamle kalmadı</p>
+    <div class="results">
+      <div><span>Skor</span><b id="over-score">0</b></div>
+      <div><span>En büyük</span><b id="over-max">0</b></div>
+    </div>
+    <p class="lead" id="over-note"></p>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Tekrar</button>
+      <button class="btn light" id="over-menu" type="button">Boyut seç</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -144,6 +144,8 @@
     .cover-dice svg{width:100%;height:100%}
     .cover-vet{background:#DFF1F7}
     .cover-vet svg{width:100%;height:100%}
+    .cover-2048{background:#1A1A2E}
+    .cover-2048 svg{width:100%;height:100%}
     .info{padding:14px 16px 18px;display:grid;gap:6px;align-content:start}
     .info h3{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.1;margin:0}
     .info p{margin:0;color:var(--muted);font-size:14px}
@@ -189,7 +191,7 @@
 
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>14</b></a>
-    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>14</b></a>
+    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>15</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>13</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>13</b></a>
   </nav>
@@ -200,8 +202,7 @@
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
         <a class="game" href="hayvan-doktoru/index.html">
-          <div class="cover is-new cover-vet" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-vet" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#EAF6FB"/>
               <rect y="78" width="164" height="24" fill="#CFE7F0"/>
@@ -541,9 +542,24 @@
     </section>
 
     <section class="group g-enes" id="enes" aria-labelledby="h-enes">
-      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 14 oyun</p></div>
+      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 15 oyun</p></div>
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
+        <a class="game" href="birlestir/index.html">
+          <div class="cover is-new cover-2048" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#1A1A2E"/>
+              <rect x="31" y="-1" width="102" height="104" rx="10" fill="#2E2E52"/>
+              <rect x="36" y="4" width="22" height="22" rx="5" fill="#EEE4DA"/><text x="47.0" y="18.666666666666668" font-family="Rubik, sans-serif" font-size="11" font-weight="800" fill="#2B2B40" text-anchor="middle">2</text><rect x="61" y="4" width="22" height="22" rx="5" fill="#EDE0C8"/><text x="72.0" y="18.666666666666668" font-family="Rubik, sans-serif" font-size="11" font-weight="800" fill="#2B2B40" text-anchor="middle">4</text><rect x="86" y="4" width="22" height="22" rx="5" fill="#F2B179"/><text x="97.0" y="18.666666666666668" font-family="Rubik, sans-serif" font-size="11" font-weight="800" fill="#FFF8F0" text-anchor="middle">8</text><rect x="111" y="4" width="22" height="22" rx="5" fill="#EDC22E"/><text x="122.0" y="17.333333333333332" font-family="Rubik, sans-serif" font-size="7" font-weight="800" fill="#FFF8F0" text-anchor="middle">2048</text><rect x="36" y="29" width="22" height="22" rx="5" fill="#F59563"/><text x="47.0" y="43.666666666666664" font-family="Rubik, sans-serif" font-size="11" font-weight="800" fill="#FFF8F0" text-anchor="middle">16</text><rect x="61" y="29" width="22" height="22" rx="5" fill="#F67C5F"/><text x="72.0" y="43.666666666666664" font-family="Rubik, sans-serif" font-size="11" font-weight="800" fill="#FFF8F0" text-anchor="middle">32</text><rect x="86" y="29" width="22" height="22" rx="5" fill="#F65E3B"/><text x="97.0" y="43.666666666666664" font-family="Rubik, sans-serif" font-size="11" font-weight="800" fill="#FFF8F0" text-anchor="middle">64</text><rect x="111" y="29" width="22" height="22" rx="5" fill="#EDCF72"/><text x="122.0" y="43.0" font-family="Rubik, sans-serif" font-size="9" font-weight="800" fill="#FFF8F0" text-anchor="middle">128</text><rect x="36" y="54" width="22" height="22" rx="5" fill="#EDE0C8"/><text x="47.0" y="68.66666666666667" font-family="Rubik, sans-serif" font-size="11" font-weight="800" fill="#2B2B40" text-anchor="middle">4</text><rect x="61" y="54" width="22" height="22" rx="5" fill="#EEE4DA"/><text x="72.0" y="68.66666666666667" font-family="Rubik, sans-serif" font-size="11" font-weight="800" fill="#2B2B40" text-anchor="middle">2</text><rect x="86" y="54" width="22" height="22" rx="5" fill="#F59563"/><text x="97.0" y="68.66666666666667" font-family="Rubik, sans-serif" font-size="11" font-weight="800" fill="#FFF8F0" text-anchor="middle">16</text><rect x="111" y="54" width="22" height="22" rx="5" fill="#F2B179"/><text x="122.0" y="68.66666666666667" font-family="Rubik, sans-serif" font-size="11" font-weight="800" fill="#FFF8F0" text-anchor="middle">8</text><rect x="36" y="79" width="22" height="22" rx="5" fill="#3A3A63"/><rect x="61" y="79" width="22" height="22" rx="5" fill="#F2B179"/><text x="72.0" y="93.66666666666667" font-family="Rubik, sans-serif" font-size="11" font-weight="800" fill="#FFF8F0" text-anchor="middle">8</text><rect x="86" y="79" width="22" height="22" rx="5" fill="#EDE0C8"/><text x="97.0" y="93.66666666666667" font-family="Rubik, sans-serif" font-size="11" font-weight="800" fill="#2B2B40" text-anchor="middle">4</text><rect x="111" y="79" width="22" height="22" rx="5" fill="#EEE4DA"/><text x="122.0" y="93.66666666666667" font-family="Rubik, sans-serif" font-size="11" font-weight="800" fill="#2B2B40" text-anchor="middle">2</text>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>2048</h3>
+            <p>Kaydır, aynı sayıları birleştir, 2048 karosunu yap. 4×4 ve 5×5 tahta, bir hamle geri alma, her boyut için ayrı skor rekoru.</p>
+            <div class="tags"><span>Enes için</span><span>Bulmaca</span><span>Rekor</span></div>
+          </div>
+        </a>
         <a class="game" href="su-yolu/index.html">
           <div class="cover cover-pipes" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

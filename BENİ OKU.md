@@ -226,7 +226,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── hayvan-doktoru/     ← Hayvan Doktoru, Egemen için alet seçip iyileştirme
+├── hayvan-doktoru/     ← Hayvan Doktoru, Egemen için alet seçip iyileştirme
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── birlestir/          ← 2048, Enes için kaydır-birleştir, skor rekoru
     ├── index.html
     ├── style.css
     └── game.js
