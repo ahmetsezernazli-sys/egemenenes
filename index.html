@@ -130,6 +130,8 @@
     .cover-garden svg{width:100%;height:100%}
     .cover-sudoku{background:#101826}
     .cover-sudoku svg{width:100%;height:100%}
+    .cover-kite{background:#2B1B4D}
+    .cover-kite svg{width:100%;height:100%}
     .info{padding:14px 16px 18px;display:grid;gap:6px;align-content:start}
     .info h3{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.1;margin:0}
     .info p{margin:0;color:var(--muted);font-size:14px}
@@ -176,7 +178,7 @@
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>12</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>13</b></a>
-    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>11</b></a>
+    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>12</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>11</b></a>
   </nav>
 
@@ -476,8 +478,7 @@
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
         <a class="game" href="sudoku/index.html">
-          <div class="cover is-new cover-sudoku" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-sudoku" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#101826"/>
               <rect x="54.7" y="45.3" width="18.2" height="11.3" fill="#34536E"/>
@@ -740,9 +741,38 @@
     </section>
 
     <section class="group g-ikisi" id="ikisi" aria-labelledby="h-ikisi">
-      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 11 oyun</p></div>
+      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 12 oyun</p></div>
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
+        <a class="game" href="ucurtma-yarisi/index.html">
+          <div class="cover is-new cover-kite" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <defs><linearGradient id="kgs" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#2B1B4D"/><stop offset=".45" stop-color="#7A3B86"/><stop offset=".78" stop-color="#E8705A"/><stop offset="1" stop-color="#FFC478"/>
+              </linearGradient></defs>
+              <rect width="164" height="102" fill="url(#kgs)"/>
+              <circle cx="128" cy="72" r="13" fill="#FFE6A3" fill-opacity=".9"/>
+              <ellipse cx="38" cy="30" rx="22" ry="7" fill="#FFD9C0" fill-opacity=".25"/>
+              <ellipse cx="104" cy="44" rx="18" ry="6" fill="#FFD9C0" fill-opacity=".22"/>
+              <circle cx="20" cy="14" r="1.4" fill="#FFFFFF"/><circle cx="62" cy="10" r="1.2" fill="#FFFFFF"/><circle cx="92" cy="20" r="1.2" fill="#FFFFFF"/>
+              <circle cx="70" cy="40" r="9" fill="none" stroke="#FFD166" stroke-width="3.5"/>
+              <circle cx="104" cy="64" r="9" fill="none" stroke="#FFD166" stroke-width="3.5"/>
+              <path d="M40 86 Q30 84 20 88" stroke="#38BDF8" stroke-width="2"/>
+              <path d="M46 56l11 12-11 12-11-12z" fill="#38BDF8"/>
+              <path d="M46 56l11 12-11 12z" fill="#0E7FB8"/>
+              <path d="M78 94 Q70 92 62 96" stroke="#FF7A8A" stroke-width="2"/>
+              <path d="M84 74l9 10-9 10-9-10z" fill="#FF7A8A"/>
+              <path d="M84 74l9 10-9 10z" fill="#C94459"/>
+              <path d="M0 96c20-10 40 2 60-4s40-8 60-2 30 8 44 4v8H0z" fill="#2A1740"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Uçurtma Yarışı</h3>
+            <p>Gün batımı gökyüzünde iki uçurtma. Altın halkaları topla, rüzgâra kapıl, kuşlardan kaç. Kaybetmek yok; bitişte halkası çok olan kazanır. Küçük oyuncu için tek tuş ve yardım.</p>
+            <div class="tags"><span>İkisi birlikte</span><span>2 oyuncu</span><span>Yarış</span></div>
+          </div>
+        </a>
         <a class="game" href="isik-duvari/index.html">
           <div class="cover cover-grid" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

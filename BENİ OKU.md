@@ -198,7 +198,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── sudoku/             ← Sudoku, Enes için 4 seviye, süre rekoru
+├── sudoku/             ← Sudoku, Enes için 4 seviye, süre rekoru
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── ucurtma-yarisi/     ← Uçurtma Yarışı, ikisi birlikte gün batımı yarışı
     ├── index.html
     ├── style.css
     └── game.js
