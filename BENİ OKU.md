@@ -218,7 +218,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── mangala/            ← Mangala, ikisi birlikte ya da bilgisayara karşı
+├── mangala/            ← Mangala, ikisi birlikte ya da bilgisayara karşı
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── bes-zar/            ← Beş Zar, tüm aile için 13 elli zar oyunu
     ├── index.html
     ├── style.css
     └── game.js
