@@ -222,7 +222,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── bes-zar/            ← Beş Zar, tüm aile için 13 elli zar oyunu
+├── bes-zar/            ← Beş Zar, tüm aile için 13 elli zar oyunu
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── hayvan-doktoru/     ← Hayvan Doktoru, Egemen için alet seçip iyileştirme
     ├── index.html
     ├── style.css
     └── game.js
