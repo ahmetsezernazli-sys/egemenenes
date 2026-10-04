@@ -134,6 +134,8 @@
     .cover-kite svg{width:100%;height:100%}
     .cover-pisti{background:#14432C}
     .cover-pisti svg{width:100%;height:100%}
+    .cover-snow{background:#BFE3F7}
+    .cover-snow svg{width:100%;height:100%}
     .info{padding:14px 16px 18px;display:grid;gap:6px;align-content:start}
     .info h3{font-family:var(--display);font-weight:400;font-size:1.5rem;line-height:1.1;margin:0}
     .info p{margin:0;color:var(--muted);font-size:14px}
@@ -178,7 +180,7 @@
   </header>
 
   <nav class="groups" aria-label="Oyun grupları">
-    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>12</b></a>
+    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>13</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>13</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>12</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>12</b></a>
@@ -186,9 +188,36 @@
 
   <main class="groups-main">
     <section class="group g-egemen" id="egemen" aria-labelledby="h-egemen">
-      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 12 oyun</p></div>
+      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 13 oyun</p></div>
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
+        <a class="game" href="kardan-adam/index.html">
+          <div class="cover is-new cover-snow" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <defs><linearGradient id="ksky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FC9E8"/><stop offset="1" stop-color="#DCEFFA"/></linearGradient></defs>
+              <rect width="164" height="102" fill="url(#ksky)"/>
+              <path d="M12 46 L21 62 H3 Z" fill="#1F6B46"/><path d="M12 40 L19 50 H5 Z" fill="#2C7A52"/><path d="M37 39 L46 62 H28 Z" fill="#1F6B46"/><path d="M37 33 L44 43 H30 Z" fill="#2C7A52"/><path d="M62 42 L71 62 H53 Z" fill="#1F6B46"/><path d="M62 36 L69 46 H55 Z" fill="#2C7A52"/><path d="M87 45 L96 62 H78 Z" fill="#1F6B46"/><path d="M87 39 L94 49 H80 Z" fill="#2C7A52"/><path d="M112 38 L121 62 H103 Z" fill="#1F6B46"/><path d="M112 32 L119 42 H105 Z" fill="#2C7A52"/><path d="M137 41 L146 62 H128 Z" fill="#1F6B46"/><path d="M137 35 L144 45 H130 Z" fill="#2C7A52"/><path d="M162 44 L171 62 H153 Z" fill="#1F6B46"/><path d="M162 38 L169 48 H155 Z" fill="#2C7A52"/>
+              <path d="M0 64 Q40 58 82 63 T164 62 V102 H0 Z" fill="#FFFFFF"/>
+              <circle cx="58" cy="84" r="18" fill="#F2F8FC"/>
+              <circle cx="58" cy="60" r="13" fill="#F7FBFD"/>
+              <circle cx="58" cy="42" r="9.5" fill="#FFFFFF"/>
+              <path d="M58 42l16 2-16 2z" fill="#F97316"/>
+              <circle cx="54" cy="38" r="1.7" fill="#27405A"/><circle cx="62" cy="38" r="1.7" fill="#27405A"/>
+              <rect x="46" y="29" width="24" height="3.5" fill="#334155"/><rect x="51" y="20" width="14" height="10" fill="#334155"/>
+              <rect x="47" y="52" width="22" height="5" fill="#E5484D"/>
+              <path d="M46 60l-14-6M70 60l14-8" stroke="#8B5A2B" stroke-width="3"/>
+              <circle cx="58" cy="58" r="2" fill="#334155"/><circle cx="58" cy="66" r="2" fill="#334155"/>
+              <circle cx="112" cy="78" r="13" fill="#EAF4FA"/><circle cx="134" cy="84" r="9" fill="#EAF4FA"/>
+              <circle cx="22" cy="20" r="2" fill="#FFFFFF"/><circle cx="96" cy="14" r="1.6" fill="#FFFFFF"/><circle cx="140" cy="28" r="2" fill="#FFFFFF"/><circle cx="120" cy="44" r="1.6" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Kardan Adam</h3>
+            <p>Parmağınla karı yuvarla, büyük orta küçük üç top yap, üst üste koy ve süsle: havuç burun, şapka, atkı, kollar. Sonunda kardan adamın canlanıp el sallıyor.</p>
+            <div class="tags"><span>Egemen için</span><span>Okuma yok</span><span>Kaybetmek yok</span></div>
+          </div>
+        </a>
         <a class="game" href="sebze-bahcesi/index.html">
           <div class="cover cover-garden" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
@@ -1044,8 +1073,7 @@
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
         <a class="game" href="pisti/index.html">
-          <div class="cover is-new cover-pisti" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-pisti" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#14432C"/>
               <ellipse cx="82" cy="52" rx="86" ry="48" fill="#1C5C3C"/>

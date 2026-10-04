@@ -206,7 +206,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── pisti/              ← Pişti, tüm aile için klasik kart oyunu
+├── pisti/              ← Pişti, tüm aile için klasik kart oyunu
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── kardan-adam/        ← Kardan Adam, Egemen için yuvarla-koy-süsle
     ├── index.html
     ├── style.css
     └── game.js
