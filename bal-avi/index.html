@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bal Avı · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Aile şans oyunu: kovandan bal çek, arılar kızmadan dur. 1-6 oyuncu, boş koltuğa bilgisayar, küçüklere kalkan ve yardım.">
+  <meta name="theme-color" content="#2B1D0E">
+  <meta property="og:title" content="Bal Avı">
+  <meta property="og:description" content="Kovandan bal çek, ne zaman duracağına sen karar ver. İki arı gelirse bal kaçar!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%232B1D0E'/%3E%3Cellipse cx='50' cy='30' rx='20' ry='12' fill='%23F6B93B'/%3E%3Cellipse cx='50' cy='48' rx='30' ry='14' fill='%23E89A1E'/%3E%3Cellipse cx='50' cy='68' rx='26' ry='13' fill='%23F6B93B'/%3E%3Cellipse cx='50' cy='70' rx='7' ry='6' fill='%232B1D0E'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Bal <span>Avı</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Ayarlar</button>
+    </div>
+  </header>
+
+  <ul class="players" id="players" aria-label="Oyuncular"></ul>
+
+  <main class="stage">
+    <p class="banner" id="banner" hidden>🏁 Son tur!</p>
+
+    <button class="hive" id="hive" type="button" aria-label="Kovandan çek">
+      <svg viewBox="0 0 200 190" aria-hidden="true">
+        <path d="M0 18 Q60 8 100 14 T200 10" stroke="#6B4423" stroke-width="12" stroke-linecap="round" fill="none"/>
+        <path d="M150 12 q14 -10 26 -4 q-10 10 -26 4z" fill="#5FA84A"/>
+        <path d="M100 14 V34" stroke="#4A2E14" stroke-width="5"/>
+        <ellipse cx="100" cy="46" rx="34" ry="16" fill="#F6B93B"/>
+        <ellipse cx="100" cy="74" rx="56" ry="20" fill="#E89A1E"/>
+        <ellipse cx="100" cy="104" rx="66" ry="22" fill="#F6B93B"/>
+        <ellipse cx="100" cy="134" rx="58" ry="20" fill="#E89A1E"/>
+        <ellipse cx="100" cy="160" rx="40" ry="15" fill="#F6B93B"/>
+        <path d="M58 70 Q100 62 142 70 M42 100 Q100 90 158 100 M50 130 Q100 122 150 130" stroke="#FFE08A" stroke-width="3" fill="none" opacity=".55"/>
+        <ellipse cx="100" cy="128" rx="15" ry="12" fill="#3A2410"/>
+        <ellipse cx="100" cy="131" rx="11" ry="7" fill="#1E1208"/>
+      </svg>
+      <span class="hive-tip" id="hive-tip">Dokun!</span>
+    </button>
+
+    <div class="bag" id="bag" aria-live="polite"></div>
+
+    <div class="turn">
+      <div class="bees" id="bees" aria-label="Arılar"></div>
+      <div class="haul"><span id="haul">0</span><small>🍯 bu tur</small></div>
+    </div>
+    <div class="tray" id="tray" aria-label="Bu tur çekilenler"></div>
+
+    <div class="actions">
+      <button class="act draw" id="draw" type="button"><span aria-hidden="true">🐝</span> Çek</button>
+      <button class="act stop" id="stop" type="button"><span aria-hidden="true">✋</span> Dur</button>
+    </div>
+    <p class="hintline" id="hintline"></p>
+    <p class="record" id="record"></p>
+  </main>
+</div>
+
+<div class="swarm" id="swarm" aria-hidden="true"></div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Bal Avı 🍯</h2>
+    <p class="help">Sırası gelen <b>kovana dokunur</b> ve içinden bir şey çeker: <b>bal</b> (1, 2 ya da 3), <b>altın petek</b> (5) ya da <b>arı</b>. İstediği kadar çekebilir. <b>✋ Dur</b> deyince o turun balı kavanozuna girer. Ama aynı turda <b>iki arı</b> çıkarsa arılar kızar ve o turun balı kaçar! Biri hedefe ulaşınca tur tamamlanır, en çok balı olan kazanır.</p>
+    <fieldset>
+      <legend>Oyuncu sayısı</legend>
+      <div class="seg wide" id="count" role="radiogroup" aria-label="Oyuncu sayısı">
+        <label><input type="radio" name="count" value="1"><span>1</span></label>
+        <label><input type="radio" name="count" value="2"><span>2</span></label>
+        <label><input type="radio" name="count" value="3"><span>3</span></label>
+        <label><input type="radio" name="count" value="4" checked><span>4</span></label>
+        <label><input type="radio" name="count" value="5"><span>5</span></label>
+        <label><input type="radio" name="count" value="6"><span>6</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Hedef</legend>
+      <div class="seg" role="radiogroup" aria-label="Hedef">
+        <label><input type="radio" name="target" value="30"><span>Kısa · 30 🍯</span></label>
+        <label><input type="radio" name="target" value="50" checked><span>Orta · 50 🍯</span></label>
+        <label><input type="radio" name="target" value="80"><span>Uzun · 80 🍯</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Oyuncular</legend>
+      <div id="rows" class="rows"></div>
+      <p class="help"><b>🤖 bilgisayar:</b> o koltuğu bilgisayar oynar. <b>✨ yardım:</b> sayılar sesli söylenir, “çek” ya da “dur” düğmesi parlayarak yol gösterir. <b>🛡 kalkan:</b> bu oyuncunun turu ancak <b>üç</b> arıda biter — küçükler için.</p>
+    </fieldset>
+    <button class="btn primary big" type="submit">Oyunu başlat</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🍯</div>
+    <p class="end-title" id="end-title">Enes kazandı!</p>
+    <div class="results" id="results"></div>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Tekrar oyna</button>
+      <button class="btn light" id="end-setup" type="button">Ayarlar</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

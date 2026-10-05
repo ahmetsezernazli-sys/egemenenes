@@ -234,10 +234,14 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── dama/               ← Dama, ikisi birlikte ya da bilgisayara karşı
+├── dama/               ← Dama, ikisi birlikte ya da bilgisayara karşı
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+└── bal-avi/            ← Bal Avı, tüm aile için şans oyunu (çek ya da dur)
     ├── index.html
     ├── style.css
-    └── game.js
+    └── game.js         ← kovanın içeriği dosyanın başındaki BAG listesinde
 ```
 
 ## Bilgisayarda oynamak
