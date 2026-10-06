@@ -238,10 +238,14 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── bal-avi/            ← Bal Avı, tüm aile için şans oyunu (çek ya da dur)
+├── bal-avi/            ← Bal Avı, tüm aile için şans oyunu (çek ya da dur)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← kovanın içeriği dosyanın başındaki BAG listesinde
+└── itfaiye/            ← İtfaiye, Egemen için yangın söndürme ve hayvan kurtarma
     ├── index.html
     ├── style.css
-    └── game.js         ← kovanın içeriği dosyanın başındaki BAG listesinde
+    └── game.js         ← binalar dosyanın başındaki BUILDINGS listesinde
 ```
 
 ## Bilgisayarda oynamak
