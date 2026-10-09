@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kare Kapmaca · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Defter oyunu kare kapmaca: sırayla iki nokta arasına çizgi çek, karenin son kenarını çizen kareyi kapar ve bir daha oynar. İki kişi ya da bilgisayara karşı, küçüklere yardım ışıkları.">
+  <meta name="theme-color" content="#FDFBF5">
+  <meta property="og:title" content="Kare Kapmaca">
+  <meta property="og:description" content="Çizgi çek, kareyi kap, bir daha oyna! İki kişilik defter oyunu.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23FDFBF5'/%3E%3Crect x='22' y='22' width='28' height='28' fill='%233D8BFD' fill-opacity='.35'/%3E%3Crect x='50' y='50' width='28' height='28' fill='%23FF7A2F' fill-opacity='.35'/%3E%3Cpath d='M22 22H78M22 50H78M22 22V78M50 22V78M50 78H78M78 50V78' stroke='%2327405A' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Kare <span>Kapmaca</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Ayarlar</button>
+    </div>
+  </header>
+
+  <div class="score" id="score"></div>
+
+  <main class="board-wrap">
+    <svg class="board" id="board" role="group" aria-label="Kare kapmaca tahtası"></svg>
+  </main>
+
+  <p class="hintline" id="hintline">İki nokta arasına dokun, çizgi çek.</p>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Kare Kapmaca</h2>
+    <p class="help">Sırayla <b>iki nokta arasına bir çizgi</b> çekin. Bir karenin <b>dördüncü kenarını</b> çizen o kareyi kapar ve <b>bir daha oynar</b>. Bütün çizgiler bitince en çok karesi olan kazanır. İpucu: bir karenin üçüncü kenarını çizersen, kareyi rakibine hediye etmiş olursun!</p>
+    <fieldset>
+      <legend>Mod</legend>
+      <div class="seg wide" role="radiogroup" aria-label="Mod">
+        <label><input type="radio" name="mode" value="2p" checked><span>👥 İki kişi</span></label>
+        <label><input type="radio" name="mode" value="cpu"><span>🤖 Bilgisayara karşı</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Tahta</legend>
+      <div class="seg" role="radiogroup" aria-label="Tahta boyu">
+        <label><input type="radio" name="size" value="3"><span>Küçük · 3×3</span></label>
+        <label><input type="radio" name="size" value="4" checked><span>Orta · 4×4</span></label>
+        <label><input type="radio" name="size" value="5"><span>Büyük · 5×5</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend><i class="dot" style="background:#3D8BFD"></i>1. oyuncu 🚀</legend>
+      <input type="text" id="pn-0" maxlength="12" aria-label="1. oyuncunun adı">
+      <label class="toggle"><input type="checkbox" id="help-0"><span>✨ yardım ışıkları</span></label>
+    </fieldset>
+    <fieldset>
+      <legend><i class="dot" style="background:#FF7A2F"></i>2. oyuncu 🎈</legend>
+      <input type="text" id="pn-1" maxlength="12" aria-label="2. oyuncunun adı">
+      <label class="toggle"><input type="checkbox" id="help-1" checked><span>✨ yardım ışıkları</span></label>
+      <div class="seg" id="cpu-level" role="radiogroup" aria-label="Bilgisayarın seviyesi" hidden>
+        <label><input type="radio" name="cpu" value="0"><span>Kolay</span></label>
+        <label><input type="radio" name="cpu" value="1" checked><span>Normal</span></label>
+        <label><input type="radio" name="cpu" value="2"><span>Zor</span></label>
+      </div>
+      <p class="help"><b>✨ yardım:</b> kare kapatan çizgiler <b>altın</b> renkte parlar, rakibe kare verecek çizgiler <b>kırmızı</b> yanar ve sıra gelince ad sesli söylenir.</p>
+    </fieldset>
+    <button class="btn primary big" type="submit">Oyunu başlat</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title">Enes kazandı!</p>
+    <p class="lead" id="end-note"></p>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Tekrar oyna</button>
+      <button class="btn light" id="end-setup" type="button">Ayarlar</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -140,6 +140,8 @@
     .cover-pipes svg{width:100%;height:100%}
     .cover-mangala{background:#2E1F14}
     .cover-mangala svg{width:100%;height:100%}
+    .cover-kare{background:#FDFBF5}
+    .cover-kare svg{width:100%;height:100%}
     .cover-nonogram{background:#16213A}
     .cover-nonogram svg{width:100%;height:100%}
     .cover-itfaiye{background:#9FD3F0}
@@ -200,7 +202,7 @@
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>15</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>16</b></a>
-    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>14</b></a>
+    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>15</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>14</b></a>
   </nav>
 
@@ -583,8 +585,7 @@
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
         <a class="game" href="resim-bulmaca/index.html">
-          <div class="cover is-new cover-nonogram" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-nonogram" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#16213A"/>
               <rect x="20" y="4" width="116" height="96" rx="6" fill="#FFFFFF"/>
@@ -898,9 +899,37 @@
     </section>
 
     <section class="group g-ikisi" id="ikisi" aria-labelledby="h-ikisi">
-      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 14 oyun</p></div>
+      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 15 oyun</p></div>
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
+        <a class="game" href="kare-kapmaca/index.html">
+          <div class="cover is-new cover-kare" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#FDFBF5"/>
+              <path d="M0 12H164M0 24H164M0 36H164M0 48H164M0 60H164M0 72H164M0 84H164M0 96H164M12 0V102M24 0V102M36 0V102M48 0V102M60 0V102M72 0V102M84 0V102M96 0V102M108 0V102M120 0V102M132 0V102M144 0V102M156 0V102" stroke="#E4ECF5"/>
+              <rect x="44" y="14" width="26" height="26" rx="3" fill="#3D8BFD" fill-opacity=".25"/>
+              <rect x="70" y="40" width="26" height="26" rx="3" fill="#FF7A2F" fill-opacity=".25"/>
+              <rect x="96" y="40" width="26" height="26" rx="3" fill="#FF7A2F" fill-opacity=".25"/>
+              <g stroke-width="4" stroke-linecap="round">
+                <path d="M44 14H70M44 14V40M70 14V40M44 40H70" stroke="#3D8BFD"/>
+                <path d="M70 40H96M96 40H122M122 40V66M70 66H96M96 66H122" stroke="#FF7A2F"/>
+                <path d="M70 40V66M96 40V66M96 14H122M96 14V40" stroke="#3D8BFD"/>
+                <path d="M44 66V92M122 66V92" stroke="#FF7A2F"/>
+                <path d="M70 14H96" stroke="#F5B700" stroke-width="5"/>
+              </g>
+              <g stroke="#D6DEE8" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 6">
+                <path d="M44 40V66M44 66H70M70 66V92M44 92H70M70 92H96M96 66V92M96 92H122M122 14V40"/>
+              </g>
+              <g fill="#27405A"><circle cx="44" cy="14" r="3.5"/><circle cx="70" cy="14" r="3.5"/><circle cx="96" cy="14" r="3.5"/><circle cx="122" cy="14" r="3.5"/><circle cx="44" cy="40" r="3.5"/><circle cx="70" cy="40" r="3.5"/><circle cx="96" cy="40" r="3.5"/><circle cx="122" cy="40" r="3.5"/><circle cx="44" cy="66" r="3.5"/><circle cx="70" cy="66" r="3.5"/><circle cx="96" cy="66" r="3.5"/><circle cx="122" cy="66" r="3.5"/><circle cx="44" cy="92" r="3.5"/><circle cx="70" cy="92" r="3.5"/><circle cx="96" cy="92" r="3.5"/><circle cx="122" cy="92" r="3.5"/></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Kare Kapmaca</h3>
+            <p>Defter oyunu: sırayla iki nokta arasına çizgi çek, karenin son kenarını çizen kareyi kapar ve bir daha oynar. İki kişi ya da bilgisayara karşı; küçüğe kare kapatan çizgiler parlar.</p>
+            <div class="tags"><span>İkisi birlikte</span><span>2 oyuncu</span><span>Strateji</span></div>
+          </div>
+        </a>
         <a class="game" href="dama/index.html">
           <div class="cover cover-dama" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

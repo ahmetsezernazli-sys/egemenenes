@@ -246,11 +246,15 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js         ← binalar dosyanın başındaki BUILDINGS listesinde
-└── resim-bulmaca/      ← Resim Bulmaca, Enes için nonogram (5×5, 10×10, 15×15, rastgele)
+├── resim-bulmaca/      ← Resim Bulmaca, Enes için nonogram (5×5, 10×10, 15×15, rastgele)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← resimler dosyanın başındaki PICS listesinde; yeni resim
+│                         tahminsiz çözülebilmeli (solveGrid ile kontrol edin)
+└── kare-kapmaca/       ← Kare Kapmaca, ikisi birlikte ya da bilgisayara karşı (noktalar ve kutular)
     ├── index.html
     ├── style.css
-    └── game.js         ← resimler dosyanın başındaki PICS listesinde; yeni resim
-                          tahminsiz çözülebilmeli (solveGrid ile kontrol edin)
+    └── game.js
 ```
 
 ## Bilgisayarda oynamak
