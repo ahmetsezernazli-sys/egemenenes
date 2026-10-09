@@ -242,10 +242,15 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js         ← kovanın içeriği dosyanın başındaki BAG listesinde
-└── itfaiye/            ← İtfaiye, Egemen için yangın söndürme ve hayvan kurtarma
+├── itfaiye/            ← İtfaiye, Egemen için yangın söndürme ve hayvan kurtarma
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← binalar dosyanın başındaki BUILDINGS listesinde
+└── resim-bulmaca/      ← Resim Bulmaca, Enes için nonogram (5×5, 10×10, 15×15, rastgele)
     ├── index.html
     ├── style.css
-    └── game.js         ← binalar dosyanın başındaki BUILDINGS listesinde
+    └── game.js         ← resimler dosyanın başındaki PICS listesinde; yeni resim
+                          tahminsiz çözülebilmeli (solveGrid ile kontrol edin)
 ```
 
 ## Bilgisayarda oynamak

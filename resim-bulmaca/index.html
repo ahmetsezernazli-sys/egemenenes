@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Resim Bulmaca · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için resimli mantık bulmacası (nonogram): satır ve sütun sayılarına göre kareleri boya, gizli resmi ortaya çıkar. 5×5, 10×10, 15×15 ve sonsuz rastgele bulmaca; hepsi tahmin gerektirmeden çözülür.">
+  <meta name="theme-color" content="#16213A">
+  <meta property="og:title" content="Resim Bulmaca">
+  <meta property="og:description" content="Sayılara bak, kareleri boya, gizli resmi bul.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2316213A'/%3E%3Cg fill='%23F5C542'%3E%3Crect x='20' y='20' width='18' height='18'/%3E%3Crect x='41' y='20' width='18' height='18'/%3E%3Crect x='41' y='41' width='18' height='18'/%3E%3Crect x='62' y='41' width='18' height='18'/%3E%3Crect x='20' y='62' width='18' height='18'/%3E%3Crect x='62' y='62' width='18' height='18'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Resim <span>Bulmaca</span></h1>
+    <div class="bar-actions">
+      <button class="btn small" id="to-list" type="button">Bulmacalar</button>
+    </div>
+  </header>
+
+  <!-- bulmaca listesi -->
+  <section class="list" id="list">
+    <p class="intro">Her satırın ve sütunun başındaki sayılar, orada <b>yan yana kaç kare</b> boyanacağını sırasıyla söyler. Gruplar arasında en az bir boş kare vardır. Hepsini doğru boyayınca gizli resim ortaya çıkar. Hiçbirinde tahmin gerekmez — her kare mantıkla bulunur.</p>
+    <div id="packs"></div>
+  </section>
+
+  <!-- oyun -->
+  <section class="play" id="play" hidden>
+    <div class="hud">
+      <span class="pill" id="p-name">10×10</span>
+      <span class="pill time" id="p-time">0:00</span>
+      <span class="pill" id="p-best"></span>
+    </div>
+    <div class="board-wrap" id="board-wrap">
+      <div class="board" id="board" role="grid" aria-label="Bulmaca"></div>
+    </div>
+    <div class="tools">
+      <div class="seg" role="radiogroup" aria-label="Kalem">
+        <button type="button" id="m-fill" class="on" aria-pressed="true"><i class="sw-fill"></i>Boya</button>
+        <button type="button" id="m-x" aria-pressed="false"><i class="sw-x">✕</i>Boş</button>
+      </div>
+      <button class="tool" id="undo" type="button" aria-label="Geri al">↶</button>
+      <button class="tool" id="hint" type="button" aria-label="İpucu">💡<b id="hint-n"></b></button>
+      <button class="tool" id="restart" type="button" aria-label="Baştan başla">⟲</button>
+    </div>
+    <p class="hintline" id="hintline">Kareye dokun ya da parmağını sürükle. Boş olduğunu bildiğin karelere ✕ koy.</p>
+  </section>
+</div>
+
+<div class="overlay" id="win" hidden>
+  <div class="sheet center">
+    <canvas id="win-pic" width="240" height="240" aria-hidden="true"></canvas>
+    <p class="end-title" id="win-title">Roket!</p>
+    <p class="end-sub" id="win-sub"></p>
+    <div class="row">
+      <button class="btn primary" id="win-next" type="button">Sonraki</button>
+      <button class="btn light" id="win-list" type="button">Bulmacalar</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
