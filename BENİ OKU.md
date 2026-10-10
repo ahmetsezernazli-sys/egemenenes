@@ -255,10 +255,14 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js
-└── hizli-goz/          ← Hızlı Göz, tüm aile için ortak resim bulma yarışı (1-4 oyuncu)
+├── hizli-goz/          ← Hızlı Göz, tüm aile için ortak resim bulma yarışı (1-4 oyuncu)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← resimler ve sesli adları dosyanın başındaki SYMBOLS listesinde (57 tane)
+└── akvaryum/           ← Akvaryum, Egemen için renkli yemle balık besleme, yumurta ve yavrular
     ├── index.html
     ├── style.css
-    └── game.js         ← resimler ve sesli adları dosyanın başındaki SYMBOLS listesinde (57 tane)
+    └── game.js         ← balıklar tarayıcıda saklanır (en çok 10 balık)
 ```
 
 ## Bilgisayarda oynamak
