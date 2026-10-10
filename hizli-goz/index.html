@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hızlı Göz · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Aile hız oyunu: her iki kartta tam olarak bir ortak resim var. Kendi kartında ortak resmi ilk bulan ortadaki kartı kapar. 1-4 oyuncu aynı ekranda, boş koltuğa bilgisayar, küçüklere yardım ışığı.">
+  <meta name="theme-color" content="#2A1B4A">
+  <meta property="og:title" content="Hızlı Göz">
+  <meta property="og:description" content="İki kartta tek bir ortak resim var. İlk bulan kartı kapar!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%232A1B4A'/%3E%3Ccircle cx='34' cy='50' r='24' fill='%23fff'/%3E%3Ccircle cx='66' cy='50' r='24' fill='%23FFD166'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23E5484D'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Hızlı <span>Göz</span></h1>
+    <div class="bar-actions">
+      <span class="pile" id="pile" aria-live="polite"></span>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Ayarlar</button>
+    </div>
+  </header>
+
+  <main class="table" id="table">
+    <div class="row top" id="row-top"></div>
+    <div class="mid">
+      <div class="center-wrap">
+        <div class="card center" id="center" aria-label="Ortadaki kart"></div>
+        <div class="count" id="count" hidden>3</div>
+      </div>
+    </div>
+    <div class="row bottom" id="row-bottom"></div>
+  </main>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Hızlı Göz 👀</h2>
+    <p class="help">Herkesin önünde bir kart, ortada bir kart var. <b>Her iki kartta tam olarak bir ortak resim</b> bulunur. Ortadaki kartla kendi kartındaki ortak resmi bul ve <b>kendi kartında ona dokun</b>. İlk bulan ortadaki kartı kapar, o kart onun yeni kartı olur. Yanlış resme dokunan bir an donar. Deste bitince en çok kartı olan kazanır.</p>
+    <fieldset>
+      <legend>Oyuncu sayısı</legend>
+      <div class="seg wide" role="radiogroup" aria-label="Oyuncu sayısı">
+        <label><input type="radio" name="count" value="1"><span>1</span></label>
+        <label><input type="radio" name="count" value="2" checked><span>2</span></label>
+        <label><input type="radio" name="count" value="3"><span>3</span></label>
+        <label><input type="radio" name="count" value="4"><span>4</span></label>
+      </div>
+      <p class="help" id="solo-note" hidden><b>Tek kişi:</b> 60 saniyede kaç kart kapabilirsin? Rekorun bu cihazda saklanır.</p>
+      <p class="help" id="seat-note">Telefonu ya da tableti masaya koyun: üstteki oyuncunun kartı ona dönük durur. 3-4 kişi için tablet daha rahattır.</p>
+    </fieldset>
+    <fieldset>
+      <legend>Kartlar</legend>
+      <div class="seg" role="radiogroup" aria-label="Karttaki resim sayısı">
+        <label><input type="radio" name="sym" value="6" checked><span>6 resim · kolay</span></label>
+        <label><input type="radio" name="sym" value="8"><span>8 resim · zor</span></label>
+      </div>
+      <div class="seg" role="radiogroup" aria-label="Deste uzunluğu" id="len-seg">
+        <label><input type="radio" name="len" value="15"><span>Kısa · 15 kart</span></label>
+        <label><input type="radio" name="len" value="25" checked><span>Orta · 25 kart</span></label>
+        <label><input type="radio" name="len" value="0"><span>Bütün deste</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Oyuncular</legend>
+      <div id="rows" class="rows"></div>
+      <div class="seg" role="radiogroup" aria-label="Bilgisayarın hızı" id="bot-seg">
+        <label><input type="radio" name="bot" value="0"><span>🤖 Yavaş</span></label>
+        <label><input type="radio" name="bot" value="1" checked><span>🤖 Normal</span></label>
+        <label><input type="radio" name="bot" value="2"><span>🤖 Hızlı</span></label>
+      </div>
+      <p class="help"><b>🤖 bilgisayar:</b> o koltuğu bilgisayar oynar. <b>✨ yardım:</b> birkaç saniye bulamazsan doğru resim kendi kartında parlamaya başlar ve bulunan resmin adı sesli söylenir.</p>
+    </fieldset>
+    <button class="btn primary big" type="submit">Oyunu başlat</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">👀</div>
+    <p class="end-title" id="end-title">Enes kazandı!</p>
+    <div class="results" id="results"></div>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Tekrar oyna</button>
+      <button class="btn light" id="end-setup" type="button">Ayarlar</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
