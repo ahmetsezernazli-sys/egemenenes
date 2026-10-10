@@ -271,10 +271,14 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js         ← fizik ayarları ve top boyları dosyanın başında
-└── dart/               ← Dart, tüm aile için puan avı ya da 301 (1-6 oyuncu)
+├── dart/               ← Dart, tüm aile için puan avı ya da 301 (1-6 oyuncu)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← halka genişlikleri RING, nişan hızları SPEED, titreme WOBBLE
+└── saklambac/          ← Saklambaç, Egemen için saklanan hayvanları bulma (oda ve bahçe)
     ├── index.html
     ├── style.css
-    └── game.js         ← halka genişlikleri RING, nişan hızları SPEED, titreme WOBBLE
+    └── game.js         ← saklanma yerleri dosyanın başındaki SCENES listesinde
 ```
 
 ## Bilgisayarda oynamak
