@@ -267,10 +267,14 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js         ← üstte satranç motoru (hamle üretici perft ile doğrulandı), altta arayüz
-└── sumo/               ← Sumo Topları, ikisi birlikte ya da bilgisayara karşı ring itişmesi
+├── sumo/               ← Sumo Topları, ikisi birlikte ya da bilgisayara karşı ring itişmesi
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← fizik ayarları ve top boyları dosyanın başında
+└── dart/               ← Dart, tüm aile için puan avı ya da 301 (1-6 oyuncu)
     ├── index.html
     ├── style.css
-    └── game.js         ← fizik ayarları ve top boyları dosyanın başında
+    └── game.js         ← halka genişlikleri RING, nişan hızları SPEED, titreme WOBBLE
 ```
 
 ## Bilgisayarda oynamak
