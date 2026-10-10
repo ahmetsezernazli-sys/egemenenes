@@ -263,10 +263,14 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js         ← balıklar tarayıcıda saklanır (en çok 10 balık)
-└── satranc/            ← Satranç, Enes için bilgisayara karşı (3 seviye) ya da iki kişi
+├── satranc/            ← Satranç, Enes için bilgisayara karşı (3 seviye) ya da iki kişi
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← üstte satranç motoru (hamle üretici perft ile doğrulandı), altta arayüz
+└── sumo/               ← Sumo Topları, ikisi birlikte ya da bilgisayara karşı ring itişmesi
     ├── index.html
     ├── style.css
-    └── game.js         ← üstte satranç motoru (hamle üretici perft ile doğrulandı), altta arayüz
+    └── game.js         ← fizik ayarları ve top boyları dosyanın başında
 ```
 
 ## Bilgisayarda oynamak
