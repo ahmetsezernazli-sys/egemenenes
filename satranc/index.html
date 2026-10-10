@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Satranç · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için satranç: bilgisayara karşı üç seviye ya da iki kişi. Rok, geçerken alma, terfi, şah mat ve pat kurallarının hepsi; gidilebilecek kareler, ipucu ve geri al.">
+  <meta name="theme-color" content="#2B2118">
+  <meta property="og:title" content="Satranç">
+  <meta property="og:description" content="Bilgisayara karşı ya da iki kişi satranç. İpucu, geri al, üç seviye.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%232B2118'/%3E%3Cpath d='M30 84h40v-8H30zM34 74h32l-6-30h6v-8h-8l4-14h-8v6h-6v-6h-6v6h-6v-6h-8l4 14h-8v8h6z' fill='%23F3E3C3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Sat<span>ranç</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Yeni oyun</button>
+    </div>
+  </header>
+
+  <div class="side top" id="side-top"><span class="who" id="who-top"></span><span class="caps" id="caps-top"></span></div>
+  <main class="board-wrap">
+    <div class="board" id="board" role="grid" aria-label="Satranç tahtası"></div>
+  </main>
+  <div class="side bottom" id="side-bottom"><span class="who" id="who-bottom"></span><span class="caps" id="caps-bottom"></span></div>
+
+  <div class="tools">
+    <button class="tool" id="undo" type="button" aria-label="Geri al">↶ <small>Geri al</small></button>
+    <button class="tool" id="hint" type="button" aria-label="İpucu">💡 <small>İpucu</small></button>
+    <button class="tool" id="flip" type="button" aria-label="Tahtayı çevir">⇅ <small>Çevir</small></button>
+  </div>
+  <p class="status" id="status" aria-live="polite">Beyaz başlar.</p>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Satranç ♞</h2>
+    <fieldset>
+      <legend>Rakip</legend>
+      <div class="seg wide" role="radiogroup" aria-label="Rakip">
+        <label><input type="radio" name="mode" value="cpu" checked><span>🤖 Bilgisayar</span></label>
+        <label><input type="radio" name="mode" value="2p"><span>👥 İki kişi</span></label>
+      </div>
+    </fieldset>
+    <fieldset id="cpu-opts">
+      <legend>Bilgisayarın seviyesi</legend>
+      <div class="seg" role="radiogroup" aria-label="Seviye">
+        <label><input type="radio" name="level" value="0"><span>Kolay</span></label>
+        <label><input type="radio" name="level" value="1" checked><span>Normal</span></label>
+        <label><input type="radio" name="level" value="2"><span>Zor</span></label>
+      </div>
+      <legend>Senin rengin</legend>
+      <div class="seg" role="radiogroup" aria-label="Renk">
+        <label><input type="radio" name="color" value="w" checked><span>♔ Beyaz</span></label>
+        <label><input type="radio" name="color" value="b"><span>♚ Siyah</span></label>
+        <label><input type="radio" name="color" value="r"><span>🎲 Rastgele</span></label>
+      </div>
+      <p class="help" id="wins"></p>
+    </fieldset>
+    <label class="toggle"><input type="checkbox" id="show-moves" checked><span>Taşa dokununca gidebileceği kareleri göster</span></label>
+    <p class="help">Taşına dokun, sonra gideceği kareye dokun. <b>Rok</b> için şahını iki kare yana götür. Piyon son sıraya ulaşınca hangi taş olacağını seçersin. <b>💡 İpucu</b> iyi bir hamleyi gösterir, <b>↶ Geri al</b> son hamleni geri alır.</p>
+    <button class="btn primary big" type="submit">Oyunu başlat</button>
+  </form>
+</div>
+
+<div class="overlay" id="promo" hidden>
+  <div class="sheet center">
+    <p class="end-title">Piyon ne olsun?</p>
+    <div class="promo-row" id="promo-row"></div>
+  </div>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" id="end-icon" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title">Şah mat!</p>
+    <p class="lead" id="end-note"></p>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Tekrar oyna</button>
+      <button class="btn light" id="end-board" type="button">Tahtaya bak</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

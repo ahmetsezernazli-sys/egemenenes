@@ -259,10 +259,14 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js         ← resimler ve sesli adları dosyanın başındaki SYMBOLS listesinde (57 tane)
-└── akvaryum/           ← Akvaryum, Egemen için renkli yemle balık besleme, yumurta ve yavrular
+├── akvaryum/           ← Akvaryum, Egemen için renkli yemle balık besleme, yumurta ve yavrular
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← balıklar tarayıcıda saklanır (en çok 10 balık)
+└── satranc/            ← Satranç, Enes için bilgisayara karşı (3 seviye) ya da iki kişi
     ├── index.html
     ├── style.css
-    └── game.js         ← balıklar tarayıcıda saklanır (en çok 10 balık)
+    └── game.js         ← üstte satranç motoru (hamle üretici perft ile doğrulandı), altta arayüz
 ```
 
 ## Bilgisayarda oynamak
