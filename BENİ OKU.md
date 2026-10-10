@@ -279,10 +279,14 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js         ← saklanma yerleri dosyanın başındaki SCENES listesinde
-└── robo-labirent/      ← Robo Labirent, Enes için labirent kovalamacası (skor rekoru)
+├── robo-labirent/      ← Robo Labirent, Enes için labirent kovalamacası (skor rekoru)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← labirentler HALVES listesinde (sol yarı yazılır, sağ yarı aynalanır)
+└── bilardo/            ← Bilardo, ikisi birlikte ya da bilgisayara karşı (çek-bırak, nişan çizgisi)
     ├── index.html
     ├── style.css
-    └── game.js         ← labirentler HALVES listesinde (sol yarı yazılır, sağ yarı aynalanır)
+    └── game.js         ← masa ölçüleri, sürtünme ve vuruş gücü dosyanın başında
 ```
 
 ## Bilgisayarda oynamak
