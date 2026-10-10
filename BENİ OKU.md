@@ -275,10 +275,14 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js         ← halka genişlikleri RING, nişan hızları SPEED, titreme WOBBLE
-└── saklambac/          ← Saklambaç, Egemen için saklanan hayvanları bulma (oda ve bahçe)
+├── saklambac/          ← Saklambaç, Egemen için saklanan hayvanları bulma (oda ve bahçe)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← saklanma yerleri dosyanın başındaki SCENES listesinde
+└── robo-labirent/      ← Robo Labirent, Enes için labirent kovalamacası (skor rekoru)
     ├── index.html
     ├── style.css
-    └── game.js         ← saklanma yerleri dosyanın başındaki SCENES listesinde
+    └── game.js         ← labirentler HALVES listesinde (sol yarı yazılır, sağ yarı aynalanır)
 ```
 
 ## Bilgisayarda oynamak
