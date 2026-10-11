@@ -283,10 +283,14 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js         ← labirentler HALVES listesinde (sol yarı yazılır, sağ yarı aynalanır)
-└── bilardo/            ← Bilardo, ikisi birlikte ya da bilgisayara karşı (çek-bırak, nişan çizgisi)
+├── bilardo/            ← Bilardo, ikisi birlikte ya da bilgisayara karşı (çek-bırak, nişan çizgisi)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← masa ölçüleri, sürtünme ve vuruş gücü dosyanın başında
+└── hasat/              ← Hasat Zamanı, tüm aile birlikte karga gelmeden meyve toplar (1-6 oyuncu)
     ├── index.html
     ├── style.css
-    └── game.js         ← masa ölçüleri, sürtünme ve vuruş gücü dosyanın başında
+    └── game.js         ← karga yolu uzunlukları STEPS (simülasyonla dengelendi)
 ```
 
 ## Bilgisayarda oynamak
