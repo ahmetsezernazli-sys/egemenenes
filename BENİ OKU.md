@@ -287,10 +287,14 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js         ← masa ölçüleri, sürtünme ve vuruş gücü dosyanın başında
-└── hasat/              ← Hasat Zamanı, tüm aile birlikte karga gelmeden meyve toplar (1-6 oyuncu)
+├── hasat/              ← Hasat Zamanı, tüm aile birlikte karga gelmeden meyve toplar (1-6 oyuncu)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← karga yolu uzunlukları STEPS (simülasyonla dengelendi)
+└── ne-giysem/          ← Ne Giysem?, Egemen için hava durumuna göre giyinme
     ├── index.html
     ├── style.css
-    └── game.js         ← karga yolu uzunlukları STEPS (simülasyonla dengelendi)
+    └── game.js         ← havalar WEATHERS, kıyafetler ve açıklamaları ITEMS listesinde
 ```
 
 ## Bilgisayarda oynamak
