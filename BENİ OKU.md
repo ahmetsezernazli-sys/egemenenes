@@ -10,6 +10,12 @@ Tarayıcıda çalışan oyunlar. Hepsi düz HTML, CSS ve JavaScript. Derleme, su
 Oyunlar/
 ├── index.html          ← ana sayfa (oyun listesi)
 ├── BENİ OKU.md
+├── ders/               ← Enes'in Çalışma Köşesi (7. sınıf 1. dönem; oyun değil, sayaca girmez)
+│   ├── index.html      ← konu özeti · alıştırma · deneme sınavı · yanlışlarım (#/ yolları)
+│   ├── style.css
+│   ├── app.js          ← uygulama; ilerleme localStorage "ders-calisma"
+│   └── data/           ← matematik, fen, turkce, sosyal, ingilizce, din .js
+│                         (soru: ["soru", ["doğru", "yanlış"…], 0, "açıklama"]; doğru cevap hep 0. sırada yazılır, uygulama karıştırır)
 ├── tavsan-kani/        ← her oyun kendi klasöründe (Tavşan Kanı)
 │   ├── index.html
 │   ├── style.css

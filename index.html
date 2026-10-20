@@ -210,6 +210,17 @@
       .gchip{flex:none}
     }
     @media (prefers-reduced-motion:reduce){ .game{transition:none} .game:hover{transform:none} }
+    /* Çalışma Köşesi */
+    .study{display:flex;align-items:center;gap:16px;color:var(--ink);text-decoration:none;border:1px solid var(--line);
+      background:var(--ground-2);padding:14px 18px;border-left:4px solid #6FB7C9}
+    .study:hover{border-color:var(--brass);border-left-color:var(--brass)}
+    .study:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+    .study .ico{font-size:34px;line-height:1}
+    .study strong{display:block;font-family:var(--display);font-weight:400;font-size:1.35rem;line-height:1.15}
+    .study span{color:var(--muted);font-size:14px}
+    .study .go{margin-left:auto;font-weight:700;color:var(--brass);white-space:nowrap}
+    .gchip.g-ders{border-color:#6FB7C9}
+    @media (max-width:640px){ .study .go{display:none} }
   </style>
 </head>
 <body>
@@ -219,11 +230,18 @@
     <p>Tarayıcıda, kurulum olmadan oynanan küçük oyunlar. Telefonda da çalışır.</p>
   </header>
 
+  <a class="study" href="ders/index.html">
+    <span class="ico" aria-hidden="true">📚</span>
+    <div><strong>Enes'in Çalışma Köşesi</strong><span>7. sınıf 1. dönem · konu özetleri, alıştırmalar ve deneme sınavları</span></div>
+    <span class="go">Çalışmaya başla →</span>
+  </a>
+
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>18</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>18</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>17</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>17</b></a>
+    <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
 
   <main class="groups-main">
