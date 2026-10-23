@@ -297,10 +297,15 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js         ← karga yolu uzunlukları STEPS (simülasyonla dengelendi)
-└── ne-giysem/          ← Ne Giysem?, Egemen için hava durumuna göre giyinme
+├── ne-giysem/          ← Ne Giysem?, Egemen için hava durumuna göre giyinme
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← havalar WEATHERS, kıyafetler ve açıklamaları ITEMS listesinde
+└── kale-savunmasi/     ← Kale Savunması, Enes için kule savunma (3 harita, 3 zorluk, 20 dalga)
     ├── index.html
     ├── style.css
-    └── game.js         ← havalar WEATHERS, kıyafetler ve açıklamaları ITEMS listesinde
+    └── game.js         ← haritalar MAPS, zorluk DIFFS, kuleler TOWERS, düşmanlar FOES, dalgalar WAVE_LIST
+                          (zorluklar otomatik oyuncu simülasyonuyla dengelendi)
 ```
 
 ## Bilgisayarda oynamak
