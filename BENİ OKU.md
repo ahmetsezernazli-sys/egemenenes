@@ -301,11 +301,11 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js         ← havalar WEATHERS, kıyafetler ve açıklamaları ITEMS listesinde
-└── kale-savunmasi/     ← Kale Savunması, Enes için kule savunma (3 harita, 3 zorluk, 20 dalga)
+└── mucevher-madeni/    ← Mücevher Madeni, Enes için üçlü eşleştirme (20 bölüm, yıldız rekoru)
     ├── index.html
     ├── style.css
-    └── game.js         ← haritalar MAPS, zorluk DIFFS, kuleler TOWERS, düşmanlar FOES, dalgalar WAVE_LIST
-                          (zorluklar otomatik oyuncu simülasyonuyla dengelendi)
+    └── game.js         ← bölümler LEVELS listesinde (harita: "." kare, "#" delik, "1"/"2" buz;
+                          hedef: score / collect / ice); hamle sayıları otomatik oyuncuyla dengelendi
 ```
 
 ## Bilgisayarda oynamak
