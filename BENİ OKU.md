@@ -311,11 +311,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← saha ölçüleri dosyanın başında (GOAL_H kale yüksekliği), şut gücü physics() içinde,
 │                         bilgisayar seviyeleri aiInput()/setAi() içinde
-└── kim-bu/             ← Kim Bu?, tüm aile tahmin oyunu (1-6 oyuncu, bilgisayar rakip, sesli)
+├── kim-bu/             ← Kim Bu?, tüm aile tahmin oyunu (1-6 oyuncu, bilgisayar rakip, sesli)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← sorular QUESTIONS, isimler NAMES; yüzler her turda makeFaces() ile rastgele üretilir
+│                         (24 farklı kişi, her soru en az 3 kişiyi ayırır), yüz çizimi drawFace()
+└── boncuk-dizisi/      ← Boncuk Dizisi, Egemen için örüntü (desen) oyunu + serbest kolye modu
     ├── index.html
     ├── style.css
-    └── game.js         ← sorular QUESTIONS, isimler NAMES; yüzler her turda makeFaces() ile rastgele üretilir
-                          (24 farklı kişi, her soru en az 3 kişiyi ayırır), yüz çizimi drawFace()
+    └── game.js         ← seviyeler GENS listesinde (10 seviye, her biri 3 kolye; sonra karışık),
+                          renk adları COLORS, şekiller SHAPES, hayvanlar ANIMALS
 ```
 
 ## Bilgisayarda oynamak
