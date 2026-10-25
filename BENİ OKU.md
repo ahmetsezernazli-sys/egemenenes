@@ -306,11 +306,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← bölümler LEVELS listesinde (harita: "." kare, "#" delik, "1"/"2" buz;
 │                         hedef: score / collect / ice); hamle sayıları otomatik oyuncuyla dengelendi
-└── kafa-topu/          ← Kafa Topu, ikisi birlikte yandan futbol (bilgisayara karşı da; süper güç)
+├── kafa-topu/          ← Kafa Topu, ikisi birlikte yandan futbol (bilgisayara karşı da; süper güç)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← saha ölçüleri dosyanın başında (GOAL_H kale yüksekliği), şut gücü physics() içinde,
+│                         bilgisayar seviyeleri aiInput()/setAi() içinde
+└── kim-bu/             ← Kim Bu?, tüm aile tahmin oyunu (1-6 oyuncu, bilgisayar rakip, sesli)
     ├── index.html
     ├── style.css
-    └── game.js         ← saha ölçüleri dosyanın başında (GOAL_H kale yüksekliği), şut gücü physics() içinde,
-                          bilgisayar seviyeleri aiInput()/setAi() içinde
+    └── game.js         ← sorular QUESTIONS, isimler NAMES; yüzler her turda makeFaces() ile rastgele üretilir
+                          (24 farklı kişi, her soru en az 3 kişiyi ayırır), yüz çizimi drawFace()
 ```
 
 ## Bilgisayarda oynamak

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kim Bu? · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Aile tahmin oyunu: bilgisayar 24 kişiden birini gizlice seçer. Sırayla resimli sorular sorun — gözlüğü var mı, saçı sarı mı? — uymayan kartlar kapanır, gizli kişiyi ilk bulan turu kazanır. 1-6 oyuncu, boş koltuğa bilgisayar, sorular ve cevaplar sesli.">
+  <meta name="theme-color" content="#16424A">
+  <meta property="og:title" content="Kim Bu?">
+  <meta property="og:description" content="Soru sor, kartları kapat, gizli kişiyi bul!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2316424A'/%3E%3Ccircle cx='44' cy='44' r='24' fill='none' stroke='%23FFD166' stroke-width='9'/%3E%3Cpath d='M62 62l20 20' stroke='%23FFD166' stroke-width='11' stroke-linecap='round'/%3E%3Ctext x='44' y='54' font-size='30' text-anchor='middle' font-family='sans-serif' font-weight='900' fill='%23fff'%3E%3F%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Kim <span>Bu?</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="open-setup" type="button" aria-label="Oyuncular ve ayarlar">⚙</button>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="players" id="players" aria-label="Oyuncular ve puanlar"></div>
+  <p class="status" id="status" aria-live="polite"></p>
+
+  <main class="play">
+    <div class="board" id="board" aria-label="Kartlar"></div>
+    <aside class="side">
+      <div class="answer" id="answer" hidden></div>
+      <div class="qs" id="qs" aria-label="Sorular"></div>
+      <p class="tip" id="tip">Bir <b>soru</b> seç ya da bildiğini düşünüyorsan <b>karta dokunup tahmin et</b>.</p>
+    </aside>
+  </main>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Kim Bu? 🔍</h2>
+    <p class="help">Bilgisayar kartlardan <b>birini gizlice seçer</b>. Sırası gelen ya bir <b>soru sorar</b> (cevaba uymayan kartlar kapanır) ya da bir karta dokunup <b>tahmin eder</b>. Gizli kişiyi bulan turu kazanır, ⭐ alır. Yanlış tahminde o kart kapanır, sıra geçer. Bir soruyla tek kart kalırsa, o soruyu soran bilmiş sayılır!</p>
+    <fieldset>
+      <legend>Oyuncu sayısı</legend>
+      <div class="seg wide" role="radiogroup" aria-label="Oyuncu sayısı">
+        <label><input type="radio" name="count" value="1"><span>1</span></label>
+        <label><input type="radio" name="count" value="2"><span>2</span></label>
+        <label><input type="radio" name="count" value="3"><span>3</span></label>
+        <label><input type="radio" name="count" value="4" checked><span>4</span></label>
+        <label><input type="radio" name="count" value="5"><span>5</span></label>
+        <label><input type="radio" name="count" value="6"><span>6</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Tur sayısı</legend>
+      <div class="seg" role="radiogroup" aria-label="Tur sayısı">
+        <label><input type="radio" name="rounds" value="3"><span>3 tur</span></label>
+        <label><input type="radio" name="rounds" value="5" checked><span>5 tur</span></label>
+        <label><input type="radio" name="rounds" value="7"><span>7 tur</span></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Oyuncular</legend>
+      <div id="rows" class="rows"></div>
+      <p class="help"><b>🤖 bilgisayar:</b> o koltuğu bilgisayar oynar. <b>✨ yardım:</b> sırası gelince iyi bir soru parlar — küçükler için. Tek kişi oynarsan amaç gizli kişiyi <b>en az soruyla</b> bulmak.</p>
+    </fieldset>
+    <button class="btn primary big" type="submit">Oyunu başlat</button>
+  </form>
+</div>
+
+<div class="overlay" id="guess" hidden>
+  <div class="sheet center small">
+    <canvas id="guess-face" width="200" height="240" aria-hidden="true"></canvas>
+    <p class="end-title" id="guess-title"></p>
+    <div class="two">
+      <button class="btn" id="guess-no" type="button">Vazgeç</button>
+      <button class="btn primary" id="guess-yes" type="button">Evet, tahmin et</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="reveal" hidden>
+  <div class="sheet center small">
+    <p class="lead" id="reveal-top"></p>
+    <canvas id="reveal-face" width="200" height="240" aria-hidden="true"></canvas>
+    <p class="end-title" id="reveal-title"></p>
+    <p class="lead" id="reveal-text"></p>
+    <button class="btn primary big" id="reveal-next" type="button">Sonraki tur</button>
+  </div>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title"></p>
+    <div class="results" id="results"></div>
+    <p class="lead" id="end-text"></p>
+    <button class="btn primary big" id="again" type="button">Yeniden oyna</button>
+    <button class="btn big" id="end-setup" type="button">Oyuncuları değiştir</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
