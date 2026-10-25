@@ -301,11 +301,16 @@ Oyunlar/
 │   ├── index.html
 │   ├── style.css
 │   └── game.js         ← havalar WEATHERS, kıyafetler ve açıklamaları ITEMS listesinde
-└── mucevher-madeni/    ← Mücevher Madeni, Enes için üçlü eşleştirme (20 bölüm, yıldız rekoru)
+├── mucevher-madeni/    ← Mücevher Madeni, Enes için üçlü eşleştirme (20 bölüm, yıldız rekoru)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← bölümler LEVELS listesinde (harita: "." kare, "#" delik, "1"/"2" buz;
+│                         hedef: score / collect / ice); hamle sayıları otomatik oyuncuyla dengelendi
+└── kafa-topu/          ← Kafa Topu, ikisi birlikte yandan futbol (bilgisayara karşı da; süper güç)
     ├── index.html
     ├── style.css
-    └── game.js         ← bölümler LEVELS listesinde (harita: "." kare, "#" delik, "1"/"2" buz;
-                          hedef: score / collect / ice); hamle sayıları otomatik oyuncuyla dengelendi
+    └── game.js         ← saha ölçüleri dosyanın başında (GOAL_H kale yüksekliği), şut gücü physics() içinde,
+                          bilgisayar seviyeleri aiInput()/setAi() içinde
 ```
 
 ## Bilgisayarda oynamak

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kafa Topu · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="İki kişilik kafa topu: büyük kafalı futbolcunla koş, zıpla, kafa vur ve şut çek; rakibin kalesine gol at. Aynı tablette ya da klavyede iki kişi, ya da bilgisayara karşı. Küçük oyuncu için süper güç seçeneği.">
+  <meta name="theme-color" content="#123A5A">
+  <meta property="og:title" content="Kafa Topu">
+  <meta property="og:description" content="Koş, zıpla, kafa vur, gol at! İki kişilik futbol düellosu.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%233F9E4D'/%3E%3Ccircle cx='50' cy='50' r='30' fill='%23fff'/%3E%3Cpath d='M50 38l11 8-4 13H43l-4-13z' fill='%23222'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Kafa <span>Topu</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="pause" type="button" aria-label="Duraklat">⏸</button>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <p class="rotate">📱↻ Telefonu yan çevirirsen saha büyür</p>
+    <canvas id="cv"aria-label="Futbol sahası. Mavi oyuncu A ve D ile koşar, W ile zıplar, S ile şut çeker. Kırmızı oyuncu ok tuşlarıyla oynar, aşağı ok şut çeker."></canvas>
+  </main>
+
+  <div class="pads">
+    <div class="pad p1" id="pad1" aria-label="Mavi oyuncunun tuşları">
+      <button type="button" data-p="0" data-k="l" aria-label="Mavi sola">◀</button>
+      <button type="button" data-p="0" data-k="r" aria-label="Mavi sağa">▶</button>
+      <button type="button" data-p="0" data-k="j" aria-label="Mavi zıpla">⤒</button>
+      <button type="button" data-p="0" data-k="k" class="kick" aria-label="Mavi şut">⚽</button>
+    </div>
+    <div class="pad p2" id="pad2" aria-label="Kırmızı oyuncunun tuşları">
+      <button type="button" data-p="1" data-k="k" class="kick" aria-label="Kırmızı şut">⚽</button>
+      <button type="button" data-p="1" data-k="j" aria-label="Kırmızı zıpla">⤒</button>
+      <button type="button" data-p="1" data-k="l" aria-label="Kırmızı sola">◀</button>
+      <button type="button" data-p="1" data-k="r" aria-label="Kırmızı sağa">▶</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="menu">
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">⚽</div>
+    <p class="end-title">Kafa Topu</p>
+    <p class="help">Koş, zıpla, <b>kafa vur</b> ya da <b>şut çek</b>: topu rakibin kalesine sok!<br>
+      <b>Mavi:</b> A / D koş, W zıpla, S şut · <b>Kırmızı:</b> ← / → koş, ↑ zıpla, ↓ şut.<br>
+      Tablette herkes kendi köşesindeki tuşlarla oynar. <b>Süper güç</b> seçen oyuncu daha hızlı koşar, daha yükseğe zıplar ve kafası daha büyüktür; küçük oyuncu için.</p>
+    <div class="opt">
+      <span class="lbl">Rakip</span>
+      <div class="seg" id="o-mode" role="radiogroup" aria-label="Rakip">
+        <button type="button" role="radio" data-v="2p">👫 İki kişi</button>
+        <button type="button" role="radio" data-v="ai">🤖 Bilgisayar</button>
+      </div>
+    </div>
+    <div class="opt" id="row-ai">
+      <span class="lbl">Bilgisayar</span>
+      <div class="seg" id="o-ai" role="radiogroup" aria-label="Bilgisayarın seviyesi">
+        <button type="button" role="radio" data-v="0">Kolay</button>
+        <button type="button" role="radio" data-v="1">Orta</button>
+        <button type="button" role="radio" data-v="2">Zor</button>
+      </div>
+    </div>
+    <div class="opt">
+      <span class="lbl blue">Mavi</span>
+      <div class="seg" id="o-p1" role="radiogroup" aria-label="Mavi oyuncunun gücü">
+        <button type="button" role="radio" data-v="0">Normal</button>
+        <button type="button" role="radio" data-v="1">⚡ Süper güç</button>
+      </div>
+    </div>
+    <div class="opt" id="row-p2">
+      <span class="lbl red">Kırmızı</span>
+      <div class="seg" id="o-p2" role="radiogroup" aria-label="Kırmızı oyuncunun gücü">
+        <button type="button" role="radio" data-v="0">Normal</button>
+        <button type="button" role="radio" data-v="1">⚡ Süper güç</button>
+      </div>
+    </div>
+    <div class="opt">
+      <span class="lbl">Süre</span>
+      <div class="seg" id="o-time" role="radiogroup" aria-label="Maç süresi">
+        <button type="button" role="radio" data-v="60">1 dk</button>
+        <button type="button" role="radio" data-v="90">1,5 dk</button>
+        <button type="button" role="radio" data-v="120">2 dk</button>
+      </div>
+    </div>
+    <button class="btn primary big" id="go" type="button">Maça başla</button>
+  </div>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" id="end-icon" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title"></p>
+    <p class="score-big" id="end-score"></p>
+    <p class="lead" id="end-text"></p>
+    <button class="btn primary big" id="again" type="button">Rövanş</button>
+    <button class="btn big" id="to-menu" type="button">Ayarlar</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
