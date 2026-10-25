@@ -316,11 +316,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← sorular QUESTIONS, isimler NAMES; yüzler her turda makeFaces() ile rastgele üretilir
 │                         (24 farklı kişi, her soru en az 3 kişiyi ayırır), yüz çizimi drawFace()
-└── boncuk-dizisi/      ← Boncuk Dizisi, Egemen için örüntü (desen) oyunu + serbest kolye modu
+├── boncuk-dizisi/      ← Boncuk Dizisi, Egemen için örüntü (desen) oyunu + serbest kolye modu
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← seviyeler GENS listesinde (10 seviye, her biri 3 kolye; sonra karışık),
+│                         renk adları COLORS, şekiller SHAPES, hayvanlar ANIMALS
+└── korsan-pinball/     ← Korsan Pinball, Enes için pinball (3 top, çarpan, çoklu top, rekor)
     ├── index.html
     ├── style.css
-    └── game.js         ← seviyeler GENS listesinde (10 seviye, her biri 3 kolye; sonra karışık),
-                          renk adları COLORS, şekiller SHAPES, hayvanlar ANIMALS
+    └── game.js         ← masa duvarları wall(...) çağrılarıyla tanımlı; tamponlar BUMPERS, hedefler TARGETS,
+                          sandık CHEST, paletler FL; yerçekimi GRAV, top kurtarma süresi launch() içinde
 ```
 
 ## Bilgisayarda oynamak
