@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kıvılcım ve Damla · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="İki kişilik işbirliği platform oyunu: Kıvılcım lavda yürür ama suya giremez, Damla suda yüzer ama lava giremez. Düğmelere basıp kapıları birbirinize açın, kaldıraçları çekin, elmasları toplayın ve iki kapıya birlikte ulaşın. 5 bölüm, kolay mod.">
+  <meta name="theme-color" content="#1E1A2E">
+  <meta property="og:title" content="Kıvılcım ve Damla">
+  <meta property="og:description" content="Biri ateş, biri su: birbirinize yardım edip kapılara birlikte ulaşın!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%231E1A2E'/%3E%3Cpath d='M30 80c-14 0-18-16-10-28 4 6 8 6 8 0 0-10 6-18 14-24-2 12 10 18 10 32 0 12-8 20-22 20z' fill='%23FF7A2F'/%3E%3Cpath d='M70 82c-12 0-18-8-18-17 0-10 10-20 18-34 8 14 18 24 18 34 0 9-6 17-18 17z' fill='%233D8BFD'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title"><span class="f">Kıvılcım</span> ve <span class="w">Damla</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="restart" type="button" aria-label="Bölümü baştan başlat">↻</button>
+      <button class="icon-btn" id="menu-btn" type="button" aria-label="Bölümler">☰</button>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="hud">
+    <span class="pill" id="lvl-name"></span>
+    <span class="pill"><span class="gem r"></span><b id="gems-r">0/0</b></span>
+    <span class="pill"><span class="gem b"></span><b id="gems-b">0/0</b></span>
+    <span class="pill">⏱ <b id="time">0:00</b></span>
+  </div>
+
+  <main class="stage" id="stage">
+    <p class="rotate">📱↻ Telefonu yan çevirirsen oyun büyür</p>
+    <canvas id="cv"aria-label="Oyun alanı. Kıvılcım: A ve D ile yürür, W ile zıplar. Damla: sol ve sağ oklarla yürür, yukarı okla zıplar."></canvas>
+  </main>
+
+  <div class="pads">
+    <div class="pad f" aria-label="Kıvılcımın tuşları">
+      <button type="button" data-p="0" data-k="l" aria-label="Kıvılcım sola">◀</button>
+      <button type="button" data-p="0" data-k="r" aria-label="Kıvılcım sağa">▶</button>
+      <button type="button" data-p="0" data-k="j" aria-label="Kıvılcım zıpla">⤒</button>
+    </div>
+    <div class="pad w" aria-label="Damlanın tuşları">
+      <button type="button" data-p="1" data-k="j" aria-label="Damla zıpla">⤒</button>
+      <button type="button" data-p="1" data-k="l" aria-label="Damla sola">◀</button>
+      <button type="button" data-p="1" data-k="r" aria-label="Damla sağa">▶</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="menu">
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🔥💧</div>
+    <p class="end-title">Kıvılcım ve Damla</p>
+    <p class="help"><b class="f">Kıvılcım</b> lavda yürür, suya girerse söner. <b class="w">Damla</b> suda yüzer, lava girerse buharlaşır. <b>Yeşil balçığa</b> ikisi de giremez! Düğmeye basılı tutarak kapıları birbirinize açın, kaldıraçları çekin, kendi renginizdeki elmasları toplayın ve <b>iki kapıya birlikte</b> girin.<br>
+      <b>Klavye:</b> Kıvılcım A / D / W · Damla ← / → / ↑. Tablette herkes kendi köşesindeki tuşlarla oynar.</p>
+    <label class="toggle"><input type="checkbox" id="easy" checked> <span><b>Kolay mod:</b> düşen yalnızca kendi başlangıcına döner (küçükler için)</span></label>
+    <div class="lvgrid" id="lvgrid"></div>
+  </div>
+</div>
+
+<div class="overlay" id="done" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="done-title"></p>
+    <p class="stars" id="done-stars" aria-hidden="true"></p>
+    <p class="lead" id="done-text"></p>
+    <button class="btn primary big" id="done-next" type="button">Sonraki bölüm</button>
+    <button class="btn big" id="done-retry" type="button">Tekrar oyna</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
