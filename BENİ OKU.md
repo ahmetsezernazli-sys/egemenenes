@@ -377,11 +377,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← tahta S (20 kare, fiyatlar), şans kartları CARDS, START_MONEY ve PASS;
 │                         kira rentOf(), bilgisayar kararları aiWantsBuy() ve offerHotel() içinde, Türkçe ekler ek()
-└── ordek-yolu/         ← Ördek Yolu, Egemen için trafik ve karşıdan karşıya geçme (6 bölüm, ışıklı ve ışıksız yollar)
+├── ordek-yolu/         ← Ördek Yolu, Egemen için trafik ve karşıdan karşıya geçme (6 bölüm, ışıklı ve ışıksız yollar)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← bölümler LEVELS (şeritler alttan üste [yön, hız], "m" = refüj, araç aralığı gap), araçlar SPEC;
+│                         ışık döngüsü lightTick(), güvenli mi laneSafe() / canGo(), çarpma hitCheck()
+└── zindan-kasifi/      ← Zindan Kaşifi, Enes için sıra tabanlı zindan macerası (8 kat, rastgele harita, Kolay/Normal)
     ├── index.html
     ├── style.css
-    └── game.js         ← bölümler LEVELS (şeritler alttan üste [yön, hız], "m" = refüj, araç aralığı gap), araçlar SPEC;
-                          ışık döngüsü lightTick(), güvenli mi laneSafe() / canGo(), çarpma hitCheck()
+    └── game.js         ← canavarlar MONSTERS (kat aralığı, can, saldırı, savunma, deneyim), eşyalar ITEMS (ağırlık);
+                          harita genFloor(), görüş computeFov(), canavar hamlesi monstersAct(), seviye eşiği needXp()
 ```
 
 ## Bilgisayarda oynamak

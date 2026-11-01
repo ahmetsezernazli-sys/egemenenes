@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-zk{background:#14111F}
+    .cover-zk svg{width:100%;height:100%}
     .cover-sky{background:linear-gradient(#5DB8EE, #D4F1FF)}
     .cover-sky svg{width:62%}
     .cover-space{background:radial-gradient(ellipse 70% 80% at 30% 30%, rgba(107,42,122,.5), transparent 70%), #140F2E}
@@ -270,7 +272,7 @@
 
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>22</b></a>
-    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>22</b></a>
+    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>23</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>21</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>21</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
@@ -282,8 +284,7 @@
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
         <a class="game" href="ordek-yolu/index.html">
-          <div class="cover is-new cover-oy" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-oy" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#9BD77E"/>
               <ellipse cx="82" cy="12" rx="52" ry="12" fill="#5FB7E5"/>
@@ -816,9 +817,31 @@
     </section>
 
     <section class="group g-enes" id="enes" aria-labelledby="h-enes">
-      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 22 oyun</p></div>
+      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 23 oyun</p></div>
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
+        <a class="game" href="zindan-kasifi/index.html">
+          <div class="cover is-new cover-zk" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#14111F"/>
+              <g fill="#3B3355"><rect x="0" y="0" width="164" height="16"/><rect x="0" y="86" width="164" height="16"/><rect x="0" y="16" width="16" height="70"/><rect x="148" y="16" width="16" height="70"/><rect x="70" y="16" width="16" height="30"/></g>
+              <g fill="#4D4470"><rect x="0" y="0" width="164" height="5"/><rect x="0" y="86" width="164" height="5"/><rect x="70" y="16" width="16" height="5"/></g>
+              <g fill="#2A2440"><rect x="16" y="16" width="54" height="70"/><rect x="86" y="16" width="62" height="70"/><rect x="70" y="46" width="16" height="40"/></g>
+              <g fill="#000" opacity=".5"><rect x="110" y="16" width="38" height="70"/></g>
+              <g transform="translate(40 60)"><circle r="13" fill="#FFC93C" opacity=".15"/><rect x="-6" y="-2" width="12" height="11" rx="3" fill="#3D8BFD"/><circle cy="-6" r="5" fill="#FFD7B0"/><path d="M-5.5 -7.5a5.5 5.5 0 0 1 11 0z" fill="#C9CED6"/><rect x="7.5" y="-10" width="2" height="14" fill="#E9EEF5"/><circle cx="-8" cy="3" r="4" fill="#FFC93C"/></g>
+              <g transform="translate(112 52)"><path d="M-14 6c4-14 20-18 28-6 6-2 10 2 8 6-6 0-8 4-12 6h-16c-4-2-8-2-8-6z" fill="#3DAA5A"/><path d="M-2 -6l4-8 3 7z M6 -6l4-7 2 7z" fill="#2A8A44"/><circle cx="16" cy="2" r="1.6" fill="#FFC93C"/><path d="M22 6c6 0 10-2 14 2" stroke="#FF8A3C" stroke-width="3" stroke-linecap="round"/></g>
+              <g transform="translate(130 74)"><path d="M-7 4l2-9 5 5 5-5 2 9z" fill="#FFC93C"/><circle cx="-5" cy="-6" r="1.5" fill="#FFC93C"/><circle cx="5" cy="-6" r="1.5" fill="#FFC93C"/></g>
+              <g fill="#FFC93C"><rect x="22" y="24" width="16" height="3"/><rect x="24" y="28" width="12" height="3"/><rect x="26" y="32" width="8" height="3"/></g>
+              <circle cx="58" cy="30" r="4" fill="#FF5A5F"/><rect x="56" y="22" width="4" height="5" fill="#C9CED6"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Zindan Kaşifi</h3>
+            <p>Her oyunda değişen 8 katlı zindanda sıra tabanlı macera. Canavarlarla savaş, iksir, bomba ve harita topla, seviye atla; en dipteki ejderhayı yen, tacı al.</p>
+            <div class="tags"><span>Enes için</span><span>Kolay / Normal</span><span>Rekor</span></div>
+          </div>
+        </a>
         <a class="game" href="klavye-ninjasi/index.html">
           <div class="cover cover-klavye" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

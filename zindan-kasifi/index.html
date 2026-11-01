@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Zindan Kaşifi · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için sıra tabanlı zindan macerası: her oyunda değişen 8 katlı zindanı keşfet, canavarlarla savaş, iksir, bomba ve harita topla, seviye atla. En dipteki ejderhayı yen, tacı al. Kolay ve Normal zorluk, rekor.">
+  <meta name="theme-color" content="#14111F">
+  <meta property="og:title" content="Zindan Kaşifi">
+  <meta property="og:description" content="Her seferinde değişen zindanda 8 kat in, ejderhayı yen, tacı al!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2314111F'/%3E%3Cpath d='M20 80V40a30 30 0 0 1 60 0v40z' fill='%233B3355'/%3E%3Cpath d='M32 80V44a18 18 0 0 1 36 0v36z' fill='%23000'/%3E%3Ccircle cx='50' cy='62' r='7' fill='%23FFC93C'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Zindan <span>Kaşifi</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-menu" type="button">Yeni oyun</button>
+    </div>
+  </header>
+
+  <div class="hud" id="hud">
+    <div class="hp"><div class="hp-bar"><i id="hp-fill"></i></div><b id="hp-tx">20/20</b></div>
+    <span class="chip">Kat <b id="floor">1</b></span>
+    <span class="chip">Sv <b id="lvl">1</b></span>
+    <span class="chip">⚔️ <b id="atk">3</b></span>
+    <span class="chip">🛡️ <b id="def">0</b></span>
+    <span class="chip">💰 <b id="gold">0</b></span>
+  </div>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Zindan haritası"></canvas>
+    <ol class="log" id="log" aria-live="polite"></ol>
+  </main>
+
+  <div class="controls">
+    <div class="items">
+      <button class="item" id="b-potion" type="button" aria-label="İksir iç (Q)">🧪<b id="n-potion">0</b></button>
+      <button class="item" id="b-bomb" type="button" aria-label="Bomba at (B)">💣<b id="n-bomb">0</b></button>
+      <button class="item" id="b-scroll" type="button" aria-label="Harita parşömeni oku (R)">📜<b id="n-scroll">0</b></button>
+      <button class="item" id="b-wait" type="button" aria-label="Bekle (boşluk)">⏳</button>
+    </div>
+    <div class="dpad" id="dpad">
+      <button type="button" data-d="u" aria-label="Yukarı">▲</button>
+      <button type="button" data-d="l" aria-label="Sol">◀</button>
+      <button type="button" data-d="r" aria-label="Sağ">▶</button>
+      <button type="button" data-d="d" aria-label="Aşağı">▼</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="menu">
+  <div class="sheet">
+    <h2>🏰 Zindan Kaşifi</h2>
+    <p class="help">Zindan her oyunda yeniden oluşur. <b>Ok tuşları / WASD</b> ile yürü; canavarın üstüne yürüyünce <b>saldırırsın</b>. Her hamlende canavarlar da bir adım atar. <b>▼ merdiven</b> bir alt kata indirir. 8. kattaki <b>ejderhayı</b> yen ve <b>tacı</b> al!</p>
+    <p class="help small"><b>Eşyalar:</b> ⚔️ saldırı +1 · 🛡️ savunma +1 · 🍖 hemen can · 🧪 iksir (Q) · 💣 bomba, yakındaki canavarlara vurur (B) · 📜 katın haritasını açar (R) · ⏳ bekle (boşluk). Canavar yendikçe <b>seviye atlarsın</b>.</p>
+    <fieldset><legend>Zorluk</legend>
+      <div class="seg"><label><input type="radio" name="diff" value="0"><span>Kolay</span></label><label><input type="radio" name="diff" value="1" checked><span>Normal</span></label></div>
+    </fieldset>
+    <p class="best" id="best"></p>
+    <button class="btn primary big" id="start" type="button">Zindana gir</button>
+    <button class="btn big" id="resume" type="button" hidden>Devam et</button>
+  </div>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" id="over-ic" aria-hidden="true">👑</div>
+    <p class="end-title" id="over-title"></p>
+    <p class="help" id="over-tx"></p>
+    <button class="btn primary big" id="again" type="button">Yeniden dene</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
