@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Boya Kapmaca · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="İki kişilik boya yarışı: alanda koş, geçtiğin yeri kendi rengine boya, rakibinin boyasını kendi rengine çevir! 60 saniyede en çok alanı boyayan kazanır. Boya bombası, hız ve geniş fırça; bilgisayara karşı da oynanır, küçüklere büyük fırça.">
+  <meta name="theme-color" content="#F4F1EA">
+  <meta property="og:title" content="Boya Kapmaca">
+  <meta property="og:description" content="Koş, boya, alanı kap! 60 saniyelik boya yarışı.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23F4F1EA'/%3E%3Crect x='10' y='10' width='40' height='80' fill='%233D8BFD'/%3E%3Crect x='50' y='10' width='40' height='80' fill='%23FF5A7A'/%3E%3Ccircle cx='50' cy='50' r='16' fill='%23FFD166'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title"><span class="b">Boya</span> <span class="r">Kapmaca</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="pause" type="button" aria-label="Duraklat">⏸</button>
+      <button class="icon-btn" id="menu-btn" type="button" aria-label="Ayarlar">⚙</button>
+    </div>
+  </header>
+  <div class="score">
+    <span class="side"><i class="dot b"></i><b id="n0">Mavi</b> <span class="pts" id="w0">0</span></span>
+    <div class="meter" aria-label="Boyalı alan"><i class="mb" id="mb"></i><i class="mr" id="mr"></i><span id="time">60</span></div>
+    <span class="side"><span class="pts" id="w1">0</span> <b id="n1">Kırmızı</b><i class="dot r"></i></span>
+  </div>
+  <main class="stage" id="stage">
+    <p class="rotate">📱↻ Telefonu yan çevirirsen alan büyür</p>
+    <canvas id="cv" aria-label="Boya alanı. Mavi: W A S D ile koşar. Kırmızı: ok tuşlarıyla koşar."></canvas>
+  </main>
+  <div class="pads">
+    <div class="pad p0" aria-label="Mavinin tuşları"><div class="dpad">
+      <button type="button" data-p="0" data-k="u" class="u" aria-label="Mavi yukarı">▲</button><button type="button" data-p="0" data-k="l" class="l" aria-label="Mavi sola">◀</button>
+      <button type="button" data-p="0" data-k="r" class="r" aria-label="Mavi sağa">▶</button><button type="button" data-p="0" data-k="d" class="d" aria-label="Mavi aşağı">▼</button></div></div>
+    <div class="pad p1" id="pad1" aria-label="Kırmızının tuşları"><div class="dpad">
+      <button type="button" data-p="1" data-k="u" class="u" aria-label="Kırmızı yukarı">▲</button><button type="button" data-p="1" data-k="l" class="l" aria-label="Kırmızı sola">◀</button>
+      <button type="button" data-p="1" data-k="r" class="r" aria-label="Kırmızı sağa">▶</button><button type="button" data-p="1" data-k="d" class="d" aria-label="Kırmızı aşağı">▼</button></div></div>
+  </div>
+</div>
+
+<div class="overlay" id="menu">
+  <form class="sheet" id="form">
+    <h2>🎨 Boya Kapmaca</h2>
+    <p class="help">Alanda koş, geçtiğin her yer <b>senin rengine</b> boyanır. Rakibin boyasının üstünden geçersen o da senin olur! <b>60 saniye</b> sonunda en çok alanı boyayan raundu kazanır. Güçlendiriciler: 💣 çevresini boyar, ⚡ hız, 🖌️ geniş fırça.<br>
+      <b>Mavi:</b> W A S D · <b>Kırmızı:</b> oklar. Tablette herkes kendi köşesindeki tuşlarla oynar.</p>
+    <fieldset><legend>Rakip</legend>
+      <div class="seg"><label><input type="radio" name="mode" value="2p" checked><span>👫 İki kişi</span></label><label><input type="radio" name="mode" value="ai"><span>🤖 Bilgisayar</span></label></div>
+    </fieldset>
+    <fieldset id="f-ai" hidden><legend>Bilgisayar</legend>
+      <div class="seg"><label><input type="radio" name="ai" value="0" checked><span>Kolay</span></label><label><input type="radio" name="ai" value="1"><span>Zor</span></label></div>
+    </fieldset>
+    <fieldset><legend>Oyuncular</legend>
+      <div class="names">
+        <label><i class="dot b"></i><input type="text" id="in0" maxlength="12" value="Enes" aria-label="Mavi oyuncunun adı"><span class="toggle" title="Büyük fırça"><input type="checkbox" id="big0"> 🖌️</span></label>
+        <label><i class="dot r"></i><input type="text" id="in1" maxlength="12" value="Egemen" aria-label="Kırmızı oyuncunun adı"><span class="toggle" title="Büyük fırça"><input type="checkbox" id="big1" checked> 🖌️</span></label>
+      </div>
+      <p class="help small">🖌️ <b>Büyük fırça:</b> o oyuncu her zaman 3 kare genişliğinde boyar (küçükler için).</p>
+    </fieldset>
+    <fieldset><legend>Kazanmak için</legend>
+      <div class="seg"><label><input type="radio" name="win" value="1"><span>1 raund</span></label><label><input type="radio" name="win" value="2" checked><span>2 raund</span></label><label><input type="radio" name="win" value="3"><span>3 raund</span></label></div>
+    </fieldset>
+    <button class="btn primary big" type="submit">Boyamaya başla!</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" id="end-icon" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title"></p>
+    <div class="bigbar"><i class="mb" id="eb"></i><i class="mr" id="er"></i></div>
+    <p class="lead" id="end-text"></p>
+    <button class="btn primary big" id="end-next" type="button">Sonraki raund</button>
+    <button class="btn big" id="end-menu" type="button">Ayarlar</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -362,11 +362,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← MODES: yerler (ad, -de/-e hâlleri, arka plan) ve öğeler [emoji, ad, yer];
 │                         seviyeler LEVELS (kaç yer açık), tur başına PER_ROUND öğe
-└── klavye-ninjasi/     ← Klavye Ninjası, Enes için on parmak klavye (ninja modu + 6 ders, Türkçe Q)
+├── klavye-ninjasi/     ← Klavye Ninjası, Enes için on parmak klavye (ninja modu + 6 ders, Türkçe Q)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← kelimeler WORDS, cümleler SENTENCES, dersler LESSONS, klavye ROWS ve parmak eşlemesi FINGER;
+│                         ninja zorluğu pickWord() ve ninjaUpdate() içinde (seviye başına hız ve kelime uzunluğu)
+└── boya-kapmaca/       ← Boya Kapmaca, ikisi birlikte bölge boyama (60 sn raund, bilgisayar rakip, büyük fırça)
     ├── index.html
     ├── style.css
-    └── game.js         ← kelimeler WORDS, cümleler SENTENCES, dersler LESSONS, klavye ROWS ve parmak eşlemesi FINGER;
-                          ninja zorluğu pickWord() ve ninjaUpdate() içinde (seviye başına hız ve kelime uzunluğu)
+    └── game.js         ← alan 24×14, engeller BLOCKS, raund süresi ROUND; güçlendiriciler update() içinde,
+                          bilgisayar aiDir() (BFS ile en değerli boyanmamış kareye gider)
 ```
 
 ## Bilgisayarda oynamak
