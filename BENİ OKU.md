@@ -432,11 +432,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← sorular makeQ(seviye) (0 sayma, 1 toplama, 2 çarpım, 3 karışık), çekme adımı STEP_Q / STEP_TAP, yanlışta donma FREEZE;
 │                         akış newRound() / answer() / tap() / endRound(), bilgisayar update() içinde, dikey ekranda üst taraf 180° döner (style.css)
-└── pandomim/           ← Pandomim, tüm aile takımlı anlatma oyunu (resimli 100 kart, sadece hareket ya da konuşarak)
+├── pandomim/           ← Pandomim, tüm aile takımlı anlatma oyunu (resimli 100 kart, sadece hareket ya da konuşarak)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← kartlar CARDS [resim, kelime, kategori], pas hakkı MAX_PASS;
+│                         akış handOver() / startTurn() / hit() / endTurn() / nextTeam() / finish()
+└── robot-kodla/        ← Robot Kodla, Egemen için ilk kodlama oyunu (okları diz, robotu yıldıza götür; 10 bölüm)
     ├── index.html
     ├── style.css
-    └── game.js         ← kartlar CARDS [resim, kelime, kategori], pas hakkı MAX_PASS;
-                          akış handOver() / startTurn() / hit() / endTurn() / nextTeam() / finish()
+    └── game.js         ← bölümler LEVELS (ızgara, en kısa yol aralığı, ağaç sayısı), bulmaca makePuzzle() + bfs(), ipucu nextDir();
+                          program add() / del() / run() (adım STEP_MS), çarpınca başa dönüş, bölüm başına PER_LEVEL bulmaca
 ```
 
 ## Bilgisayarda oynamak

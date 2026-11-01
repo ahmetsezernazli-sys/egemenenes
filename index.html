@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-rk{background:#EAF4FF}
+    .cover-rk svg{width:100%;height:100%}
     .cover-pm{background:#FFDDEB}
     .cover-pm svg{width:100%;height:100%}
     .cover-hc{background:#BFE6FF}
@@ -291,7 +293,7 @@
   </a>
 
   <nav class="groups" aria-label="Oyun grupları">
-    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>24</b></a>
+    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>25</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>25</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>24</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>24</b></a>
@@ -300,9 +302,35 @@
 
   <main class="groups-main">
     <section class="group g-egemen" id="egemen" aria-labelledby="h-egemen">
-      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 24 oyun</p></div>
+      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 25 oyun</p></div>
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
+        <a class="game" href="robot-kodla/index.html">
+          <div class="cover is-new cover-rk" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#EAF4FF"/>
+              <rect x="8" y="8" width="86" height="86" rx="8" fill="#8CC874"/>
+              <g fill="#BDE7A6"><rect x="12" y="12" width="24" height="24" rx="4"/><rect x="39" y="12" width="24" height="24" rx="4"/><rect x="66" y="12" width="24" height="24" rx="4"/><rect x="12" y="39" width="24" height="24" rx="4"/><rect x="39" y="39" width="24" height="24" rx="4"/><rect x="66" y="39" width="24" height="24" rx="4"/><rect x="12" y="66" width="24" height="24" rx="4"/><rect x="39" y="66" width="24" height="24" rx="4"/><rect x="66" y="66" width="24" height="24" rx="4"/></g>
+              <g transform="translate(24 78)"><rect x="-8" y="-7" width="16" height="13" rx="4" fill="#9AA6B8"/><circle cx="-3" cy="-1" r="2" fill="#3D8BFD"/><circle cx="3" cy="-1" r="2" fill="#3D8BFD"/><path d="M0 -7v-4" stroke="#9AA6B8" stroke-width="2"/><circle cy="-12" r="2" fill="#E5484D"/></g>
+              <path d="M78 18l2.5 5 5.5.8-4 3.9 1 5.5-5-2.6-5 2.6 1-5.5-4-3.9 5.5-.8z" fill="#FFC529"/>
+              <g transform="translate(51 51)"><circle r="7" fill="#3DAA5A"/><rect x="-1.5" y="5" width="3" height="5" fill="#7A5230"/></g>
+              <g font-family="Arial" font-weight="800" font-size="12" fill="#fff" text-anchor="middle">
+                <rect x="102" y="20" width="18" height="18" rx="4" fill="#3D8BFD"/><text x="111" y="33">▲</text>
+                <rect x="123" y="20" width="18" height="18" rx="4" fill="#3D8BFD"/><text x="132" y="33">▲</text>
+                <rect x="144" y="20" width="18" height="18" rx="4" fill="#2DB75A"/><text x="153" y="33">▶</text>
+                <rect x="102" y="42" width="18" height="18" rx="4" fill="#2DB75A"/><text x="111" y="55">▶</text>
+                <rect x="123" y="42" width="18" height="18" rx="4" fill="none" stroke="#C9C3D8" stroke-dasharray="3 2"/>
+              </g>
+              <rect x="110" y="70" width="40" height="20" rx="8" fill="#2DB75A"/><path d="M126 74l9 6-9 6z" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Robot Kodla</h3>
+            <p>İlk kodlama oyunu: okları sırayla dizerek robota program yaz, yeşil düğmeye bas, robot yıldıza gitsin. Ağaçlardan dolaş. 10 bölüm, takılınca sıradaki ok parlar.</p>
+            <div class="tags"><span>Egemen için</span><span>Sesli</span><span>Kodlama</span></div>
+          </div>
+        </a>
         <a class="game" href="ari-viz/index.html">
           <div class="cover cover-av" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
@@ -1951,8 +1979,7 @@
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
         <a class="game" href="pandomim/index.html">
-          <div class="cover is-new cover-pm" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-pm" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#FFDDEB"/>
               <rect x="96" y="12" width="56" height="78" rx="10" fill="#fff"/>
