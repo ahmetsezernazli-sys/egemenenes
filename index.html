@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-ya{background:#CBEFD8}
+    .cover-ya svg{width:100%;height:100%}
     .cover-kz{background:#DCEBFF}
     .cover-kz svg{width:100%;height:100%}
     .cover-lm{background:#BFE6FF}
@@ -300,7 +302,7 @@
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>25</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>26</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>25</b></a>
-    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>24</b></a>
+    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>25</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
 
@@ -1448,8 +1450,7 @@
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
         <a class="game" href="kizak-yarisi/index.html">
-          <div class="cover is-new cover-kz" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-kz" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="51" fill="#DCEBFF"/><rect y="51" width="164" height="51" fill="#FFE3E4"/>
               <g fill="#B8CDE6"><path d="M0 44l26-30 26 30zM60 44l30-34 30 34zM118 44l24-26 24 26z"/><path d="M0 95l26-30 26 30zM60 95l30-34 30 34zM118 95l24-26 24 26z"/></g>
@@ -2020,9 +2021,29 @@
     </section>
 
     <section class="group g-aile" id="aile" aria-labelledby="h-aile">
-      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 24 oyun</p></div>
+      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 25 oyun</p></div>
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
+        <a class="game" href="yuksek-alcak/index.html">
+          <div class="cover is-new cover-ya" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#CBEFD8"/>
+              <rect x="30" y="20" width="40" height="58" rx="6" fill="#fff" stroke="#DDE5E0" stroke-width="2"/>
+              <text x="50" y="52" font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="22" text-anchor="middle" fill="#D7263D">7</text><text x="50" y="70" font-size="12" text-anchor="middle" fill="#D7263D">♥</text>
+              <rect x="80" y="20" width="40" height="58" rx="6" fill="#2E9F5A"/><g stroke="#268A4D" stroke-width="3"><path d="M84 30l32 32M84 46l24 24M92 22l24 24"/></g>
+              <rect x="80" y="20" width="40" height="58" rx="6" fill="none" stroke="#fff" stroke-width="3"/>
+              <path d="M138 26l12 14h-24z" fill="#2E9F5A"/><path d="M138 74l12-14h-24z" fill="#E5484D"/>
+              <g transform="translate(14 86)"><circle r="7" fill="#FFD166" stroke="#B8902A"/><text y="3.5" font-size="9" font-weight="800" text-anchor="middle" fill="#3D2B00" font-family="Arial">₺</text></g>
+              <g transform="translate(28 90)"><circle r="7" fill="#FFD166" stroke="#B8902A"/></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Yüksek mi Alçak mı?</h3>
+            <p>Sıradaki kart yüksek mi, alçak mı? Her doğru tahmin kasayı büyütür; istediğin an puanı kasaya al, yanlışta kasa gider. 30 puana ilk ulaşan kazanır.</p>
+            <div class="tags"><span>Tüm aile</span><span>2-6 oyuncu</span><span>Bilgisayar rakip</span></div>
+          </div>
+        </a>
         <a class="game" href="pandomim/index.html">
           <div class="cover cover-pm" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
