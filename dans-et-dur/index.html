@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Dans Et, Dur! · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Aile parti oyunu: müzik çalınca karttaki gibi dans et, müzik birden durunca heykel gibi don! Neşeli müzikler kendiliğinden çalar, hareket kartları (kurbağa gibi zıpla, robot dansı), eleme modunda kıpırdayan elenir, son kalan kazanır.">
+  <meta name="theme-color" content="#2A1446">
+  <meta property="og:title" content="Dans Et, Dur!">
+  <meta property="og:description" content="Müzik çalınca dans et, durunca heykel gibi don!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%232A1446'/%3E%3Cpath d='M40 20v44a10 10 0 1 1-6-9V28l32-8v36a10 10 0 1 1-6-9V30z' fill='%23FF4FA3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← Oyunlar</a>
+    <h1 class="title">Dans Et, <span>Dur!</span></h1>
+    <button class="icon-btn" id="settings" type="button" aria-label="Ayarlar ve yeni oyun">⚙</button>
+  </header>
+  <div class="players" id="players" aria-live="polite"></div>
+  <main class="floor" id="floor">
+    <div class="lights" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="stage-in" id="view" aria-live="polite"></div>
+  </main>
+  <div class="controls" id="controls"></div>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>💃 Dans Et, Dur!</h2>
+    <p class="help">Telefonu ya da tableti herkesin göreceği bir yere koyun, sesi açın. <b>Müzik çalınca</b> karttaki gibi dans edin. <b>Müzik birden durunca</b> heykel gibi <b>donun</b>! Ekranda “DUR!” yazar, birkaç saniye kıpırdamadan bekleyin.</p>
+    <fieldset><legend>Oyun</legend>
+      <div class="seg"><label><input type="radio" name="mode" value="fun" checked><span>🎉 Eğlence</span></label><label><input type="radio" name="mode" value="out"><span>🏆 Eleme</span></label></div>
+      <p class="help" id="mode-help"><b>Eğlence:</b> kimse elenmez, istediğiniz kadar dans edin.</p>
+    </fieldset>
+    <fieldset id="f-names" hidden><legend>Dansçılar (boş bırakılanlar oynamaz)</legend>
+      <div class="names" id="names"></div>
+    </fieldset>
+    <fieldset><legend>Hız</legend>
+      <div class="seg"><label><input type="radio" name="speed" value="0"><span>🐢 Yavaş</span></label><label><input type="radio" name="speed" value="1" checked><span>🙂 Orta</span></label><label><input type="radio" name="speed" value="2"><span>⚡ Hızlı</span></label></div>
+    </fieldset>
+    <button class="btn primary big" type="submit">Müziği başlat!</button>
+  </form>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="over-title"></p>
+    <p class="help" id="over-tx"></p>
+    <button class="btn primary big" id="again" type="button">Yeniden oyna</button>
+    <button class="btn big" id="to-setup" type="button">Ayarlar</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

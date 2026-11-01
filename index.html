@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-dd{background:#2A1446}
+    .cover-dd svg{width:100%;height:100%}
     .cover-rv{background:#16302A}
     .cover-rv svg{width:100%;height:100%}
     .cover-ay{background:#0B0E1A}
@@ -284,7 +286,7 @@
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>23</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>24</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>23</b></a>
-    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>22</b></a>
+    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>23</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
 
@@ -1344,8 +1346,7 @@
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
         <a class="game" href="reversi/index.html">
-          <div class="cover is-new cover-rv" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-rv" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#16302A"/>
               <rect x="34" y="4" width="96" height="94" rx="6" fill="#0E3B29"/>
@@ -1876,9 +1877,28 @@
     </section>
 
     <section class="group g-aile" id="aile" aria-labelledby="h-aile">
-      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 22 oyun</p></div>
+      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 23 oyun</p></div>
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
+        <a class="game" href="dans-et-dur/index.html">
+          <div class="cover is-new cover-dd" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#2A1446"/>
+              <circle cx="20" cy="10" r="30" fill="#FF4FA3" opacity=".35"/><circle cx="150" cy="18" r="28" fill="#4CC9F0" opacity=".3"/><circle cx="82" cy="110" r="40" fill="#FFD166" opacity=".25"/>
+              <g transform="translate(54 58)"><circle cy="-26" r="7" fill="#FFD7B0"/><path d="M0 -19v20M0 1l-8 16M0 1l9 14M0 -14l-13-8M0 -14l12 -12" stroke="#FFF4FF" stroke-width="4" stroke-linecap="round"/></g>
+              <g transform="translate(108 60)"><circle cy="-26" r="7" fill="#C68C5A"/><path d="M0 -19v20M0 1l-10 12M0 1l6 16M0 -14l14-6M0 -14l-11 -12" stroke="#FFD166" stroke-width="4" stroke-linecap="round"/></g>
+              <path d="M136 46v-18l12-3v18" stroke="#FF4FA3" stroke-width="3"/><circle cx="133" cy="47" r="4" fill="#FF4FA3"/><circle cx="145" cy="44" r="4" fill="#FF4FA3"/>
+              <path d="M18 70v-14l10-2v14" stroke="#4CC9F0" stroke-width="3"/><circle cx="15" cy="71" r="3.5" fill="#4CC9F0"/><circle cx="25" cy="69" r="3.5" fill="#4CC9F0"/>
+              <rect x="56" y="80" width="52" height="16" rx="8" fill="#3D8BFD"/><text x="82" y="92" font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="11" text-anchor="middle" fill="#fff">DUR!</text>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Dans Et, Dur!</h3>
+            <p>Müzik çalınca karttaki gibi dans et, müzik birden durunca heykel gibi don! Neşeli müzikler kendiliğinden çalar; eleme modunda kıpırdayan elenir, son kalan kazanır.</p>
+            <div class="tags"><span>Tüm aile</span><span>Hareketli parti</span><span>2-8 kişi</span></div>
+          </div>
+        </a>
         <a class="game" href="harf-avi/index.html">
           <div class="cover cover-ha" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

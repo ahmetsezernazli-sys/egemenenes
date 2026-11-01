@@ -407,11 +407,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← bölümler LEVELS (yerçekimi g, yakıt, rüzgâr, pist genişlikleri, arazi pürüzü), güvenli iniş SAFE_VY/SAFE_VX/SAFE_ANG;
 │                         arazi genTerrain() (orta nokta kaydırma + düz pistler), fizik update(), iniş/kaza kararı land()
-└── reversi/            ← Reversi, ikisi birlikte taş çevirme oyunu (bilgisayar rakip Kolay/Zor, en iyi hamle yardımı)
+├── reversi/            ← Reversi, ikisi birlikte taş çevirme oyunu (bilgisayar rakip Kolay/Zor, en iyi hamle yardımı)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← kurallar flipsFor() / moves() / apply(), kare ağırlıkları WEIGHT;
+│                         bilgisayar: Kolay easyMove(), Zor bestMove() (alfa-beta minimax, derinlik 4); yardım render() içinde derinlik 2
+└── dans-et-dur/        ← Dans Et, Dur!, tüm aile hareketli parti oyunu (müzik durunca don, eleme modu)
     ├── index.html
     ├── style.css
-    └── game.js         ← kurallar flipsFor() / moves() / apply(), kare ağırlıkları WEIGHT;
-                          bilgisayar: Kolay easyMove(), Zor bestMove() (alfa-beta minimax, derinlik 4); yardım render() içinde derinlik 2
+    └── game.js         ← hareket kartları MOVES, hız SPEEDS (dans süresi aralığı, donma süresi), şarkılar SONGS (tempo, kök, akor dizisi, gam);
+                          müzik schedule() (davul, bas, akor, rastgele ezgi makeMelody()), akış dance() / freeze() / judge() / cont()
 ```
 
 ## Bilgisayarda oynamak
