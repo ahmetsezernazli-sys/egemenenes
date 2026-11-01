@@ -342,11 +342,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← resimler PICS listesinde: 0–100 koordinatlı dış çizgi noktaları, renk ve deco() süsleri;
 │                         20 modunda subdivide() ara nokta ekler (noktalar arası en az 9 birim)
-└── ritim-ustasi/       ← Ritim Ustası, Enes için 4 şeritli ritim oyunu (5 telifsiz eser, 3 zorluk, rekor)
+├── ritim-ustasi/       ← Ritim Ustası, Enes için 4 şeritli ritim oyunu (5 telifsiz eser, 3 zorluk, rekor)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← şarkılar SONGS listesinde "nota:vuruş" dizisi olarak (R = sus, accel = hızlanma);
+│                         zorluk DIFFS (grid/gap seyreltir, lead düşüş süresi); zamanlama WIN içinde
+└── su-balonu/          ← Su Balonu Savaşı, ikisi birlikte arena (bomberman benzeri; bilgisayar rakip, kalkan)
     ├── index.html
     ├── style.css
-    └── game.js         ← şarkılar SONGS listesinde "nota:vuruş" dizisi olarak (R = sus, accel = hızlanma);
-                          zorluk DIFFS (grid/gap seyreltir, lead düşüş süresi); zamanlama WIN içinde
+    └── game.js         ← arena 13×11 (newRound: sandık oranı 0.72, güçlendirici 0.32), FUSE balon süresi,
+                          bilgisayar aiDir(): tehlike haritası dangerMap() + bfs() ile kaçış/hedef seçimi
 ```
 
 ## Bilgisayarda oynamak
