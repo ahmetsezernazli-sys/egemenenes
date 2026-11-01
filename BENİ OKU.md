@@ -437,11 +437,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← kartlar CARDS [resim, kelime, kategori], pas hakkı MAX_PASS;
 │                         akış handOver() / startTurn() / hit() / endTurn() / nextTeam() / finish()
-└── robot-kodla/        ← Robot Kodla, Egemen için ilk kodlama oyunu (okları diz, robotu yıldıza götür; 10 bölüm)
+├── robot-kodla/        ← Robot Kodla, Egemen için ilk kodlama oyunu (okları diz, robotu yıldıza götür; 10 bölüm)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← bölümler LEVELS (ızgara, en kısa yol aralığı, ağaç sayısı), bulmaca makePuzzle() + bfs(), ipucu nextDir();
+│                         program add() / del() / run() (adım STEP_MS), çarpınca başa dönüş, bölüm başına PER_LEVEL bulmaca
+└── limonata/           ← Limonata Tezgahı, Enes için 14 günlük işletme oyunu (hava, malzeme, tarif, fiyat, ün)
     ├── index.html
     ├── style.css
-    └── game.js         ← bölümler LEVELS (ızgara, en kısa yol aralığı, ağaç sayısı), bulmaca makePuzzle() + bfs(), ipucu nextDir();
-                          program add() / del() / run() (adım STEP_MS), çarpınca başa dönüş, bölüm başına PER_LEVEL bulmaca
+    └── game.js         ← malzemeler ITEMS (paket, fiyat kuruş), hava WEATHER; müşteri sayısı ve ödeme isteği planDay() / maxPrice(), tat taste() ve idealIce();
+                          satış serve() / step(), gün sonu ve ün endDay(), malzeme yoksa skipDay() (oyun kilitlenmez)
 ```
 
 ## Bilgisayarda oynamak

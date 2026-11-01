@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-lm{background:#BFE6FF}
+    .cover-lm svg{width:100%;height:100%}
     .cover-rk{background:#EAF4FF}
     .cover-rk svg{width:100%;height:100%}
     .cover-pm{background:#FFDDEB}
@@ -294,7 +296,7 @@
 
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>25</b></a>
-    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>25</b></a>
+    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>26</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>24</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>24</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
@@ -306,8 +308,7 @@
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
         <a class="game" href="robot-kodla/index.html">
-          <div class="cover is-new cover-rk" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-rk" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#EAF4FF"/>
               <rect x="8" y="8" width="86" height="86" rx="8" fill="#8CC874"/>
@@ -906,9 +907,32 @@
     </section>
 
     <section class="group g-enes" id="enes" aria-labelledby="h-enes">
-      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 25 oyun</p></div>
+      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 26 oyun</p></div>
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
+        <a class="game" href="limonata/index.html">
+          <div class="cover is-new cover-lm" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#BFE6FF"/>
+              <rect y="66" width="164" height="36" fill="#D9D2C4"/><rect y="88" width="164" height="14" fill="#9CCF7E"/>
+              <circle cx="140" cy="20" r="11" fill="#FFC529"/>
+              <rect x="50" y="56" width="64" height="26" fill="#C98B54"/>
+              <g><rect x="44" y="26" width="10" height="8" fill="#FFD93B"/><rect x="54" y="26" width="10" height="8" fill="#fff"/><rect x="64" y="26" width="10" height="8" fill="#FFD93B"/><rect x="74" y="26" width="10" height="8" fill="#fff"/><rect x="84" y="26" width="10" height="8" fill="#FFD93B"/><rect x="94" y="26" width="10" height="8" fill="#fff"/><rect x="104" y="26" width="10" height="8" fill="#FFD93B"/><rect x="114" y="26" width="6" height="8" fill="#fff"/></g>
+              <rect x="48" y="34" width="3" height="22" fill="#8E5A2B"/><rect x="113" y="34" width="3" height="22" fill="#8E5A2B"/>
+              <ellipse cx="66" cy="50" rx="7" ry="5" fill="#FFD93B" stroke="#C9A400"/>
+              <path d="M90 42h10l-2 14h-6z" fill="#fff" stroke="#C9A400"/><path d="M91 47h8l-1 8h-6z" fill="#FFE680"/>
+              <text x="82" y="73" font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="8" text-anchor="middle" fill="#3A2E12">1,50 ₺</text>
+              <g transform="translate(22 80)"><circle cy="-14" r="6" fill="#F2C29B"/><rect x="-5" y="-8" width="10" height="12" rx="4" fill="#3D8BFD"/></g>
+              <g transform="translate(140 80)"><circle cy="-14" r="6" fill="#C68C5A"/><rect x="-5" y="-8" width="10" height="12" rx="4" fill="#E5484D"/><path d="M6 -6h5l-1 7h-3z" fill="#FFE680"/></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Limonata Tezgahı</h3>
+            <p>14 gün boyunca limonata tezgahını yönet: hava tahminine bak, malzeme al, tarifi ve fiyatı ayarla. Müşteriler beğenirse ünün artar. En çok parayı biriktir.</p>
+            <div class="tags"><span>Enes için</span><span>İşletme</span><span>Rekor</span></div>
+          </div>
+        </a>
         <a class="game" href="solitaire/index.html">
           <div class="cover cover-sol" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

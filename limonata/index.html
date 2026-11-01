@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Limonata Tezgahı · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için işletme oyunu: 14 gün boyunca limonata tezgahını yönet. Hava tahminine bak, limon, şeker, bardak ve buz al, tarifi ve fiyatı ayarla. Müşteriler tadı ve fiyatı beğenirse alır, ünün artar. En çok parayı biriktir, rekorunu kır.">
+  <meta name="theme-color" content="#FFF8D9">
+  <meta property="og:title" content="Limonata Tezgahı">
+  <meta property="og:description" content="Limonata tezgahını yönet: malzeme al, tarifi ayarla, kâr et!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23FFF1B8'/%3E%3Cpath d='M30 30h40l-6 52H36z' fill='%23fff' stroke='%23C9A400' stroke-width='4'/%3E%3Cpath d='M33 46h34l-4 34H37z' fill='%23FFD93B'/%3E%3Ccircle cx='66' cy='30' r='12' fill='%23FFD93B' stroke='%23C9A400' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← Oyunlar</a>
+    <h1 class="title">Limonata <span>Tezgahı</span></h1>
+    <button class="btn small" id="restart" type="button">Yeni oyun</button>
+  </header>
+  <div class="stats">
+    <span class="stat">Gün <b id="day">1</b>/14</span>
+    <span class="stat">💰 <b id="money">20,00</b> ₺</span>
+    <span class="stat">Ün <span class="rep"><i id="rep"></i></span></span>
+  </div>
+
+  <section id="plan" class="grid">
+    <div class="card">
+      <h2>☀️ Bugünün havası</h2>
+      <div class="weather"><span class="ic" id="w-ic" aria-hidden="true">☀️</span><div><b id="w-tx">Güneşli</b><small id="w-temp">28 °C</small></div></div>
+      <p class="note" id="w-note"></p>
+    </div>
+    <div class="card">
+      <h2>🛒 Malzemeler</h2>
+      <div id="shop"></div>
+      <p class="note">Buz gün sonunda erir. Bir sürahi limonata <b>10 bardak</b> çıkarır.</p>
+    </div>
+    <div class="card">
+      <h2>🍋 Tarif ve fiyat</h2>
+      <div id="recipe"></div>
+      <p class="note" id="can-make"></p>
+      <button class="btn primary big" id="open" type="button">Tezgahı aç!</button>
+    </div>
+  </section>
+
+  <section id="sim" class="card" hidden>
+    <div class="street"><canvas id="cv" aria-label="Tezgah ve müşteriler"></canvas></div>
+    <div class="simbar"><div class="prog"><i id="prog"></i></div><button class="btn small" id="speed" type="button">⏩ Hızlandır</button></div>
+    <ul class="feed" id="feed" aria-live="polite"></ul>
+  </section>
+</div>
+
+<div class="overlay" id="intro">
+  <div class="sheet">
+    <h2>🍋 Limonata Tezgahı</h2>
+    <p class="help">Yaz tatilinde <b>14 gün</b> boyunca limonata satıyorsun. Cebinde <b>20 ₺</b> var. Her sabah <b>hava tahminine</b> bak: sıcak ve güneşli günlerde çok müşteri gelir, yağmurda az. <b>Malzeme al</b>, <b>tarifi</b> (limon, şeker, buz) ve <b>fiyatı</b> ayarla, sonra tezgahı aç. Müşteriler tadı ve fiyatı beğenirse alır; beğenirlerse <b>ünün</b> artar, ertesi gün daha çok kişi gelir. Elinde kalan buz erir, dikkat!</p>
+    <p class="best" id="best"></p>
+    <button class="btn primary big" id="start" type="button">Başla</button>
+  </div>
+</div>
+
+<div class="overlay" id="report" hidden>
+  <div class="sheet center">
+    <h2 id="r-title">1. gün bitti</h2>
+    <table class="rep-table" id="r-table"></table>
+    <ul class="quotes" id="r-quotes"></ul>
+    <button class="btn primary big" id="r-next" type="button">Ertesi güne geç</button>
+  </div>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <h2 id="o-title"></h2>
+    <p class="help" id="o-tx"></p>
+    <button class="btn primary big" id="again" type="button">Yeniden oyna</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
