@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ritim Ustası · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için ritim oyunu: notalar dört şeritten düşer, çizgiye geldiği anda D F J K tuşlarına bas ya da dokun, melodiyi sen çal! Daha Dün Annemizin, Neşeye Övgü, Für Elise, Dağ Kralının Salonu ve Türk Marşı; üç zorluk, kombo ve rekor.">
+  <meta name="theme-color" content="#0D0B1E">
+  <meta property="og:title" content="Ritim Ustası">
+  <meta property="og:description" content="Notalar düşer, sen çalarsın: zamanlamanı yakala, komboyu büyüt!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%230D0B1E'/%3E%3Crect x='14' y='20' width='14' height='10' rx='3' fill='%23FF4D6D'/%3E%3Crect x='34' y='44' width='14' height='10' rx='3' fill='%23FFD166'/%3E%3Crect x='54' y='30' width='14' height='10' rx='3' fill='%2306D6A0'/%3E%3Crect x='74' y='56' width='14' height='10' rx='3' fill='%234CC9F0'/%3E%3Crect x='10' y='76' width='80' height='4' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Ritim <span>Ustası</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="songs-btn" type="button" aria-label="Şarkı listesi">☰</button>
+    </div>
+  </header>
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Ritim alanı. Notalar dört şeritten düşer; çizgiye geldiğinde D, F, J, K tuşlarına bas ya da şeride dokun."></canvas>
+  </main>
+</div>
+
+<div class="overlay" id="menu">
+  <div class="sheet">
+    <h2>🎵 Ritim Ustası</h2>
+    <p class="help">Notalar yukarıdan düşer. <b>Beyaz çizgiye geldiği anda</b> o şeridin tuşuna bas: <kbd>D</kbd> <kbd>F</kbd> <kbd>J</kbd> <kbd>K</kbd> (ya da ok tuşları). Tablet ve telefonda şeride dokun. Tam zamanında basarsan melodiyi <b>sen çalarsın</b>; kaçırdığın nota sessiz kalır!</p>
+    <div class="seg" id="diffs" role="radiogroup" aria-label="Zorluk"></div>
+    <div class="songs" id="songs"></div>
+  </div>
+</div>
+
+<div class="overlay" id="result" hidden>
+  <div class="sheet center">
+    <div class="grade" id="r-grade">A</div>
+    <p class="end-title" id="r-title"></p>
+    <div class="stats" id="r-stats"></div>
+    <p class="lead" id="r-text"></p>
+    <button class="btn primary big" id="r-again" type="button">Tekrar çal</button>
+    <button class="btn big" id="r-menu" type="button">Şarkı listesi</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

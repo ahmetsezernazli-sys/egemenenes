@@ -337,11 +337,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← kural motoru: target() tek adım, sequences() bütün yasal diziler (iki zarı kullanma ve
 │                         büyük zar kuralı), bilgisayar evaluate()/aiChoose(); Kolay seviye rastgelelik payı aiChoose içinde
-└── nokta-nokta/        ← Nokta Nokta, Egemen için noktaları birleştirme (10'a ve 20'ye kadar, çıkartma albümü)
+├── nokta-nokta/        ← Nokta Nokta, Egemen için noktaları birleştirme (10'a ve 20'ye kadar, çıkartma albümü)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← resimler PICS listesinde: 0–100 koordinatlı dış çizgi noktaları, renk ve deco() süsleri;
+│                         20 modunda subdivide() ara nokta ekler (noktalar arası en az 9 birim)
+└── ritim-ustasi/       ← Ritim Ustası, Enes için 4 şeritli ritim oyunu (5 telifsiz eser, 3 zorluk, rekor)
     ├── index.html
     ├── style.css
-    └── game.js         ← resimler PICS listesinde: 0–100 koordinatlı dış çizgi noktaları, renk ve deco() süsleri;
-                          20 modunda subdivide() ara nokta ekler (noktalar arası en az 9 birim)
+    └── game.js         ← şarkılar SONGS listesinde "nota:vuruş" dizisi olarak (R = sus, accel = hızlanma);
+                          zorluk DIFFS (grid/gap seyreltir, lead düşüş süresi); zamanlama WIN içinde
 ```
 
 ## Bilgisayarda oynamak
