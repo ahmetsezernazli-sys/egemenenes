@@ -352,11 +352,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← arena 13×11 (newRound: sandık oranı 0.72, güçlendirici 0.32), FUSE balon süresi,
 │                         bilgisayar aiDir(): tehlike haritası dangerMap() + bfs() ile kaçış/hedef seçimi
-└── okey/               ← Okey, tüm aile (1-4 oyuncu, boş koltuğa bilgisayar; ıstakada sürükleyerek dizme)
+├── okey/               ← Okey, tüm aile (1-4 oyuncu, boş koltuğa bilgisayar; ıstakada sürükleyerek dizme)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← cover(): seri/per arama (okey jokeri, 12-13-1 serisi), isWin() + isPairsWin() (çifte),
+│                         bilgisayar evaluate()/bestDiscard(); gösterge deal() içinde seçilir
+└── kim-nerede/         ← Kim Nerede?, Egemen için sınıflandırma (hayvanlar evine, eşyalar yerine; 2→5 yer)
     ├── index.html
     ├── style.css
-    └── game.js         ← cover(): seri/per arama (okey jokeri, 12-13-1 serisi), isWin() + isPairsWin() (çifte),
-                          bilgisayar evaluate()/bestDiscard(); gösterge deal() içinde seçilir
+    └── game.js         ← MODES: yerler (ad, -de/-e hâlleri, arka plan) ve öğeler [emoji, ad, yer];
+                          seviyeler LEVELS (kaç yer açık), tur başına PER_ROUND öğe
 ```
 
 ## Bilgisayarda oynamak
