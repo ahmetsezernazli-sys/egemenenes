@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-ha{background:#FFE6C7}
+    .cover-ha svg{width:100%;height:100%}
     .cover-tank{background:#6B7A45}
     .cover-tank svg{width:100%;height:100%}
     .cover-zk{background:#14111F}
@@ -276,7 +278,7 @@
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>22</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>23</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>22</b></a>
-    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>21</b></a>
+    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>22</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
 
@@ -1295,8 +1297,7 @@
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
         <a class="game" href="tank-duellosu/index.html">
-          <div class="cover is-new cover-tank" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-tank" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#6B7A45"/>
               <g fill="#8C7B5E"><rect x="74" y="10" width="14" height="36"/><rect x="74" y="60" width="14" height="32"/><rect x="20" y="8" width="30" height="10"/><rect x="114" y="84" width="30" height="10"/></g>
@@ -1806,9 +1807,33 @@
     </section>
 
     <section class="group g-aile" id="aile" aria-labelledby="h-aile">
-      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 21 oyun</p></div>
+      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 22 oyun</p></div>
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
+        <a class="game" href="harf-avi/index.html">
+          <div class="cover is-new cover-ha" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#FFE6C7"/>
+              <g font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="16" text-anchor="middle">
+                <rect x="18" y="20" width="22" height="28" rx="5" fill="#FF7A45"/><text x="29" y="40" fill="#fff">K</text>
+                <rect x="44" y="20" width="22" height="28" rx="5" fill="#fff" stroke="#F0D2B8" stroke-width="2"/>
+                <rect x="70" y="20" width="22" height="28" rx="5" fill="#FF7A45"/><text x="81" y="40" fill="#fff">D</text>
+                <rect x="96" y="20" width="22" height="28" rx="5" fill="#fff" stroke="#F0D2B8" stroke-width="2"/>
+                <rect x="122" y="20" width="22" height="28" rx="5" fill="#fff" stroke="#F0D2B8" stroke-width="2"/>
+              </g>
+              <g><ellipse cx="40" cy="70" rx="8" ry="10" fill="#FF6B6B"/><ellipse cx="58" cy="70" rx="8" ry="10" fill="#FFB547"/><ellipse cx="76" cy="70" rx="8" ry="10" fill="#FFE14D"/><ellipse cx="94" cy="70" rx="8" ry="10" fill="#6BD48A"/><ellipse cx="112" cy="70" rx="8" ry="10" fill="#4CC9F0" opacity=".25"/><ellipse cx="130" cy="70" rx="8" ry="10" fill="#7B8CFF" opacity=".25"/></g>
+              <g stroke="#8A6A52" stroke-width="1"><path d="M40 80v10M58 80v10M76 80v10M94 80v10"/></g>
+              <g fill="#fff" opacity=".6"><circle cx="37" cy="66" r="2"/><circle cx="55" cy="66" r="2"/><circle cx="73" cy="66" r="2"/><circle cx="91" cy="66" r="2"/></g>
+              <path d="M104 62l16 16M120 62l-16 16" stroke="#E5484D" stroke-width="2" opacity=".5"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Harf Avı</h3>
+            <p>Kategorisi verilen gizli kelimeyi sırayla harf seçerek bulun. Doğru harf puan kazandırır ve sıra sende kalır, yanlış harf bir balon patlatır. Küçüklere parlayan harf yardımı.</p>
+            <div class="tags"><span>Tüm aile</span><span>2-6 oyuncu</span><span>Bilgisayar rakip</span></div>
+          </div>
+        </a>
         <a class="game" href="turkiye-turu/index.html">
           <div class="cover cover-tt" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

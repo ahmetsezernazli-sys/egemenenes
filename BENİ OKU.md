@@ -387,11 +387,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← canavarlar MONSTERS (kat aralığı, can, saldırı, savunma, deneyim), eşyalar ITEMS (ağırlık);
 │                         harita genFloor(), görüş computeFov(), canavar hamlesi monstersAct(), seviye eşiği needXp()
-└── tank-duellosu/      ← Tank Düellosu, ikisi birlikte tank savaşı (seken mermiler, güçlendirici, bilgisayar rakip)
+├── tank-duellosu/      ← Tank Düellosu, ikisi birlikte tank savaşı (seken mermiler, güçlendirici, bilgisayar rakip)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← haritalar MAPS (sol yarı blokları, simetriği buildGrid() ekler), güçlendiriciler POWERS; hız SPEED, mermi BSPEED/BOUNCES;
+│                         bilgisayar think() (BFS yol, mermiden kaçma, shotHits() sekme denemesi); yardım: 5 can + mermi kıvrılması update() içinde
+└── harf-avi/           ← Harf Avı, tüm aile kelime oyunu (2-6 oyuncu, 8 kategori, bilgisayar rakip, harf yardımı)
     ├── index.html
     ├── style.css
-    └── game.js         ← haritalar MAPS (sol yarı blokları, simetriği buildGrid() ekler), güçlendiriciler POWERS; hız SPEED, mermi BSPEED/BOUNCES;
-                          bilgisayar think() (BFS yol, mermiden kaçma, shotHits() sekme denemesi); yardım: 5 can + mermi kıvrılması update() içinde
+    └── game.js         ← kelimeler CATS içinde (k = kolay, z = zor), alfabe ABC; puan guess() içinde (harf başına 10, son harf +30);
+                          bilgisayar cpuPick() (kalıba uyan kelimelerdeki en sık harf), yardım startTurn() (2 doğru + 2 yanlış harf parlar)
 ```
 
 ## Bilgisayarda oynamak

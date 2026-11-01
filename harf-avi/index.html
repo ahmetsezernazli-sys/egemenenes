@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Harf Avı · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Aile kelime oyunu: kategorisi verilen gizli kelimeyi sırayla harf söyleyerek bulun. Doğru harf puan kazandırır ve sıra sende kalır, yanlış harf bir balon patlatır. 2-6 oyuncu, boş koltuğa bilgisayar, küçüklere parlayan harf yardımı ve sesli anlatım.">
+  <meta name="theme-color" content="#FFF3E0">
+  <meta property="og:title" content="Harf Avı">
+  <meta property="og:description" content="Gizli kelimeyi harf harf bul, balonları patlatma!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23FFF3E0'/%3E%3Crect x='10' y='34' width='24' height='32' rx='6' fill='%23FF7A45'/%3E%3Crect x='38' y='34' width='24' height='32' rx='6' fill='%23fff' stroke='%23FF7A45' stroke-width='4'/%3E%3Crect x='66' y='34' width='24' height='32' rx='6' fill='%23FF7A45'/%3E%3Ctext x='22' y='58' font-size='20' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%23fff'%3EH%3C/text%3E%3Ctext x='78' y='58' font-size='20' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%23fff'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Harf <span>Avı</span></h1>
+    <button class="icon-btn" id="settings" type="button" aria-label="Oyuncular ve yeni oyun">⚙</button>
+  </header>
+  <div class="players" id="players"></div>
+  <main class="board">
+    <p class="cat" id="cat"></p>
+    <div class="word" id="word" aria-live="polite"></div>
+    <div class="balloons" id="balloons" aria-label="Kalan balonlar"></div>
+    <p class="msg" id="msg" aria-live="polite"></p>
+    <div class="keys" id="keys"></div>
+  </main>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>🎈 Harf Avı</h2>
+    <p class="help">Gizli kelimenin <b>kategorisi</b> yazar. Sırası gelen bir <b>harf</b> seçer: harf kelimede varsa her biri için <b>10 puan</b> alır ve <b>tekrar</b> oynar. Yoksa bir <b>balon patlar</b> ve sıra geçer. Kelimenin <b>son harfini</b> bulan <b>+30</b> alır. Balonlar biterse kelime yanar. En çok puanı toplayan kazanır!</p>
+    <fieldset><legend>Oyuncu sayısı</legend>
+      <div class="seg wide">
+        <label><input type="radio" name="count" value="2"><span>2</span></label><label><input type="radio" name="count" value="3"><span>3</span></label>
+        <label><input type="radio" name="count" value="4" checked><span>4</span></label><label><input type="radio" name="count" value="5"><span>5</span></label><label><input type="radio" name="count" value="6"><span>6</span></label>
+      </div>
+    </fieldset>
+    <fieldset><legend>Oyuncular</legend><div id="rows" class="rows"></div>
+      <p class="help small"><b>🤖</b> bilgisayar oynar · <b>✨ yardım:</b> o oyuncunun sırasında birkaç harf parlar, en az biri doğrudur (okumayı yeni öğrenenler için).</p>
+    </fieldset>
+    <fieldset><legend>Kelimeler</legend>
+      <div class="seg"><label><input type="radio" name="lvl" value="0"><span>Kolay</span></label><label><input type="radio" name="lvl" value="1" checked><span>Karışık</span></label><label><input type="radio" name="lvl" value="2"><span>Zor</span></label></div>
+    </fieldset>
+    <fieldset><legend>Kaç kelime</legend>
+      <div class="seg"><label><input type="radio" name="len" value="5"><span>5</span></label><label><input type="radio" name="len" value="8" checked><span>8</span></label><label><input type="radio" name="len" value="12"><span>12</span></label></div>
+    </fieldset>
+    <button class="btn primary big" type="submit">Başla!</button>
+  </form>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="over-title"></p>
+    <div class="results" id="results"></div>
+    <button class="btn primary big" id="again" type="button">Yeniden oyna</button>
+    <button class="btn big" id="to-setup" type="button">Oyuncuları değiştir</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
