@@ -482,11 +482,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← resimler PICS, bölümler LEVELS (adet, yön: 1 küçükten büyüğe, -1 tersi, 0 karışık; num = rakamlar);
 │                         tur newRound(), seçim pick(), ipucu armIdle() (8 sn sonra doğru resim parlar)
-└── sifre-kir/          ← Şifre Kır, Enes için renkli şifre kırma bulmacası (4 renk, 10 deneme, üç zorluk)
+├── sifre-kir/          ← Şifre Kır, Enes için renkli şifre kırma bulmacası (4 renk, 10 deneme, üç zorluk)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← renkler COLORS, zorluklar LV (renk sayısı, tekrar olur mu), ipucu hesabı score() (yeşil doğru yer, beyaz yanlış yer);
+│                         tahmin put() / del() / go(), sonuç finish(), rekor zorluk başına
+└── tas-kagit-makas/    ← Taş Kağıt Makas, ikisi birlikte gizli seçim düellosu (5 puan, bilgisayar rakip)
     ├── index.html
     ├── style.css
-    └── game.js         ← renkler COLORS, zorluklar LV (renk sayısı, tekrar olur mu), ipucu hesabı score() (yeşil doğru yer, beyaz yanlış yer);
-                          tahmin put() / del() / go(), sonuç finish(), rekor zorluk başına
+    └── game.js         ← eller H, kural beats() ve açıklamalar WHY, hedef GOAL;
+                          akış round() / choose() / reveal(), klavye mavi 1 2 3, kırmızı 8 9 0
 ```
 
 ## Bilgisayarda oynamak

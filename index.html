@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-tkm{background:#E3EEFF}
+    .cover-tkm svg{width:100%;height:100%}
     .cover-sk{background:#1B1D2E}
     .cover-sk svg{width:100%;height:100%}
     .cover-sr{background:#F0F7FF}
@@ -313,7 +315,7 @@
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>27</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>28</b></a>
-    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>26</b></a>
+    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>27</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>26</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
@@ -966,8 +968,7 @@
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
         <a class="game" href="sifre-kir/index.html">
-          <div class="cover is-new cover-sk" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-sk" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#1B1D2E"/>
               <rect x="20" y="8" width="124" height="86" rx="10" fill="#262A42"/>
@@ -1536,9 +1537,26 @@
     </section>
 
     <section class="group g-ikisi" id="ikisi" aria-labelledby="h-ikisi">
-      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 26 oyun</p></div>
+      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 27 oyun</p></div>
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
+        <a class="game" href="tas-kagit-makas/index.html">
+          <div class="cover is-new cover-tkm" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="82" height="102" fill="#E3EEFF"/><rect x="82" width="82" height="102" fill="#FFE5E6"/>
+              <g transform="translate(40 52)"><circle r="18" fill="#F2C29B"/><path d="M-14 -6h28M-14 2h28M-12 10h24" stroke="#D9A57A" stroke-width="2"/></g>
+              <g transform="translate(124 52)"><rect x="-16" y="-6" width="10" height="30" rx="5" fill="#F2C29B" transform="rotate(-20)"/><rect x="2" y="-8" width="10" height="30" rx="5" fill="#F2C29B" transform="rotate(20)"/><circle cy="18" r="13" fill="#F2C29B"/></g>
+              <text x="82" y="58" font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="14" text-anchor="middle" fill="#2A2540">VS</text>
+              <g font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="16" fill="#2A2540"><text x="14" y="22">3</text><text x="142" y="22">1</text></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Taş Kağıt Makas</h3>
+            <p>Herkes kendi tarafından gizlice seçer, ikisi de seçince eller aynı anda açılır. Taş makası kırar, makas kağıdı keser, kağıt taşı sarar. 5 puana ilk ulaşan kazanır.</p>
+            <div class="tags"><span>İkisi birlikte</span><span>Bilgisayar rakip</span><span>Hızlı</span></div>
+          </div>
+        </a>
         <a class="game" href="labirent-yarisi/index.html">
           <div class="cover cover-lb" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

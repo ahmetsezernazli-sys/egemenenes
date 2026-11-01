@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Taş Kağıt Makas · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="İki kişilik taş kağıt makas düellosu: herkes kendi tarafından gizlice seçer, ikisi de seçince eller aynı anda açılır. Taş makası, makas kağıdı, kağıt taşı yener. 5 puana ilk ulaşan kazanır, bilgisayara karşı da oynanır.">
+  <meta name="theme-color" content="#FFF4E2">
+  <meta property="og:title" content="Taş Kağıt Makas">
+  <meta property="og:description" content="Gizlice seç, eller aynı anda açılsın: taş, kağıt, makas!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23FFF4E2'/%3E%3Ccircle cx='30' cy='56' r='16' fill='%23999'/%3E%3Crect x='52' y='34' width='32' height='40' rx='4' fill='%23fff' stroke='%23ccc' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← Oyunlar</a>
+    <h1 class="title">Taş Kağıt <span>Makas</span></h1>
+    <div class="bar-actions"><button class="icon-btn" id="settings" type="button" aria-label="Ayarlar">⚙</button></div>
+  </header>
+  <main class="arena">
+    <section class="side p0" id="side0" aria-label="Mavi oyuncu">
+      <div class="who"><span><i class="dot b"></i> <b id="n0">Enes</b></span></div>
+      <div class="pts" id="s0">0</div>
+      <div class="opts" id="o0"></div>
+    </section>
+    <div class="mid"><div class="hands" id="hands" aria-live="polite"></div></div>
+    <section class="side p1" id="side1" aria-label="Kırmızı oyuncu">
+      <div class="who"><span><i class="dot r"></i> <b id="n1">Egemen</b></span></div>
+      <div class="pts" id="s1">0</div>
+      <div class="opts" id="o1"></div>
+    </section>
+  </main>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="form">
+    <h2>✊✋✌️ Taş Kağıt Makas</h2>
+    <p class="help">Herkes kendi tarafındaki düğmelerden <b>gizlice</b> seçer (seçim gizli kalır). İkisi de seçince eller aynı anda açılır. <b>Taş</b> makası kırar, <b>makas</b> kağıdı keser, <b>kağıt</b> taşı sarar. Aynıysa berabere. <b>5 puana</b> ilk ulaşan kazanır. Klavyede mavi <b>1 2 3</b>, kırmızı <b>8 9 0</b>.</p>
+    <fieldset><legend>Rakip</legend>
+      <div class="seg"><label><input type="radio" name="opp" value="2p" checked><span>👫 İki kişi</span></label><label><input type="radio" name="opp" value="ai"><span>🤖 Bilgisayar</span></label></div>
+    </fieldset>
+    <fieldset><legend><i class="dot b"></i> Mavi</legend><input class="name" id="in0" maxlength="12" value="Enes" aria-label="Mavi oyuncunun adı"></fieldset>
+    <fieldset><legend><i class="dot r"></i> Kırmızı</legend><input class="name" id="in1" maxlength="12" value="Egemen" aria-label="Kırmızı oyuncunun adı"></fieldset>
+    <button class="btn primary big" type="submit">Başla!</button>
+  </form>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="over-title"></p>
+    <p class="help" id="over-tx"></p>
+    <button class="btn primary big" id="again" type="button">Yeniden oyna</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
