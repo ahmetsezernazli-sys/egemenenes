@@ -397,11 +397,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← kelimeler CATS içinde (k = kolay, z = zor), alfabe ABC; puan guess() içinde (harf başına 10, son harf +30);
 │                         bilgisayar cpuPick() (kalıba uyan kelimelerdeki en sık harf), yardım startTurn() (2 doğru + 2 yanlış harf parlar)
-└── minik-market/       ← Minik Market, Egemen için market oyunu (sayarak ürün toplama, bozuk para sayma, 6 bölüm)
+├── minik-market/       ← Minik Market, Egemen için market oyunu (sayarak ürün toplama, bozuk para sayma, 6 bölüm)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← ürünler GOODS (resim, ad, fiyat), müşteriler ANIMALS, bölümler LEVELS (raf, çeşit, en çok adet, ödeme ve toplam);
+│                         sipariş makeOrder(), seçim pick(), para sayma startPay() / answerPay() / countAloud()
+└── ay-inisi/           ← Ay'a İniş, Enes için uzay aracı iniş oyunu (10 bölüm, yerçekimi, rüzgâr, yakıt, dengeleyici yardım)
     ├── index.html
     ├── style.css
-    └── game.js         ← ürünler GOODS (resim, ad, fiyat), müşteriler ANIMALS, bölümler LEVELS (raf, çeşit, en çok adet, ödeme ve toplam);
-                          sipariş makeOrder(), seçim pick(), para sayma startPay() / answerPay() / countAloud()
+    └── game.js         ← bölümler LEVELS (yerçekimi g, yakıt, rüzgâr, pist genişlikleri, arazi pürüzü), güvenli iniş SAFE_VY/SAFE_VX/SAFE_ANG;
+                          arazi genTerrain() (orta nokta kaydırma + düz pistler), fizik update(), iniş/kaza kararı land()
 ```
 
 ## Bilgisayarda oynamak
