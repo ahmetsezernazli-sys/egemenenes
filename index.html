@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-hc{background:#BFE6FF}
+    .cover-hc svg{width:100%;height:100%}
     .cover-sol{background:#145A3E}
     .cover-sol svg{width:100%;height:100%}
     .cover-av{background:#CDEBFF}
@@ -289,7 +291,7 @@
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>24</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>25</b></a>
-    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>23</b></a>
+    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>24</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>23</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
@@ -878,8 +880,7 @@
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
         <a class="game" href="solitaire/index.html">
-          <div class="cover is-new cover-sol" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-sol" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#145A3E"/>
               <rect x="8" y="8" width="22" height="31" rx="3" fill="#2A64C0" stroke="#fff" stroke-width="1.5"/>
@@ -1388,9 +1389,31 @@
     </section>
 
     <section class="group g-ikisi" id="ikisi" aria-labelledby="h-ikisi">
-      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 23 oyun</p></div>
+      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 24 oyun</p></div>
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
+        <a class="game" href="halat-cekme/index.html">
+          <div class="cover is-new cover-hc" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#BFE6FF"/>
+              <rect y="62" width="164" height="40" fill="#8FCF6E"/>
+              <ellipse cx="82" cy="70" rx="16" ry="4" fill="#8A5A2B"/>
+              <path d="M24 50 Q82 56 140 50" stroke="#B5793A" stroke-width="3.5"/>
+              <rect x="80" y="48" width="2.5" height="14" fill="#E5484D"/><path d="M82.5 49l10 3.5-10 3.5z" fill="#E5484D"/>
+              <g transform="translate(22 62) rotate(-20)"><path d="M0 0l-5 12M0 0l4 12" stroke="#2A2540" stroke-width="3" stroke-linecap="round"/><rect x="-5" y="-18" width="10" height="18" rx="4" fill="#3D8BFD"/><circle cy="-24" r="6" fill="#F2C29B"/></g>
+              <g transform="translate(38 62) rotate(-16)"><path d="M0 0l-5 12M0 0l4 12" stroke="#2A2540" stroke-width="3" stroke-linecap="round"/><rect x="-5" y="-18" width="10" height="18" rx="4" fill="#5FA2FF"/><circle cy="-24" r="6" fill="#F2C29B"/></g>
+              <g transform="translate(142 62) rotate(20)"><path d="M0 0l-4 12M0 0l5 12" stroke="#2A2540" stroke-width="3" stroke-linecap="round"/><rect x="-5" y="-18" width="10" height="18" rx="4" fill="#E5484D"/><circle cy="-24" r="6" fill="#F2C29B"/></g>
+              <g transform="translate(126 62) rotate(16)"><path d="M0 0l-4 12M0 0l5 12" stroke="#2A2540" stroke-width="3" stroke-linecap="round"/><rect x="-5" y="-18" width="10" height="18" rx="4" fill="#FF7A7E"/><circle cy="-24" r="6" fill="#F2C29B"/></g>
+              <g font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="12"><rect x="8" y="8" width="44" height="18" rx="6" fill="#3D8BFD"/><text x="30" y="21" text-anchor="middle" fill="#fff">7 × 6</text><rect x="112" y="8" width="44" height="18" rx="6" fill="#E5484D"/><text x="134" y="21" text-anchor="middle" fill="#fff">3 + 4</text></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Halat Çekme</h3>
+            <p>Herkes kendi seviyesindeki soruyu çözdükçe halat kendi tarafına kayar. Küçüklere resim sayma, büyüklere çarpım ve karışık işlem. Hızlı bas modu ve bilgisayar rakip.</p>
+            <div class="tags"><span>İkisi birlikte</span><span>Matematik</span><span>Bilgisayar rakip</span></div>
+          </div>
+        </a>
         <a class="game" href="reversi/index.html">
           <div class="cover cover-rv" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

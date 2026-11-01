@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Halat Çekme · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="İki kişilik halat çekme: herkes kendi seviyesindeki soruyu çözdükçe halat kendi tarafına kayar. Küçüklere resim sayma, büyüklere toplama, çarpım ve karışık işlem. Hızlı bas modu, bilgisayar rakip, tablette karşılıklı oturma.">
+  <meta name="theme-color" content="#FFF4E2">
+  <meta property="og:title" content="Halat Çekme">
+  <meta property="og:description" content="Soruyu çöz, halatı kendine çek!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23FFF4E2'/%3E%3Cpath d='M8 54h84' stroke='%23B5793A' stroke-width='8' stroke-linecap='round'/%3E%3Crect x='46' y='40' width='8' height='28' fill='%23E5484D'/%3E%3Ccircle cx='16' cy='38' r='9' fill='%233D8BFD'/%3E%3Ccircle cx='84' cy='38' r='9' fill='%23E5484D'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← Oyunlar</a>
+    <h1 class="title">Halat <span>Çekme</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="settings" type="button" aria-label="Ayarlar">⚙</button>
+    </div>
+  </header>
+  <main class="arena">
+    <section class="side p0" id="side0" aria-label="Mavi oyuncu">
+      <div class="who"><span><i class="dot b"></i> <b id="n0">Enes</b></span><span class="wins" id="w0"></span></div>
+      <div class="q" id="q0" aria-live="polite"></div>
+      <div class="opts" id="o0"></div>
+    </section>
+    <div class="mid" id="mid"><canvas id="cv" aria-label="Halat"></canvas><div class="banner" id="banner"></div></div>
+    <section class="side p1" id="side1" aria-label="Kırmızı oyuncu">
+      <div class="who"><span><i class="dot r"></i> <b id="n1">Egemen</b></span><span class="wins" id="w1"></span></div>
+      <div class="q" id="q1" aria-live="polite"></div>
+      <div class="opts" id="o1"></div>
+    </section>
+  </main>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="form">
+    <h2>🪢 Halat Çekme</h2>
+    <p class="help">Herkes kendi tarafındaki soruyu çözer. <b>Doğru cevap</b> halatı kendi tarafına çeker, <b>yanlış cevapta</b> bir an donarsın. Kırmızı bayrağı kendi çizgisine ilk getiren raundu alır. Klavyede mavi <b>1 2 3</b>, kırmızı <b>8 9 0</b> tuşlarıyla cevap verir. Tablet dik dururken karşılıklı oturabilirsiniz.</p>
+    <fieldset><legend>Oyun</legend>
+      <div class="seg"><label><input type="radio" name="mode" value="q" checked><span>🧠 Soru</span></label><label><input type="radio" name="mode" value="tap"><span>👆 Hızlı bas</span></label></div>
+    </fieldset>
+    <fieldset><legend>Rakip</legend>
+      <div class="seg"><label><input type="radio" name="opp" value="2p" checked><span>👫 İki kişi</span></label><label><input type="radio" name="opp" value="ai"><span>🤖 Bilgisayar</span></label></div>
+    </fieldset>
+    <fieldset><legend><i class="dot b"></i> Mavi</legend>
+      <input class="name" id="in0" maxlength="12" value="Enes" aria-label="Mavi oyuncunun adı">
+      <div class="seg lv" data-p="0"><label><input type="radio" name="lv0" value="0"><span>🍎 Sayma</span></label><label><input type="radio" name="lv0" value="1"><span>➕ Toplama</span></label><label><input type="radio" name="lv0" value="2"><span>✖ Çarpım</span></label><label><input type="radio" name="lv0" value="3" checked><span>🔀 Karışık</span></label></div>
+    </fieldset>
+    <fieldset><legend><i class="dot r"></i> Kırmızı</legend>
+      <input class="name" id="in1" maxlength="12" value="Egemen" aria-label="Kırmızı oyuncunun adı">
+      <div class="seg lv" data-p="1"><label><input type="radio" name="lv1" value="0" checked><span>🍎 Sayma</span></label><label><input type="radio" name="lv1" value="1"><span>➕ Toplama</span></label><label><input type="radio" name="lv1" value="2"><span>✖ Çarpım</span></label><label><input type="radio" name="lv1" value="3"><span>🔀 Karışık</span></label></div>
+    </fieldset>
+    <p class="help">Hızlı bas modunda seviye seçimi gücü belirler: <b>Sayma</b> seçen küçük oyuncunun her basışı daha çok çeker.</p>
+    <button class="btn primary big" type="submit">Çekmeye başla!</button>
+  </form>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="over-title"></p>
+    <p class="help" id="over-tx"></p>
+    <button class="btn primary big" id="again" type="button">Yeniden oyna</button>
+    <button class="btn big" id="to-setup" type="button">Ayarlar</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

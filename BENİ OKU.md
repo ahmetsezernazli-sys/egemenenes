@@ -422,11 +422,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← bölümler LEVELS (çiçek, ağ sayısı, ipucu), yerleşim placeLevel() (ipucu yolu ağlara değmez), uçuş hızı SPEED;
 │                         çizim pointer olayları, uçuş ve çiçek/ağ kontrolü update(), sonuç arrive()
-└── solitaire/          ← Solitaire, Enes için Klondike sabır oyunu (1 ya da 3 kart çekme, geri al, ipucu, rekor)
+├── solitaire/          ← Solitaire, Enes için Klondike sabır oyunu (1 ya da 3 kart çekme, geri al, ipucu, rekor)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← kurallar canTab() / canFound() / legal(), hamle doMove() ve drawStock(); dokununca hedef autoTarget(), ipucu findHint();
+│                         yerleşim layout() / offsets() (uzun sütunlar sıkıştırılır), sürükle-bırak pointer olayları, otomatik bitirme autoFinish()
+└── halat-cekme/        ← Halat Çekme, ikisi birlikte soru çözme / hızlı basma yarışı (oyuncu başına seviye, bilgisayar rakip)
     ├── index.html
     ├── style.css
-    └── game.js         ← kurallar canTab() / canFound() / legal(), hamle doMove() ve drawStock(); dokununca hedef autoTarget(), ipucu findHint();
-                          yerleşim layout() / offsets() (uzun sütunlar sıkıştırılır), sürükle-bırak pointer olayları, otomatik bitirme autoFinish()
+    └── game.js         ← sorular makeQ(seviye) (0 sayma, 1 toplama, 2 çarpım, 3 karışık), çekme adımı STEP_Q / STEP_TAP, yanlışta donma FREEZE;
+                          akış newRound() / answer() / tap() / endRound(), bilgisayar update() içinde, dikey ekranda üst taraf 180° döner (style.css)
 ```
 
 ## Bilgisayarda oynamak
