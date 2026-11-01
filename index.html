@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-mm{background:#FFE9C9}
+    .cover-mm svg{width:100%;height:100%}
     .cover-ha{background:#FFE6C7}
     .cover-ha svg{width:100%;height:100%}
     .cover-tank{background:#6B7A45}
@@ -275,7 +277,7 @@
   </a>
 
   <nav class="groups" aria-label="Oyun grupları">
-    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>22</b></a>
+    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>23</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>23</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>22</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>22</b></a>
@@ -284,9 +286,32 @@
 
   <main class="groups-main">
     <section class="group g-egemen" id="egemen" aria-labelledby="h-egemen">
-      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 22 oyun</p></div>
+      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 23 oyun</p></div>
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
+        <a class="game" href="minik-market/index.html">
+          <div class="cover is-new cover-mm" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#FFE9C9"/>
+              <rect y="66" width="164" height="36" fill="#E9C79C"/>
+              <rect x="8" y="10" width="84" height="84" rx="10" fill="#C98B54"/>
+              <g fill="#FFF8EE"><rect x="14" y="16" width="34" height="34" rx="7"/><rect x="52" y="16" width="34" height="34" rx="7"/><rect x="14" y="54" width="34" height="34" rx="7"/><rect x="52" y="54" width="34" height="34" rx="7"/></g>
+              <circle cx="31" cy="34" r="9" fill="#E63946"/><path d="M31 25c1-4 4-5 6-5" stroke="#5B8A2B" stroke-width="2"/>
+              <path d="M62 38c4 6 14 6 18-6-6 4-12 4-18 6z" fill="#FFD43B" stroke="#C99A00"/>
+              <path d="M25 66l12 0-6 16z" fill="#FF8C1A"/><path d="M31 66l-3-6M31 66l3-6" stroke="#4FA85A" stroke-width="2"/>
+              <ellipse cx="69" cy="72" rx="8" ry="10" fill="#F4E3C3" stroke="#C9A97A"/>
+              <g transform="translate(124 34)"><circle r="17" fill="#B9773E"/><circle cx="-12" cy="-13" r="6" fill="#B9773E"/><circle cx="12" cy="-13" r="6" fill="#B9773E"/><ellipse cy="6" rx="8" ry="6" fill="#E8C79A"/><circle cx="-6" cy="-3" r="2" fill="#2A2540"/><circle cx="6" cy="-3" r="2" fill="#2A2540"/><circle cy="3" r="2.5" fill="#2A2540"/></g>
+              <path d="M104 70h40l-5 22h-30z" fill="#B57840"/><path d="M110 70l6-12M138 70l-6-12" stroke="#8E5A2B" stroke-width="3" stroke-linecap="round"/>
+              <g><circle cx="118" cy="66" r="5" fill="#FFC529" stroke="#C98F00"/><circle cx="128" cy="64" r="5" fill="#FFC529" stroke="#C98F00"/><circle cx="138" cy="66" r="5" fill="#FFC529" stroke="#C98F00"/></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Minik Market</h3>
+            <p>Hayvan müşteriler resimli listeyle gelir; söylenen sayıda ürünü raftan sepete koy. Üst bölümlerde müşterinin verdiği paraları say. Sayma ve para, okuma gerekmez.</p>
+            <div class="tags"><span>Egemen için</span><span>Sesli</span><span>Sayma</span></div>
+          </div>
+        </a>
         <a class="game" href="ordek-yolu/index.html">
           <div class="cover cover-oy" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
@@ -1811,8 +1836,7 @@
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
         <a class="game" href="harf-avi/index.html">
-          <div class="cover is-new cover-ha" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-ha" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#FFE6C7"/>
               <g font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="16" text-anchor="middle">
