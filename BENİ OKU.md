@@ -467,11 +467,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← alan GW×GH, hızlar SPEEDS (yedikçe artar), yönler DIRS;
 │                         adım step() (kuyruk kayarken yerine girilebilir), yön kuyruğu turn(), kaydırma ve yön düğmeleri
-└── labirent-yarisi/    ← Labirent Yarışı, ikisi birlikte labirent yarışı (ortadaki hazine, adil labirent, ipucu izi, bilgisayar rakip)
+├── labirent-yarisi/    ← Labirent Yarışı, ikisi birlikte labirent yarışı (ortadaki hazine, adil labirent, ipucu izi, bilgisayar rakip)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← labirent carve() (DFS + ek geçitler), adalet: iki başlangıcın hazineye uzaklık farkı en çok 2 (newRound), boyutlar SIZES;
+│                         hareket tryMove() (basılı tutunca STEP aralığı), bilgisayar ve ipucu bfs() / nextStep()
+└── sayi-avi/           ← Sayı Avı, tüm aile sayı tahmin oyunu (daha büyük / küçük, 1-20/50/100, bilgisayar rakip)
     ├── index.html
     ├── style.css
-    └── game.js         ← labirent carve() (DFS + ek geçitler), adalet: iki başlangıcın hazineye uzaklık farkı en çok 2 (newRound), boyutlar SIZES;
-                          hareket tryMove() (basılı tutunca STEP aralığı), bilgisayar ve ipucu bfs() / nextStep()
+    └── game.js         ← akış newRound() / startTurn() / guess(), bilgisayar cpuPick() (çoğunlukla aralığın ortası);
+                          yardım: aralığın ortası önerilir ve sesli söylenir, sayı tuşları press()
 ```
 
 ## Bilgisayarda oynamak
