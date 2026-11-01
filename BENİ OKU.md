@@ -382,11 +382,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← bölümler LEVELS (şeritler alttan üste [yön, hız], "m" = refüj, araç aralığı gap), araçlar SPEC;
 │                         ışık döngüsü lightTick(), güvenli mi laneSafe() / canGo(), çarpma hitCheck()
-└── zindan-kasifi/      ← Zindan Kaşifi, Enes için sıra tabanlı zindan macerası (8 kat, rastgele harita, Kolay/Normal)
+├── zindan-kasifi/      ← Zindan Kaşifi, Enes için sıra tabanlı zindan macerası (8 kat, rastgele harita, Kolay/Normal)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← canavarlar MONSTERS (kat aralığı, can, saldırı, savunma, deneyim), eşyalar ITEMS (ağırlık);
+│                         harita genFloor(), görüş computeFov(), canavar hamlesi monstersAct(), seviye eşiği needXp()
+└── tank-duellosu/      ← Tank Düellosu, ikisi birlikte tank savaşı (seken mermiler, güçlendirici, bilgisayar rakip)
     ├── index.html
     ├── style.css
-    └── game.js         ← canavarlar MONSTERS (kat aralığı, can, saldırı, savunma, deneyim), eşyalar ITEMS (ağırlık);
-                          harita genFloor(), görüş computeFov(), canavar hamlesi monstersAct(), seviye eşiği needXp()
+    └── game.js         ← haritalar MAPS (sol yarı blokları, simetriği buildGrid() ekler), güçlendiriciler POWERS; hız SPEED, mermi BSPEED/BOUNCES;
+                          bilgisayar think() (BFS yol, mermiden kaçma, shotHits() sekme denemesi); yardım: 5 can + mermi kıvrılması update() içinde
 ```
 
 ## Bilgisayarda oynamak

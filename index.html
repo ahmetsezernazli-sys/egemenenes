@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-tank{background:#6B7A45}
+    .cover-tank svg{width:100%;height:100%}
     .cover-zk{background:#14111F}
     .cover-zk svg{width:100%;height:100%}
     .cover-sky{background:linear-gradient(#5DB8EE, #D4F1FF)}
@@ -273,7 +275,7 @@
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>22</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>23</b></a>
-    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>21</b></a>
+    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>22</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>21</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
@@ -821,8 +823,7 @@
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
         <a class="game" href="zindan-kasifi/index.html">
-          <div class="cover is-new cover-zk" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-zk" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#14111F"/>
               <g fill="#3B3355"><rect x="0" y="0" width="164" height="16"/><rect x="0" y="86" width="164" height="16"/><rect x="0" y="16" width="16" height="70"/><rect x="148" y="16" width="16" height="70"/><rect x="70" y="16" width="16" height="30"/></g>
@@ -1290,9 +1291,30 @@
     </section>
 
     <section class="group g-ikisi" id="ikisi" aria-labelledby="h-ikisi">
-      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 21 oyun</p></div>
+      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 22 oyun</p></div>
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
+        <a class="game" href="tank-duellosu/index.html">
+          <div class="cover is-new cover-tank" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#6B7A45"/>
+              <g fill="#8C7B5E"><rect x="74" y="10" width="14" height="36"/><rect x="74" y="60" width="14" height="32"/><rect x="20" y="8" width="30" height="10"/><rect x="114" y="84" width="30" height="10"/></g>
+              <g fill="#A6957A"><rect x="74" y="10" width="14" height="3"/><rect x="74" y="60" width="14" height="3"/><rect x="20" y="8" width="30" height="3"/><rect x="114" y="84" width="30" height="3"/></g>
+              <g transform="translate(34 56)"><rect x="-16" y="-16" width="32" height="8" rx="3" fill="#26251C"/><rect x="-16" y="8" width="32" height="8" rx="3" fill="#26251C"/><rect x="-13" y="-10" width="26" height="20" rx="5" fill="#3D8BFD"/><rect x="2" y="-3" width="20" height="6" rx="2" fill="#92BEFF"/><circle r="8" fill="#92BEFF"/><circle r="4" fill="#3D8BFD"/></g>
+              <g transform="translate(130 40) rotate(180)"><rect x="-16" y="-16" width="32" height="8" rx="3" fill="#26251C"/><rect x="-16" y="8" width="32" height="8" rx="3" fill="#26251C"/><rect x="-13" y="-10" width="26" height="20" rx="5" fill="#E5484D"/><rect x="2" y="-3" width="20" height="6" rx="2" fill="#FF9EA1"/><circle r="8" fill="#FF9EA1"/><circle r="4" fill="#E5484D"/></g>
+              <path d="M58 56 L74 50 M88 50 L110 42" stroke="#FFE6A8" stroke-width="1.5" stroke-dasharray="3 3"/>
+              <circle cx="110" cy="42" r="3.5" fill="#CFE2FF"/><circle cx="110" cy="42" r="1.8" fill="#3D8BFD"/>
+              <circle cx="82" cy="52" r="5" fill="#FFE6A8" opacity=".7"/>
+              <circle cx="122" cy="70" r="8" fill="rgba(0,0,0,.35)" stroke="#7FD4FF" stroke-width="2"/><path d="M122 65l4 2v3c0 3-2 5-4 6-2-1-4-3-4-6v-3z" fill="#7FD4FF"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Tank Düellosu</h3>
+            <p>Labirentli arenada tankını sür, duvardan seken mermilerle rakibini vur. Kalkan, üçlü atış ve hız güçlendiricileri; küçüğe ekstra can ve nişan yardımı.</p>
+            <div class="tags"><span>İkisi birlikte</span><span>Bilgisayar rakip</span><span>Yardım ayarı</span></div>
+          </div>
+        </a>
         <a class="game" href="boya-kapmaca/index.html">
           <div class="cover cover-boya" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
