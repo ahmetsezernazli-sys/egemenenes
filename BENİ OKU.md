@@ -326,12 +326,17 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← masa duvarları wall(...) çağrılarıyla tanımlı; tamponlar BUMPERS, hedefler TARGETS,
 │                         sandık CHEST, paletler FL; yerçekimi GRAV, top kurtarma süresi launch() içinde
-└── kivilcim-damla/     ← Kıvılcım ve Damla, ikisi birlikte işbirliği platform oyunu (5 bölüm, kolay mod)
+├── kivilcim-damla/     ← Kıvılcım ve Damla, ikisi birlikte işbirliği platform oyunu (5 bölüm, kolay mod)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← bölümler LEVELS listesinde, 30×17 karo haritalar: # duvar, L lav, W su, G balçık,
+│                         r/b elmas, R/B kapı, 1/2 başlangıç, X Y Z K M geçit; plates/levers hangi harfin
+│                         hangi geçidi açtığını söyler. Her satır tam 30 karakter olmalı.
+└── tavla/              ← Tavla, tüm aile (bilgisayara karşı Kolay/Usta ya da iki kişi; mars; 1/3/5 sayılık maç)
     ├── index.html
     ├── style.css
-    └── game.js         ← bölümler LEVELS listesinde, 30×17 karo haritalar: # duvar, L lav, W su, G balçık,
-                          r/b elmas, R/B kapı, 1/2 başlangıç, X Y Z K M geçit; plates/levers hangi harfin
-                          hangi geçidi açtığını söyler. Her satır tam 30 karakter olmalı.
+    └── game.js         ← kural motoru: target() tek adım, sequences() bütün yasal diziler (iki zarı kullanma ve
+                          büyük zar kuralı), bilgisayar evaluate()/aiChoose(); Kolay seviye rastgelelik payı aiChoose içinde
 ```
 
 ## Bilgisayarda oynamak
