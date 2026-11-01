@@ -357,11 +357,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← cover(): seri/per arama (okey jokeri, 12-13-1 serisi), isWin() + isPairsWin() (çifte),
 │                         bilgisayar evaluate()/bestDiscard(); gösterge deal() içinde seçilir
-└── kim-nerede/         ← Kim Nerede?, Egemen için sınıflandırma (hayvanlar evine, eşyalar yerine; 2→5 yer)
+├── kim-nerede/         ← Kim Nerede?, Egemen için sınıflandırma (hayvanlar evine, eşyalar yerine; 2→5 yer)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← MODES: yerler (ad, -de/-e hâlleri, arka plan) ve öğeler [emoji, ad, yer];
+│                         seviyeler LEVELS (kaç yer açık), tur başına PER_ROUND öğe
+└── klavye-ninjasi/     ← Klavye Ninjası, Enes için on parmak klavye (ninja modu + 6 ders, Türkçe Q)
     ├── index.html
     ├── style.css
-    └── game.js         ← MODES: yerler (ad, -de/-e hâlleri, arka plan) ve öğeler [emoji, ad, yer];
-                          seviyeler LEVELS (kaç yer açık), tur başına PER_ROUND öğe
+    └── game.js         ← kelimeler WORDS, cümleler SENTENCES, dersler LESSONS, klavye ROWS ve parmak eşlemesi FINGER;
+                          ninja zorluğu pickWord() ve ninjaUpdate() içinde (seviye başına hız ve kelime uzunluğu)
 ```
 
 ## Bilgisayarda oynamak

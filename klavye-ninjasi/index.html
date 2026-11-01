@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Klavye Ninjası · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için klavye oyunu: Türkçe kelimeler meteor gibi şehre düşer, yazdığın kelime patlar! Ninja modunda seviye, kombo ve rekor; Dersler modunda Türkçe Q klavyede on parmak alıştırmaları, hangi parmakla basılacağı gösterilir, dakikada kelime ve doğruluk ölçülür.">
+  <meta name="theme-color" content="#0B1024">
+  <meta property="og:title" content="Klavye Ninjası">
+  <meta property="og:description" content="Kelimeyi yaz, meteoru patlat! Türkçe on parmak klavye oyunu.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%230B1024'/%3E%3Crect x='14' y='54' width='72' height='30' rx='6' fill='%23293056'/%3E%3Cg fill='%23E9ECFF'%3E%3Crect x='20' y='60' width='10' height='8' rx='2'/%3E%3Crect x='33' y='60' width='10' height='8' rx='2'/%3E%3Crect x='46' y='60' width='10' height='8' rx='2'/%3E%3Crect x='59' y='60' width='10' height='8' rx='2'/%3E%3Crect x='72' y='60' width='8' height='8' rx='2'/%3E%3Crect x='28' y='71' width='44' height='7' rx='2'/%3E%3C/g%3E%3Ccircle cx='62' cy='26' r='12' fill='%23FF7A2F'/%3E%3Cpath d='M54 34 L36 50' stroke='%23FFD166' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&family=JetBrains+Mono:wght@600;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Klavye <span>Ninjası</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="menu-btn" type="button" aria-label="Menü">☰</button>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <canvas id="cv" aria-label="Kelimeler yukarıdan düşer. Kelimeyi klavyeyle yaz, meteor patlasın."></canvas>
+    <section class="lesson" id="lesson" hidden>
+      <div class="l-head"><b id="l-title"></b><span id="l-stats"></span></div>
+      <div class="l-text" id="l-text" aria-live="off"></div>
+      <div class="kb" id="kb" aria-hidden="true"></div>
+      <p class="l-tip" id="l-tip"></p>
+    </section>
+    <input id="hidden-input" class="hidden-input" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Yazı alanı">
+  </main>
+</div>
+
+<div class="overlay" id="menu">
+  <div class="sheet">
+    <h2>⌨️ Klavye Ninjası</h2>
+    <p class="help"><b>Ninja:</b> Kelimeler meteor olup şehre düşer. Kelimeyi yaz, meteor patlasın! İlk harfi yazınca o meteoru hedeflersin. Şehre 3 meteor düşerse oyun biter.<br><b>Dersler:</b> On parmak klavye. Parmakların ana sırada dursun: sol el <kbd>A S D F</kbd>, sağ el <kbd>J K L Ş</kbd>. Hangi tuşa hangi parmakla basacağın renkle gösterilir.</p>
+    <button class="mode-btn" id="play" type="button"><span>☄️</span><b>Ninja modu</b><small id="best"></small></button>
+    <div class="lessons" id="lessons"></div>
+    <p class="help small">Tablet ve telefonda ekrana dokunca klavye açılır. En iyisi gerçek klavye!</p>
+  </div>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" id="over-icon" aria-hidden="true">🏆</div>
+    <p class="end-title" id="over-title"></p>
+    <div class="stats" id="over-stats"></div>
+    <p class="lead" id="over-text"></p>
+    <button class="btn primary big" id="over-again" type="button">Tekrar</button>
+    <button class="btn big" id="over-menu" type="button">Menü</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
