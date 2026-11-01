@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-sr{background:#F0F7FF}
+    .cover-sr svg{width:100%;height:100%}
     .cover-sa{background:#D9DCFF}
     .cover-sa svg{width:100%;height:100%}
     .cover-lb{background:#3A3158}
@@ -307,7 +309,7 @@
   </a>
 
   <nav class="groups" aria-label="Oyun grupları">
-    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>26</b></a>
+    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>27</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>27</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>26</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>26</b></a>
@@ -316,9 +318,28 @@
 
   <main class="groups-main">
     <section class="group g-egemen" id="egemen" aria-labelledby="h-egemen">
-      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 26 oyun</p></div>
+      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 27 oyun</p></div>
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
+        <a class="game" href="sirala/index.html">
+          <div class="cover is-new cover-sr" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#F0F7FF"/>
+              <rect x="10" y="84" width="144" height="4" rx="2" fill="#BFD3EA"/>
+              <g fill="#3E9B4A"><circle cx="30" cy="70" r="9"/><circle cx="66" cy="60" r="15"/><circle cx="112" cy="46" r="24"/></g>
+              <g fill="#7A5230"><rect x="28" y="76" width="4" height="8"/><rect x="63" y="72" width="6" height="12"/><rect x="108" y="66" width="8" height="18"/></g>
+              <g fill="#56B85E"><circle cx="27" cy="67" r="4"/><circle cx="60" cy="54" r="7"/><circle cx="103" cy="38" r="11"/></g>
+              <path d="M20 22 L140 12" stroke="#FFC529" stroke-width="4" stroke-linecap="round"/><path d="M140 12l-10-4M140 12l-8 7" stroke="#FFC529" stroke-width="4" stroke-linecap="round"/>
+              <g font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="11" fill="#2A64C0"><text x="26" y="98">1</text><text x="62" y="98">2</text><text x="108" y="98">3</text></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Sırala Bakalım</h3>
+            <p>Aynı resmin büyük ve küçük hâllerini en küçükten en büyüğe ya da tersine diz; üst bölümlerde rakamları sırala. Dokunarak, sesli, kaybetmek yok.</p>
+            <div class="tags"><span>Egemen için</span><span>Sesli</span><span>Sıralama</span></div>
+          </div>
+        </a>
         <a class="game" href="golge-bul/index.html">
           <div class="cover cover-gb" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
@@ -2088,8 +2109,7 @@
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
         <a class="game" href="sayi-avi/index.html">
-          <div class="cover is-new cover-sa" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-sa" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#D9DCFF"/>
               <text x="82" y="38" font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="24" text-anchor="middle" fill="#4B3CC4">51 – 100</text>

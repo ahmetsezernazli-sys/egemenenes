@@ -472,11 +472,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← labirent carve() (DFS + ek geçitler), adalet: iki başlangıcın hazineye uzaklık farkı en çok 2 (newRound), boyutlar SIZES;
 │                         hareket tryMove() (basılı tutunca STEP aralığı), bilgisayar ve ipucu bfs() / nextStep()
-└── sayi-avi/           ← Sayı Avı, tüm aile sayı tahmin oyunu (daha büyük / küçük, 1-20/50/100, bilgisayar rakip)
+├── sayi-avi/           ← Sayı Avı, tüm aile sayı tahmin oyunu (daha büyük / küçük, 1-20/50/100, bilgisayar rakip)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← akış newRound() / startTurn() / guess(), bilgisayar cpuPick() (çoğunlukla aralığın ortası);
+│                         yardım: aralığın ortası önerilir ve sesli söylenir, sayı tuşları press()
+└── sirala/             ← Sırala Bakalım, Egemen için büyük-küçük ve rakam sıralama oyunu (8 bölüm)
     ├── index.html
     ├── style.css
-    └── game.js         ← akış newRound() / startTurn() / guess(), bilgisayar cpuPick() (çoğunlukla aralığın ortası);
-                          yardım: aralığın ortası önerilir ve sesli söylenir, sayı tuşları press()
+    └── game.js         ← resimler PICS, bölümler LEVELS (adet, yön: 1 küçükten büyüğe, -1 tersi, 0 karışık; num = rakamlar);
+                          tur newRound(), seçim pick(), ipucu armIdle() (8 sn sonra doğru resim parlar)
 ```
 
 ## Bilgisayarda oynamak
