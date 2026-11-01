@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kelime Avı · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için Türkçe kelime bulmaca: harf tablosunda saklanan kelimeleri sürükleyerek bul. Yatay, dikey, çapraz ve zor modda ters yazılmış kelimeler. 8 tema, üç zorluk, süre rekoru.">
+  <meta name="theme-color" content="#0F2233">
+  <meta property="og:title" content="Kelime Avı">
+  <meta property="og:description" content="Harf tablosunda saklı kelimeleri bul!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%230F2233'/%3E%3Crect x='14' y='38' width='72' height='22' rx='11' fill='%23FFD166'/%3E%3Ctext x='50' y='56' font-size='18' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%230F2233'%3EKEDİ%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← Oyunlar</a>
+    <h1 class="title">Kelime <span>Avı</span></h1>
+    <button class="btn small" id="new" type="button">Yeni</button>
+  </header>
+  <div class="stats"><span class="chip">Tema <b id="theme">—</b></span><span class="chip">Süre <b id="time">0:00</b></span><span class="chip">Bulunan <b id="found">0/0</b></span><span class="chip">Rekor <b id="best">—</b></span></div>
+  <div class="main">
+    <div class="grid" id="grid" aria-label="Harf tablosu"></div>
+    <div class="words"><h2>Bulunacak kelimeler</h2><div class="wl" id="wl" aria-live="polite"></div><p class="msg" id="msg"></p></div>
+  </div>
+</div>
+
+<div class="overlay" id="menu">
+  <div class="sheet">
+    <h2>🔎 Kelime Avı</h2>
+    <p class="help">Harf tablosunda listedeki kelimeler saklı. Kelimenin <b>ilk harfinden son harfine sürükle</b> (ya da ilk harfe, sonra son harfe dokun). Kelimeler <b>yatay, dikey ve çapraz</b> durabilir; Zor modda <b>tersten</b> de yazılmış olabilir. Hepsini en kısa sürede bul!</p>
+    <fieldset><legend>Zorluk</legend>
+      <div class="seg"><label><input type="radio" name="lv" value="0"><span>Kolay · 8×8</span></label><label><input type="radio" name="lv" value="1" checked><span>Normal · 10×10</span></label><label><input type="radio" name="lv" value="2"><span>Zor · 12×12</span></label></div>
+    </fieldset>
+    <p class="best" id="best-line"></p>
+    <button class="btn primary big" id="start" type="button">Başla</button>
+  </div>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <h2 id="o-title"></h2>
+    <p class="help" id="o-tx"></p>
+    <button class="btn primary big" id="again" type="button">Yeni bulmaca</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
