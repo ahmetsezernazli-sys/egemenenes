@@ -452,11 +452,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← pist makeTrack() (iki şeritte aynı engeller), hız BASE/BOOST/SLOW, zıplama JUMP/GRAV, bitiş FINISH;
 │                         yardım ve bilgisayar update() içinde (lucky: kayayı görme olasılığı), çizim draw()
-└── yuksek-alcak/       ← Yüksek mi Alçak mı?, tüm aile kart tahmin oyunu (riske gir ya da kasaya al, 2-6 oyuncu)
+├── yuksek-alcak/       ← Yüksek mi Alçak mı?, tüm aile kart tahmin oyunu (riske gir ya da kasaya al, 2-6 oyuncu)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← kurallar guess() / bank(), hedef GOAL, kalan desteye göre ihtimal odds();
+│                         bilgisayar cpuAct() (risk ve kasa büyüklüğüne göre kasaya alır), yardım render() içinde ihtimal çubuğu
+└── golge-bul/          ← Gölge Bul, Egemen için gölge eşleştirme oyunu (8 bölüm, benzer gölgeler, dokun ya da sürükle)
     ├── index.html
     ├── style.css
-    └── game.js         ← kurallar guess() / bank(), hedef GOAL, kalan desteye göre ihtimal odds();
-                          bilgisayar cpuAct() (risk ve kasa büyüklüğüne göre kasaya alır), yardım render() içinde ihtimal çubuğu
+    └── game.js         ← resimler GROUPS (benzer gölgeler aynı grupta), bölümler LEVELS (resim sayısı, aynı gruptan mı);
+                          eşleştirme tryMatch(), dokunma ve sürükleme pointer olayları, ipucu armIdle()
 ```
 
 ## Bilgisayarda oynamak
