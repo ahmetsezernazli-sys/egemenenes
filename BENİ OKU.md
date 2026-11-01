@@ -352,6 +352,11 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← arena 13×11 (newRound: sandık oranı 0.72, güçlendirici 0.32), FUSE balon süresi,
 │                         bilgisayar aiDir(): tehlike haritası dangerMap() + bfs() ile kaçış/hedef seçimi
+└── turkiye-turu/       ← Türkiye Turu, tüm aile emlak oyunu (2-6 oyuncu, kira, otel, şans kartları, bilgisayar rakip)
+    ├── index.html
+    ├── style.css
+    └── game.js         ← tahta S (20 kare, fiyatlar), şans kartları CARDS, START_MONEY ve PASS;
+                          kira rentOf(), bilgisayar kararları aiWantsBuy() ve offerHotel() içinde, Türkçe ekler ek()
 ├── okey/               ← Okey, tüm aile (1-4 oyuncu, boş koltuğa bilgisayar; ıstakada sürükleyerek dizme)
 │   ├── index.html
 │   ├── style.css
@@ -367,11 +372,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← kelimeler WORDS, cümleler SENTENCES, dersler LESSONS, klavye ROWS ve parmak eşlemesi FINGER;
 │                         ninja zorluğu pickWord() ve ninjaUpdate() içinde (seviye başına hız ve kelime uzunluğu)
-└── boya-kapmaca/       ← Boya Kapmaca, ikisi birlikte bölge boyama (60 sn raund, bilgisayar rakip, büyük fırça)
+├── boya-kapmaca/       ← Boya Kapmaca, ikisi birlikte bölge boyama (60 sn raund, bilgisayar rakip, büyük fırça)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← alan 24×14, engeller BLOCKS, raund süresi ROUND; güçlendiriciler update() içinde,
+│                         bilgisayar aiDir() (BFS ile en değerli boyanmamış kareye gider)
+└── turkiye-turu/       ← Türkiye Turu, tüm aile emlak oyunu (2-6 oyuncu, kira, otel, şans kartları, bilgisayar rakip)
     ├── index.html
     ├── style.css
-    └── game.js         ← alan 24×14, engeller BLOCKS, raund süresi ROUND; güçlendiriciler update() içinde,
-                          bilgisayar aiDir() (BFS ile en değerli boyanmamış kareye gider)
+    └── game.js         ← tahta S (20 kare, fiyatlar), şans kartları CARDS, START_MONEY ve PASS;
+                          kira rentOf(), bilgisayar kararları aiWantsBuy() ve offerHotel() içinde, Türkçe ekler ek()
 ```
 
 ## Bilgisayarda oynamak
