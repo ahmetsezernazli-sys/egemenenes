@@ -507,11 +507,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← temalar THEMES, zorluklar LV (tablo boyu, kelime sayısı, yönler), bulmaca build();
 │                         seçim sürükleme ya da iki dokunuş, kontrol check() (tersten de kabul), çizgi drawHl()
-└── bayrak-kapmaca/     ← Bayrak Kapmaca, ikisi birlikte bayrak kapma oyunu (kendi sahanda yakala, hız yardımı, bilgisayar rakip)
+├── bayrak-kapmaca/     ← Bayrak Kapmaca, ikisi birlikte bayrak kapma oyunu (kendi sahanda yakala, hız yardımı, bilgisayar rakip)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← saha AW×AH, orta çizgi MID, üsler BASES, ağaçlar TREES, hız SPEED;
+│                         yakalama ve bayrak update() içinde, sayı scoreFlag(), bilgisayar think() (kap, kaç, gerekirse kovala)
+└── gozum-goruyor/      ← Gözüm Bir Şey Görüyor, tüm aile bulma oyunu (adıyla, renk ve türle, bilmeceyle ipuçları)
     ├── index.html
     ├── style.css
-    └── game.js         ← saha AW×AH, orta çizgi MID, üsler BASES, ağaçlar TREES, hız SPEED;
-                          yakalama ve bayrak update() içinde, sayı scoreFlag(), bilgisayar think() (kap, kaç, gerekirse kovala)
+    └── game.js         ← nesneler OBJ [resim, ad, renk, tür, etiketler], türler CAT, bilmeceler RIDDLE; sahnede tek doğru cevap makeRound();
+                          akış nextTurn() / pick() / timeUp(), süre TIME (hızlı bulana çok puan), yardım: 6 sn sonra doğru resim parlar
 ```
 
 ## Bilgisayarda oynamak
