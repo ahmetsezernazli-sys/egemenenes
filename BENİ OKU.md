@@ -402,11 +402,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← ürünler GOODS (resim, ad, fiyat), müşteriler ANIMALS, bölümler LEVELS (raf, çeşit, en çok adet, ödeme ve toplam);
 │                         sipariş makeOrder(), seçim pick(), para sayma startPay() / answerPay() / countAloud()
-└── ay-inisi/           ← Ay'a İniş, Enes için uzay aracı iniş oyunu (10 bölüm, yerçekimi, rüzgâr, yakıt, dengeleyici yardım)
+├── ay-inisi/           ← Ay'a İniş, Enes için uzay aracı iniş oyunu (10 bölüm, yerçekimi, rüzgâr, yakıt, dengeleyici yardım)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← bölümler LEVELS (yerçekimi g, yakıt, rüzgâr, pist genişlikleri, arazi pürüzü), güvenli iniş SAFE_VY/SAFE_VX/SAFE_ANG;
+│                         arazi genTerrain() (orta nokta kaydırma + düz pistler), fizik update(), iniş/kaza kararı land()
+└── reversi/            ← Reversi, ikisi birlikte taş çevirme oyunu (bilgisayar rakip Kolay/Zor, en iyi hamle yardımı)
     ├── index.html
     ├── style.css
-    └── game.js         ← bölümler LEVELS (yerçekimi g, yakıt, rüzgâr, pist genişlikleri, arazi pürüzü), güvenli iniş SAFE_VY/SAFE_VX/SAFE_ANG;
-                          arazi genTerrain() (orta nokta kaydırma + düz pistler), fizik update(), iniş/kaza kararı land()
+    └── game.js         ← kurallar flipsFor() / moves() / apply(), kare ağırlıkları WEIGHT;
+                          bilgisayar: Kolay easyMove(), Zor bestMove() (alfa-beta minimax, derinlik 4); yardım render() içinde derinlik 2
 ```
 
 ## Bilgisayarda oynamak
