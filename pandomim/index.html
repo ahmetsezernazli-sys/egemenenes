@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pandomim · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Aile parti oyunu: iki takım sırayla oynar, anlatıcı ekrandaki kelimeyi hareketlerle (ya da kelimeyi söylemeden konuşarak) anlatır, takımı süre bitmeden bilmeye çalışır. Resimli kartlar sayesinde okuma bilmeyen küçükler de anlatabilir.">
+  <meta name="theme-color" content="#FFF0F6">
+  <meta property="og:title" content="Pandomim">
+  <meta property="og:description" content="Kelimeyi konuşmadan anlat, takımın süre bitmeden bilsin!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%237B5CFF'/%3E%3Ccircle cx='50' cy='30' r='12' fill='%23fff'/%3E%3Cpath d='M50 42v26M50 50l-20-14M50 50l20-14M50 68l-14 20M50 68l14 20' stroke='%23fff' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← Oyunlar</a>
+    <h1 class="title">Pando<span>mim</span></h1>
+    <button class="icon-btn" id="settings" type="button" aria-label="Ayarlar ve yeni oyun">⚙</button>
+  </header>
+  <div class="score">
+    <div class="team a" id="ta"><span id="na">Mor takım</span><b id="sa">0</b></div>
+    <div class="team b" id="tb"><span id="nb">Turuncu takım</span><b id="sb">0</b></div>
+  </div>
+  <main class="panel" id="panel" aria-live="polite"></main>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="form">
+    <h2>🎭 Pandomim</h2>
+    <p class="help">İki takım olun. Sırası gelen takımdan biri <b>anlatıcı</b> olur, telefonu alır ve kimseye göstermeden kartı görür. Kelimeyi anlatır, takım arkadaşları <b>süre bitmeden</b> bilmeye çalışır. Bildiklerinde <b>✔ Bildi</b>, geçmek isterseniz <b>Pas</b>. Kartlarda resim olduğu için okuma bilmeyenler de anlatabilir.</p>
+    <fieldset><legend>Takımlar</legend>
+      <div class="teams-in"><input id="in-a" maxlength="16" value="Mor takım" aria-label="Birinci takımın adı"><input id="in-b" maxlength="16" value="Turuncu takım" aria-label="İkinci takımın adı"></div>
+    </fieldset>
+    <fieldset><legend>Nasıl anlatılacak</legend>
+      <div class="seg"><label><input type="radio" name="how" value="act" checked><span>🤫 Sadece hareket</span></label><label><input type="radio" name="how" value="talk"><span>🗣️ Konuşarak</span></label></div>
+      <p class="help" id="how-help"><b>Sadece hareket:</b> konuşmak, ses çıkarmak ve parmakla harf yazmak yok!</p>
+    </fieldset>
+    <fieldset><legend>Süre</legend>
+      <div class="seg"><label><input type="radio" name="time" value="45"><span>45 sn</span></label><label><input type="radio" name="time" value="60" checked><span>60 sn</span></label><label><input type="radio" name="time" value="90"><span>90 sn</span></label></div>
+    </fieldset>
+    <fieldset><legend>Tur sayısı (her takım)</legend>
+      <div class="seg"><label><input type="radio" name="rounds" value="2"><span>2</span></label><label><input type="radio" name="rounds" value="3" checked><span>3</span></label><label><input type="radio" name="rounds" value="5"><span>5</span></label></div>
+    </fieldset>
+    <button class="btn primary big" type="submit">Oyuna başla</button>
+  </form>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="over-title"></p>
+    <div class="res" id="res"></div>
+    <button class="btn primary big" id="again" type="button">Yeniden oyna</button>
+    <button class="btn big" id="to-setup" type="button">Ayarlar</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

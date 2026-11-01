@@ -427,11 +427,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← kurallar canTab() / canFound() / legal(), hamle doMove() ve drawStock(); dokununca hedef autoTarget(), ipucu findHint();
 │                         yerleşim layout() / offsets() (uzun sütunlar sıkıştırılır), sürükle-bırak pointer olayları, otomatik bitirme autoFinish()
-└── halat-cekme/        ← Halat Çekme, ikisi birlikte soru çözme / hızlı basma yarışı (oyuncu başına seviye, bilgisayar rakip)
+├── halat-cekme/        ← Halat Çekme, ikisi birlikte soru çözme / hızlı basma yarışı (oyuncu başına seviye, bilgisayar rakip)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← sorular makeQ(seviye) (0 sayma, 1 toplama, 2 çarpım, 3 karışık), çekme adımı STEP_Q / STEP_TAP, yanlışta donma FREEZE;
+│                         akış newRound() / answer() / tap() / endRound(), bilgisayar update() içinde, dikey ekranda üst taraf 180° döner (style.css)
+└── pandomim/           ← Pandomim, tüm aile takımlı anlatma oyunu (resimli 100 kart, sadece hareket ya da konuşarak)
     ├── index.html
     ├── style.css
-    └── game.js         ← sorular makeQ(seviye) (0 sayma, 1 toplama, 2 çarpım, 3 karışık), çekme adımı STEP_Q / STEP_TAP, yanlışta donma FREEZE;
-                          akış newRound() / answer() / tap() / endRound(), bilgisayar update() içinde, dikey ekranda üst taraf 180° döner (style.css)
+    └── game.js         ← kartlar CARDS [resim, kelime, kategori], pas hakkı MAX_PASS;
+                          akış handOver() / startTurn() / hit() / endTurn() / nextTeam() / finish()
 ```
 
 ## Bilgisayarda oynamak
