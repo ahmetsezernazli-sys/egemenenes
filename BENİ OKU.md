@@ -477,11 +477,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← akış newRound() / startTurn() / guess(), bilgisayar cpuPick() (çoğunlukla aralığın ortası);
 │                         yardım: aralığın ortası önerilir ve sesli söylenir, sayı tuşları press()
-└── sirala/             ← Sırala Bakalım, Egemen için büyük-küçük ve rakam sıralama oyunu (8 bölüm)
+├── sirala/             ← Sırala Bakalım, Egemen için büyük-küçük ve rakam sıralama oyunu (8 bölüm)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← resimler PICS, bölümler LEVELS (adet, yön: 1 küçükten büyüğe, -1 tersi, 0 karışık; num = rakamlar);
+│                         tur newRound(), seçim pick(), ipucu armIdle() (8 sn sonra doğru resim parlar)
+└── sifre-kir/          ← Şifre Kır, Enes için renkli şifre kırma bulmacası (4 renk, 10 deneme, üç zorluk)
     ├── index.html
     ├── style.css
-    └── game.js         ← resimler PICS, bölümler LEVELS (adet, yön: 1 küçükten büyüğe, -1 tersi, 0 karışık; num = rakamlar);
-                          tur newRound(), seçim pick(), ipucu armIdle() (8 sn sonra doğru resim parlar)
+    └── game.js         ← renkler COLORS, zorluklar LV (renk sayısı, tekrar olur mu), ipucu hesabı score() (yeşil doğru yer, beyaz yanlış yer);
+                          tahmin put() / del() / go(), sonuç finish(), rekor zorluk başına
 ```
 
 ## Bilgisayarda oynamak

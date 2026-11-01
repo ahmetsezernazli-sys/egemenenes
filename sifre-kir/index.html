@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Şifre Kır · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için renkli şifre kırma bulmacası: bilgisayarın tuttuğu 4 renkli şifreyi 10 denemede bul. Her denemeden sonra kaç rengin doğru yerde, kaçının yanlış yerde olduğunu öğren, mantıkla daralt. Kolay, Normal, Zor ve rekor.">
+  <meta name="theme-color" content="#1B1D2E">
+  <meta property="og:title" content="Şifre Kır">
+  <meta property="og:description" content="4 renkli gizli şifreyi mantıkla 10 denemede kır!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%231B1D2E'/%3E%3Ccircle cx='22' cy='50' r='10' fill='%23E5484D'/%3E%3Ccircle cx='42' cy='50' r='10' fill='%233D8BFD'/%3E%3Ccircle cx='62' cy='50' r='10' fill='%23FFD166'/%3E%3Ccircle cx='82' cy='50' r='10' fill='%233DDC97'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← Oyunlar</a>
+    <h1 class="title">Şifre <span>Kır</span></h1>
+    <button class="btn small" id="new" type="button">Yeni</button>
+  </header>
+  <div class="stats"><span class="chip">Deneme <b id="try">1</b>/10</span><span class="chip">Kazanma <b id="wins">0</b></span><span class="chip">Rekor <b id="best">—</b></span></div>
+  <div class="board" id="board" aria-live="polite"></div>
+  <p class="legend"><i style="background:#3DDC97"></i> doğru renk, doğru yer · <i style="background:#fff"></i> doğru renk, yanlış yer</p>
+  <div class="palette" id="palette"></div>
+  <div class="acts"><button class="btn" id="del" type="button">⌫ Sil</button><button class="btn primary" id="go" type="button">Dene ✔</button></div>
+</div>
+
+<div class="overlay" id="menu">
+  <div class="sheet">
+    <h2>🔐 Şifre Kır</h2>
+    <p class="help">Bilgisayar <b>4 renkli</b> gizli bir şifre tuttu. Renklere basarak bir tahmin yap ve <b>Dene</b>. Sağdaki küçük noktalar ipucudur: <b>yeşil</b> nokta bir rengin hem doğru hem de doğru yerde olduğunu, <b>beyaz</b> nokta rengin şifrede olduğunu ama yeri yanlış olduğunu söyler (hangisi olduğunu söylemez!). <b>10 denemede</b> şifreyi bul.</p>
+    <fieldset><legend>Zorluk</legend>
+      <div class="seg"><label><input type="radio" name="lv" value="0"><span>Kolay · 4 renk</span></label><label><input type="radio" name="lv" value="1" checked><span>Normal · 6 renk</span></label><label><input type="radio" name="lv" value="2"><span>Zor · 6 renk, tekrar</span></label></div>
+    </fieldset>
+    <p class="best" id="best-line"></p>
+    <button class="btn primary big" id="start" type="button">Başla</button>
+  </div>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" id="o-ic" aria-hidden="true">🏆</div>
+    <h2 id="o-title"></h2>
+    <p class="help" id="o-tx"></p>
+    <button class="btn primary big" id="again" type="button">Yeni şifre</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
