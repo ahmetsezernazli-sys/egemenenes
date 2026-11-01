@@ -332,11 +332,16 @@ Oyunlar/
 │   └── game.js         ← bölümler LEVELS listesinde, 30×17 karo haritalar: # duvar, L lav, W su, G balçık,
 │                         r/b elmas, R/B kapı, 1/2 başlangıç, X Y Z K M geçit; plates/levers hangi harfin
 │                         hangi geçidi açtığını söyler. Her satır tam 30 karakter olmalı.
-└── tavla/              ← Tavla, tüm aile (bilgisayara karşı Kolay/Usta ya da iki kişi; mars; 1/3/5 sayılık maç)
+├── tavla/              ← Tavla, tüm aile (bilgisayara karşı Kolay/Usta ya da iki kişi; mars; 1/3/5 sayılık maç)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← kural motoru: target() tek adım, sequences() bütün yasal diziler (iki zarı kullanma ve
+│                         büyük zar kuralı), bilgisayar evaluate()/aiChoose(); Kolay seviye rastgelelik payı aiChoose içinde
+└── nokta-nokta/        ← Nokta Nokta, Egemen için noktaları birleştirme (10'a ve 20'ye kadar, çıkartma albümü)
     ├── index.html
     ├── style.css
-    └── game.js         ← kural motoru: target() tek adım, sequences() bütün yasal diziler (iki zarı kullanma ve
-                          büyük zar kuralı), bilgisayar evaluate()/aiChoose(); Kolay seviye rastgelelik payı aiChoose içinde
+    └── game.js         ← resimler PICS listesinde: 0–100 koordinatlı dış çizgi noktaları, renk ve deco() süsleri;
+                          20 modunda subdivide() ara nokta ekler (noktalar arası en az 9 birim)
 ```
 
 ## Bilgisayarda oynamak
