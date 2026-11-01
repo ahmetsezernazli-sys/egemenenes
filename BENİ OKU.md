@@ -462,11 +462,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← resimler GROUPS (benzer gölgeler aynı grupta), bölümler LEVELS (resim sayısı, aynı gruptan mı);
 │                         eşleştirme tryMatch(), dokunma ve sürükleme pointer olayları, ipucu armIdle()
-└── yilan/              ← Yılan, Enes için klasik yılan oyunu (duvarlı/duvarsız, üç hız, altın elma, rekor)
+├── yilan/              ← Yılan, Enes için klasik yılan oyunu (duvarlı/duvarsız, üç hız, altın elma, rekor)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← alan GW×GH, hızlar SPEEDS (yedikçe artar), yönler DIRS;
+│                         adım step() (kuyruk kayarken yerine girilebilir), yön kuyruğu turn(), kaydırma ve yön düğmeleri
+└── labirent-yarisi/    ← Labirent Yarışı, ikisi birlikte labirent yarışı (ortadaki hazine, adil labirent, ipucu izi, bilgisayar rakip)
     ├── index.html
     ├── style.css
-    └── game.js         ← alan GW×GH, hızlar SPEEDS (yedikçe artar), yönler DIRS;
-                          adım step() (kuyruk kayarken yerine girilebilir), yön kuyruğu turn(), kaydırma ve yön düğmeleri
+    └── game.js         ← labirent carve() (DFS + ek geçitler), adalet: iki başlangıcın hazineye uzaklık farkı en çok 2 (newRound), boyutlar SIZES;
+                          hareket tryMove() (basılı tutunca STEP aralığı), bilgisayar ve ipucu bfs() / nextStep()
 ```
 
 ## Bilgisayarda oynamak
