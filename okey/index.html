@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Okey · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Aile için okey: 106 taş, gösterge ve okey taşı, sahte okey. Seri ve per diz, yandan ya da ortadan taş çek, eli ilk bitiren kazansın. Boş koltuklara bilgisayar, ıstakada sürükleyerek dizme, seri ve çift dizme düğmeleri, ipucu.">
+  <meta name="theme-color" content="#14532D">
+  <meta property="og:title" content="Okey">
+  <meta property="og:description" content="Istakanı diz, okeyi bul, eli ilk sen bitir!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%2314532D'/%3E%3Crect x='16' y='18' width='30' height='44' rx='5' fill='%23FFF8E7'/%3E%3Ctext x='31' y='50' font-size='26' text-anchor='middle' font-family='sans-serif' font-weight='900' fill='%23D7263D'%3E7%3C/text%3E%3Crect x='54' y='30' width='30' height='44' rx='5' fill='%23FFF8E7'/%3E%3Ctext x='69' y='62' font-size='26' text-anchor='middle' font-family='sans-serif' font-weight='900' fill='%231E6FD9'%3E8%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Okey</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="settings" type="button" aria-label="Oyuncular ve yeni el">⚙</button>
+    </div>
+  </header>
+
+  <main class="table" id="table">
+    <div class="seat top" id="seat2"></div>
+    <div class="seat left" id="seat3"></div>
+    <div class="seat right" id="seat1"></div>
+    <div class="center">
+      <button class="pile" id="pile" type="button" aria-label="Ortadan taş çek"><span id="pile-n">0</span></button>
+      <div class="ind"><small>Gösterge</small><div id="indicator"></div><small id="okey-txt"></small></div>
+    </div>
+    <div class="discard d0" id="disc0" aria-label="Senin attığın taş"></div>
+    <div class="discard d1" id="disc1"></div>
+    <div class="discard d2" id="disc2"></div>
+    <div class="discard d3" id="disc3" aria-label="Soldaki oyuncunun attığı taş"></div>
+  </main>
+
+  <p class="status" id="status" aria-live="polite"></p>
+  <div class="rack-wrap">
+    <div class="me"><b id="my-name"></b> <span class="wins" id="my-wins"></span></div>
+    <div class="rack" id="rack" aria-label="Istakan"></div>
+    <div class="controls">
+      <button class="btn" id="sort-run" type="button">Seri diz</button>
+      <button class="btn" id="sort-pair" type="button">Çift diz</button>
+      <button class="btn" id="hint" type="button">💡 İpucu</button>
+      <button class="btn primary" id="discard" type="button" disabled>Taşı at</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>Okey 🀄</h2>
+    <p class="help"><b>Gösterge</b> taşının bir üstü (aynı renk) <b>okeydir</b>: her taşın yerine geçer. <b>Sahte okey</b> (★) ise okeyin değerini taşır. Sırası gelen ya <b>ortadan</b> ya da <b>soldakinin attığı</b> taşı alır, sonra bir taş atar. Elindeki 14 taşın hepsini <b>seri</b> (aynı renk, sıralı: 4-5-6) ya da <b>per</b> (aynı sayı, farklı renk: 7-7-7) yapıp 15. taşı atan kazanır. 7 çift ile de bitebilir.</p>
+    <fieldset>
+      <legend>Oyuncular (saat yönünde)</legend>
+      <div id="rows" class="rows"></div>
+      <p class="help small"><b>🤖</b> o koltuğu bilgisayar oynar. Birden fazla kişi aynı cihazda oynarsa her sıra değişiminde ıstaka gizlenir.</p>
+    </fieldset>
+    <fieldset>
+      <legend>Bilgisayar</legend>
+      <div class="seg"><label><input type="radio" name="lvl" value="0"><span>Kolay</span></label><label><input type="radio" name="lvl" value="1" checked><span>Usta</span></label></div>
+    </fieldset>
+    <button class="btn primary big" type="submit">Eli dağıt</button>
+  </form>
+</div>
+
+<div class="overlay" id="pass" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🙈</div>
+    <p class="end-title" id="pass-title"></p>
+    <p class="lead">Başkaları ıstakaya bakmasın!</p>
+    <button class="btn primary big" id="pass-go" type="button">Hazırım</button>
+  </div>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" id="over-icon" aria-hidden="true">🏆</div>
+    <p class="end-title" id="over-title"></p>
+    <div class="win-rack" id="over-rack"></div>
+    <p class="lead" id="over-text"></p>
+    <button class="btn primary big" id="over-next" type="button">Yeni el</button>
+    <button class="btn big" id="over-setup" type="button">Oyuncuları değiştir</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

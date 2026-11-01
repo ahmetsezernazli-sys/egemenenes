@@ -347,11 +347,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← şarkılar SONGS listesinde "nota:vuruş" dizisi olarak (R = sus, accel = hızlanma);
 │                         zorluk DIFFS (grid/gap seyreltir, lead düşüş süresi); zamanlama WIN içinde
-└── su-balonu/          ← Su Balonu Savaşı, ikisi birlikte arena (bomberman benzeri; bilgisayar rakip, kalkan)
+├── su-balonu/          ← Su Balonu Savaşı, ikisi birlikte arena (bomberman benzeri; bilgisayar rakip, kalkan)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← arena 13×11 (newRound: sandık oranı 0.72, güçlendirici 0.32), FUSE balon süresi,
+│                         bilgisayar aiDir(): tehlike haritası dangerMap() + bfs() ile kaçış/hedef seçimi
+└── okey/               ← Okey, tüm aile (1-4 oyuncu, boş koltuğa bilgisayar; ıstakada sürükleyerek dizme)
     ├── index.html
     ├── style.css
-    └── game.js         ← arena 13×11 (newRound: sandık oranı 0.72, güçlendirici 0.32), FUSE balon süresi,
-                          bilgisayar aiDir(): tehlike haritası dangerMap() + bfs() ile kaçış/hedef seçimi
+    └── game.js         ← cover(): seri/per arama (okey jokeri, 12-13-1 serisi), isWin() + isPairsWin() (çifte),
+                          bilgisayar evaluate()/bestDiscard(); gösterge deal() içinde seçilir
 ```
 
 ## Bilgisayarda oynamak
