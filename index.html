@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-av{background:#CDEBFF}
+    .cover-av svg{width:100%;height:100%}
     .cover-dd{background:#2A1446}
     .cover-dd svg{width:100%;height:100%}
     .cover-rv{background:#16302A}
@@ -283,7 +285,7 @@
   </a>
 
   <nav class="groups" aria-label="Oyun grupları">
-    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>23</b></a>
+    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>24</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>24</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>23</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>23</b></a>
@@ -292,9 +294,29 @@
 
   <main class="groups-main">
     <section class="group g-egemen" id="egemen" aria-labelledby="h-egemen">
-      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 23 oyun</p></div>
+      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 24 oyun</p></div>
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
+        <a class="game" href="ari-viz/index.html">
+          <div class="cover is-new cover-av" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#CDEBFF"/>
+              <ellipse cx="40" cy="112" rx="80" ry="34" fill="#A8DB8A"/><ellipse cx="130" cy="116" rx="80" ry="36" fill="#94D075"/>
+              <path d="M22 76 C40 50 60 70 72 46 S110 40 136 28" stroke="#FFC529" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 6"/>
+              <g transform="translate(72 46)"><g fill="#FF6B9A"><ellipse cx="0" cy="-8" rx="5" ry="7"/><ellipse cx="8" cy="0" rx="7" ry="5"/><ellipse cx="0" cy="8" rx="5" ry="7"/><ellipse cx="-8" cy="0" rx="7" ry="5"/></g><circle r="5" fill="#FFE14D"/></g>
+              <g transform="translate(104 64)"><path d="M0 6v16" stroke="#3E9B4A" stroke-width="3"/><g fill="#B77DFF"><ellipse cx="0" cy="-7" rx="4.5" ry="6"/><ellipse cx="7" cy="0" rx="6" ry="4.5"/><ellipse cx="0" cy="7" rx="4.5" ry="6"/><ellipse cx="-7" cy="0" rx="6" ry="4.5"/></g><circle r="4.5" fill="#FFE14D"/></g>
+              <g transform="translate(140 26)"><g fill="#F5BD3C"><rect x="-12" y="-12" width="24" height="7" rx="3.5"/><rect x="-15" y="-5" width="30" height="7" rx="3.5"/><rect x="-13" y="2" width="26" height="7" rx="3.5"/></g><ellipse cy="5" rx="4" ry="3" fill="#5A3A10"/></g>
+              <g transform="translate(26 74)"><ellipse cx="-2" cy="-10" rx="5" ry="7" fill="#fff" opacity=".9"/><ellipse cx="4" cy="-9" rx="4" ry="6" fill="#fff" opacity=".9"/><ellipse rx="11" ry="8" fill="#FFC529"/><rect x="-5" y="-8" width="3" height="16" fill="#2A2540"/><rect x="1" y="-8" width="3" height="16" fill="#2A2540"/><circle cx="7" cy="-2" r="1.6" fill="#2A2540"/></g>
+              <g transform="translate(110 30)" stroke="#fff" stroke-width="1"><path d="M-10 0h20M0 -10v20M-7 -7l14 14M7 -7l-14 14"/><circle r="5" fill="none"/><circle r="9" fill="none"/><circle r="3" fill="#2A2540" stroke="none"/></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Arı Vız</h3>
+            <p>Parmağınla arıdan başlayıp bir yol çiz; arı o yoldan uçsun, bütün çiçeklerden bal toplayıp kovana dönsün. Örümcek ağlarından kaçın. 10 bölüm, kaybetmek yok.</p>
+            <div class="tags"><span>Egemen için</span><span>Sesli</span><span>Yol çizme</span></div>
+          </div>
+        </a>
         <a class="game" href="minik-market/index.html">
           <div class="cover cover-mm" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
@@ -1881,8 +1903,7 @@
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
         <a class="game" href="dans-et-dur/index.html">
-          <div class="cover is-new cover-dd" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-dd" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#2A1446"/>
               <circle cx="20" cy="10" r="30" fill="#FF4FA3" opacity=".35"/><circle cx="150" cy="18" r="28" fill="#4CC9F0" opacity=".3"/><circle cx="82" cy="110" r="40" fill="#FFD166" opacity=".25"/>

@@ -412,11 +412,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← kurallar flipsFor() / moves() / apply(), kare ağırlıkları WEIGHT;
 │                         bilgisayar: Kolay easyMove(), Zor bestMove() (alfa-beta minimax, derinlik 4); yardım render() içinde derinlik 2
-└── dans-et-dur/        ← Dans Et, Dur!, tüm aile hareketli parti oyunu (müzik durunca don, eleme modu)
+├── dans-et-dur/        ← Dans Et, Dur!, tüm aile hareketli parti oyunu (müzik durunca don, eleme modu)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← hareket kartları MOVES, hız SPEEDS (dans süresi aralığı, donma süresi), şarkılar SONGS (tempo, kök, akor dizisi, gam);
+│                         müzik schedule() (davul, bas, akor, rastgele ezgi makeMelody()), akış dance() / freeze() / judge() / cont()
+└── ari-viz/            ← Arı Vız, Egemen için yol çizme oyunu (çiçek topla, kovana dön, ağlardan kaçın; 10 bölüm)
     ├── index.html
     ├── style.css
-    └── game.js         ← hareket kartları MOVES, hız SPEEDS (dans süresi aralığı, donma süresi), şarkılar SONGS (tempo, kök, akor dizisi, gam);
-                          müzik schedule() (davul, bas, akor, rastgele ezgi makeMelody()), akış dance() / freeze() / judge() / cont()
+    └── game.js         ← bölümler LEVELS (çiçek, ağ sayısı, ipucu), yerleşim placeLevel() (ipucu yolu ağlara değmez), uçuş hızı SPEED;
+                          çizim pointer olayları, uçuş ve çiçek/ağ kontrolü update(), sonuç arrive()
 ```
 
 ## Bilgisayarda oynamak
