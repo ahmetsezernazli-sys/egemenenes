@@ -492,11 +492,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← eller H, kural beats() ve açıklamalar WHY, hedef GOAL;
 │                         akış round() / choose() / reveal(), klavye mavi 1 2 3, kırmızı 8 9 0
-└── yirmi-bir/          ← 21 Demeyen Kazanır, tüm aile sayma ve strateji oyunu (1-3 sayı, 21 diyen kaybeder)
+├── yirmi-bir/          ← 21 Demeyen Kazanır, tüm aile sayma ve strateji oyunu (1-3 sayı, 21 diyen kaybeder)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← kural step() (21 diyen ceza alır), iyi hamle bestStep() (4'ün katlarını söyle), bilgisayar cpuStep();
+│                         akış newHand() / startTurn() / finish() (en az ceza kazanır), sayıları sesli okur
+└── duygu-kutusu/       ← Duygu Kutusu, Egemen için duyguları tanıma oyunu (yüzler ve küçük olaylar, 7 bölüm)
     ├── index.html
     ├── style.css
-    └── game.js         ← kural step() (21 diyen ceza alır), iyi hamle bestStep() (4'ün katlarını söyle), bilgisayar cpuStep();
-                          akış newHand() / startTurn() / finish() (en az ceza kazanır), sayıları sesli okur
+    └── game.js         ← duygular FEEL, olaylar EVENTS [resim, anlatım, duygu, açıklama], bölümler LEVELS (face / event, yüz sayısı);
+                          soru next(), seçim pick() (doğruda açıklama sesli okunur), bölüm başına PER_LEVEL soru
 ```
 
 ## Bilgisayarda oynamak

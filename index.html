@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-dk{background:#FFE0EB}
+    .cover-dk svg{width:100%;height:100%}
     .cover-yb{background:#FFD9C2}
     .cover-yb svg{width:100%;height:100%}
     .cover-tkm{background:#E3EEFF}
@@ -315,7 +317,7 @@
   </a>
 
   <nav class="groups" aria-label="Oyun grupları">
-    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>27</b></a>
+    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>28</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>28</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>27</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>27</b></a>
@@ -324,9 +326,27 @@
 
   <main class="groups-main">
     <section class="group g-egemen" id="egemen" aria-labelledby="h-egemen">
-      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 27 oyun</p></div>
+      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 28 oyun</p></div>
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
+        <a class="game" href="duygu-kutusu/index.html">
+          <div class="cover is-new cover-dk" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#FFE0EB"/>
+              <g transform="translate(34 52)"><circle r="20" fill="#FFD43B"/><circle cx="-7" cy="-5" r="3" fill="#333"/><circle cx="7" cy="-5" r="3" fill="#333"/><path d="M-9 6q9 9 18 0" stroke="#333" stroke-width="3"/></g>
+              <g transform="translate(82 52)"><circle r="20" fill="#FFD43B"/><circle cx="-7" cy="-5" r="3" fill="#333"/><circle cx="7" cy="-5" r="3" fill="#333"/><path d="M-8 10q8 -7 16 0" stroke="#333" stroke-width="3"/><path d="M-9 0v6" stroke="#4CC9F0" stroke-width="3" stroke-linecap="round"/></g>
+              <g transform="translate(130 52)"><circle r="20" fill="#FFD43B"/><circle cx="-7" cy="-5" r="3" fill="#333"/><circle cx="7" cy="-5" r="3" fill="#333"/><ellipse cy="8" rx="5" ry="6" fill="#333"/></g>
+              <text x="82" y="20" font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="11" text-anchor="middle" fill="#7A3B5A">Nasıl hisseder?</text>
+              <rect x="64" y="80" width="36" height="14" rx="7" fill="#fff"/><text x="82" y="90" font-family="Rubik, Arial, sans-serif" font-weight="700" font-size="8" text-anchor="middle" fill="#7A3B5A">üzgün</text>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Duygu Kutusu</h3>
+            <p>Mutlu, üzgün, kızgın, korkmuş, şaşkın, uykulu: yüzleri tanı. İleri bölümlerde küçük olaylar anlatılır, nasıl hissedildiğini seç. Sesli, okuma gerekmez.</p>
+            <div class="tags"><span>Egemen için</span><span>Sesli</span><span>Duygular</span></div>
+          </div>
+        </a>
         <a class="game" href="sirala/index.html">
           <div class="cover cover-sr" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
@@ -2150,8 +2170,7 @@
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
         <a class="game" href="yirmi-bir/index.html">
-          <div class="cover is-new cover-yb" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-yb" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#FFD9C2"/>
               <g font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="11" text-anchor="middle">
