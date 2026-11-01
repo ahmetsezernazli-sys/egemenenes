@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-sol{background:#145A3E}
+    .cover-sol svg{width:100%;height:100%}
     .cover-av{background:#CDEBFF}
     .cover-av svg{width:100%;height:100%}
     .cover-dd{background:#2A1446}
@@ -286,7 +288,7 @@
 
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>24</b></a>
-    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>24</b></a>
+    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>25</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>23</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>23</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
@@ -298,8 +300,7 @@
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
         <a class="game" href="ari-viz/index.html">
-          <div class="cover is-new cover-av" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-av" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#CDEBFF"/>
               <ellipse cx="40" cy="112" rx="80" ry="34" fill="#A8DB8A"/><ellipse cx="130" cy="116" rx="80" ry="36" fill="#94D075"/>
@@ -873,9 +874,32 @@
     </section>
 
     <section class="group g-enes" id="enes" aria-labelledby="h-enes">
-      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 24 oyun</p></div>
+      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 25 oyun</p></div>
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
+        <a class="game" href="solitaire/index.html">
+          <div class="cover is-new cover-sol" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#145A3E"/>
+              <rect x="8" y="8" width="22" height="31" rx="3" fill="#2A64C0" stroke="#fff" stroke-width="1.5"/>
+              <g stroke="#ffffff55" stroke-dasharray="3 2"><rect x="70" y="8" width="20" height="29" rx="3"/><rect x="96" y="8" width="20" height="29" rx="3"/><rect x="122" y="8" width="20" height="29" rx="3"/></g>
+              <rect x="34" y="8" width="22" height="31" rx="3" fill="#FFFDF7"/><text x="45" y="30" font-size="14" text-anchor="middle" fill="#D7263D">♥</text>
+              <rect x="70" y="8" width="20" height="29" rx="3" fill="#FFFDF7"/><text x="80" y="22" font-size="9" font-weight="700" text-anchor="middle" fill="#1B1B22" font-family="Arial">A</text><text x="80" y="33" font-size="10" text-anchor="middle" fill="#1B1B22">♠</text>
+              <g><rect x="12" y="46" width="22" height="31" rx="3" fill="#FFFDF7"/><text x="17" y="56" font-size="8" font-weight="700" fill="#1B1B22" font-family="Arial">K</text><text x="23" y="70" font-size="12" text-anchor="middle" fill="#1B1B22">♣</text>
+                <rect x="12" y="58" width="22" height="31" rx="3" fill="#FFFDF7" stroke="#ccc" stroke-width=".5"/><text x="17" y="68" font-size="8" font-weight="700" fill="#D7263D" font-family="Arial">Q</text><text x="23" y="82" font-size="12" text-anchor="middle" fill="#D7263D">♦</text></g>
+              <g><rect x="44" y="46" width="22" height="31" rx="3" fill="#2A64C0" stroke="#fff"/><rect x="44" y="52" width="22" height="31" rx="3" fill="#2A64C0" stroke="#fff"/><rect x="44" y="58" width="22" height="31" rx="3" fill="#FFFDF7"/><text x="49" y="68" font-size="8" font-weight="700" fill="#1B1B22" font-family="Arial">7</text><text x="55" y="82" font-size="12" text-anchor="middle" fill="#1B1B22">♠</text></g>
+              <g><rect x="76" y="46" width="22" height="31" rx="3" fill="#2A64C0" stroke="#fff"/><rect x="76" y="52" width="22" height="31" rx="3" fill="#FFFDF7"/><text x="81" y="62" font-size="8" font-weight="700" fill="#D7263D" font-family="Arial">9</text><text x="87" y="76" font-size="12" text-anchor="middle" fill="#D7263D">♥</text></g>
+              <g><rect x="108" y="46" width="22" height="31" rx="3" fill="#2A64C0" stroke="#fff"/><rect x="108" y="52" width="22" height="31" rx="3" fill="#2A64C0" stroke="#fff"/><rect x="108" y="58" width="22" height="31" rx="3" fill="#2A64C0" stroke="#fff"/><rect x="108" y="64" width="22" height="31" rx="3" fill="#FFFDF7"/><text x="113" y="74" font-size="8" font-weight="700" fill="#1B1B22" font-family="Arial">J</text><text x="119" y="88" font-size="12" text-anchor="middle" fill="#1B1B22">♣</text></g>
+              <g transform="translate(140 54) rotate(12)"><rect x="-11" y="-15" width="22" height="31" rx="3" fill="#FFFDF7" stroke="#FFD166" stroke-width="2"/><text x="0" y="6" font-size="12" text-anchor="middle" fill="#D7263D">♦</text></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Solitaire</h3>
+            <p>Klasik sabır oyunu: kartları sürükle ya da dokun, sütunlarda kırmızı-siyah sırayla diz, dört türü A'dan K'ya topla. 1 ya da 3 kart çekme, geri al, ipucu, rekor.</p>
+            <div class="tags"><span>Enes için</span><span>Kart</span><span>Rekor</span></div>
+          </div>
+        </a>
         <a class="game" href="ay-inisi/index.html">
           <div class="cover cover-ay" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

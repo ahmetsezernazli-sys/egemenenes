@@ -1,0 +1,71 @@
+:root{
+  --bg:#0F3D2C;
+  --ink:#EEF7F2;
+  --muted:#9CC2B2;
+  --gold:#FFD166;
+  --paper:#fff;
+  --paper-ink:#123326;
+  --paper-muted:#5E7A6E;
+  --red:#D7263D;
+  --black:#1B1B22;
+  --font:"Rubik", "Segoe UI", system-ui, sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{margin:0;color:var(--ink);font:16px/1.35 var(--font);padding-inline:8px;padding-block:6px 10px;-webkit-tap-highlight-color:transparent;overscroll-behavior:none;
+  background:radial-gradient(120% 80% at 50% 20%,#1A6A4A 0%,#0A2A1E 85%) fixed,var(--bg)}
+.app{max-width:900px;margin-inline:auto;min-height:calc(100dvh - 16px);display:grid;grid-template-rows:auto auto 1fr;gap:8px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px}
+.back{color:var(--muted);text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap}
+.back:hover{color:var(--ink)}
+.title{margin:0;font-weight:800;font-size:clamp(1.2rem,4vw,1.8rem)}
+.title span{color:var(--gold)}
+.bar-actions{display:flex;gap:6px;align-items:center}
+button{font:inherit;cursor:pointer}
+.btn{border:0;border-radius:11px;background:rgba(255,255,255,.14);color:var(--ink);font-weight:700;padding:8px 12px;font-size:14px}
+.btn:active{translate:0 2px}
+.btn:disabled{opacity:.4;cursor:default}
+.btn[hidden]{display:none}
+.btn.primary{background:var(--gold);color:#3D2B00}
+.btn.big{font-size:1.1rem;padding:12px 26px;width:100%;box-shadow:0 4px 0 rgba(0,0,0,.25)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.stats{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;font-weight:600;color:var(--muted);font-size:14px}
+.stats b{color:var(--ink);font-variant-numeric:tabular-nums}
+
+.table{position:relative;width:100%;min-height:0;user-select:none;-webkit-user-select:none;touch-action:none}
+.slot{position:absolute;border-radius:8%/6%;border:2px dashed rgba(255,255,255,.22);display:grid;place-items:center;color:rgba(255,255,255,.3)}
+.slot.stock{cursor:pointer;border-style:solid}
+.card{position:absolute;border-radius:8%/6%;background:#FFFDF7;box-shadow:0 1px 2px rgba(0,0,0,.35);transition:left .18s,top .18s;font-weight:700;overflow:hidden;cursor:pointer}
+.card.dragging{transition:none;z-index:1000 !important;box-shadow:0 10px 24px rgba(0,0,0,.45)}
+.card .tl{position:absolute;left:7%;top:3%;line-height:.95;text-align:center}
+.card .tl i{display:block;font-style:normal}
+.card .mid{position:absolute;inset:0;display:grid;place-items:center;padding-top:22%}
+.card.red{color:var(--red)}
+.card.blk{color:var(--black)}
+.card.down{background:repeating-linear-gradient(45deg,#2A64C0 0 6px,#2457AA 6px 12px);border:3px solid #fff}
+.card.down > *{display:none}
+.card.hint{box-shadow:0 0 0 3px var(--gold),0 0 14px var(--gold)}
+
+.overlay{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:16px;background:rgba(5,15,10,.8);overflow-y:auto}
+.overlay[hidden]{display:none}
+.sheet{width:100%;max-width:440px;background:var(--paper);color:var(--paper-ink);border-radius:22px;padding:18px 20px;display:grid;gap:10px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.sheet.center{text-align:center;justify-items:center}
+.sheet h2{margin:0;font-size:1.5rem}
+.help{margin:0;font-size:13.5px;color:var(--paper-muted);line-height:1.55}
+.help b{color:var(--paper-ink)}
+.trophy{font-size:54px;line-height:1}
+.end-title{margin:0;font-weight:800;font-size:1.5rem}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:6px;min-width:0}
+legend{font-size:12.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--paper-muted);margin-bottom:3px;padding:0}
+.seg{display:flex;border:3px solid rgba(18,51,38,.12);border-radius:12px;overflow:hidden}
+.seg label{position:relative;cursor:pointer;flex:1;min-width:0}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:block;padding:8px 6px;font-size:14px;font-weight:700;color:var(--paper-muted);text-align:center}
+.seg label + label span{border-left:2px solid rgba(18,51,38,.1)}
+.seg input:checked + span{background:var(--paper-ink);color:#fff}
+.seg input:focus-visible + span{outline:3px solid #3D8BFD;outline-offset:-3px}
+.best{margin:0;font-weight:700;color:#8A6A00;font-size:14px;min-height:1em}
+.sheet .btn{background:#E6F2EA;color:var(--paper-ink)}
+.sheet .btn.primary{background:var(--gold);color:#3D2B00}
+@media (max-width:560px){ .back-tx{display:none} .back{font-size:20px} .btn{padding:7px 9px;font-size:13px} .title{font-size:1.1rem} }

@@ -417,11 +417,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← hareket kartları MOVES, hız SPEEDS (dans süresi aralığı, donma süresi), şarkılar SONGS (tempo, kök, akor dizisi, gam);
 │                         müzik schedule() (davul, bas, akor, rastgele ezgi makeMelody()), akış dance() / freeze() / judge() / cont()
-└── ari-viz/            ← Arı Vız, Egemen için yol çizme oyunu (çiçek topla, kovana dön, ağlardan kaçın; 10 bölüm)
+├── ari-viz/            ← Arı Vız, Egemen için yol çizme oyunu (çiçek topla, kovana dön, ağlardan kaçın; 10 bölüm)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← bölümler LEVELS (çiçek, ağ sayısı, ipucu), yerleşim placeLevel() (ipucu yolu ağlara değmez), uçuş hızı SPEED;
+│                         çizim pointer olayları, uçuş ve çiçek/ağ kontrolü update(), sonuç arrive()
+└── solitaire/          ← Solitaire, Enes için Klondike sabır oyunu (1 ya da 3 kart çekme, geri al, ipucu, rekor)
     ├── index.html
     ├── style.css
-    └── game.js         ← bölümler LEVELS (çiçek, ağ sayısı, ipucu), yerleşim placeLevel() (ipucu yolu ağlara değmez), uçuş hızı SPEED;
-                          çizim pointer olayları, uçuş ve çiçek/ağ kontrolü update(), sonuç arrive()
+    └── game.js         ← kurallar canTab() / canFound() / legal(), hamle doMove() ve drawStock(); dokununca hedef autoTarget(), ipucu findHint();
+                          yerleşim layout() / offsets() (uzun sütunlar sıkıştırılır), sürükle-bırak pointer olayları, otomatik bitirme autoFinish()
 ```
 
 ## Bilgisayarda oynamak
