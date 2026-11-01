@@ -442,11 +442,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← bölümler LEVELS (ızgara, en kısa yol aralığı, ağaç sayısı), bulmaca makePuzzle() + bfs(), ipucu nextDir();
 │                         program add() / del() / run() (adım STEP_MS), çarpınca başa dönüş, bölüm başına PER_LEVEL bulmaca
-└── limonata/           ← Limonata Tezgahı, Enes için 14 günlük işletme oyunu (hava, malzeme, tarif, fiyat, ün)
+├── limonata/           ← Limonata Tezgahı, Enes için 14 günlük işletme oyunu (hava, malzeme, tarif, fiyat, ün)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← malzemeler ITEMS (paket, fiyat kuruş), hava WEATHER; müşteri sayısı ve ödeme isteği planDay() / maxPrice(), tat taste() ve idealIce();
+│                         satış serve() / step(), gün sonu ve ün endDay(), malzeme yoksa skipDay() (oyun kilitlenmez)
+└── kizak-yarisi/       ← Kızak Yarışı, ikisi birlikte penguen kızak yarışı (zıpla, balık topla; yardım, bilgisayar rakip)
     ├── index.html
     ├── style.css
-    └── game.js         ← malzemeler ITEMS (paket, fiyat kuruş), hava WEATHER; müşteri sayısı ve ödeme isteği planDay() / maxPrice(), tat taste() ve idealIce();
-                          satış serve() / step(), gün sonu ve ün endDay(), malzeme yoksa skipDay() (oyun kilitlenmez)
+    └── game.js         ← pist makeTrack() (iki şeritte aynı engeller), hız BASE/BOOST/SLOW, zıplama JUMP/GRAV, bitiş FINISH;
+                          yardım ve bilgisayar update() içinde (lucky: kayayı görme olasılığı), çizim draw()
 ```
 
 ## Bilgisayarda oynamak
