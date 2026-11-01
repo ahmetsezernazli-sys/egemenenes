@@ -502,11 +502,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← duygular FEEL, olaylar EVENTS [resim, anlatım, duygu, açıklama], bölümler LEVELS (face / event, yüz sayısı);
 │                         soru next(), seçim pick() (doğruda açıklama sesli okunur), bölüm başına PER_LEVEL soru
-└── kelime-avi/         ← Kelime Avı, Enes için Türkçe kelime bulmaca (8 tema, üç zorluk, süre rekoru)
+├── kelime-avi/         ← Kelime Avı, Enes için Türkçe kelime bulmaca (8 tema, üç zorluk, süre rekoru)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← temalar THEMES, zorluklar LV (tablo boyu, kelime sayısı, yönler), bulmaca build();
+│                         seçim sürükleme ya da iki dokunuş, kontrol check() (tersten de kabul), çizgi drawHl()
+└── bayrak-kapmaca/     ← Bayrak Kapmaca, ikisi birlikte bayrak kapma oyunu (kendi sahanda yakala, hız yardımı, bilgisayar rakip)
     ├── index.html
     ├── style.css
-    └── game.js         ← temalar THEMES, zorluklar LV (tablo boyu, kelime sayısı, yönler), bulmaca build();
-                          seçim sürükleme ya da iki dokunuş, kontrol check() (tersten de kabul), çizgi drawHl()
+    └── game.js         ← saha AW×AH, orta çizgi MID, üsler BASES, ağaçlar TREES, hız SPEED;
+                          yakalama ve bayrak update() içinde, sayı scoreFlag(), bilgisayar think() (kap, kaç, gerekirse kovala)
 ```
 
 ## Bilgisayarda oynamak

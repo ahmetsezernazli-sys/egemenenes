@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-bk{background:#69B85A}
+    .cover-bk svg{width:100%;height:100%}
     .cover-ka{background:#0F2233}
     .cover-ka svg{width:100%;height:100%}
     .cover-dk{background:#FFE0EB}
@@ -321,7 +323,7 @@
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>28</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>29</b></a>
-    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>27</b></a>
+    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>28</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>27</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
@@ -991,8 +993,7 @@
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
         <a class="game" href="kelime-avi/index.html">
-          <div class="cover is-new cover-ka" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-ka" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#0F2233"/>
               <rect x="22" y="16" width="70" height="14" rx="7" fill="rgba(255,209,102,.8)"/>
@@ -1581,9 +1582,29 @@
     </section>
 
     <section class="group g-ikisi" id="ikisi" aria-labelledby="h-ikisi">
-      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 27 oyun</p></div>
+      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 28 oyun</p></div>
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
+        <a class="game" href="bayrak-kapmaca/index.html">
+          <div class="cover is-new cover-bk" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="82" height="102" fill="#69B85A"/><rect x="82" width="82" height="102" fill="#7BBF52"/>
+              <path d="M82 0v102" stroke="#fff" stroke-width="2" stroke-dasharray="6 5"/>
+              <circle cx="16" cy="51" r="11" stroke="#3D8BFD" stroke-width="2.5"/><circle cx="148" cy="51" r="11" stroke="#E5484D" stroke-width="2.5"/>
+              <rect x="146" y="38" width="2" height="18" fill="#fff"/><path d="M148 38l11 4-11 4z" fill="#E5484D"/>
+              <g transform="translate(60 56)"><circle r="9" fill="#3D8BFD"/><circle cy="-2" r="5.5" fill="#F2C29B"/><rect x="-1" y="-30" width="2" height="18" fill="#fff"/><path d="M1 -30l11 4-11 4z" fill="#E5484D"/></g>
+              <g transform="translate(104 64)"><circle r="9" fill="#E5484D"/><circle cy="-2" r="5.5" fill="#F2C29B"/></g>
+              <path d="M74 56h-8M76 60h-10" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+              <g fill="#2E7D32"><circle cx="46" cy="22" r="8"/><circle cx="118" cy="22" r="8"/><circle cx="46" cy="82" r="8"/><circle cx="118" cy="82" r="8"/></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Bayrak Kapmaca</h3>
+            <p>Rakibin bayrağını kap, kendi yarı sahana getir; kendi sahanda rakibe dokunursan başlangıca gönderirsin. 3 sayıya ilk ulaşan kazanır. Hız yardımı, bilgisayar rakip.</p>
+            <div class="tags"><span>İkisi birlikte</span><span>Bilgisayar rakip</span><span>Yardım ayarı</span></div>
+          </div>
+        </a>
         <a class="game" href="tas-kagit-makas/index.html">
           <div class="cover cover-tkm" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
