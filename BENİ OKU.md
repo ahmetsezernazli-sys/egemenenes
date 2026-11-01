@@ -487,11 +487,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← renkler COLORS, zorluklar LV (renk sayısı, tekrar olur mu), ipucu hesabı score() (yeşil doğru yer, beyaz yanlış yer);
 │                         tahmin put() / del() / go(), sonuç finish(), rekor zorluk başına
-└── tas-kagit-makas/    ← Taş Kağıt Makas, ikisi birlikte gizli seçim düellosu (5 puan, bilgisayar rakip)
+├── tas-kagit-makas/    ← Taş Kağıt Makas, ikisi birlikte gizli seçim düellosu (5 puan, bilgisayar rakip)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← eller H, kural beats() ve açıklamalar WHY, hedef GOAL;
+│                         akış round() / choose() / reveal(), klavye mavi 1 2 3, kırmızı 8 9 0
+└── yirmi-bir/          ← 21 Demeyen Kazanır, tüm aile sayma ve strateji oyunu (1-3 sayı, 21 diyen kaybeder)
     ├── index.html
     ├── style.css
-    └── game.js         ← eller H, kural beats() ve açıklamalar WHY, hedef GOAL;
-                          akış round() / choose() / reveal(), klavye mavi 1 2 3, kırmızı 8 9 0
+    └── game.js         ← kural step() (21 diyen ceza alır), iyi hamle bestStep() (4'ün katlarını söyle), bilgisayar cpuStep();
+                          akış newHand() / startTurn() / finish() (en az ceza kazanır), sayıları sesli okur
 ```
 
 ## Bilgisayarda oynamak

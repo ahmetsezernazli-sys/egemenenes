@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-yb{background:#FFD9C2}
+    .cover-yb svg{width:100%;height:100%}
     .cover-tkm{background:#E3EEFF}
     .cover-tkm svg{width:100%;height:100%}
     .cover-sk{background:#1B1D2E}
@@ -316,7 +318,7 @@
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>27</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>28</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>27</b></a>
-    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>26</b></a>
+    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>27</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
 
@@ -1541,8 +1543,7 @@
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
         <a class="game" href="tas-kagit-makas/index.html">
-          <div class="cover is-new cover-tkm" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-tkm" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="82" height="102" fill="#E3EEFF"/><rect x="82" width="82" height="102" fill="#FFE5E6"/>
               <g transform="translate(40 52)"><circle r="18" fill="#F2C29B"/><path d="M-14 -6h28M-14 2h28M-12 10h24" stroke="#D9A57A" stroke-width="2"/></g>
@@ -2145,9 +2146,32 @@
     </section>
 
     <section class="group g-aile" id="aile" aria-labelledby="h-aile">
-      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 26 oyun</p></div>
+      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 27 oyun</p></div>
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
+        <a class="game" href="yirmi-bir/index.html">
+          <div class="cover is-new cover-yb" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#FFD9C2"/>
+              <g font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="11" text-anchor="middle">
+                <rect x="10" y="40" width="20" height="18" rx="5" fill="#E8590C"/><text x="20" y="53" fill="#fff">17</text>
+                <rect x="34" y="40" width="20" height="18" rx="5" fill="#E8590C"/><text x="44" y="53" fill="#fff">18</text>
+                <rect x="58" y="40" width="20" height="18" rx="5" fill="#E8590C"/><text x="68" y="53" fill="#fff">19</text>
+                <rect x="82" y="40" width="20" height="18" rx="5" fill="#E8590C"/><text x="92" y="53" fill="#fff">20</text>
+                <rect x="106" y="40" width="22" height="18" rx="5" fill="#fff"/><text x="117" y="53" fill="#E5484D">21</text>
+              </g>
+              <text x="146" y="58" font-size="20" text-anchor="middle">😬</text>
+              <text x="82" y="28" font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="16" text-anchor="middle" fill="#B5430A">21 diyen kaybeder!</text>
+              <g font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="10" text-anchor="middle" fill="#2E1A0B"><rect x="28" y="70" width="30" height="16" rx="6" fill="#fff"/><text x="43" y="81">1</text><rect x="66" y="70" width="30" height="16" rx="6" fill="#fff"/><text x="81" y="81">2</text><rect x="104" y="70" width="30" height="16" rx="6" fill="#fff"/><text x="119" y="81">3</text></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>21 Demeyen Kazanır</h3>
+            <p>Sırayla 1, 2 ya da 3 sayı ilerleyerek sayın; 21 demek zorunda kalan kaybeder. Basit ama stratejik sayma oyunu, sesli; küçüklere iyi hamle yardımı.</p>
+            <div class="tags"><span>Tüm aile</span><span>2-6 oyuncu</span><span>Bilgisayar rakip</span></div>
+          </div>
+        </a>
         <a class="game" href="sayi-avi/index.html">
           <div class="cover cover-sa" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
