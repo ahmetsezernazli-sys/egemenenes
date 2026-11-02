@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-saat{background:#E3F6DC}
+    .cover-saat svg{width:100%;height:100%}
     .cover-gg{background:#CFE6F7}
     .cover-gg svg{width:100%;height:100%}
     .cover-bk{background:#69B85A}
@@ -323,7 +325,7 @@
   </a>
 
   <nav class="groups" aria-label="Oyun grupları">
-    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>28</b></a>
+    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>29</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>29</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>28</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>28</b></a>
@@ -332,9 +334,28 @@
 
   <main class="groups-main">
     <section class="group g-egemen" id="egemen" aria-labelledby="h-egemen">
-      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 28 oyun</p></div>
+      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 29 oyun</p></div>
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
+        <a class="game" href="saat-kac/index.html">
+          <div class="cover is-new cover-saat" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#E3F6DC"/>
+              <circle cx="60" cy="51" r="40" fill="#2DB75A"/><circle cx="60" cy="51" r="35" fill="#fff"/>
+              <g font-family="Baloo 2, Arial, sans-serif" font-weight="800" font-size="9" fill="#2A2540" text-anchor="middle"><text x="60" y="27">12</text><text x="84" y="54">3</text><text x="60" y="81">6</text><text x="36" y="54">9</text></g>
+              <path d="M60 51V24" stroke="#3D8BFD" stroke-width="3" stroke-linecap="round"/><path d="M60 51l13 7" stroke="#2A2540" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="60" cy="51" r="3" fill="#FFC529"/>
+              <rect x="112" y="30" width="44" height="22" rx="7" fill="#fff"/><text x="134" y="46" font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="13" text-anchor="middle" fill="#2A2540">4:00</text>
+              <rect x="112" y="58" width="44" height="18" rx="6" fill="#D8F5E1"/><text x="134" y="71" font-family="Rubik, Arial, sans-serif" font-weight="700" font-size="9" text-anchor="middle" fill="#1E8A41">saat dört</text>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Saat Kaç?</h3>
+            <p>Kadrandaki saati oku, doğru kartı seç; akrebi ve yelkovanı sürükleyerek söylenen saati kur. Tam saatlerden buçuklara, günlük hayattan cümleler, sesli.</p>
+            <div class="tags"><span>Egemen için</span><span>Sesli</span><span>Saat</span></div>
+          </div>
+        </a>
         <a class="game" href="duygu-kutusu/index.html">
           <div class="cover cover-dk" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
@@ -2214,8 +2235,7 @@
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
         <a class="game" href="gozum-goruyor/index.html">
-          <div class="cover is-new cover-gg" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-gg" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#CFE6F7"/>
               <rect x="10" y="10" width="144" height="82" rx="10" fill="#fff"/>
