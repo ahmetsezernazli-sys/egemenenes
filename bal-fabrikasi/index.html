@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bal Fabrikası · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için tıklamalı üretim oyunu: kovana tıkla, bal üret; arı, kovan, çiçek tarlası, bal makinesi ve daha fazlasını al, saniyede kendiliğinden bal üretsinler. Güçlendirmeler, altın arı, başarılar; ilerleme kaydedilir, oyun kapalıyken de bal birikir.">
+  <meta name="theme-color" content="#2A1E08">
+  <meta property="og:title" content="Bal Fabrikası">
+  <meta property="og:description" content="Kovana tıkla, arıları çalıştır, bal imparatorluğunu kur!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%232A1E08'/%3E%3Cpath d='M50 14l30 17v34L50 82 20 65V31z' fill='%23FFC529' stroke='%23B8860B' stroke-width='5'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← Oyunlar</a>
+    <h1 class="title">Bal <span>Fabrikası</span></h1>
+    <button class="btn" id="reset" type="button">Sıfırla</button>
+  </header>
+  <div class="main">
+    <section class="left" id="left">
+      <div class="honey" id="honey" aria-live="off">0 bal</div>
+      <div class="rate" id="rate">saniyede 0</div>
+      <div class="boost" id="boost" aria-live="polite"></div>
+      <button class="hive" id="hive" type="button" aria-label="Kovana tıkla, bal üret">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <ellipse cx="100" cy="186" rx="70" ry="8" fill="rgba(0,0,0,.3)"/>
+          <rect x="95" y="6" width="10" height="26" fill="#7A5230"/>
+          <g><rect x="52" y="28" width="96" height="30" rx="15" fill="#F5BD3C"/><rect x="36" y="56" width="128" height="32" rx="16" fill="#E8A92C"/><rect x="28" y="86" width="144" height="34" rx="17" fill="#F5BD3C"/><rect x="36" y="118" width="128" height="32" rx="16" fill="#E8A92C"/><rect x="54" y="148" width="92" height="30" rx="15" fill="#F5BD3C"/></g>
+          <ellipse cx="100" cy="132" rx="18" ry="14" fill="#5A3A10"/>
+          <g transform="translate(150 60)"><ellipse rx="12" ry="9" fill="#FFC529"/><path d="M-5 -9v18M3 -9v18" stroke="#2A1E08" stroke-width="3"/><ellipse cx="-2" cy="-12" rx="6" ry="4" fill="#fff" opacity=".8"/></g>
+        </svg>
+      </button>
+      <p class="ach" id="ach"></p>
+    </section>
+    <section class="shop">
+      <h2>Güçlendirmeler</h2>
+      <div class="ups" id="ups"></div>
+      <h2>Üreticiler</h2>
+      <div id="blds"></div>
+    </section>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

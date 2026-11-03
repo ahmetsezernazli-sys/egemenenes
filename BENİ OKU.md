@@ -517,11 +517,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← nesneler OBJ [resim, ad, renk, tür, etiketler], türler CAT, bilmeceler RIDDLE; sahnede tek doğru cevap makeRound();
 │                         akış nextTurn() / pick() / timeUp(), süre TIME (hızlı bulana çok puan), yardım: 6 sn sonra doğru resim parlar
-└── saat-kac/           ← Saat Kaç?, Egemen için saat okuma ve kurma oyunu (tam saat ve buçuk, 5 bölüm)
+├── saat-kac/           ← Saat Kaç?, Egemen için saat okuma ve kurma oyunu (tam saat ve buçuk, 5 bölüm)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← bölümler LEVELS (read okuma, set kurma, mix; half = buçuk), günlük cümleler DAY, sayılar NUM;
+│                         kadran buildClock() / setHands(), sürükleme: dış kısım yelkovan, iç kısım akrep, cevap answer()
+└── bal-fabrikasi/      ← Bal Fabrikası, Enes için tıklamalı üretim (idle) oyunu (8 üretici, güçlendirme, altın arı, kayıt)
     ├── index.html
     ├── style.css
-    └── game.js         ← bölümler LEVELS (read okuma, set kurma, mix; half = buçuk), günlük cümleler DAY, sayılar NUM;
-                          kadran buildClock() / setHands(), sürükleme: dış kısım yelkovan, iç kısım akrep, cevap answer()
+    └── game.js         ← üreticiler BLD [resim, ad, açıklama, ilk fiyat, saniyelik], fiyat artışı GROW, güçlendirmeler UPS [resim, ad, fiyat, şart, etki], başarılar ACH;
+                          üretim perSec() / perClick(), satın alma buy() / buyUp(), altın arı spawnGold(), kapalıyken birikim OFFLINE_MAX / OFFLINE_RATE
 ```
 
 ## Bilgisayarda oynamak
