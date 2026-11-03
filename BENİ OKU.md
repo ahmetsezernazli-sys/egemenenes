@@ -522,11 +522,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← bölümler LEVELS (read okuma, set kurma, mix; half = buçuk), günlük cümleler DAY, sayılar NUM;
 │                         kadran buildClock() / setHands(), sürükleme: dış kısım yelkovan, iç kısım akrep, cevap answer()
-└── bal-fabrikasi/      ← Bal Fabrikası, Enes için tıklamalı üretim (idle) oyunu (8 üretici, güçlendirme, altın arı, kayıt)
+├── bal-fabrikasi/      ← Bal Fabrikası, Enes için tıklamalı üretim (idle) oyunu (8 üretici, güçlendirme, altın arı, kayıt)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← üreticiler BLD [resim, ad, açıklama, ilk fiyat, saniyelik], fiyat artışı GROW, güçlendirmeler UPS [resim, ad, fiyat, şart, etki], başarılar ACH;
+│                         üretim perSec() / perClick(), satın alma buy() / buyUp(), altın arı spawnGold(), kapalıyken birikim OFFLINE_MAX / OFFLINE_RATE
+└── bes-tas/            ← Beş Taş, ikisi birlikte beşli dizme oyunu (13×13, tehlike uyarısı, bilgisayar rakip)
     ├── index.html
     ├── style.css
-    └── game.js         ← üreticiler BLD [resim, ad, açıklama, ilk fiyat, saniyelik], fiyat artışı GROW, güçlendirmeler UPS [resim, ad, fiyat, şart, etki], başarılar ACH;
-                          üretim perSec() / perClick(), satın alma buy() / buyUp(), altın arı spawnGold(), kapalıyken birikim OFFLINE_MAX / OFFLINE_RATE
+    └── game.js         ← kazanma lineAt(), hamle değeri scoreFor() (açık dörtlü/üçlü), adaylar candidates();
+                          bilgisayar bestMove() (Kolay daha rastgele), yardım dangers() + en iyi hamle
 ```
 
 ## Bilgisayarda oynamak
