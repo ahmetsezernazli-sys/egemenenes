@@ -532,11 +532,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← kazanma lineAt(), hamle değeri scoreFor() (açık dörtlü/üçlü), adaylar candidates();
 │                         bilgisayar bestMove() (Kolay daha rastgele), yardım dangers() + en iyi hamle
-└── tahmin-ustasi/      ← Tahmin Ustası, tüm aile gizli tahmin yarışması (bilgi soruları ve yıldız sayma)
+├── tahmin-ustasi/      ← Tahmin Ustası, tüm aile gizli tahmin yarışması (bilgi soruları ve yıldız sayma)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← sorular QS [resim, soru, cevap, zorluk], her üçüncü soru yıldız sayma (nextQ);
+│                         gizli giriş askNext() / press() / submit(), puan reveal() (en yakın +3, tam +2), yardım helpRange()
+└── vucudum/            ← Vücudumu Tanıyorum, Egemen için vücut bölümleri oyunu (yüz, vücut, işlev soruları)
     ├── index.html
     ├── style.css
-    └── game.js         ← sorular QS [resim, soru, cevap, zorluk], her üçüncü soru yıldız sayma (nextQ);
-                          gizli giriş askNext() / press() / submit(), puan reveal() (en yakın +3, tam +2), yardım helpRange()
+    └── game.js         ← bölümler PART (ad ve “göster” hâli), işlev soruları USE, bölümler LEVELS; resim FIG (data-p ile tıklanır SVG);
+                          soru next(), seçim pick(), ipucu armIdle() (8 sn sonra doğru bölüm parlar)
 ```
 
 ## Bilgisayarda oynamak
