@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tahmin Ustası · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Aile tahmin yarışması: herkes aynı soruya gizlice bir sayı yazar, sonra açılır, en yakın tahmin kazanır. Bilgi soruları ve ekranda kısa süre görünen yıldızları sayma. Küçüklere kolay sorular, 2-6 oyuncu, bilgisayar rakip.">
+  <meta name="theme-color" content="#F1FAF0">
+  <meta property="og:title" content="Tahmin Ustası">
+  <meta property="og:description" content="Gizlice tahmin et, en yakın olan kazansın!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23EEF0FF'/%3E%3Crect x='10' y='44' width='80' height='14' rx='7' fill='%23D9D6F5'/%3E%3Crect x='34' y='44' width='30' height='14' rx='7' fill='%236C5CE7'/%3E%3Ctext x='50' y='34' font-size='26' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%234B3CC4'%3E%3F%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Tahmin <span>Ustası</span></h1>
+    <button class="icon-btn" id="settings" type="button" aria-label="Oyuncular ve yeni oyun">⚙</button>
+  </header>
+  <div class="players" id="players"></div>
+  <main class="table" id="table" aria-live="polite"></main>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>🎯 Tahmin Ustası</h2>
+    <p class="help">Herkes aynı soruyu görür. Sonra sırayla telefonu alıp tahminini <b>gizlice</b> yazar. Hepsi bitince tahminler açılır: <b>en yakın</b> tahmin <b>3 puan</b>, tam bilen <b>2 puan daha</b> alır. Bazı turlarda ekranda yıldızlar 3 saniye görünür, kaç tane olduğunu tahmin edersiniz!</p>
+    <fieldset><legend>Oyuncu sayısı</legend>
+      <div class="seg wide">
+        <label><input type="radio" name="count" value="2"><span>2</span></label><label><input type="radio" name="count" value="3"><span>3</span></label>
+        <label><input type="radio" name="count" value="4" checked><span>4</span></label><label><input type="radio" name="count" value="5"><span>5</span></label><label><input type="radio" name="count" value="6"><span>6</span></label>
+      </div>
+    </fieldset>
+    <fieldset><legend>Oyuncular</legend><div id="rows" class="rows"></div>
+      <p class="help small"><b>🤖</b> bilgisayar oynar · <b>✨ yardım:</b> o oyuncu tahmin yazarken bir ipucu aralığı görür.</p>
+    </fieldset>
+    <fieldset><legend>Sorular</legend>
+      <div class="seg"><label><input type="radio" name="lvl" value="0"><span>Kolay</span></label><label><input type="radio" name="lvl" value="1" checked><span>Karışık</span></label><label><input type="radio" name="lvl" value="2"><span>Zor</span></label></div>
+    </fieldset>
+    <fieldset><legend>Tur</legend>
+      <div class="seg"><label><input type="radio" name="len" value="6"><span>6 soru</span></label><label><input type="radio" name="len" value="10" checked><span>10 soru</span></label><label><input type="radio" name="len" value="15"><span>15 soru</span></label></div>
+    </fieldset>
+    <button class="btn primary big" type="submit">Başla!</button>
+  </form>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="over-title"></p>
+    <div class="results" id="results"></div>
+    <button class="btn primary big" id="again" type="button">Yeniden oyna</button>
+    <button class="btn big" id="to-setup" type="button">Oyuncuları değiştir</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

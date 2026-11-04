@@ -527,11 +527,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← üreticiler BLD [resim, ad, açıklama, ilk fiyat, saniyelik], fiyat artışı GROW, güçlendirmeler UPS [resim, ad, fiyat, şart, etki], başarılar ACH;
 │                         üretim perSec() / perClick(), satın alma buy() / buyUp(), altın arı spawnGold(), kapalıyken birikim OFFLINE_MAX / OFFLINE_RATE
-└── bes-tas/            ← Beş Taş, ikisi birlikte beşli dizme oyunu (13×13, tehlike uyarısı, bilgisayar rakip)
+├── bes-tas/            ← Beş Taş, ikisi birlikte beşli dizme oyunu (13×13, tehlike uyarısı, bilgisayar rakip)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← kazanma lineAt(), hamle değeri scoreFor() (açık dörtlü/üçlü), adaylar candidates();
+│                         bilgisayar bestMove() (Kolay daha rastgele), yardım dangers() + en iyi hamle
+└── tahmin-ustasi/      ← Tahmin Ustası, tüm aile gizli tahmin yarışması (bilgi soruları ve yıldız sayma)
     ├── index.html
     ├── style.css
-    └── game.js         ← kazanma lineAt(), hamle değeri scoreFor() (açık dörtlü/üçlü), adaylar candidates();
-                          bilgisayar bestMove() (Kolay daha rastgele), yardım dangers() + en iyi hamle
+    └── game.js         ← sorular QS [resim, soru, cevap, zorluk], her üçüncü soru yıldız sayma (nextQ);
+                          gizli giriş askNext() / press() / submit(), puan reveal() (en yakın +3, tam +2), yardım helpRange()
 ```
 
 ## Bilgisayarda oynamak
