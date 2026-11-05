@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-lz{background:#0B0F1E}
+    .cover-lz svg{width:100%;height:100%}
     .cover-vc{background:#FFE9D2}
     .cover-vc svg{width:100%;height:100%}
     .cover-tu{background:#CDEFD9}
@@ -334,7 +336,7 @@
 
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>30</b></a>
-    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>30</b></a>
+    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>31</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>29</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>29</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
@@ -346,8 +348,7 @@
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
         <a class="game" href="vucudum/index.html">
-          <div class="cover is-new cover-vc" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-vc" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#FFE9D2"/>
               <g transform="translate(58 4) scale(.19)">
@@ -1046,9 +1047,29 @@
     </section>
 
     <section class="group g-enes" id="enes" aria-labelledby="h-enes">
-      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 30 oyun</p></div>
+      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 31 oyun</p></div>
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
+        <a class="game" href="lazer-aynalari/index.html">
+          <div class="cover is-new cover-lz" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#0B0F1E"/>
+              <g stroke="#9AA6D1" stroke-opacity=".15"><path d="M0 20h164M0 41h164M0 62h164M0 83h164M28 0v102M55 0v102M82 0v102M109 0v102M136 0v102"/></g>
+              <rect x="6" y="66" width="20" height="13" rx="3" fill="#FF4D6D"/>
+              <path d="M26 72H68V30H122V72" stroke="#FF4D6D" stroke-opacity=".4" stroke-width="6" stroke-linejoin="round"/>
+              <path d="M26 72H68V30H122V72" stroke="#FFB3C1" stroke-width="2" stroke-linejoin="round"/>
+              <g stroke="#E8EDFF" stroke-width="4" stroke-linecap="round"><path d="M58 82L78 62"/><path d="M58 20L78 40"/><path d="M112 20L132 40"/></g>
+              <path d="M95 22l7 8-7 10-7-10z" fill="#4CC9F0" stroke="#9BE7FF"/>
+              <circle cx="122" cy="80" r="9" stroke="#FFD166" stroke-width="3"/><circle cx="122" cy="80" r="4" fill="#FFD166"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Lazer Aynaları</h3>
+            <p>Aynalara dokunarak çevir, lazer ışınını kristallerden geçirip hedefe ulaştır. 20 bölüm, büyüyen tahta, duvarlar ve tuzak aynalar; en az dokunuşla üç yıldız.</p>
+            <div class="tags"><span>Enes için</span><span>Bulmaca</span><span>20 bölüm</span></div>
+          </div>
+        </a>
         <a class="game" href="bal-fabrikasi/index.html">
           <div class="cover cover-bf" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
