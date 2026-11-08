@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-ut{background:#070A22}
+    .cover-ut svg{width:100%;height:100%}
     .cover-lz{background:#0B0F1E}
     .cover-lz svg{width:100%;height:100%}
     .cover-vc{background:#FFE9D2}
@@ -337,7 +339,7 @@
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>30</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>31</b></a>
-    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>29</b></a>
+    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>30</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>29</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
@@ -1051,8 +1053,7 @@
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
         <a class="game" href="lazer-aynalari/index.html">
-          <div class="cover is-new cover-lz" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-lz" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#0B0F1E"/>
               <g stroke="#9AA6D1" stroke-opacity=".15"><path d="M0 20h164M0 41h164M0 62h164M0 83h164M28 0v102M55 0v102M82 0v102M109 0v102M136 0v102"/></g>
@@ -1680,9 +1681,29 @@
     </section>
 
     <section class="group g-ikisi" id="ikisi" aria-labelledby="h-ikisi">
-      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 29 oyun</p></div>
+      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 30 oyun</p></div>
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
+        <a class="game" href="uzay-takimi/index.html">
+          <div class="cover is-new cover-ut" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#070A22"/>
+              <g fill="#fff" opacity=".8"><circle cx="14" cy="18" r="1"/><circle cx="48" cy="84" r="1"/><circle cx="92" cy="12" r="1"/><circle cx="150" cy="60" r="1"/><circle cx="26" cy="56" r="1"/></g>
+              <path d="M90 54L46 34l8 20-8 20z" fill="#3D8BFD"/><circle cx="70" cy="54" r="7" fill="#92BEFF"/>
+              <path d="M70 54L108 34" stroke="#E5484D" stroke-width="6" stroke-linecap="round"/><circle cx="70" cy="54" r="8" fill="#E5484D"/>
+              <circle cx="120" cy="28" r="3.5" fill="#FFE6A8"/><circle cx="132" cy="21" r="3.5" fill="#FFE6A8"/>
+              <path d="M140 8l13 5 6 12-7 11-14 1-9-10 2-13z" fill="#8D8476"/>
+              <path d="M126 70l9 3 4 8-5 8-10 1-6-7 1-9z" fill="#8D8476"/>
+              <path d="M28 76l8 10-8 11-8-11z" fill="#FFD166"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Uzay Takımı</h3>
+            <p>Aynı gemide ortak görev: biri gemiyi sürer, diğeri tareti çevirir. Göktaşlarını birlikte vurun, kristal toplayın, takım rekorunu kırın. Küçüğe nişan yardımı.</p>
+            <div class="tags"><span>İkisi birlikte</span><span>Ortak görev</span><span>Yardım ayarı</span></div>
+          </div>
+        </a>
         <a class="game" href="bes-tas/index.html">
           <div class="cover cover-bt" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

@@ -542,11 +542,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← bölümler PART (ad ve “göster” hâli), işlev soruları USE, bölümler LEVELS; resim FIG (data-p ile tıklanır SVG);
 │                         soru next(), seçim pick(), ipucu armIdle() (8 sn sonra doğru bölüm parlar)
-└── lazer-aynalari/     ← Lazer Aynaları, Enes için ışık yönlendirme bulmacası (20 bölüm, kristal, tuzak ayna, yıldız)
+├── lazer-aynalari/     ← Lazer Aynaları, Enes için ışık yönlendirme bulmacası (20 bölüm, kristal, tuzak ayna, yıldız)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← bölüm üretimi generate() (tohumlu, her bölüm hep aynı; yoldaki dönüşlere ayna), zorluk spec(), yansıma REFLECT;
+│                         ışın izi trace(), dokunuş tap(), yıldız win() (gereken dokunuş par üstüne fark)
+└── uzay-takimi/        ← Uzay Takımı, ikisi birlikte ortak uzay oyunu (pilot ve nişancı, dalgalar, takım rekoru)
     ├── index.html
     ├── style.css
-    └── game.js         ← bölüm üretimi generate() (tohumlu, her bölüm hep aynı; yoldaki dönüşlere ayna), zorluk spec(), yansıma REFLECT;
-                          ışın izi trace(), dokunuş tap(), yıldız win() (gereken dokunuş par üstüne fark)
+    └── game.js         ← hız SPEED, taret TURN, ateş FIRE, kalkan SHIELDS, zorluk LV;
+                          update() (pilot, nişancı, nişan yardımı, göktaşları), parçalanma ve dalga killRock(), rekor gameOver()
 ```
 
 ## Bilgisayarda oynamak
