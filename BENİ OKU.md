@@ -552,11 +552,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← hız SPEED, taret TURN, ateş FIRE, kalkan SHIELDS, zorluk LV;
 │                         update() (pilot, nişancı, nişan yardımı, göktaşları), parçalanma ve dalga killRock(), rekor gameOver()
-└── hikaye-zarlari/     ← Hikaye Zarları (Tüm aile)
+├── hikaye-zarlari/     ← Hikaye Zarları (Tüm aile)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← resimli zarlarla sırayla hikâye anlatma, isteğe bağlı süre
+│                         zar sayısı 6/9/12, kalanları yeniden at, sırayı geç
+└── tahterevalli/       ← Tahterevalli (Egemen)
     ├── index.html
     ├── style.css
-    └── game.js         ← resimli zarlarla sırayla hikâye anlatma, isteğe bağlı süre
-                          zar sayısı 6/9/12, kalanları yeniden at, sırayı geç
+    └── game.js         ← denge oyunu: hangisi ağır, bloklarla dengele, hayvan kaç blok
+                          5 bölüm × 5 tur, mor büyük blok 2 ağırlığında, hook window.__tt
 ```
 
 ## Bilgisayarda oynamak

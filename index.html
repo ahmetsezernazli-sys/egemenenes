@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-thv{background:#DDF1FF}
+    .cover-thv svg{width:100%;height:100%}
     .cover-hz{background:#FFE3C7}
     .cover-hz svg{width:100%;height:100%}
     .cover-ut{background:#070A22}
@@ -339,7 +341,7 @@
   </a>
 
   <nav class="groups" aria-label="Oyun grupları">
-    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>30</b></a>
+    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>31</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>31</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>30</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>30</b></a>
@@ -348,9 +350,29 @@
 
   <main class="groups-main">
     <section class="group g-egemen" id="egemen" aria-labelledby="h-egemen">
-      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 30 oyun</p></div>
+      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 31 oyun</p></div>
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
+        <a class="game" href="tahterevalli/index.html">
+          <div class="cover is-new cover-thv" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#DDF1FF"/>
+              <rect y="86" width="164" height="16" fill="#BDE7A6"/>
+              <path d="M82 62L68 88H96Z" fill="#E4483B"/>
+              <g transform="rotate(-12 82 60)">
+                <rect x="18" y="56" width="128" height="8" rx="4" fill="#C98F00"/>
+                <rect x="104" y="40" width="16" height="16" rx="3" fill="#2A64C0"/><rect x="121" y="40" width="16" height="16" rx="3" fill="#E4483B"/><rect x="112" y="24" width="16" height="16" rx="3" fill="#1E8A41"/>
+                <ellipse cx="42" cy="44" rx="18" ry="13" fill="#F79CB8"/><circle cx="31" cy="34" r="5" fill="#F79CB8"/><circle cx="52" cy="34" r="5" fill="#F79CB8"/><ellipse cx="42" cy="47" rx="7" ry="5" fill="#E86E95"/><circle cx="36" cy="40" r="2" fill="#2A2540"/><circle cx="48" cy="40" r="2" fill="#2A2540"/>
+              </g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Tahterevalli</h3>
+            <p>Hangi hayvan daha ağır? Tahterevalliye blok koyarak dengele, kedinin kaç blok ağırlığında olduğunu bul. Saymayı ve eşitliği öğretir.</p>
+            <div class="tags"><span>Egemen için</span><span>Sesli</span><span>Denge</span></div>
+          </div>
+        </a>
         <a class="game" href="vucudum/index.html">
           <div class="cover cover-vc" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
@@ -2348,8 +2370,7 @@
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
         <a class="game" href="hikaye-zarlari/index.html">
-          <div class="cover is-new cover-hz" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-hz" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#FFE3C7"/>
               <rect x="14" y="10" width="136" height="24" rx="12" fill="#fff"/>
