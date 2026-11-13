@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-dkt{background:#E9C891}
+    .cover-dkt svg{width:100%;height:100%}
     .cover-bat{background:#1A1440}
     .cover-bat svg{width:100%;height:100%}
     .cover-thv{background:#DDF1FF}
@@ -345,7 +347,7 @@
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>31</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>32</b></a>
-    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>30</b></a>
+    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>31</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>30</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
@@ -1078,8 +1080,7 @@
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
         <a class="game" href="balon-atici/index.html">
-          <div class="cover is-new cover-bat" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-bat" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#1A1440"/>
               <g><circle cx="12" cy="10" r="10" fill="#FF5A5F"/><circle cx="32" cy="10" r="10" fill="#FF5A5F"/><circle cx="52" cy="10" r="10" fill="#4DA3FF"/><circle cx="72" cy="10" r="10" fill="#FFD166"/><circle cx="92" cy="10" r="10" fill="#FFD166"/><circle cx="112" cy="10" r="10" fill="#3DDC84"/><circle cx="132" cy="10" r="10" fill="#B57CFF"/><circle cx="152" cy="10" r="10" fill="#4DA3FF"/>
@@ -1725,9 +1726,26 @@
     </section>
 
     <section class="group g-ikisi" id="ikisi" aria-labelledby="h-ikisi">
-      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 30 oyun</p></div>
+      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 31 oyun</p></div>
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
+        <a class="game" href="dokuz-tas/index.html">
+          <div class="cover is-new cover-dkt" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#E9C891"/>
+              <g stroke="#6B4423" stroke-width="3" fill="none"><rect x="37" y="6" width="90" height="90" rx="2"/><rect x="52" y="21" width="60" height="60" rx="2"/><rect x="67" y="36" width="30" height="30" rx="2"/><path d="M82 6V36M82 66V96M37 51H67M97 51H127"/></g>
+              <g stroke-width="2"><circle cx="37" cy="6" r="7" fill="#F08A24" stroke="#B9620F"/><circle cx="82" cy="6" r="7" fill="#F08A24" stroke="#B9620F"/><circle cx="127" cy="6" r="7" fill="#F08A24" stroke="#B9620F"/>
+              <circle cx="52" cy="81" r="7" fill="#2A7FD4" stroke="#1A5C9E"/><circle cx="97" cy="51" r="7" fill="#2A7FD4" stroke="#1A5C9E"/><circle cx="82" cy="96" r="7" fill="#2A7FD4" stroke="#1A5C9E"/><circle cx="67" cy="66" r="7" fill="#F08A24" stroke="#B9620F"/></g>
+              <path d="M37 6H127" stroke="#FFD166" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Dokuz Taş</h3>
+            <p>Geleneksel değirmen oyunu: dokuz taşını yerleştir, üçünü bir çizgide dizip rakibin taşını al, sonra taşlarını kaydır. İki kişi ya da bilgisayara karşı.</p>
+            <div class="tags"><span>İkisi birlikte</span><span>Strateji</span><span>Bilgisayar rakip</span></div>
+          </div>
+        </a>
         <a class="game" href="uzay-takimi/index.html">
           <div class="cover cover-ut" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
