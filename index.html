@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-bat{background:#1A1440}
+    .cover-bat svg{width:100%;height:100%}
     .cover-thv{background:#DDF1FF}
     .cover-thv svg{width:100%;height:100%}
     .cover-hz{background:#FFE3C7}
@@ -342,7 +344,7 @@
 
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>31</b></a>
-    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>31</b></a>
+    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>32</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>30</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>30</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
@@ -354,8 +356,7 @@
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
         <a class="game" href="tahterevalli/index.html">
-          <div class="cover is-new cover-thv" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-thv" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#DDF1FF"/>
               <rect y="86" width="164" height="16" fill="#BDE7A6"/>
@@ -1073,9 +1074,28 @@
     </section>
 
     <section class="group g-enes" id="enes" aria-labelledby="h-enes">
-      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 31 oyun</p></div>
+      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 32 oyun</p></div>
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
+        <a class="game" href="balon-atici/index.html">
+          <div class="cover is-new cover-bat" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#1A1440"/>
+              <g><circle cx="12" cy="10" r="10" fill="#FF5A5F"/><circle cx="32" cy="10" r="10" fill="#FF5A5F"/><circle cx="52" cy="10" r="10" fill="#4DA3FF"/><circle cx="72" cy="10" r="10" fill="#FFD166"/><circle cx="92" cy="10" r="10" fill="#FFD166"/><circle cx="112" cy="10" r="10" fill="#3DDC84"/><circle cx="132" cy="10" r="10" fill="#B57CFF"/><circle cx="152" cy="10" r="10" fill="#4DA3FF"/>
+              <circle cx="22" cy="27" r="10" fill="#4DA3FF"/><circle cx="42" cy="27" r="10" fill="#FF5A5F"/><circle cx="62" cy="27" r="10" fill="#FFD166"/><circle cx="102" cy="27" r="10" fill="#3DDC84"/><circle cx="122" cy="27" r="10" fill="#3DDC84"/><circle cx="142" cy="27" r="10" fill="#B57CFF"/>
+              <circle cx="32" cy="44" r="10" fill="#3DDC84"/><circle cx="132" cy="44" r="10" fill="#FF5A5F"/></g>
+              <g fill="#fff" opacity=".7"><circle cx="82" cy="42" r="2"/><circle cx="86" cy="54" r="2"/><circle cx="90" cy="66" r="2"/><circle cx="94" cy="78" r="2"/></g>
+              <circle cx="82" cy="30" r="10" fill="#FFD166" stroke="#fff" stroke-width="2"/>
+              <circle cx="96" cy="92" r="14" fill="#2C2266"/><circle cx="96" cy="92" r="9" fill="#FFD166"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Balon Atıcı</h3>
+            <p>Nişan al, duvardan sektir, aynı renkten üç balonu birleştirip patlat. Askıda kalanlar düşer, ıskalarsan yeni sıra iner. Bomba balonu ve bölümler.</p>
+            <div class="tags"><span>Enes için</span><span>Nişan</span><span>Rekor</span></div>
+          </div>
+        </a>
         <a class="game" href="lazer-aynalari/index.html">
           <div class="cover cover-lz" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

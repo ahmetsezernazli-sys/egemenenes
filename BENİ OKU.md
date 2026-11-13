@@ -557,11 +557,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← resimli zarlarla sırayla hikâye anlatma, isteğe bağlı süre
 │                         zar sayısı 6/9/12, kalanları yeniden at, sırayı geç
-└── tahterevalli/       ← Tahterevalli (Egemen)
+├── tahterevalli/       ← Tahterevalli (Egemen)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← denge oyunu: hangisi ağır, bloklarla dengele, hayvan kaç blok
+│                         5 bölüm × 5 tur, mor büyük blok 2 ağırlığında, hook window.__tt
+└── balon-atici/        ← Balon Atıcı (Enes)
     ├── index.html
     ├── style.css
-    └── game.js         ← denge oyunu: hangisi ağır, bloklarla dengele, hayvan kaç blok
-                          5 bölüm × 5 tur, mor büyük blok 2 ağırlığında, hook window.__tt
+    └── game.js         ← balon atma: nişan, duvar sekmesi, 3'lü patlatma, askıda kalan düşer
+                          ıska sınırında yeni sıra, bomba her 1500 puan, Kolay/Normal/Zor, hook window.__ba
 ```
 
 ## Bilgisayarda oynamak
