@@ -547,11 +547,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← bölüm üretimi generate() (tohumlu, her bölüm hep aynı; yoldaki dönüşlere ayna), zorluk spec(), yansıma REFLECT;
 │                         ışın izi trace(), dokunuş tap(), yıldız win() (gereken dokunuş par üstüne fark)
-└── uzay-takimi/        ← Uzay Takımı, ikisi birlikte ortak uzay oyunu (pilot ve nişancı, dalgalar, takım rekoru)
+├── uzay-takimi/        ← Uzay Takımı, ikisi birlikte ortak uzay oyunu (pilot ve nişancı, dalgalar, takım rekoru)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← hız SPEED, taret TURN, ateş FIRE, kalkan SHIELDS, zorluk LV;
+│                         update() (pilot, nişancı, nişan yardımı, göktaşları), parçalanma ve dalga killRock(), rekor gameOver()
+└── hikaye-zarlari/     ← Hikaye Zarları (Tüm aile)
     ├── index.html
     ├── style.css
-    └── game.js         ← hız SPEED, taret TURN, ateş FIRE, kalkan SHIELDS, zorluk LV;
-                          update() (pilot, nişancı, nişan yardımı, göktaşları), parçalanma ve dalga killRock(), rekor gameOver()
+    └── game.js         ← resimli zarlarla sırayla hikâye anlatma, isteğe bağlı süre
+                          zar sayısı 6/9/12, kalanları yeniden at, sırayı geç
 ```
 
 ## Bilgisayarda oynamak

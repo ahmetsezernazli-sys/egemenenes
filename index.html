@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-hz{background:#FFE3C7}
+    .cover-hz svg{width:100%;height:100%}
     .cover-ut{background:#070A22}
     .cover-ut svg{width:100%;height:100%}
     .cover-lz{background:#0B0F1E}
@@ -340,7 +342,7 @@
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>30</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>31</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>30</b></a>
-    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>29</b></a>
+    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>30</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
 
@@ -1685,8 +1687,7 @@
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
         <a class="game" href="uzay-takimi/index.html">
-          <div class="cover is-new cover-ut" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-ut" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#070A22"/>
               <g fill="#fff" opacity=".8"><circle cx="14" cy="18" r="1"/><circle cx="48" cy="84" r="1"/><circle cx="92" cy="12" r="1"/><circle cx="150" cy="60" r="1"/><circle cx="26" cy="56" r="1"/></g>
@@ -2343,9 +2344,27 @@
     </section>
 
     <section class="group g-aile" id="aile" aria-labelledby="h-aile">
-      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 29 oyun</p></div>
+      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 30 oyun</p></div>
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
+        <a class="game" href="hikaye-zarlari/index.html">
+          <div class="cover is-new cover-hz" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#FFE3C7"/>
+              <rect x="14" y="10" width="136" height="24" rx="12" fill="#fff"/>
+              <text x="82" y="27" font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="13" text-anchor="middle" fill="#C2410C">Bir zamanlar…</text>
+              <g transform="rotate(-8 37 68)"><rect x="16" y="46" width="42" height="42" rx="9" fill="#fff" stroke="#F4B183" stroke-width="2"/><circle cx="37" cy="67" r="8" fill="#FFC529"/><g stroke="#FFC529" stroke-width="3" stroke-linecap="round"><path d="M37 52v4M37 78v4M22 67h4M48 67h4"/></g></g>
+              <g><rect x="61" y="44" width="42" height="42" rx="9" fill="#fff" stroke="#F4B183" stroke-width="2"/><path d="M70 66l12-11 12 11v13H70z" fill="#E8590C"/><rect x="79" y="70" width="6" height="9" fill="#fff"/></g>
+              <g transform="rotate(9 127 68)"><rect x="106" y="47" width="42" height="42" rx="9" fill="#fff" stroke="#F4B183" stroke-width="2"/><path d="M127 55l4 9 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z" fill="#6C5CE7"/></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Hikaye Zarları</h3>
+            <p>Resimli zarları atın, sırayla birer resim seçip hikâyeye bir cümle ekleyin. Bütün resimler bitince hikâyenize birlikte bir isim koyun.</p>
+            <div class="tags"><span>Tüm aile</span><span>2-6 oyuncu</span><span>Hayal gücü</span></div>
+          </div>
+        </a>
         <a class="game" href="tahmin-ustasi/index.html">
           <div class="cover cover-tu" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
