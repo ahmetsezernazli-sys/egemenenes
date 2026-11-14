@@ -572,11 +572,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← değirmen oyunu: yerleştirme, değirmende taş alma (değirmendekiler korunur), kaydırma, 3 taşta uçma
 │                         minimax yapay zekâ Kolay/Orta/Zor, 50 sessiz hamlede berabere, hook window.__dt
-└── isim-sehir/         ← İsim Şehir Hayvan (Tüm aile)
+├── isim-sehir/         ← İsim Şehir Hayvan (Tüm aile)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← harf çarkı, süre ve STOP, tek 10 / aynı 5 / yalnız cevap 20 puanlama tablosu
+│                         8 kategori ve örnek cevap sözlüğü EX, ✨ küçüklere ipucu ve aynı cevaba 10, hook window.__ish
+└── otobus/             ← Otobüs Şoförü (Egemen)
     ├── index.html
     ├── style.css
-    └── game.js         ← harf çarkı, süre ve STOP, tek 10 / aynı 5 / yalnız cevap 20 puanlama tablosu
-                          8 kategori ve örnek cevap sözlüğü EX, ✨ küçüklere ipucu ve aynı cevaba 10, hook window.__ish
+    └── game.js         ← pedalla sür, durakta dur, yolcuları bindir ve say, renkli evde indir, kırmızı ışıkta bekle
+                          5 bölüm, kaçan durakta otomatik geri dönüş, dar ekranda dünya genişliği W uyarlanır, hook window.__ob
 ```
 
 ## Bilgisayarda oynamak
