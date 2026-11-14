@@ -587,11 +587,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← kaydırmalı araba bulmacası: 40 bölüm RAW (36 karakter tahta : en az hamle, BFS ile doğrulandı)
 │                         sürükle ya da ok tuşları, BFS ipucu solve(), geri al, yıldız en az hamleye göre, hook window.__op
-└── yumurta/            ← Yumurta Kapmaca (İkisi birlikte)
+├── yumurta/            ← Yumurta Kapmaca (İkisi birlikte)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← ikiye bölünmüş ekranda sepetle yumurta yakalama, iki tarafa aynı nesneler düşer
+│                         altın 5, taş -2 ve sersemleme, civciv büyük sepet; yarış/takım, ✨ büyük sepet, bilgisayar Kolay/Zor, hook window.__ym
+└── tahta-kule/         ← Tahta Kule (Tüm aile)
     ├── index.html
     ├── style.css
-    └── game.js         ← ikiye bölünmüş ekranda sepetle yumurta yakalama, iki tarafa aynı nesneler düşer
-                          altın 5, taş -2 ve sersemleme, civciv büyük sepet; yarış/takım, ✨ büyük sepet, bilgisayar Kolay/Zor, hook window.__ym
+    └── game.js         ← blok çekme oyunu: 18 kat × 3 blok, sıkılık tight, çekme hızına göre sallanma wob, kalıcı eğilme lean, 100'de devrilir
+                          üst kat kuralı maxLayer(), tek kenar bloğu kalan kat devrilir, dokununca sıkılık, ✨ güvenli bloklar ve 0.6 sallanma, Z yakınlaştırma, hook window.__tk
 ```
 
 ## Bilgisayarda oynamak

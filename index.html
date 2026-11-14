@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-tkl{background:#F6EBDD}
+    .cover-tkl svg{width:100%;height:100%}
     .cover-ymk{background:#FFE3E0}
     .cover-ymk svg{width:100%;height:100%}
     .cover-opk{background:#1B1F2A}
@@ -356,7 +358,7 @@
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>32</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>33</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>32</b></a>
-    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>31</b></a>
+    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>32</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
 
@@ -1780,8 +1782,7 @@
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
         <a class="game" href="yumurta/index.html">
-          <div class="cover is-new cover-ymk" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-ymk" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="82" height="102" fill="#E0EDFF"/><rect x="82" width="82" height="102" fill="#FFE3E0"/>
               <rect y="20" width="164" height="5" fill="#8A5222"/>
@@ -2474,9 +2475,34 @@
     </section>
 
     <section class="group g-aile" id="aile" aria-labelledby="h-aile">
-      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 31 oyun</p></div>
+      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 32 oyun</p></div>
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
+        <a class="game" href="tahta-kule/index.html">
+          <div class="cover is-new cover-tkl" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#F6EBDD"/>
+              <rect y="92" width="164" height="10" fill="#C9A27A"/>
+              <g fill="#DDA66A" stroke="#8A5A2B" stroke-width="1.2">
+                <rect x="58" y="80" width="15" height="11"/><rect x="74" y="80" width="15" height="11"/><rect x="90" y="80" width="15" height="11"/>
+                <rect x="74" y="68" width="15" height="11"/><rect x="90" y="68" width="15" height="11"/>
+                <rect x="58" y="56" width="15" height="11"/><rect x="74" y="56" width="15" height="11"/><rect x="90" y="56" width="15" height="11"/>
+                <rect x="58" y="44" width="15" height="11"/><rect x="90" y="44" width="15" height="11"/>
+                <rect x="58" y="32" width="15" height="11"/><rect x="74" y="32" width="15" height="11"/><rect x="90" y="32" width="15" height="11"/>
+                <rect x="58" y="20" width="15" height="11"/><rect x="74" y="20" width="15" height="11"/>
+                <rect x="30" y="66" width="15" height="11" transform="rotate(-12 37 71)"/>
+              </g>
+              <path d="M48 70 L56 72" stroke="#8A5A2B" stroke-width="2" stroke-dasharray="2 2"/>
+              <g stroke="#E5484D" stroke-width="2" stroke-linecap="round"><path d="M112 22l6-3M113 30l7 0M112 38l6 3"/></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Tahta Kule</h3>
+            <p>Sırayla kuleden bir blok seçip yavaşça çekin, blok tepeye konsun. Hızlı çekersen kule sallanır, sıkı bloklar tehlikeli. Kuleyi deviren kaybeder!</p>
+            <div class="tags"><span>Tüm aile</span><span>2-6 oyuncu</span><span>Dikkat</span></div>
+          </div>
+        </a>
         <a class="game" href="isim-sehir/index.html">
           <div class="cover cover-ish" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

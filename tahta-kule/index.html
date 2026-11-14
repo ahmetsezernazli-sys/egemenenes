@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Tahta Kule · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Aile için tahta kule oyunu: sırayla kuleden bir blok seç, yavaşça çek ve tepeye koy. Hızlı çekersen kule sallanır, sıkı bloklar daha tehlikeli. Kuleyi deviren kaybeder. 2-6 oyuncu, küçüklere güvenli blok yardımı.">
+  <meta name="theme-color" content="#F6EBDD">
+  <meta property="og:title" content="Tahta Kule">
+  <meta property="og:description" content="Bloğu yavaşça çek, kuleyi yıkma!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23F6EBDD'/%3E%3Cg fill='%23D9A066' stroke='%238A5A2B' stroke-width='3'%3E%3Crect x='26' y='70' width='48' height='14'/%3E%3Crect x='26' y='54' width='48' height='14'/%3E%3Crect x='26' y='38' width='16' height='14'/%3E%3Crect x='58' y='38' width='16' height='14'/%3E%3Crect x='26' y='22' width='48' height='14'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Tahta <span>Kule</span></h1>
+    <button class="icon-btn" id="settings" type="button" aria-label="Oyuncular ve yeni oyun">⚙</button>
+  </header>
+  <div class="players" id="players"></div>
+  <p class="prompt" id="prompt" aria-live="polite"></p>
+  <main class="stage"><canvas id="cv" width="600" height="800" aria-label="Tahta kule: bir bloğa dokunup sürükleyerek yavaşça çek. Klavyede oklarla blok seç, boşluğa basılı tutarak çek."></canvas></main>
+  <div class="meter"><span>Sallanma</span><div class="mbar"><i id="mb"></i></div><span id="ht">18 kat</span></div>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>🪵 Tahta Kule</h2>
+    <p class="help">Sırası gelen, kuleden <b>bir blok seçer</b> ve parmağıyla <b>yavaşça sürükleyerek çeker</b>. Çekilen blok kendiliğinden <b>tepeye konur</b>. Hızlı çekersen kule sallanır; bazı bloklar <b>sıkıdır</b>, onlar daha çok sallar. Bloğa bir kez <b>dokunmak</b> ne kadar sıkı olduğunu gösterir. En üst kattan (ve üst kat bitmediyse altındakinden) blok alınmaz. Kat <b>tek kenar bloğuyla</b> kalırsa kule devrilir! <b>Kuleyi deviren kaybeder.</b></p>
+    <fieldset><legend>Oyuncu sayısı</legend>
+      <div class="seg wide">
+        <label><input type="radio" name="count" value="2"><span>2</span></label><label><input type="radio" name="count" value="3"><span>3</span></label>
+        <label><input type="radio" name="count" value="4" checked><span>4</span></label><label><input type="radio" name="count" value="5"><span>5</span></label><label><input type="radio" name="count" value="6"><span>6</span></label>
+      </div>
+    </fieldset>
+    <fieldset><legend>Oyuncular</legend><div id="rows" class="rows"></div>
+      <p class="help small">✨ işaretli oyuncuda (küçükler) güvenli bloklar yeşil parlar ve kule onun sırasında daha az sallanır.</p>
+    </fieldset>
+    <button class="btn primary big" type="submit">Kuleyi kur!</button>
+  </form>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="over-title"></p>
+    <p class="help" id="over-tx"></p>
+    <div class="results" id="results"></div>
+    <button class="btn primary big" id="again" type="button">Yeniden oyna</button>
+    <button class="btn big" id="to-setup" type="button">Ayarlar</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
