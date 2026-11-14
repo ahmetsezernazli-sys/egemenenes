@@ -567,11 +567,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← balon atma: nişan, duvar sekmesi, 3'lü patlatma, askıda kalan düşer
 │                         ıska sınırında yeni sıra, bomba her 1500 puan, Kolay/Normal/Zor, hook window.__ba
-└── dokuz-tas/          ← Dokuz Taş (İkisi birlikte)
+├── dokuz-tas/          ← Dokuz Taş (İkisi birlikte)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← değirmen oyunu: yerleştirme, değirmende taş alma (değirmendekiler korunur), kaydırma, 3 taşta uçma
+│                         minimax yapay zekâ Kolay/Orta/Zor, 50 sessiz hamlede berabere, hook window.__dt
+└── isim-sehir/         ← İsim Şehir Hayvan (Tüm aile)
     ├── index.html
     ├── style.css
-    └── game.js         ← değirmen oyunu: yerleştirme, değirmende taş alma (değirmendekiler korunur), kaydırma, 3 taşta uçma
-                          minimax yapay zekâ Kolay/Orta/Zor, 50 sessiz hamlede berabere, hook window.__dt
+    └── game.js         ← harf çarkı, süre ve STOP, tek 10 / aynı 5 / yalnız cevap 20 puanlama tablosu
+                          8 kategori ve örnek cevap sözlüğü EX, ✨ küçüklere ipucu ve aynı cevaba 10, hook window.__ish
 ```
 
 ## Bilgisayarda oynamak

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>İsim Şehir Hayvan · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Aile için klasik İsim Şehir Hayvan: harf çarkı döner, herkes kâğıda isim, şehir, hayvan, bitki, eşya yazar. Süre sayacı, STOP düğmesi, kolay puanlama tablosu, örnek cevaplar ve küçüklere kolaylık.">
+  <meta name="theme-color" content="#EEF6FF">
+  <meta property="og:title" content="İsim Şehir Hayvan">
+  <meta property="og:description" content="Harf çarkını çevir, kalemler hazır, STOP!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%231C7ED6'/%3E%3Ctext x='50' y='70' font-family='Arial' font-weight='800' font-size='60' text-anchor='middle' fill='%23fff'%3EK%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">İsim Şehir <span>Hayvan</span></h1>
+    <button class="icon-btn" id="settings" type="button" aria-label="Oyuncular ve yeni oyun">⚙</button>
+  </header>
+  <div class="players" id="players"></div>
+  <main class="table" id="table" aria-live="polite"></main>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>✏️ İsim Şehir Hayvan</h2>
+    <p class="help">Herkes bir <b>kâğıt ve kalem</b> alsın. Çark bir <b>harf</b> seçer; her kategori için o harfle başlayan bir kelime yazın. İlk bitiren <b>STOP</b> düğmesine basar ya da süre biter. Sonra cevapları sırayla okuyun ve tabloda işaretleyin: <b>tek başına yazan 10</b>, <b>aynısını yazanlar 5</b>, o kategoride <b>tek cevap veren 20</b> puan alır.</p>
+    <fieldset><legend>Oyuncu sayısı</legend>
+      <div class="seg wide">
+        <label><input type="radio" name="count" value="2"><span>2</span></label><label><input type="radio" name="count" value="3"><span>3</span></label>
+        <label><input type="radio" name="count" value="4" checked><span>4</span></label><label><input type="radio" name="count" value="5"><span>5</span></label><label><input type="radio" name="count" value="6"><span>6</span></label>
+      </div>
+    </fieldset>
+    <fieldset><legend>Oyuncular</legend><div id="rows" class="rows"></div>
+      <p class="help small">✨ işaretli oyuncu (küçükler) cevabını söyleyerek verebilir, aynı cevaplar da ona 10 puan getirir ve yazarken ipucu isteyebilir.</p>
+    </fieldset>
+    <fieldset><legend>Kategoriler</legend><div class="cats" id="cats"></div></fieldset>
+    <fieldset><legend>Harfler</legend>
+      <div class="seg"><label><input type="radio" name="lt" value="easy" checked><span>Kolay harfler</span></label><label><input type="radio" name="lt" value="all"><span>Hepsi</span></label></div>
+    </fieldset>
+    <fieldset><legend>Tur sayısı</legend>
+      <div class="seg"><label><input type="radio" name="rn" value="3"><span>3</span></label><label><input type="radio" name="rn" value="5" checked><span>5</span></label><label><input type="radio" name="rn" value="8"><span>8</span></label></div>
+    </fieldset>
+    <fieldset><legend>Yazma süresi</legend>
+      <div class="seg"><label><input type="radio" name="len" value="60"><span>60 sn</span></label><label><input type="radio" name="len" value="90" checked><span>90 sn</span></label><label><input type="radio" name="len" value="120"><span>120 sn</span></label><label><input type="radio" name="len" value="0"><span>Süresiz</span></label></div>
+    </fieldset>
+    <button class="btn primary big" type="submit">Başlayalım!</button>
+  </form>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="over-title"></p>
+    <p class="help" id="over-tx"></p>
+    <div class="results" id="results"></div>
+    <button class="btn primary big" id="again" type="button">Yeniden oyna</button>
+    <button class="btn big" id="to-setup" type="button">Ayarlar</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

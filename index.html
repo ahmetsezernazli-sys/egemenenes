@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-ish{background:#D6E9FB}
+    .cover-ish svg{width:100%;height:100%}
     .cover-dkt{background:#E9C891}
     .cover-dkt svg{width:100%;height:100%}
     .cover-bat{background:#1A1440}
@@ -348,7 +350,7 @@
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>31</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>32</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>31</b></a>
-    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>30</b></a>
+    <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>31</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
 
@@ -1730,8 +1732,7 @@
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
         <a class="game" href="dokuz-tas/index.html">
-          <div class="cover is-new cover-dkt" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-dkt" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#E9C891"/>
               <g stroke="#6B4423" stroke-width="3" fill="none"><rect x="37" y="6" width="90" height="90" rx="2"/><rect x="52" y="21" width="60" height="60" rx="2"/><rect x="67" y="36" width="30" height="30" rx="2"/><path d="M82 6V36M82 66V96M37 51H67M97 51H127"/></g>
@@ -2404,9 +2405,27 @@
     </section>
 
     <section class="group g-aile" id="aile" aria-labelledby="h-aile">
-      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 30 oyun</p></div>
+      <div class="group-head"><h2 id="h-aile"><i aria-hidden="true"></i>Tüm aile</h2><p>2–6 kişi · masa ve parti oyunları · 31 oyun</p></div>
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
+        <a class="game" href="isim-sehir/index.html">
+          <div class="cover is-new cover-ish" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#D6E9FB"/>
+              <rect x="70" y="10" width="84" height="84" rx="6" fill="#fff" transform="rotate(4 112 52)"/>
+              <g font-family="Rubik, Arial, sans-serif" font-weight="700" font-size="10" fill="#3A2618" transform="rotate(4 112 52)"><text x="78" y="28">İsim: Kerem</text><text x="78" y="44">Şehir: Konya</text><text x="78" y="60">Hayvan: Kedi</text><text x="78" y="76">Eşya: Kalem</text></g>
+              <circle cx="38" cy="50" r="30" fill="#FF6B6B"/><path d="M38 50L38 20A30 30 0 0 1 68 50Z" fill="#FFC529"/><path d="M38 50L68 50A30 30 0 0 1 38 80Z" fill="#2DB75A"/><path d="M38 50L38 80A30 30 0 0 1 8 50Z" fill="#1C7ED6"/>
+              <circle cx="38" cy="50" r="19" fill="#fff"/>
+              <text x="38" y="60" font-family="Rubik, Arial, sans-serif" font-weight="800" font-size="27" text-anchor="middle" fill="#145EA8">K</text>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>İsim Şehir Hayvan</h3>
+            <p>Klasik kâğıt kalem oyunu: çark harfi seçer, herkes isim, şehir, hayvan, bitki, eşya yazar, ilk bitiren STOP der. Puanlama tablosu ve örnek cevaplar.</p>
+            <div class="tags"><span>Tüm aile</span><span>2-6 oyuncu</span><span>Kâğıt kalem</span></div>
+          </div>
+        </a>
         <a class="game" href="hikaye-zarlari/index.html">
           <div class="cover cover-hz" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
