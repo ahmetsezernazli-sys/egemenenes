@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-opk{background:#1B1F2A}
+    .cover-opk svg{width:100%;height:100%}
     .cover-obs{background:#BFE6FF}
     .cover-obs svg{width:100%;height:100%}
     .cover-ish{background:#D6E9FB}
@@ -350,7 +352,7 @@
 
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>32</b></a>
-    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>32</b></a>
+    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>33</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>31</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>31</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
@@ -362,8 +364,7 @@
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
         <a class="game" href="otobus/index.html">
-          <div class="cover is-new cover-obs" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-obs" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#BFE6FF"/>
               <circle cx="140" cy="18" r="10" fill="#FFE27A"/>
@@ -1103,9 +1104,30 @@
     </section>
 
     <section class="group g-enes" id="enes" aria-labelledby="h-enes">
-      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 32 oyun</p></div>
+      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 33 oyun</p></div>
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
+        <a class="game" href="otopark/index.html">
+          <div class="cover is-new cover-opk" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#1B1F2A"/>
+              <rect x="38" y="6" width="90" height="90" rx="6" fill="#3A3F4D" stroke="#4B5263" stroke-width="4"/>
+              <g stroke="rgba(255,255,255,.1)" stroke-width="1"><path d="M53 6V96M68 6V96M83 6V96M98 6V96M113 6V96M38 21H128M38 36H128M38 51H128M38 66H128M38 81H128"/></g>
+              <rect x="40" y="38" width="27" height="12" rx="3" fill="#E5484D"/>
+              <rect x="71" y="23" width="12" height="42" rx="3" fill="#FFC529"/>
+              <rect x="101" y="8" width="12" height="27" rx="3" fill="#4DA3FF"/>
+              <rect x="86" y="53" width="40" height="12" rx="3" fill="#3DDC84"/>
+              <rect x="56" y="68" width="12" height="27" rx="3" fill="#B57CFF"/>
+              <path d="M134 37l10 7-10 7z" fill="#FFD166"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Otopark Kaçışı</h3>
+            <p>Otopark tıkandı! Arabaları ve kamyonları ileri geri kaydır, kırmızı arabaya çıkış yolu aç. 40 bölüm, en az hamleye göre yıldız ve ipucu.</p>
+            <div class="tags"><span>Enes için</span><span>Bulmaca</span><span>40 bölüm</span></div>
+          </div>
+        </a>
         <a class="game" href="balon-atici/index.html">
           <div class="cover cover-bat" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

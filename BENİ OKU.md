@@ -577,11 +577,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← harf çarkı, süre ve STOP, tek 10 / aynı 5 / yalnız cevap 20 puanlama tablosu
 │                         8 kategori ve örnek cevap sözlüğü EX, ✨ küçüklere ipucu ve aynı cevaba 10, hook window.__ish
-└── otobus/             ← Otobüs Şoförü (Egemen)
+├── otobus/             ← Otobüs Şoförü (Egemen)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← pedalla sür, durakta dur, yolcuları bindir ve say, renkli evde indir, kırmızı ışıkta bekle
+│                         5 bölüm, kaçan durakta otomatik geri dönüş, dar ekranda dünya genişliği W uyarlanır, hook window.__ob
+└── otopark/            ← Otopark Kaçışı (Enes)
     ├── index.html
     ├── style.css
-    └── game.js         ← pedalla sür, durakta dur, yolcuları bindir ve say, renkli evde indir, kırmızı ışıkta bekle
-                          5 bölüm, kaçan durakta otomatik geri dönüş, dar ekranda dünya genişliği W uyarlanır, hook window.__ob
+    └── game.js         ← kaydırmalı araba bulmacası: 40 bölüm RAW (36 karakter tahta : en az hamle, BFS ile doğrulandı)
+                          sürükle ya da ok tuşları, BFS ipucu solve(), geri al, yıldız en az hamleye göre, hook window.__op
 ```
 
 ## Bilgisayarda oynamak
