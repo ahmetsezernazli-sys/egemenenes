@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Yumurta Kapmaca · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="İki kişilik yakalama oyunu: ekranın kendi yarısında sepetini kaydır, tavukların bıraktığı yumurtaları yakala. Altın yumurta 5 puan, taştan kaç, civciv sepeti büyütür. Yarış ya da takım, küçüklere büyük sepet, bilgisayara karşı da oynanır.">
+  <meta name="theme-color" content="#DCEFFF">
+  <meta property="og:title" content="Yumurta Kapmaca">
+  <meta property="og:description" content="Sepetini kaydır, yumurtaları kap!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23FFE9B8'/%3E%3Cellipse cx='50' cy='40' rx='16' ry='20' fill='%23fff' stroke='%23D9B26A' stroke-width='3'/%3E%3Cpath d='M20 66h60l-8 22H28z' fill='%23B9773A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Yumurta <span>Kapmaca</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="menu-btn" type="button" aria-label="Ayarlar">⚙</button>
+    </div>
+  </header>
+  <div class="score">
+    <span class="side s0"><i class="dot b"></i><b id="n0">Enes</b> <span class="pts" id="p0">0</span></span>
+    <span class="vs" id="round">60 sn</span>
+    <span class="side s1"><span class="pts" id="p1">0</span> <b id="n1">Egemen</b><i class="dot r"></i></span>
+  </div>
+  <main class="stage" id="stage">
+    <p class="rotate">📱 Telefonu yan çevirin, kümes büyüsün</p>
+    <canvas id="cv" aria-label="İki yarıya bölünmüş kümes. Mavi A ve D, kırmızı sol ve sağ ok tuşlarıyla ya da kendi yarısında parmağını kaydırarak sepetini oynatır."></canvas>
+  </main>
+</div>
+
+<div class="overlay" id="menu">
+  <form class="sheet" id="form">
+    <h2>🥚 Yumurta Kapmaca</h2>
+    <p class="help">Tavuklar yumurtluyor! Ekranın <b>kendi yarında</b> parmağını kaydır ya da tuşlarla sepetini oynat, düşen yumurtaları yakala. 🥚 1 puan, <b>altın yumurta 5 puan</b>. 🪨 <b>Taş</b> yakalarsan 2 puan gider. 🐤 <b>Civciv</b> sepetini bir süre büyütür. İki tarafa da aynı yumurtalar düşer, herkes eşit!<br>
+      <b>Mavi:</b> A / D · <b>Kırmızı:</b> ← / →</p>
+    <fieldset><legend>Rakip</legend>
+      <div class="seg"><label><input type="radio" name="mode" value="2p" checked><span>👫 İki kişi</span></label><label><input type="radio" name="mode" value="ai"><span>🤖 Bilgisayar</span></label></div>
+    </fieldset>
+    <fieldset id="f-ai" hidden><legend>Bilgisayar</legend>
+      <div class="seg"><label><input type="radio" name="ai" value="0" checked><span>Kolay</span></label><label><input type="radio" name="ai" value="1"><span>Zor</span></label></div>
+    </fieldset>
+    <fieldset><legend>Oyuncular</legend>
+      <div class="names">
+        <label><i class="dot b"></i><input type="text" id="in0" maxlength="12" value="Enes" aria-label="Mavi oyuncunun adı"><span class="toggle" title="Büyük sepet"><input type="checkbox" id="h0"> ✨</span></label>
+        <label id="row1"><i class="dot r"></i><input type="text" id="in1" maxlength="12" value="Egemen" aria-label="Kırmızı oyuncunun adı"><span class="toggle" title="Büyük sepet"><input type="checkbox" id="h1" checked> ✨</span></label>
+      </div>
+      <p class="help small">✨ <b>Büyük sepet:</b> o oyuncunun sepeti daha geniş olur (küçükler için).</p>
+    </fieldset>
+    <fieldset><legend>Oyun</legend>
+      <div class="seg"><label><input type="radio" name="team" value="0" checked><span>🏁 Yarış</span></label><label><input type="radio" name="team" value="1"><span>🤝 Takım</span></label></div>
+    </fieldset>
+    <fieldset><legend>Süre</legend>
+      <div class="seg"><label><input type="radio" name="len" value="45"><span>45 sn</span></label><label><input type="radio" name="len" value="60" checked><span>60 sn</span></label><label><input type="radio" name="len" value="90"><span>90 sn</span></label></div>
+    </fieldset>
+    <button class="btn primary big" type="submit">Başla!</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" id="end-icon" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title"></p>
+    <p class="lead" id="end-text"></p>
+    <button class="btn primary big" id="end-next" type="button">Tekrar oyna</button>
+    <button class="btn big" id="end-menu" type="button">Ayarlar</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

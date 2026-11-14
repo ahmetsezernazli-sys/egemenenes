@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-ymk{background:#FFE3E0}
+    .cover-ymk svg{width:100%;height:100%}
     .cover-opk{background:#1B1F2A}
     .cover-opk svg{width:100%;height:100%}
     .cover-obs{background:#BFE6FF}
@@ -353,7 +355,7 @@
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>32</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>33</b></a>
-    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>31</b></a>
+    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>32</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>31</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
@@ -1108,8 +1110,7 @@
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
         <a class="game" href="otopark/index.html">
-          <div class="cover is-new cover-opk" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-opk" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#1B1F2A"/>
               <rect x="38" y="6" width="90" height="90" rx="6" fill="#3A3F4D" stroke="#4B5263" stroke-width="4"/>
@@ -1775,9 +1776,30 @@
     </section>
 
     <section class="group g-ikisi" id="ikisi" aria-labelledby="h-ikisi">
-      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 31 oyun</p></div>
+      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 32 oyun</p></div>
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
+        <a class="game" href="yumurta/index.html">
+          <div class="cover is-new cover-ymk" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="82" height="102" fill="#E0EDFF"/><rect x="82" width="82" height="102" fill="#FFE3E0"/>
+              <rect y="20" width="164" height="5" fill="#8A5222"/>
+              <g fill="#fff"><ellipse cx="24" cy="15" rx="10" ry="7"/><ellipse cx="60" cy="15" rx="10" ry="7"/><ellipse cx="104" cy="15" rx="10" ry="7"/><ellipse cx="140" cy="15" rx="10" ry="7"/></g>
+              <g fill="#E5484D"><circle cx="31" cy="7" r="2.5"/><circle cx="67" cy="7" r="2.5"/><circle cx="111" cy="7" r="2.5"/><circle cx="147" cy="7" r="2.5"/></g>
+              <ellipse cx="40" cy="52" rx="5" ry="7" fill="#FFF8EA" stroke="#D9C7A6"/><ellipse cx="122" cy="44" rx="5" ry="7" fill="#FFC529" stroke="#C98F00"/><ellipse cx="62" cy="38" rx="5" ry="7" fill="#FFF8EA" stroke="#D9C7A6"/>
+              <rect y="90" width="164" height="12" fill="#F2C66D"/>
+              <path d="M24 76h32l-5 14H29z" fill="#B9773A"/><rect x="22" y="73" width="36" height="4" rx="2" fill="#3D8BFD"/>
+              <path d="M106 76h32l-5 14h-22z" fill="#B9773A"/><rect x="104" y="73" width="36" height="4" rx="2" fill="#E5484D"/>
+              <rect x="80.5" width="3" height="102" fill="#1E2A44"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Yumurta Kapmaca</h3>
+            <p>Ekranın kendi yarısında sepetini kaydır, tavukların bıraktığı yumurtaları yakala. Altın yumurta 5 puan, taştan kaç, civciv sepeti büyütür. Yarış ya da takım.</p>
+            <div class="tags"><span>İkisi birlikte</span><span>Yakalama</span><span>Bilgisayar rakip</span></div>
+          </div>
+        </a>
         <a class="game" href="dokuz-tas/index.html">
           <div class="cover cover-dkt" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

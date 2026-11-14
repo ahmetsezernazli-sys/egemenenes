@@ -582,11 +582,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← pedalla sür, durakta dur, yolcuları bindir ve say, renkli evde indir, kırmızı ışıkta bekle
 │                         5 bölüm, kaçan durakta otomatik geri dönüş, dar ekranda dünya genişliği W uyarlanır, hook window.__ob
-└── otopark/            ← Otopark Kaçışı (Enes)
+├── otopark/            ← Otopark Kaçışı (Enes)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← kaydırmalı araba bulmacası: 40 bölüm RAW (36 karakter tahta : en az hamle, BFS ile doğrulandı)
+│                         sürükle ya da ok tuşları, BFS ipucu solve(), geri al, yıldız en az hamleye göre, hook window.__op
+└── yumurta/            ← Yumurta Kapmaca (İkisi birlikte)
     ├── index.html
     ├── style.css
-    └── game.js         ← kaydırmalı araba bulmacası: 40 bölüm RAW (36 karakter tahta : en az hamle, BFS ile doğrulandı)
-                          sürükle ya da ok tuşları, BFS ipucu solve(), geri al, yıldız en az hamleye göre, hook window.__op
+    └── game.js         ← ikiye bölünmüş ekranda sepetle yumurta yakalama, iki tarafa aynı nesneler düşer
+                          altın 5, taş -2 ve sersemleme, civciv büyük sepet; yarış/takım, ✨ büyük sepet, bilgisayar Kolay/Zor, hook window.__ym
 ```
 
 ## Bilgisayarda oynamak
