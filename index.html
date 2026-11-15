@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-dvu{background:#3B2A1A}
+    .cover-dvu svg{width:100%;height:100%}
     .cover-gaj{background:#101820}
     .cover-gaj svg{width:100%;height:100%}
     .cover-mzk{background:#F3EEFF}
@@ -361,7 +363,7 @@
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>33</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>34</b></a>
-    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>32</b></a>
+    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>33</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>32</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
@@ -1139,8 +1141,7 @@
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
         <a class="game" href="gizli-ajan/index.html">
-          <div class="cover is-new cover-gaj" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-gaj" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#101820"/>
               <g fill="#2F4152"><rect x="22" y="8" width="120" height="88" rx="6"/></g>
@@ -1826,9 +1827,33 @@
     </section>
 
     <section class="group g-ikisi" id="ikisi" aria-labelledby="h-ikisi">
-      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 32 oyun</p></div>
+      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 33 oyun</p></div>
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
+        <a class="game" href="duvar-ustasi/index.html">
+          <div class="cover is-new cover-dvu" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#3B2A1A"/>
+              <rect x="37" y="6" width="90" height="90" rx="6" fill="#6B4423"/>
+              <g fill="#C99B66">
+                <rect x="41" y="10" width="14" height="14" rx="2" fill="#B7C9E6"/><rect x="58" y="10" width="14" height="14" rx="2" fill="#B7C9E6"/><rect x="75" y="10" width="14" height="14" rx="2" fill="#B7C9E6"/><rect x="92" y="10" width="14" height="14" rx="2" fill="#B7C9E6"/><rect x="109" y="10" width="14" height="14" rx="2" fill="#B7C9E6"/>
+                <rect x="41" y="27" width="14" height="14" rx="2"/><rect x="58" y="27" width="14" height="14" rx="2"/><rect x="75" y="27" width="14" height="14" rx="2"/><rect x="92" y="27" width="14" height="14" rx="2"/><rect x="109" y="27" width="14" height="14" rx="2"/>
+                <rect x="41" y="44" width="14" height="14" rx="2"/><rect x="58" y="44" width="14" height="14" rx="2"/><rect x="75" y="44" width="14" height="14" rx="2"/><rect x="92" y="44" width="14" height="14" rx="2"/><rect x="109" y="44" width="14" height="14" rx="2"/>
+                <rect x="41" y="61" width="14" height="14" rx="2"/><rect x="58" y="61" width="14" height="14" rx="2"/><rect x="75" y="61" width="14" height="14" rx="2"/><rect x="92" y="61" width="14" height="14" rx="2"/><rect x="109" y="61" width="14" height="14" rx="2"/>
+                <rect x="41" y="78" width="14" height="14" rx="2" fill="#E8B9B3"/><rect x="58" y="78" width="14" height="14" rx="2" fill="#E8B9B3"/><rect x="75" y="78" width="14" height="14" rx="2" fill="#E8B9B3"/><rect x="92" y="78" width="14" height="14" rx="2" fill="#E8B9B3"/><rect x="109" y="78" width="14" height="14" rx="2" fill="#E8B9B3"/>
+              </g>
+              <rect x="57" y="41" width="33" height="3" rx="1.5" fill="#FFD166"/><rect x="89" y="27" width="3" height="31" rx="1.5" fill="#FFD166"/><rect x="74" y="58" width="33" height="3" rx="1.5" fill="#FFD166"/>
+              <circle cx="82" cy="17" r="5.5" fill="#E5484D" stroke="#fff" stroke-width="1.5"/>
+              <circle cx="65" cy="68" r="5.5" fill="#3D8BFD" stroke="#fff" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Duvar Ustası</h3>
+            <p>Piyonunu karşı kenara ilk ulaştıran kazanır. Sıran gelince bir adım at ya da rakibinin yolunu uzatmak için duvar koy, ama yolu tamamen kapatamazsın!</p>
+            <div class="tags"><span>İkisi birlikte</span><span>Strateji</span><span>Bilgisayar rakip</span></div>
+          </div>
+        </a>
         <a class="game" href="yumurta/index.html">
           <div class="cover cover-ymk" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

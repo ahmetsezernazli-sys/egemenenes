@@ -602,11 +602,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← 8×8 ritim tablosu: 5 nota (do-mi-sol-la-do) + zil, alkış, davul; Web Audio sentez
 │                         6 taklit bölümü (kesikli kareler, 👂 dinle) + serbest mod (şarkı saklanır), hook window.__mk
-└── gizli-ajan/         ← Gizli Ajan (Enes)
+├── gizli-ajan/         ← Gizli Ajan (Enes)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← sıra tabanlı gizlilik: core.js (GA.parse/step/seen/solve), 23 bölüm RAW harita|robotlar|en az adım
+│                         devriye p ve dönen r robotlar, görüş 4 kare, çalı gizler, 👁 sonraki görüş, BFS ipucu, geri al, hook window.__ga
+└── duvar-ustasi/       ← Duvar Ustası (İkisi birlikte)
     ├── index.html
     ├── style.css
-    └── game.js         ← sıra tabanlı gizlilik: core.js (GA.parse/step/seen/solve), 23 bölüm RAW harita|robotlar|en az adım
-                          devriye p ve dönen r robotlar, görüş 4 kare, çalı gizler, 👁 sonraki görüş, BFS ipucu, geri al, hook window.__ga
+    └── game.js         ← yol ve duvar stratejisi: 7×7 (6 duvar) ya da 9×9 (10 duvar), atlama ve yan sekme, duvar yolu kapatamaz (BFS path)
+                          yapay zekâ Kolay (yolu izler) / Zor (2 kat arama, rakip yolunu kesen aday duvarlar), ✨ yolu göster, hook window.__du
 ```
 
 ## Bilgisayarda oynamak

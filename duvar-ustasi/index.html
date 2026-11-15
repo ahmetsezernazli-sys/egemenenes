@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Duvar Ustası · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="İki kişilik yol ve duvar strateji oyunu: piyonunu karşı kenara ilk ulaştıran kazanır. Sıran gelince bir adım at ya da rakibinin yolunu uzatmak için duvar koy; ama yolu tamamen kapatamazsın! 7×7 ya da 9×9, bilgisayara karşı da oynanır.">
+  <meta name="theme-color" content="#16302A">
+  <meta property="og:title" content="Duvar Ustası">
+  <meta property="og:description" content="Yürü ya da duvar koy, karşı kenara ilk sen ulaş!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%233B2A1A'/%3E%3Crect x='15' y='45' width='50' height='9' rx='3' fill='%23FFD166'/%3E%3Ccircle cx='30' cy='75' r='11' fill='%233D8BFD'/%3E%3Ccircle cx='70' cy='24' r='11' fill='%23E5484D'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Duvar <span>Ustası</span></h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+      <button class="btn small" id="open-setup" type="button">Ayarlar</button>
+    </div>
+  </header>
+  <div class="score">
+    <span class="side" id="s0"><span class="disc b" aria-hidden="true"></span><span id="n0">Enes</span> 🧱<b id="c0">10</b></span>
+    <span class="side" id="s1"><span class="disc w" aria-hidden="true"></span><span id="n1">Egemen</span> 🧱<b id="c1">10</b></span>
+  </div>
+  <div class="modes"><button class="mode on" id="m-move" type="button" aria-pressed="true">🚶 Yürü</button><button class="mode" id="m-wall" type="button" aria-pressed="false">🧱 Duvar</button><button class="mode" id="m-rot" type="button" aria-label="Duvarı çevir">↔ Yatay</button></div>
+  <main class="board-wrap">
+    <svg class="board" id="board" role="group" aria-label="Oyun tahtası"></svg>
+  </main>
+  <p class="hintline" id="hintline" aria-live="polite"></p>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>🧱 Duvar Ustası</h2>
+    <p class="help">Mavi aşağıdan, kırmızı yukarıdan başlar. <b>Karşı kenara ilk ulaşan kazanır.</b> Sıran gelince ya piyonunu <b>bir kare yürüt</b> ya da <b>bir duvar koy</b>. Duvar iki kare uzunluğundadır, piyonlar duvardan geçemez. Rakibinin yolunu uzat ama <b>yolu tamamen kapatamazsın</b>. Piyonlar yan yanaysa üstünden <b>atlanabilir</b>. Duvar koymak için 🧱 Duvar'a geç, çizgilerin arasına dokun, gölgeye tekrar dokununca duvar konur.</p>
+    <fieldset><legend>Rakip</legend>
+      <div class="seg"><label><input type="radio" name="mode" value="2p" checked><span>👫 İki kişi</span></label><label><input type="radio" name="mode" value="ai"><span>🤖 Bilgisayar</span></label></div>
+    </fieldset>
+    <fieldset id="f-ai" hidden><legend>Bilgisayar</legend>
+      <div class="seg"><label><input type="radio" name="ai" value="0" checked><span>Kolay</span></label><label><input type="radio" name="ai" value="1"><span>Zor</span></label></div>
+    </fieldset>
+    <fieldset><legend>Tahta</legend>
+      <div class="seg"><label><input type="radio" name="size" value="7" checked><span>7×7 · 6 duvar</span></label><label><input type="radio" name="size" value="9"><span>9×9 · 10 duvar</span></label></div>
+    </fieldset>
+    <fieldset class="names"><legend><i class="mini b"></i>Mavi (aşağıdan, önce başlar)</legend>
+      <input type="text" id="in0" maxlength="12" value="Enes" aria-label="Mavi oyuncunun adı">
+      <label class="toggle"><input type="checkbox" id="h0"> ✨ yolunu göster</label>
+    </fieldset>
+    <fieldset class="names" id="f-p1"><legend><i class="mini w"></i>Kırmızı (yukarıdan)</legend>
+      <input type="text" id="in1" maxlength="12" value="Egemen" aria-label="Kırmızı oyuncunun adı">
+      <label class="toggle"><input type="checkbox" id="h1" checked> ✨ yolunu göster</label>
+    </fieldset>
+    <button class="btn primary big" type="submit">Oyunu başlat</button>
+  </form>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="end-title"></p>
+    <p class="lead" id="end-note"></p>
+    <div class="row">
+      <button class="btn primary" id="again" type="button">Tekrar oyna</button>
+      <button class="btn" id="end-setup" type="button">Ayarlar</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
