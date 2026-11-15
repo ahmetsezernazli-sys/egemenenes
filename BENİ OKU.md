@@ -632,11 +632,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← masa futbolu: 8 çubuk (1-2-3-4 adam), takımın çubukları birlikte kayar (u -1..1), dokun/tuş = şut, hızlı top kendi takımının içinden geçer
 │                         3/5/7 gol, ✨ büyük oyuncular, bilgisayar Kolay/Zor (aiThink), hook window.__lg
-└── pazar-yeri/         ← Pazar Yeri (Tüm aile)
+├── pazar-yeri/         ← Pazar Yeri (Tüm aile)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← ticaret masa oyunu: 16 karelik pazar, 12 tezgah 6 renk çifti, kira, çift = 2 kat, Başla +3, şans kartları, çeşme +1
+│                         2-4 oyuncu 🤖 bilgisayar ve ✨ yardım (sesli öneri, iyi seçim parlar), 6/10/15 tur, zenginlik = altın + tezgah değeri, hook window.__pz
+└── ayna-resim/         ← Ayna Resim (Egemen)
     ├── index.html
     ├── style.css
-    └── game.js         ← ticaret masa oyunu: 16 karelik pazar, 12 tezgah 6 renk çifti, kira, çift = 2 kat, Başla +3, şans kartları, çeşme +1
-                          2-4 oyuncu 🤖 bilgisayar ve ✨ yardım (sesli öneri, iyi seçim parlar), 6/10/15 tur, zenginlik = altın + tezgah değeri, hook window.__pz
+    └── game.js         ← simetri boyama: 8 resim, LEVELS satırları sol yarı, sağ yarı hedefi ters satır
+                          renk paleti, aynı renkle dokun = sil, yanlış kare sallanır ve sesli düzeltir, 9 sn takılınca kare parlar, hook window.__ar
 ```
 
 ## Bilgisayarda oynamak
