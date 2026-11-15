@@ -637,11 +637,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← ticaret masa oyunu: 16 karelik pazar, 12 tezgah 6 renk çifti, kira, çift = 2 kat, Başla +3, şans kartları, çeşme +1
 │                         2-4 oyuncu 🤖 bilgisayar ve ✨ yardım (sesli öneri, iyi seçim parlar), 6/10/15 tur, zenginlik = altın + tezgah değeri, hook window.__pz
-└── ayna-resim/         ← Ayna Resim (Egemen)
+├── ayna-resim/         ← Ayna Resim (Egemen)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← simetri boyama: 8 resim, LEVELS satırları sol yarı, sağ yarı hedefi ters satır
+│                         renk paleti, aynı renkle dokun = sil, yanlış kare sallanır ve sesli düzeltir, 9 sn takılınca kare parlar, hook window.__ar
+└── meyve-kesici/       ← Meyve Kesici (Enes)
     ├── index.html
     ├── style.css
-    └── game.js         ← simetri boyama: 8 resim, LEVELS satırları sol yarı, sağ yarı hedefi ters satır
-                          renk paleti, aynı renkle dokun = sil, yanlış kare sallanır ve sesli düzeltir, 9 sn takılınca kare parlar, hook window.__ar
+    └── game.js         ← kaydırarak kesme: fırlatılan emoji meyveler, bıçak izi, kesilen meyve iki yarıya ayrılır (clip), meyve suyu
+                          seri bonusu, 💣 bomba, ❄️ yavaş zaman, ⭐ ×2, Klasik (3 can) ve 60 saniye modu, rekorlar, hook window.__mk2
 ```
 
 ## Bilgisayarda oynamak

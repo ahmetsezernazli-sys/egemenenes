@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Meyve Kesici · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için kesme oyunu: havaya fırlayan meyveleri parmağını ya da fareyi kaydırarak kes, bombalara dokunma! Tek hamlede çok meyve kesince seri bonusu, buz meyvesi zamanı yavaşlatır, yıldız meyvesi puanı ikiye katlar. Klasik ve 60 saniye modları, rekorlar.">
+  <meta name="theme-color" content="#1C1208">
+  <meta property="og:title" content="Meyve Kesici">
+  <meta property="og:description" content="Kaydır, kes, bombaya dokunma!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%231C1208'/%3E%3Ccircle cx='50' cy='55' r='28' fill='%232DB75A'/%3E%3Ccircle cx='50' cy='55' r='21' fill='%23FF5A5F'/%3E%3Cpath d='M14 86L86 14' stroke='%23fff' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← Oyunlar</a>
+    <h1 class="title">Meyve <span>Kesici</span></h1>
+    <button class="btn small" id="open-menu" type="button">Menü</button>
+  </header>
+  <div class="stats"><span class="chip">Puan <b id="sc">0</b></span><span class="chip" id="lifechip">Can <b id="lv">❤❤❤</b></span><span class="chip">Rekor <b id="hi">0</b></span></div>
+  <div class="wrap"><canvas id="cv" width="800" height="600" aria-label="Meyve alanı: parmağını ya da basılı fareyi kaydırarak meyveleri kes"></canvas></div>
+  <p class="msg" id="msg" aria-live="polite"></p>
+</div>
+
+<div class="overlay" id="menu">
+  <div class="sheet">
+    <h2 id="m-title">🍉 Meyve Kesici</h2>
+    <p class="help" id="m-tx">Meyveler havaya fırlar. Parmağını ya da <b>basılı tuttuğun fareyi kaydırarak</b> meyveleri <b>kes</b>! Tek kaydırışta 3 ya da daha fazla meyve kesersen <b>seri bonusu</b> alırsın. 💣 <b>Bombaya dokunma!</b> ❄️ buz meyvesi zamanı yavaşlatır, ⭐ yıldız meyvesi bir süre puanları ikiye katlar.<br><b>Klasik:</b> kaçırdığın her meyve bir can götürür, bomba oyunu bitirir. <b>60 saniye:</b> can yok, bomba 10 puan götürür.</p>
+    <div class="seg" role="radiogroup" aria-label="Mod">
+      <label><input type="radio" name="df" value="0" checked><span>Klasik</span></label>
+      <label><input type="radio" name="df" value="1"><span>60 saniye</span></label>
+    </div>
+    <button class="btn primary big" id="start" type="button">Başla</button>
+    <button class="btn big" id="resume" type="button" hidden>Devam et</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

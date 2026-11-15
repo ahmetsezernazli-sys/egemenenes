@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-mvk{background:#3A2814}
+    .cover-mvk svg{width:100%;height:100%}
     .cover-ayr{background:#F1F7FF}
     .cover-ayr svg{width:100%;height:100%}
     .cover-pzy{background:#D9F0C8}
@@ -374,7 +376,7 @@
 
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>35</b></a>
-    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>35</b></a>
+    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>36</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>34</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>34</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
@@ -386,8 +388,7 @@
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
         <a class="game" href="ayna-resim/index.html">
-          <div class="cover is-new cover-ayr" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-ayr" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#F1F7FF"/>
               <rect x="34" y="8" width="96" height="86" rx="8" fill="#fff"/>
@@ -1188,9 +1189,30 @@
     </section>
 
     <section class="group g-enes" id="enes" aria-labelledby="h-enes">
-      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 35 oyun</p></div>
+      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 36 oyun</p></div>
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
+        <a class="game" href="meyve-kesici/index.html">
+          <div class="cover is-new cover-mvk" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#3A2814"/>
+              <g stroke="rgba(0,0,0,.2)" stroke-width="1.5"><path d="M33 0V102M66 0V102M99 0V102M132 0V102"/></g>
+              <circle cx="58" cy="58" r="20" fill="#FF4D6D" opacity=".35"/>
+              <path d="M38 52a18 18 0 0 1 34-6z" fill="#2DB75A"/><path d="M41 50a14 14 0 0 1 28-5z" fill="#FF4D6D"/>
+              <path d="M46 66a18 18 0 0 0 34 4z" fill="#2DB75A"/><path d="M49 66a14 14 0 0 0 28 3z" fill="#FF4D6D"/>
+              <g fill="#2A2540"><circle cx="52" cy="46" r="1.5"/><circle cx="60" cy="44" r="1.5"/><circle cx="58" cy="70" r="1.5"/><circle cx="66" cy="71" r="1.5"/></g>
+              <circle cx="122" cy="34" r="13" fill="#FF9F43"/><circle cx="118" cy="30" r="3" fill="#FFC680"/>
+              <circle cx="112" cy="76" r="12" fill="#2A2540"/><path d="M118 66l5-7" stroke="#C9A27A" stroke-width="2"/><circle cx="124" cy="58" r="2.5" fill="#FFD166"/>
+              <path d="M10 92L88 20" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Meyve Kesici</h3>
+            <p>Havaya fırlayan meyveleri parmağını ya da fareyi kaydırarak kes, bombaya dokunma! Seri bonusu, buz ve yıldız meyveleri, klasik ve 60 saniye modu.</p>
+            <div class="tags"><span>Enes için</span><span>Aksiyon</span><span>Rekor</span></div>
+          </div>
+        </a>
         <a class="game" href="solo-test/index.html">
           <div class="cover cover-sot" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
