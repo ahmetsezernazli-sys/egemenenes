@@ -627,11 +627,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← tek taş: 33 delikli haç tahta, 24 bölüm tek taştan geriye oynanarak üretildi (RAW 33 bit), 25. klasik tam tahta
 │                         DFS çözücü (sayısal anahtar + 8 simetri) ipucu verir, geri al, yıldız kalan taşa göre, hook window.__so
-└── langirt/            ← Langırt (İkisi birlikte)
+├── langirt/            ← Langırt (İkisi birlikte)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← masa futbolu: 8 çubuk (1-2-3-4 adam), takımın çubukları birlikte kayar (u -1..1), dokun/tuş = şut, hızlı top kendi takımının içinden geçer
+│                         3/5/7 gol, ✨ büyük oyuncular, bilgisayar Kolay/Zor (aiThink), hook window.__lg
+└── pazar-yeri/         ← Pazar Yeri (Tüm aile)
     ├── index.html
     ├── style.css
-    └── game.js         ← masa futbolu: 8 çubuk (1-2-3-4 adam), takımın çubukları birlikte kayar (u -1..1), dokun/tuş = şut, hızlı top kendi takımının içinden geçer
-                          3/5/7 gol, ✨ büyük oyuncular, bilgisayar Kolay/Zor (aiThink), hook window.__lg
+    └── game.js         ← ticaret masa oyunu: 16 karelik pazar, 12 tezgah 6 renk çifti, kira, çift = 2 kat, Başla +3, şans kartları, çeşme +1
+                          2-4 oyuncu 🤖 bilgisayar ve ✨ yardım (sesli öneri, iyi seçim parlar), 6/10/15 tur, zenginlik = altın + tezgah değeri, hook window.__pz
 ```
 
 ## Bilgisayarda oynamak

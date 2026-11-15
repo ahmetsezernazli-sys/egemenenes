@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pazar Yeri · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Aile için ticaret masa oyunu: zar at, pazarda dolaş, meyve ve sebze tezgahları satın al, başkasının tezgahına gelen kira öder. Aynı renkten iki tezgah kirayı ikiye katlar, şans kartları sürpriz getirir. 2-4 oyuncu, bilgisayar ve küçüklere yardım.">
+  <meta name="theme-color" content="#EEF8E6">
+  <meta property="og:title" content="Pazar Yeri">
+  <meta property="og:description" content="Zar at, tezgah al, kira topla!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23EEF8E6'/%3E%3Cpath d='M14 40h72l-6-18H20z' fill='%23E5484D'/%3E%3Crect x='20' y='40' width='60' height='40' fill='%23F2C66D'/%3E%3Ccircle cx='40' cy='60' r='9' fill='%23E5484D'/%3E%3Ccircle cx='62' cy='60' r='9' fill='%23FF9F43'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Pazar <span>Yeri</span></h1>
+    <button class="icon-btn" id="settings" type="button" aria-label="Oyuncular ve yeni oyun">⚙</button>
+  </header>
+  <div class="players" id="players"></div>
+  <main class="bwrap"><div class="board" id="board"><div class="mid" id="mid" aria-live="polite"></div></div></main>
+</div>
+
+<div class="overlay" id="setup">
+  <form class="sheet" id="setup-form">
+    <h2>🛒 Pazar Yeri</h2>
+    <p class="help">Herkes <b>15 altınla</b> başlar. Sırası gelen <b>zar atar</b> ve ilerler. Boş bir <b>tezgaha</b> gelirsen satın alabilirsin. Başkasının tezgahına gelirsen ona <b>kira</b> ödersin; <b>aynı renkten iki tezgahı</b> olanın kirası iki katıdır. <b>Başla</b>dan geçen 3 altın alır, ❓ karelerde <b>şans kartı</b> çekilir. Turlar bitince <b>en zengin</b> (altın + tezgahların değeri) kazanır.</p>
+    <fieldset><legend>Oyuncu sayısı</legend>
+      <div class="seg wide">
+        <label><input type="radio" name="count" value="2"><span>2</span></label><label><input type="radio" name="count" value="3"><span>3</span></label>
+        <label><input type="radio" name="count" value="4" checked><span>4</span></label>
+      </div>
+    </fieldset>
+    <fieldset><legend>Oyuncular</legend><div id="rows" class="rows"></div>
+      <p class="help small">🤖 bilgisayar oynar. ✨ küçüklere: ne yapacağını sesle söyler, en iyi seçimi parlatır.</p>
+    </fieldset>
+    <fieldset><legend>Tur sayısı</legend>
+      <div class="seg"><label><input type="radio" name="rn" value="6"><span>6 tur</span></label><label><input type="radio" name="rn" value="10" checked><span>10 tur</span></label><label><input type="radio" name="rn" value="15"><span>15 tur</span></label></div>
+    </fieldset>
+    <button class="btn primary big" type="submit">Pazarı aç!</button>
+  </form>
+</div>
+
+<div class="overlay" id="over" hidden>
+  <div class="sheet center">
+    <div class="trophy" aria-hidden="true">🏆</div>
+    <p class="end-title" id="over-title"></p>
+    <p class="help" id="over-tx"></p>
+    <div class="results" id="results"></div>
+    <button class="btn primary big" id="again" type="button">Yeniden oyna</button>
+    <button class="btn big" id="to-setup" type="button">Ayarlar</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
