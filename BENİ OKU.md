@@ -617,11 +617,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← parti oyunu: gizli rastgele fitil (Kısa/Normal/Uzun), soru söyle ve ver, patlayan 🥔 alır
 │                         ✨ kolay resimli sorular + ilk 4 sn koruma, harf soruları, en az patates kazanır, hook window.__sp
-└── bilye-yolu/         ← Bilye Yolu (Egemen)
+├── bilye-yolu/         ← Bilye Yolu (Egemen)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← rampa bulmacası: kutular boş/sağa/sola, sabit gri rampalar, kapsül-çarpışmalı bilye fiziği physStep()
+│                         10 bölüm tarayıcıda simülasyonla üretildi (boş hâlde kaçar, çözüm a ile sepete düşer), 2 kaçıştan sonra yanlış kutu parlar, hook window.__by
+└── solo-test/          ← Solo Test (Enes)
     ├── index.html
     ├── style.css
-    └── game.js         ← rampa bulmacası: kutular boş/sağa/sola, sabit gri rampalar, kapsül-çarpışmalı bilye fiziği physStep()
-                          10 bölüm tarayıcıda simülasyonla üretildi (boş hâlde kaçar, çözüm a ile sepete düşer), 2 kaçıştan sonra yanlış kutu parlar, hook window.__by
+    └── game.js         ← tek taş: 33 delikli haç tahta, 24 bölüm tek taştan geriye oynanarak üretildi (RAW 33 bit), 25. klasik tam tahta
+                          DFS çözücü (sayısal anahtar + 8 simetri) ipucu verir, geri al, yıldız kalan taşa göre, hook window.__so
 ```
 
 ## Bilgisayarda oynamak
