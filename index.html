@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-sps{background:#BFE6FF}
+    .cover-sps svg{width:100%;height:100%}
     .cover-mvk{background:#3A2814}
     .cover-mvk svg{width:100%;height:100%}
     .cover-ayr{background:#F1F7FF}
@@ -377,7 +379,7 @@
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>35</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>36</b></a>
-    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>34</b></a>
+    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>35</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>34</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
@@ -1193,8 +1195,7 @@
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
         <a class="game" href="meyve-kesici/index.html">
-          <div class="cover is-new cover-mvk" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-mvk" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#3A2814"/>
               <g stroke="rgba(0,0,0,.2)" stroke-width="1.5"><path d="M33 0V102M66 0V102M99 0V102M132 0V102"/></g>
@@ -1947,9 +1948,31 @@
     </section>
 
     <section class="group g-ikisi" id="ikisi" aria-labelledby="h-ikisi">
-      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 34 oyun</p></div>
+      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 35 oyun</p></div>
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
+        <a class="game" href="spor-senligi/index.html">
+          <div class="cover is-new cover-sps" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#BFE6FF"/>
+              <rect y="30" width="164" height="6" fill="#7FA36B"/>
+              <g><circle cx="10" cy="28" r="4" fill="#E5484D"/><circle cx="26" cy="28" r="4" fill="#FFC529"/><circle cx="42" cy="28" r="4" fill="#3D8BFD"/><circle cx="58" cy="28" r="4" fill="#2DB75A"/><circle cx="74" cy="28" r="4" fill="#E5484D"/><circle cx="90" cy="28" r="4" fill="#FFC529"/><circle cx="106" cy="28" r="4" fill="#3D8BFD"/><circle cx="122" cy="28" r="4" fill="#2DB75A"/><circle cx="138" cy="28" r="4" fill="#E5484D"/><circle cx="154" cy="28" r="4" fill="#FFC529"/></g>
+              <rect y="36" width="164" height="50" fill="#E8664A"/><rect y="86" width="164" height="16" fill="#6FBF5A"/>
+              <path d="M0 61H164" stroke="#fff" stroke-width="2"/>
+              <rect x="110" y="36" width="20" height="25" fill="rgba(255,209,102,.7)"/><rect x="130" y="36" width="3" height="50" fill="#fff"/>
+              <g fill="#1E2A44"><circle cx="58" cy="41" r="4"/><path d="M58 45l-3 9 6 5-2 2-7-6 2-8z"/><path d="M57 50l8-3 2 2-9 4z"/></g>
+              <g fill="#1E2A44"><circle cx="92" cy="66" r="4"/><path d="M92 70l-3 9 6 5-2 2-7-6 2-8z"/></g>
+              <path d="M98 64L120 50" stroke="#8A5A2B" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="58" cy="54" r="2.5" fill="#3D8BFD"/><circle cx="92" cy="79" r="2.5" fill="#E5484D"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Spor Şenliği</h3>
+            <p>İki kişilik atletizm: 60 metre koşu, uzun atlama ve cirit atma. Düğmeye hızlı hızlı basarak koş, doğru anda atla, açıyı ayarlayıp fırlat!</p>
+            <div class="tags"><span>İkisi birlikte</span><span>Spor</span><span>Bilgisayar rakip</span></div>
+          </div>
+        </a>
         <a class="game" href="langirt/index.html">
           <div class="cover cover-lgt" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

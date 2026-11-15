@@ -642,11 +642,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← simetri boyama: 8 resim, LEVELS satırları sol yarı, sağ yarı hedefi ters satır
 │                         renk paleti, aynı renkle dokun = sil, yanlış kare sallanır ve sesli düzeltir, 9 sn takılınca kare parlar, hook window.__ar
-└── meyve-kesici/       ← Meyve Kesici (Enes)
+├── meyve-kesici/       ← Meyve Kesici (Enes)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← kaydırarak kesme: fırlatılan emoji meyveler, bıçak izi, kesilen meyve iki yarıya ayrılır (clip), meyve suyu
+│                         seri bonusu, 💣 bomba, ❄️ yavaş zaman, ⭐ ×2, Klasik (3 can) ve 60 saniye modu, rekorlar, hook window.__mk2
+└── spor-senligi/       ← Spor Şenliği (İkisi birlikte)
     ├── index.html
     ├── style.css
-    └── game.js         ← kaydırarak kesme: fırlatılan emoji meyveler, bıçak izi, kesilen meyve iki yarıya ayrılır (clip), meyve suyu
-                          seri bonusu, 💣 bomba, ❄️ yavaş zaman, ⭐ ×2, Klasik (3 can) ve 60 saniye modu, rekorlar, hook window.__mk2
+    └── game.js         ← atletizm: 60 m koşu (hızlı basma), uzun atlama (sarı bölgede bas, çizgi 40 m), cirit (sarı bölgede basılı tut, ok yeşilde bırak, çizgi 30 m)
+                          yarış galibi 2 puan, ✨ güçlü adım + otomatik atlama/atış, bilgisayar Kolay/Zor, hook window.__ss
 ```
 
 ## Bilgisayarda oynamak
