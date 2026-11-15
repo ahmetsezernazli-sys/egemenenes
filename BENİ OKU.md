@@ -622,11 +622,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← rampa bulmacası: kutular boş/sağa/sola, sabit gri rampalar, kapsül-çarpışmalı bilye fiziği physStep()
 │                         10 bölüm tarayıcıda simülasyonla üretildi (boş hâlde kaçar, çözüm a ile sepete düşer), 2 kaçıştan sonra yanlış kutu parlar, hook window.__by
-└── solo-test/          ← Solo Test (Enes)
+├── solo-test/          ← Solo Test (Enes)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← tek taş: 33 delikli haç tahta, 24 bölüm tek taştan geriye oynanarak üretildi (RAW 33 bit), 25. klasik tam tahta
+│                         DFS çözücü (sayısal anahtar + 8 simetri) ipucu verir, geri al, yıldız kalan taşa göre, hook window.__so
+└── langirt/            ← Langırt (İkisi birlikte)
     ├── index.html
     ├── style.css
-    └── game.js         ← tek taş: 33 delikli haç tahta, 24 bölüm tek taştan geriye oynanarak üretildi (RAW 33 bit), 25. klasik tam tahta
-                          DFS çözücü (sayısal anahtar + 8 simetri) ipucu verir, geri al, yıldız kalan taşa göre, hook window.__so
+    └── game.js         ← masa futbolu: 8 çubuk (1-2-3-4 adam), takımın çubukları birlikte kayar (u -1..1), dokun/tuş = şut, hızlı top kendi takımının içinden geçer
+                          3/5/7 gol, ✨ büyük oyuncular, bilgisayar Kolay/Zor (aiThink), hook window.__lg
 ```
 
 ## Bilgisayarda oynamak

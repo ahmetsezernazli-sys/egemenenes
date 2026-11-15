@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-lgt{background:#6B4423}
+    .cover-lgt svg{width:100%;height:100%}
     .cover-sot{background:#1E1410}
     .cover-sot svg{width:100%;height:100%}
     .cover-byl{background:#FFF4E0}
@@ -369,7 +371,7 @@
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>34</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>35</b></a>
-    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>33</b></a>
+    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>34</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>33</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
@@ -1167,8 +1169,7 @@
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
         <a class="game" href="solo-test/index.html">
-          <div class="cover is-new cover-sot" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-sot" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#1E1410"/>
               <circle cx="82" cy="51" r="48" fill="#6B4423"/>
@@ -1901,9 +1902,29 @@
     </section>
 
     <section class="group g-ikisi" id="ikisi" aria-labelledby="h-ikisi">
-      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 33 oyun</p></div>
+      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 34 oyun</p></div>
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
+        <a class="game" href="langirt/index.html">
+          <div class="cover is-new cover-lgt" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#6B4423"/>
+              <rect x="8" y="8" width="148" height="86" fill="#2E8B4E"/>
+              <path d="M82 8V94" stroke="rgba(255,255,255,.7)" stroke-width="1.5"/><circle cx="82" cy="51" r="12" stroke="rgba(255,255,255,.7)" stroke-width="1.5"/>
+              <rect x="4" y="38" width="4" height="26" fill="#BFD7FF"/><rect x="156" y="38" width="4" height="26" fill="#FFC9CB"/>
+              <g fill="#C9CED6"><rect x="21" y="0" width="3" height="102"/><rect x="45" y="0" width="3" height="102"/><rect x="69" y="0" width="3" height="102"/><rect x="93" y="0" width="3" height="102"/><rect x="117" y="0" width="3" height="102"/><rect x="141" y="0" width="3" height="102"/></g>
+              <g fill="#3D8BFD"><ellipse cx="22.5" cy="51" rx="5" ry="7"/><ellipse cx="70.5" cy="26" rx="5" ry="7"/><ellipse cx="70.5" cy="51" rx="5" ry="7"/><ellipse cx="70.5" cy="76" rx="5" ry="7"/><ellipse cx="118.5" cy="34" rx="5" ry="7"/><ellipse cx="118.5" cy="68" rx="5" ry="7"/></g>
+              <g fill="#E5484D"><ellipse cx="46.5" cy="34" rx="5" ry="7"/><ellipse cx="46.5" cy="68" rx="5" ry="7"/><ellipse cx="94.5" cy="22" rx="5" ry="7"/><ellipse cx="94.5" cy="46" rx="5" ry="7"/><ellipse cx="94.5" cy="80" rx="5" ry="7"/><ellipse cx="142.5" cy="51" rx="5" ry="7"/></g>
+              <circle cx="104" cy="60" r="3.5" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Langırt</h3>
+            <p>Masa futbolu: kendi yarında parmağını kaydırıp çubuklarını oynat, dokunarak şut çek, rakibin kalesine gol at. İki kişi ya da bilgisayara karşı.</p>
+            <div class="tags"><span>İkisi birlikte</span><span>Spor</span><span>Bilgisayar rakip</span></div>
+          </div>
+        </a>
         <a class="game" href="duvar-ustasi/index.html">
           <div class="cover cover-dvu" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
