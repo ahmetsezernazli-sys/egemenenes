@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-mzk{background:#F3EEFF}
+    .cover-mzk svg{width:100%;height:100%}
     .cover-tkl{background:#F6EBDD}
     .cover-tkl svg{width:100%;height:100%}
     .cover-ymk{background:#FFE3E0}
@@ -355,7 +357,7 @@
   </a>
 
   <nav class="groups" aria-label="Oyun grupları">
-    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>32</b></a>
+    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>33</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>33</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>32</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>32</b></a>
@@ -364,9 +366,33 @@
 
   <main class="groups-main">
     <section class="group g-egemen" id="egemen" aria-labelledby="h-egemen">
-      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 32 oyun</p></div>
+      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 33 oyun</p></div>
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
+        <a class="game" href="muzik-kutusu/index.html">
+          <div class="cover is-new cover-mzk" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#F3EEFF"/>
+              <rect x="22" y="8" width="120" height="86" rx="10" fill="#2B2350"/>
+              <g fill="rgba(255,255,255,.12)">
+                <rect x="30" y="14" width="11" height="11" rx="3"/><rect x="44" y="14" width="11" height="11" rx="3"/><rect x="58" y="14" width="11" height="11" rx="3"/><rect x="72" y="14" width="11" height="11" rx="3"/><rect x="86" y="14" width="11" height="11" rx="3"/><rect x="100" y="14" width="11" height="11" rx="3"/><rect x="114" y="14" width="11" height="11" rx="3"/><rect x="128" y="14" width="8" height="11" rx="3"/>
+                <rect x="30" y="34" width="11" height="11" rx="3"/><rect x="58" y="34" width="11" height="11" rx="3"/><rect x="86" y="34" width="11" height="11" rx="3"/><rect x="114" y="34" width="11" height="11" rx="3"/>
+                <rect x="44" y="54" width="11" height="11" rx="3"/><rect x="72" y="54" width="11" height="11" rx="3"/><rect x="100" y="54" width="11" height="11" rx="3"/><rect x="128" y="54" width="8" height="11" rx="3"/>
+                <rect x="44" y="74" width="11" height="11" rx="3"/><rect x="58" y="74" width="11" height="11" rx="3"/><rect x="86" y="74" width="11" height="11" rx="3"/><rect x="100" y="74" width="11" height="11" rx="3"/><rect x="128" y="74" width="8" height="11" rx="3"/>
+              </g>
+              <rect x="44" y="34" width="11" height="11" rx="3" fill="#FF6B6B"/><rect x="72" y="34" width="11" height="11" rx="3" fill="#FFD84D"/><rect x="100" y="34" width="11" height="11" rx="3" fill="#FF9F43"/>
+              <rect x="30" y="54" width="11" height="11" rx="3" fill="#4DA3FF"/><rect x="58" y="54" width="11" height="11" rx="3" fill="#4DA3FF"/><rect x="86" y="54" width="11" height="11" rx="3" fill="#4DA3FF"/><rect x="114" y="54" width="11" height="11" rx="3" fill="#4DA3FF"/>
+              <rect x="30" y="74" width="11" height="11" rx="3" fill="#2DB75A"/><rect x="72" y="74" width="11" height="11" rx="3" fill="#2DB75A"/><rect x="114" y="74" width="11" height="11" rx="3" fill="#2DB75A"/>
+              <rect x="70" y="10" width="15" height="80" rx="4" stroke="#fff" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Müzik Kutusu</h3>
+            <p>Hayvanlı ritim tablosunda karelere dokun: fil davul çalsın, ördek alkışlasın, kedi, köpek ve civciv nota söylesin. Ritmi taklit et ya da kendi şarkını yap.</p>
+            <div class="tags"><span>Egemen için</span><span>Sesli</span><span>Müzik</span></div>
+          </div>
+        </a>
         <a class="game" href="otobus/index.html">
           <div class="cover cover-obs" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
@@ -2479,8 +2505,7 @@
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
         <a class="game" href="tahta-kule/index.html">
-          <div class="cover is-new cover-tkl" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-tkl" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#F6EBDD"/>
               <rect y="92" width="164" height="10" fill="#C9A27A"/>

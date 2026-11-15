@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Müzik Kutusu · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Egemen için müzik yapma oyunu: hayvanlı ritim tablosunda karelere dokun, fil davul çalsın, ördek alkışlasın, kedi, köpek, tavşan ve civciv nota söylesin. Taklit bölümlerinde ritmi tamamla, serbest modda kendi şarkını yap. Okuma gerekmez.">
+  <meta name="theme-color" content="#2B2350">
+  <meta property="og:title" content="Müzik Kutusu">
+  <meta property="og:description" content="Karelere dokun, hayvanlar şarkını çalsın!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%232B2350'/%3E%3Crect x='14' y='14' width='20' height='20' rx='5' fill='%23FF6B6B'/%3E%3Crect x='40' y='40' width='20' height='20' rx='5' fill='%23FFC529'/%3E%3Crect x='66' y='66' width='20' height='20' rx='5' fill='%232DB75A'/%3E%3Crect x='66' y='14' width='20' height='20' rx='5' fill='%234DA3FF'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html">← Oyunlar</a>
+    <span class="bar-title">Müzik Kutusu</span>
+    <div class="bar-actions">
+      <button class="icon-btn" id="menu" type="button" aria-label="Bölümler">
+        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/></svg>
+      </button>
+      <button class="icon-btn" id="sound" type="button" aria-label="Sesi kapat" aria-pressed="true">
+        <span id="ic-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+        <span id="ic-off" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <div class="dots" id="dots" aria-hidden="true"></div>
+    <p class="task" id="task" aria-live="polite"></p>
+    <div class="seq" id="seq" role="grid" aria-label="Ritim tablosu"></div>
+    <div class="ctrl" id="ctrl">
+      <button class="cb" id="listen" type="button" aria-label="Dinle"><span aria-hidden="true">👂</span></button>
+      <button class="cb go" id="playb" type="button" aria-label="Çal"><svg viewBox="0 0 100 100" id="ic-play"><path d="M36 24 L76 50 L36 76 Z" fill="#fff" stroke="#fff" stroke-width="10" stroke-linejoin="round"/></svg><svg viewBox="0 0 100 100" id="ic-stop" hidden><rect x="28" y="26" width="16" height="48" rx="5" fill="#fff"/><rect x="56" y="26" width="16" height="48" rx="5" fill="#fff"/></svg></button>
+      <button class="cb" id="tempo" type="button" aria-label="Hız: yavaş"><span aria-hidden="true" id="tempo-ic">🐢</span></button>
+      <button class="cb" id="clear" type="button" aria-label="Hepsini sil"><span aria-hidden="true">🧽</span></button>
+    </div>
+  </main>
+</div>
+
+<div class="overlay" id="intro">
+  <h1 class="rainbow" data-rainbow>Müzik Kutusu</h1>
+  <button class="big-btn" id="play" type="button" aria-label="Oyuna başla">
+    <svg viewBox="0 0 100 100"><path d="M38 26 L76 50 L38 74 Z" fill="#fff" stroke="#fff" stroke-width="10" stroke-linejoin="round"/></svg>
+  </button>
+  <div class="levels" id="levels"></div>
+  <p class="parent"><b>Ebeveyn notu:</b> Her satırda bir hayvan bir ses çalar: alttan üste fil davul, ördek alkış, fare zil; kurbağa, kedi, köpek, tavşan ve civciv notalar (do-mi-sol-la-do). Karelere dokununca açılır, oynat düğmesiyle soldan sağa çalınır. İlk 6 bölümde 👂 ile ritmi dinleyip kesikli kareleri doldurarak taklit eder; 7. bölüm serbest müzik kutusudur, yapılan şarkı saklanır. Kaybetmek yok.</p>
+</div>
+
+<div class="overlay" id="done" hidden>
+  <div class="stars" id="stars" aria-live="polite"><span>⭐</span><span>⭐</span><span>⭐</span></div>
+  <div class="row-btns">
+    <button class="small-btn" id="replay" type="button" aria-label="Bölümü tekrar oyna">
+      <svg viewBox="0 0 100 100" fill="none"><path d="M50 22 A28 28 0 1 0 76 42" stroke="#fff" stroke-width="11" stroke-linecap="round"/><path d="M46 8 L66 22 L46 36 Z" fill="#fff" stroke="#fff" stroke-width="4" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="big-btn" id="next" type="button" aria-label="Sonraki bölüm">
+      <svg viewBox="0 0 100 100"><path d="M38 26 L76 50 L38 74 Z" fill="#fff" stroke="#fff" stroke-width="10" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="overlay" id="party" hidden>
+  <p class="rainbow big" data-rainbow>Süper müzisyen!</p>
+  <button class="big-btn" id="again" type="button" aria-label="Bölümlere dön">
+    <svg viewBox="0 0 100 100" fill="none"><path d="M50 22 A28 28 0 1 0 76 42" stroke="#fff" stroke-width="11" stroke-linecap="round"/><path d="M46 8 L66 22 L46 36 Z" fill="#fff" stroke="#fff" stroke-width="4" stroke-linejoin="round"/></svg>
+  </button>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
