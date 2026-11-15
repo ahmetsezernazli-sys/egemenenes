@@ -612,11 +612,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← yol ve duvar stratejisi: 7×7 (6 duvar) ya da 9×9 (10 duvar), atlama ve yan sekme, duvar yolu kapatamaz (BFS path)
 │                         yapay zekâ Kolay (yolu izler) / Zor (2 kat arama, rakip yolunu kesen aday duvarlar), ✨ yolu göster, hook window.__du
-└── sicak-patates/      ← Sıcak Patates (Tüm aile)
+├── sicak-patates/      ← Sıcak Patates (Tüm aile)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← parti oyunu: gizli rastgele fitil (Kısa/Normal/Uzun), soru söyle ve ver, patlayan 🥔 alır
+│                         ✨ kolay resimli sorular + ilk 4 sn koruma, harf soruları, en az patates kazanır, hook window.__sp
+└── bilye-yolu/         ← Bilye Yolu (Egemen)
     ├── index.html
     ├── style.css
-    └── game.js         ← parti oyunu: gizli rastgele fitil (Kısa/Normal/Uzun), soru söyle ve ver, patlayan 🥔 alır
-                          ✨ kolay resimli sorular + ilk 4 sn koruma, harf soruları, en az patates kazanır, hook window.__sp
+    └── game.js         ← rampa bulmacası: kutular boş/sağa/sola, sabit gri rampalar, kapsül-çarpışmalı bilye fiziği physStep()
+                          10 bölüm tarayıcıda simülasyonla üretildi (boş hâlde kaçar, çözüm a ile sepete düşer), 2 kaçıştan sonra yanlış kutu parlar, hook window.__by
 ```
 
 ## Bilgisayarda oynamak
