@@ -597,11 +597,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← blok çekme oyunu: 18 kat × 3 blok, sıkılık tight, çekme hızına göre sallanma wob, kalıcı eğilme lean, 100'de devrilir
 │                         üst kat kuralı maxLayer(), tek kenar bloğu kalan kat devrilir, dokununca sıkılık, ✨ güvenli bloklar ve 0.6 sallanma, Z yakınlaştırma, hook window.__tk
-└── muzik-kutusu/       ← Müzik Kutusu (Egemen)
+├── muzik-kutusu/       ← Müzik Kutusu (Egemen)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← 8×8 ritim tablosu: 5 nota (do-mi-sol-la-do) + zil, alkış, davul; Web Audio sentez
+│                         6 taklit bölümü (kesikli kareler, 👂 dinle) + serbest mod (şarkı saklanır), hook window.__mk
+└── gizli-ajan/         ← Gizli Ajan (Enes)
     ├── index.html
     ├── style.css
-    └── game.js         ← 8×8 ritim tablosu: 5 nota (do-mi-sol-la-do) + zil, alkış, davul; Web Audio sentez
-                          6 taklit bölümü (kesikli kareler, 👂 dinle) + serbest mod (şarkı saklanır), hook window.__mk
+    └── game.js         ← sıra tabanlı gizlilik: core.js (GA.parse/step/seen/solve), 23 bölüm RAW harita|robotlar|en az adım
+                          devriye p ve dönen r robotlar, görüş 4 kare, çalı gizler, 👁 sonraki görüş, BFS ipucu, geri al, hook window.__ga
 ```
 
 ## Bilgisayarda oynamak

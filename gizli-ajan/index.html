@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gizli Ajan · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için sıra tabanlı gizlilik bulmacası: devriye robotlarının görüş alanına girmeden gizli dosyayı al ve çıkışa ulaş. Her adımda robotlar da hareket eder; çalılara saklan, doğru anı bekle. 23 bölüm, ipucu ve geri alma.">
+  <meta name="theme-color" content="#101820">
+  <meta property="og:title" content="Gizli Ajan">
+  <meta property="og:description" content="Robotlara görünmeden dosyayı kap, çıkışa koş!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23101820'/%3E%3Cpath d='M50 50L90 30V70Z' fill='%23FF4D6D' opacity='.6'/%3E%3Ccircle cx='42' cy='50' r='14' fill='%23E8EDFF'/%3E%3Crect x='16' y='16' width='18' height='14' rx='3' fill='%23FFD166'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← Oyunlar</a>
+    <h1 class="title">Gizli <span>Ajan</span></h1>
+    <button class="btn small" id="open-menu" type="button">Bölümler</button>
+  </header>
+  <div class="stats"><span class="chip">Bölüm <b id="lv">1</b>/23</span><span class="chip">Adım <b id="mv">0</b></span><span class="chip">En az <b id="par">0</b></span><span class="chip" id="filechip">Dosya <b id="fl">yok</b></span></div>
+  <div class="wrap"><div class="map" id="map" role="group" aria-label="Harita: oklarla ya da yanındaki kareye dokunarak yürü"></div></div>
+  <p class="msg" id="msg" aria-live="polite"></p>
+  <div class="pad" aria-label="Yön düğmeleri"><button class="k u" data-m="U" type="button" aria-label="Yukarı">▲</button><button class="k l" data-m="L" type="button" aria-label="Sola">◀</button><button class="k w" data-m="W" type="button" aria-label="Bekle">⏳</button><button class="k r" data-m="R" type="button" aria-label="Sağa">▶</button><button class="k d" data-m="D" type="button" aria-label="Aşağı">▼</button></div>
+  <div class="acts"><button class="btn" id="undo" type="button">↶ Geri al</button><button class="btn" id="reset" type="button">↺ Baştan</button><button class="btn" id="peek" type="button" aria-pressed="false">👁 Sonraki</button><button class="btn" id="hint" type="button">💡 İpucu</button></div>
+</div>
+
+<div class="overlay" id="menu">
+  <div class="sheet">
+    <h2>🕵️ Gizli Ajan</h2>
+    <p class="help">Gizli <b>dosyayı 📁</b> al ve <b>çıkışa 🚪</b> ulaş. Her adımında <b>robotlar da bir adım</b> atar ya da döner. Kırmızı alan robotların <b>görüş alanı</b>: oraya girersen ya da robot seni orada görürse yakalanırsın! Duvarlar görüşü keser, <b>çalılarda 🌿</b> görünmezsin. ⏳ ile <b>bekleyebilirsin</b>. 👁 Sonraki düğmesi robotların bir sonraki adımda nereye bakacağını gösterir. Klavye: oklar ya da WASD, boşluk bekle, Z geri al.</p>
+    <div class="grid-l" id="levels"></div>
+    <button class="btn primary big" id="start" type="button">Başla</button>
+  </div>
+</div>
+
+<div class="overlay" id="win" hidden>
+  <div class="sheet center">
+    <div class="stars" id="stars"></div>
+    <h2 id="w-title">Görev tamam!</h2>
+    <p class="help" id="w-tx"></p>
+    <button class="btn primary big" id="next" type="button">Sonraki bölüm</button>
+    <button class="btn big" id="replay" type="button">Tekrar oyna</button>
+  </div>
+</div>
+
+<script src="core.js"></script>
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
