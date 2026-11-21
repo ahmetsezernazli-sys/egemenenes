@@ -647,11 +647,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← kaydırarak kesme: fırlatılan emoji meyveler, bıçak izi, kesilen meyve iki yarıya ayrılır (clip), meyve suyu
 │                         seri bonusu, 💣 bomba, ❄️ yavaş zaman, ⭐ ×2, Klasik (3 can) ve 60 saniye modu, rekorlar, hook window.__mk2
-└── spor-senligi/       ← Spor Şenliği (İkisi birlikte)
+├── spor-senligi/       ← Spor Şenliği (İkisi birlikte)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← atletizm: 60 m koşu (hızlı basma), uzun atlama (sarı bölgede bas, çizgi 40 m), cirit (sarı bölgede basılı tut, ok yeşilde bırak, çizgi 30 m)
+│                         yarış galibi 2 puan, ✨ güçlü adım + otomatik atlama/atış, bilgisayar Kolay/Zor, hook window.__ss
+└── anlat-bakalim/      ← Anlat Bakalım (Tüm aile)
     ├── index.html
     ├── style.css
-    └── game.js         ← atletizm: 60 m koşu (hızlı basma), uzun atlama (sarı bölgede bas, çizgi 40 m), cirit (sarı bölgede basılı tut, ok yeşilde bırak, çizgi 30 m)
-                          yarış galibi 2 puan, ✨ güçlü adım + otomatik atlama/atış, bilgisayar Kolay/Zor, hook window.__ss
+    └── game.js         ← takım kelime anlatma: 117 yetişkin kartı (kelime + 4 yasak), 64 resimli küçük kartı (✨ anlatıcıya)
+                          2 takım, anlatıcı sırayla döner, 45/60/90 sn, 3 pas, ✓ +1 / ✗ yasak -1, her takım 2-4 tur, hook window.__ab
 ```
 
 ## Bilgisayarda oynamak
