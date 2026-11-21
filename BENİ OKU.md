@@ -667,11 +667,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← yerçekimi bulmacası: sapan fırlatma, gezegen çekimi (m = r²·1.6), itici (eksi kütle), kara delik; ekrandan çıkan kaybolur
 │                         20 bölüm tarayıcıda açı × güç taramasıyla üretildi (düz atış olmaz, sağlam çözüm ve 3 yıldız tek atışta), ipucu h, hook window.__yr
-└── muzik-dueti/        ← Müzik Düeti (İkisi birlikte)
+├── muzik-dueti/        ← Müzik Düeti (İkisi birlikte)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← ortak ritim oyunu: melodi (A/S) ve bas (K/L) partileri, vuruşla o nota çalar (Web Audio), AudioContext zamanlaması
+│                         4 halk/klasik ezgi, 82/108 bpm, ✨ tek düğme + daha az nota + geniş pencere, bası bilgisayar çalabilir, hook window.__md
+└── buz-tasi/           ← Buz Taşı (Tüm aile)
     ├── index.html
     ├── style.css
-    └── game.js         ← ortak ritim oyunu: melodi (A/S) ve bas (K/L) partileri, vuruşla o nota çalar (Web Audio), AudioContext zamanlaması
-                          4 halk/klasik ezgi, 82/108 bpm, ✨ tek düğme + daha az nota + geniş pencere, bası bilgisayar çalabilir, hook window.__md
+    └── game.js         ← curling: sapan atış, dönüş (kavis), süpürme (sürtünme azalır), taş-taş çarpışma, domuz çizgisi, hedef puanlama
+                          2 takım, 2-6 oyuncu, 🤖 bilgisayar (merkeze çek ya da rakibi vur), ✨ tam yol çizgisi, 2/3/5 el, hook window.__bt
 ```
 
 ## Bilgisayarda oynamak
