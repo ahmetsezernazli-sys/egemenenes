@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-mdu{background:#120A30}
+    .cover-mdu svg{width:100%;height:100%}
     .cover-yrg{background:#0B1233}
     .cover-yrg svg{width:100%;height:100%}
     .cover-ddm{background:#FFF7EC}
@@ -385,7 +387,7 @@
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>36</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>37</b></a>
-    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>35</b></a>
+    <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>36</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>35</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
   </nav>
@@ -1223,8 +1225,7 @@
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
         <a class="game" href="yorunge/index.html">
-          <div class="cover is-new cover-yrg" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-yrg" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <defs><radialGradient id="yrp1" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#fff"/><stop offset=".2" stop-color="#FF9F6B"/><stop offset="1" stop-color="#B5532A"/></radialGradient><radialGradient id="yrp2" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#fff"/><stop offset=".2" stop-color="#6C8CFF"/><stop offset="1" stop-color="#2B3FA8"/></radialGradient></defs>
               <rect width="164" height="102" fill="#0B1233"/>
@@ -1997,9 +1998,30 @@
     </section>
 
     <section class="group g-ikisi" id="ikisi" aria-labelledby="h-ikisi">
-      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 35 oyun</p></div>
+      <div class="group-head"><h2 id="h-ikisi"><i aria-hidden="true"></i>İkisi birlikte</h2><p>İki kişi aynı cihazda · küçüğe yardım ayarları var · 36 oyun</p></div>
       <div class="grid" id="grid-ikisi">
 <!-- ikisi:yeni oyun buraya, en üste -->
+        <a class="game" href="muzik-dueti/index.html">
+          <div class="cover is-new cover-mdu" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#120A30"/>
+              <g stroke="rgba(167,139,250,.18)"><path d="M0 20H164M0 40H164M0 60H164M0 80H164"/></g>
+              <g fill="rgba(255,255,255,.05)"><rect x="18" y="0" width="28" height="102"/><rect x="50" y="0" width="28" height="102"/><rect x="92" y="0" width="54" height="102"/></g>
+              <rect x="20" y="22" width="24" height="9" rx="4.5" fill="#38BDF8"/><rect x="52" y="44" width="24" height="9" rx="4.5" fill="#38BDF8"/><rect x="20" y="62" width="24" height="9" rx="4.5" fill="#38BDF8"/>
+              <rect x="95" y="30" width="48" height="12" rx="6" fill="#F472B6"/><rect x="95" y="64" width="48" height="12" rx="6" fill="#F472B6" opacity=".8"/>
+              <path d="M16 84H80M90 84H148" stroke="#fff" stroke-width="2.5"/>
+              <ellipse cx="32" cy="84" rx="16" ry="4" fill="#38BDF8" opacity=".5"/>
+              <g fill="#FFD166"><path d="M118 10v10a3.5 3.5 0 1 1-2-3V12l8-2v8a3.5 3.5 0 1 1-2-3v-6z"/></g>
+              <g fill="rgba(56,189,248,.45)"><rect x="4" y="92" width="3" height="10"/><rect x="9" y="88" width="3" height="14"/></g><g fill="rgba(244,114,182,.45)"><rect x="152" y="90" width="3" height="12"/><rect x="157" y="86" width="3" height="16"/></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Müzik Düeti</h3>
+            <p>Neon sahnede notalar düşer: biri melodiyi, biri basları çalar. Doğru anda basınca o ses çalar; ikiniz tutturursanız şarkı tam çalar! 4 şarkı.</p>
+            <div class="tags"><span>İkisi birlikte</span><span>Müzik</span><span>Ortak oyun</span></div>
+          </div>
+        </a>
         <a class="game" href="spor-senligi/index.html">
           <div class="cover cover-sps" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">

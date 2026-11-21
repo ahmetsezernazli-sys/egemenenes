@@ -662,11 +662,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← dondurma dükkanı: SVG külah/kase, 5 tat topu alttan üste, 3 süsleme; sipariş balonu + sesli sipariş
 │                         6 bölüm × 4 müşteri, yanlışta neyin farklı olduğunu söyler, Geri düğmesi, 11 sn takılınca sıradaki düğme parlar, hook window.__dd
-└── yorunge/            ← Yörünge (Enes)
+├── yorunge/            ← Yörünge (Enes)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← yerçekimi bulmacası: sapan fırlatma, gezegen çekimi (m = r²·1.6), itici (eksi kütle), kara delik; ekrandan çıkan kaybolur
+│                         20 bölüm tarayıcıda açı × güç taramasıyla üretildi (düz atış olmaz, sağlam çözüm ve 3 yıldız tek atışta), ipucu h, hook window.__yr
+└── muzik-dueti/        ← Müzik Düeti (İkisi birlikte)
     ├── index.html
     ├── style.css
-    └── game.js         ← yerçekimi bulmacası: sapan fırlatma, gezegen çekimi (m = r²·1.6), itici (eksi kütle), kara delik; ekrandan çıkan kaybolur
-                          20 bölüm tarayıcıda açı × güç taramasıyla üretildi (düz atış olmaz, sağlam çözüm ve 3 yıldız tek atışta), ipucu h, hook window.__yr
+    └── game.js         ← ortak ritim oyunu: melodi (A/S) ve bas (K/L) partileri, vuruşla o nota çalar (Web Audio), AudioContext zamanlaması
+                          4 halk/klasik ezgi, 82/108 bpm, ✨ tek düğme + daha az nota + geniş pencere, bası bilgisayar çalabilir, hook window.__md
 ```
 
 ## Bilgisayarda oynamak
