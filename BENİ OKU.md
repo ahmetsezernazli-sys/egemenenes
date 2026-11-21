@@ -652,11 +652,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← atletizm: 60 m koşu (hızlı basma), uzun atlama (sarı bölgede bas, çizgi 40 m), cirit (sarı bölgede basılı tut, ok yeşilde bırak, çizgi 30 m)
 │                         yarış galibi 2 puan, ✨ güçlü adım + otomatik atlama/atış, bilgisayar Kolay/Zor, hook window.__ss
-└── anlat-bakalim/      ← Anlat Bakalım (Tüm aile)
+├── anlat-bakalim/      ← Anlat Bakalım (Tüm aile)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← takım kelime anlatma: 117 yetişkin kartı (kelime + 4 yasak), 64 resimli küçük kartı (✨ anlatıcıya)
+│                         2 takım, anlatıcı sırayla döner, 45/60/90 sn, 3 pas, ✓ +1 / ✗ yasak -1, her takım 2-4 tur, hook window.__ab
+└── dondurmaci/         ← Dondurmacı (Egemen)
     ├── index.html
     ├── style.css
-    └── game.js         ← takım kelime anlatma: 117 yetişkin kartı (kelime + 4 yasak), 64 resimli küçük kartı (✨ anlatıcıya)
-                          2 takım, anlatıcı sırayla döner, 45/60/90 sn, 3 pas, ✓ +1 / ✗ yasak -1, her takım 2-4 tur, hook window.__ab
+    └── game.js         ← dondurma dükkanı: SVG külah/kase, 5 tat topu alttan üste, 3 süsleme; sipariş balonu + sesli sipariş
+                          6 bölüm × 4 müşteri, yanlışta neyin farklı olduğunu söyler, Geri düğmesi, 11 sn takılınca sıradaki düğme parlar, hook window.__dd
 ```
 
 ## Bilgisayarda oynamak

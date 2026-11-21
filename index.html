@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-ddm{background:#FFF7EC}
+    .cover-ddm svg{width:100%;height:100%}
     .cover-anb{background:#F9D5E2}
     .cover-anb svg{width:100%;height:100%}
     .cover-sps{background:#BFE6FF}
@@ -379,7 +381,7 @@
   </a>
 
   <nav class="groups" aria-label="Oyun grupları">
-    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>35</b></a>
+    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>36</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>36</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>35</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>35</b></a>
@@ -388,9 +390,32 @@
 
   <main class="groups-main">
     <section class="group g-egemen" id="egemen" aria-labelledby="h-egemen">
-      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 35 oyun</p></div>
+      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 36 oyun</p></div>
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
+        <a class="game" href="dondurmaci/index.html">
+          <div class="cover is-new cover-ddm" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#FFF7EC"/>
+              <g><rect x="0" y="0" width="164" height="14" fill="#FF6B8B"/><rect x="14" y="0" width="14" height="14" fill="#fff"/><rect x="42" y="0" width="14" height="14" fill="#fff"/><rect x="70" y="0" width="14" height="14" fill="#fff"/><rect x="98" y="0" width="14" height="14" fill="#fff"/><rect x="126" y="0" width="14" height="14" fill="#fff"/><rect x="154" y="0" width="10" height="14" fill="#fff"/></g>
+              <rect y="74" width="164" height="28" fill="#E8C9A6"/>
+              <path d="M70 66L94 66L82 96Z" fill="#E0A458" stroke="#B9813A" stroke-width="1.5"/>
+              <path d="M68 66q0-16 14-16q14 0 14 16z" fill="#9BD770" stroke="#6FB040" stroke-width="1.5"/>
+              <path d="M68 52q0-16 14-16q14 0 14 16z" fill="#8B5A3C" stroke="#64401F" stroke-width="1.5"/>
+              <path d="M68 38q0-16 14-16q14 0 14 16z" fill="#FF8FB1" stroke="#E0607F" stroke-width="1.5"/>
+              <circle cx="82" cy="20" r="5" fill="#E5484D"/><path d="M82 16q2-6 7-8" stroke="#3B7A2A" stroke-width="2"/>
+              <circle cx="28" cy="62" r="14" fill="#C98A4B"/><circle cx="18" cy="50" r="5" fill="#C98A4B"/><circle cx="38" cy="50" r="5" fill="#C98A4B"/><circle cx="23" cy="60" r="2" fill="#2A2540"/><circle cx="33" cy="60" r="2" fill="#2A2540"/><ellipse cx="28" cy="67" rx="5" ry="3.5" fill="#F2D4B0"/>
+              <rect x="112" y="28" width="40" height="34" rx="8" fill="#fff"/><path d="M114 50l-6 6 10-2" fill="#fff"/>
+              <path d="M124 46L140 46L132 58Z" fill="#E0A458"/><path d="M123 46q0-10 9-10q9 0 9 10z" fill="#FF8FB1"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Dondurmacı</h3>
+            <p>Hayvan müşteriler resimle ve sesle sipariş verir: külah ya da kase seç, tatları doğru sırayla koy, üstüne vişne ya da sos ekle ve müşteriyi sevindir!</p>
+            <div class="tags"><span>Egemen için</span><span>Sesli</span><span>Dükkan</span></div>
+          </div>
+        </a>
         <a class="game" href="ayna-resim/index.html">
           <div class="cover cover-ayr" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
@@ -2714,8 +2739,7 @@
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
         <a class="game" href="anlat-bakalim/index.html">
-          <div class="cover is-new cover-anb" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-anb" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#F9D5E2"/>
               <rect x="50" y="8" width="64" height="86" rx="8" fill="#fff"/>
