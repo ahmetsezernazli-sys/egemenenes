@@ -682,11 +682,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← 3 aşama: kazı (canvas kum, fırça destination-out, kazılan ızgara ile kemik bulma), müzede birleştirme (SVG sürükle-bırak, 46 px yapışma), canlanma (deri, göz kırpma, nefes, kuyruk, kükreme)
 │                         6 dinozor DINOS parça yolları (SVG d), müze koleksiyonu, dik ekranda 560×700 kazı ve uzun viewBox, hook window.__dz
-└── kayip-fener/        ← Enes için piksel sanatlı, hikâyeli macera: köyün feneri söndü, üç ışık kristalini geri getir.
+├── kayip-fener/        ← Enes için piksel sanatlı, hikâyeli macera: köyün feneri söndü, üç ışık kristalini geri getir.
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← Orman, karanlık mağara ve eski kule; 18 oda, anahtarlar, sandıklar, demirci dükkânı.
+│                         Üç boss (Dev Mantar, Taş Dev, Gölge Büyücüsü), kayıt, müzik, dokunmatik tuşlar.
+└── gokkusagi-adasi/    ← İki kişilik piksel platform-bulmaca: Pıtır ve Tombul gökkuşağının 3 parçasını arıyor.
     ├── index.html
     ├── style.css
-    └── game.js         ← Orman, karanlık mağara ve eski kule; 18 oda, anahtarlar, sandıklar, demirci dükkânı.
-                          Üç boss (Dev Mantar, Taş Dev, Gölge Büyücüsü), kayıt, müzik, dokunmatik tuşlar.
+    └── game.js         ← 3 dünya, 12 bölüm (levels.js); kutu, düğme-kapı, yay, kayan raf, asansör, çatlak taş, fırlatma.
+                          Hikâye ekranları, yıldızlar, kayıt, tek kişi modu (karakter değiştir), iki dokunmatik tuş takımı.
 ```
 
 ## Bilgisayarda oynamak

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gökkuşağı Adası · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="İki kişilik piksel platform macerası: küçük Pıtır ve koca Tombul gökkuşağının üç parçasını arıyor. Tombul kutu iter, duvar kırar, Pıtır'ı havaya fırlatır; Pıtır dar tünellerden geçip düğmelere basar. 3 dünya, 12 bölüm, yıldızlar ve kayıt.">
+  <meta name="theme-color" content="#2B2458">
+  <meta property="og:title" content="Gökkuşağı Adası">
+  <meta property="og:description" content="Pıtır ve Tombul ile birlikte oyna, gökkuşağını yeniden birleştir!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect width='16' height='16' fill='%238FD3FF'/%3E%3Crect x='1' y='4' width='14' height='2' fill='%23E8463F'/%3E%3Crect x='1' y='6' width='14' height='2' fill='%23FFD23F'/%3E%3Crect x='1' y='8' width='14' height='2' fill='%234DA3FF'/%3E%3Crect y='12' width='16' height='4' fill='%233FA34D'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Gökkuşağı Adası</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="mute" type="button" aria-label="Sesi kapat" aria-pressed="false">♪</button>
+      <button class="icon-btn" id="restart" type="button" aria-label="Bölümü yeniden başlat">↻</button>
+      <button class="icon-btn" id="menu" type="button" aria-label="Bölüm haritası">☰</button>
+    </div>
+  </header>
+  <main class="screen" id="screen">
+    <div class="stage" id="stage">
+      <canvas id="cv" width="480" height="272" aria-label="Oyun ekranı"></canvas>
+      <div class="hint" id="hint" hidden></div>
+      <button class="swap" id="swap" type="button" hidden>⇄ <span id="swapName">Tombul</span></button>
+    </div>
+  </main>
+  <div class="pads" id="pads">
+    <div class="pad p1" data-p="0" aria-label="Pıtır düğmeleri">
+      <span class="who">Pıtır</span>
+      <button class="k" data-k="left" type="button" aria-label="Sola">◀</button>
+      <button class="k" data-k="right" type="button" aria-label="Sağa">▶</button>
+      <button class="k jump" data-k="jump" type="button" aria-label="Zıpla">⤒</button>
+    </div>
+    <div class="pad p2" data-p="1" aria-label="Tombul düğmeleri">
+      <span class="who">Tombul</span>
+      <button class="k act" data-k="act" type="button" aria-label="Fırlat ya da kır">✊</button>
+      <button class="k jump" data-k="jump" type="button" aria-label="Zıpla">⤒</button>
+      <button class="k" data-k="left" type="button" aria-label="Sola">◀</button>
+      <button class="k" data-k="right" type="button" aria-label="Sağa">▶</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="title">
+  <div class="logo"><span class="rainbow" aria-hidden="true"></span><h2>GÖKKUŞAĞI ADASI</h2><p>Pıtır ile Tombul'un macerası</p></div>
+  <canvas id="heroes" width="96" height="40" class="heroes" aria-hidden="true"></canvas>
+  <div class="mode" role="group" aria-label="Oyuncu sayısı">
+    <button type="button" class="mbtn" id="m2" aria-pressed="true">👫 İki kişi</button>
+    <button type="button" class="mbtn" id="m1" aria-pressed="false">🧒 Tek kişi</button>
+  </div>
+  <div class="menu-btns"><button class="pbtn" id="play" type="button">▶ Oyna</button></div>
+  <p class="keys" id="keysTx"></p>
+</div>
+
+<div class="overlay" id="story" hidden>
+  <div class="panel story">
+    <canvas id="storyCv" width="240" height="120" aria-hidden="true"></canvas>
+    <p id="storyTx"></p>
+    <div class="menu-btns"><button class="pbtn" id="storyGo" type="button">Devam ▶</button></div>
+  </div>
+</div>
+
+<div class="overlay" id="levels" hidden>
+  <div class="panel wide">
+    <h2>Bölümler</h2>
+    <div id="worldList" class="worlds"></div>
+    <div class="menu-btns"><button class="pbtn ghost" id="toTitle" type="button">Ana menü</button></div>
+  </div>
+</div>
+
+<div class="overlay" id="done" hidden>
+  <div class="panel">
+    <h2 id="doneTitle">Bölüm bitti!</h2>
+    <div class="stars" id="doneStars"></div>
+    <p class="tip" id="doneTx"></p>
+    <div class="menu-btns"><button class="pbtn" id="next" type="button">Sonraki ▶</button><button class="pbtn ghost" id="again" type="button">↻ Tekrar</button><button class="pbtn ghost" id="toMap" type="button">☰ Harita</button></div>
+  </div>
+</div>
+
+<script src="levels.js"></script>
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
