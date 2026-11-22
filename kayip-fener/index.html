@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kayıp Fener · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için piksel sanatlı macera oyunu: köyün Büyük Feneri söndü! Kılıcını al, Gizemli Orman'ı, karanlık Kristal Mağarası'nı ve Eski Kule'yi keşfet, düşmanları yen, bulmacaları çöz ve Gölge Büyücüsü'nden üç ışık kristalini geri al. Hikâye, boss dövüşleri, anahtarlar, kalpler ve kayıt.">
+  <meta name="theme-color" content="#14112B">
+  <meta property="og:title" content="Kayıp Fener">
+  <meta property="og:description" content="Üç ışık kristalini bul, köyün fenerini yeniden yak!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect width='16' height='16' fill='%2314112B'/%3E%3Crect x='6' y='2' width='4' height='2' fill='%23C9A24A'/%3E%3Crect x='5' y='4' width='6' height='7' fill='%23FFD166'/%3E%3Crect x='7' y='6' width='2' height='3' fill='%23fff'/%3E%3Crect x='5' y='11' width='6' height='2' fill='%23C9A24A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Kayıp Fener</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="mute" type="button" aria-label="Müziği kapat" aria-pressed="false">♪</button>
+      <button class="icon-btn" id="pause" type="button" aria-label="Duraklat ve çanta">❚❚</button>
+    </div>
+  </header>
+  <main class="screen" id="screen">
+    <div class="stage" id="stage">
+      <canvas id="cv" width="320" height="200" aria-label="Oyun ekranı. Yön tuşları ya da WASD ile yürü, boşluk ya da J ile kılıç salla, E ya da K ile konuş ve aç."></canvas>
+      <div class="dlg" id="dlg" hidden aria-live="polite"><b class="dlg-name" id="dlgName"></b><p id="dlgText"></p><div class="dlg-opts" id="dlgOpts"></div><span class="dlg-more" id="dlgMore">▼</span></div>
+    </div>
+  </main>
+  <div class="pad" id="pad">
+    <div class="dpad" aria-label="Yön düğmeleri">
+      <button class="k u" data-k="up" type="button" aria-label="Yukarı">▲</button>
+      <button class="k l" data-k="left" type="button" aria-label="Sola">◀</button>
+      <button class="k r" data-k="right" type="button" aria-label="Sağa">▶</button>
+      <button class="k d" data-k="down" type="button" aria-label="Aşağı">▼</button>
+    </div>
+    <div class="ab">
+      <button class="k b" data-k="b" type="button" aria-label="Konuş ya da aç">B</button>
+      <button class="k a" data-k="a" type="button" aria-label="Kılıç">A</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="title">
+  <div class="logo"><span class="lamp" aria-hidden="true"></span><h2>KAYIP FENER</h2><p>Bir ışık kristalleri macerası</p></div>
+  <label class="name">Kahramanın adı <input id="hero" maxlength="10" value="Enes" autocomplete="off"></label>
+  <div class="menu-btns">
+    <button class="pbtn" id="cont" type="button" hidden>▶ Devam et</button>
+    <button class="pbtn" id="newg" type="button">★ Yeni macera</button>
+  </div>
+  <p class="keys">Klavye: <b>Oklar/WASD</b> yürü · <b>Boşluk/J</b> kılıç · <b>E/K</b> konuş, aç · <b>Esc</b> çanta</p>
+</div>
+
+<div class="overlay" id="bag" hidden>
+  <div class="panel">
+    <h2>Çanta</h2>
+    <div class="inv" id="inv"></div>
+    <p class="goal" id="goal"></p>
+    <canvas class="map" id="map" width="130" height="70" aria-label="Harita"></canvas>
+    <p class="tip" id="tip"></p>
+    <div class="menu-btns"><button class="pbtn" id="resume" type="button">▶ Devam</button><button class="pbtn ghost" id="toTitle" type="button">Ana menü</button></div>
+  </div>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="logo"><span class="lamp" aria-hidden="true"></span><h2>FENER YANDI!</h2><p id="endTx"></p></div>
+  <div class="stats" id="endStats"></div>
+  <div class="menu-btns"><button class="pbtn" id="endGo" type="button">▶ Dolaşmaya devam</button><button class="pbtn ghost" id="endNew" type="button">★ Yeni macera</button></div>
+</div>
+
+<script src="art.js"></script>
+<script src="world.js"></script>
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

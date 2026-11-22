@@ -677,11 +677,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← curling: sapan atış, dönüş (kavis), süpürme (sürtünme azalır), taş-taş çarpışma, domuz çizgisi, hedef puanlama
 │                         2 takım, 2-6 oyuncu, 🤖 bilgisayar (merkeze çek ya da rakibi vur), ✨ tam yol çizgisi, 2/3/5 el, hook window.__bt
-└── dinozor-kazisi/     ← Dinozor Kazısı (Egemen)
+├── dinozor-kazisi/     ← Dinozor Kazısı (Egemen)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← 3 aşama: kazı (canvas kum, fırça destination-out, kazılan ızgara ile kemik bulma), müzede birleştirme (SVG sürükle-bırak, 46 px yapışma), canlanma (deri, göz kırpma, nefes, kuyruk, kükreme)
+│                         6 dinozor DINOS parça yolları (SVG d), müze koleksiyonu, dik ekranda 560×700 kazı ve uzun viewBox, hook window.__dz
+└── kayip-fener/        ← Enes için piksel sanatlı, hikâyeli macera: köyün feneri söndü, üç ışık kristalini geri getir.
     ├── index.html
     ├── style.css
-    └── game.js         ← 3 aşama: kazı (canvas kum, fırça destination-out, kazılan ızgara ile kemik bulma), müzede birleştirme (SVG sürükle-bırak, 46 px yapışma), canlanma (deri, göz kırpma, nefes, kuyruk, kükreme)
-                          6 dinozor DINOS parça yolları (SVG d), müze koleksiyonu, dik ekranda 560×700 kazı ve uzun viewBox, hook window.__dz
+    └── game.js         ← Orman, karanlık mağara ve eski kule; 18 oda, anahtarlar, sandıklar, demirci dükkânı.
+                          Üç boss (Dev Mantar, Taş Dev, Gölge Büyücüsü), kayıt, müzik, dokunmatik tuşlar.
 ```
 
 ## Bilgisayarda oynamak
