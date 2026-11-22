@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ada Macerası · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Tüm aile için resimli masa oyunu: 2-4 oyuncu hayvanını seçer, zar atıp adayı dolaşır, altın toplar ve yıldız satın alır. Sürpriz kartlar, hediye kutuları, kasırga, kısa yol ve her tur sonunda dört farklı mini oyun. Bilgisayar oyuncusu ve kayıt.">
+  <meta name="theme-color" content="#1D6FA8">
+  <meta property="og:title" content="Ada Macerası">
+  <meta property="og:description" content="Zar at, adayı dolaş, yıldızları topla! Tüm aile için masa oyunu.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%232E9BD6'/%3E%3Cellipse cx='8' cy='10' rx='6' ry='4' fill='%23F2D58A'/%3E%3Cellipse cx='8' cy='9.5' rx='4.5' ry='3' fill='%235DB34A'/%3E%3Cpath d='M8 1l1.5 3 3.3.4-2.4 2.3.6 3.3L8 8.4 5 10l.6-3.3L3.2 4.4l3.3-.4z' fill='%23FFD23F'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Rubik:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Ada Macerası</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="mute" type="button" aria-label="Sesi kapat" aria-pressed="false">♪</button>
+      <button class="icon-btn" id="menuBtn" type="button" aria-label="Ana menü">☰</button>
+    </div>
+  </header>
+  <div class="board-players" id="pl" aria-live="polite"></div>
+  <main class="screen" id="screen">
+    <div class="stage" id="stage">
+      <canvas id="cv" width="960" height="600" aria-label="Oyun tahtası"></canvas>
+      <div class="roundtag" id="roundTag" hidden></div>
+      <div class="turnbar" id="turnbar" hidden>
+        <canvas id="turnAv" width="64" height="64" aria-hidden="true"></canvas>
+        <div class="tb-tx"><b id="turnName"></b><span id="turnSub"></span></div>
+        <div class="tb-btns"><button class="btn item" id="useItem" type="button" hidden></button><button class="btn go" id="roll" type="button">🎲 Zar at</button></div>
+      </div>
+      <div class="modal" id="modal" hidden>
+        <div class="card" id="card">
+          <canvas id="cardArt" width="160" height="110" aria-hidden="true"></canvas>
+          <h2 id="mTitle"></h2>
+          <p id="mText"></p>
+          <div class="m-btns" id="mBtns"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="overlay" id="setup">
+  <div class="logo"><h2>Ada Macerası</h2><p>Zar at, adayı dolaş, yıldızları topla!</p></div>
+  <div class="setup-box">
+    <div id="rows" class="rows"></div>
+    <div class="setup-row">
+      <button class="btn ghost" id="addP" type="button">＋ Oyuncu ekle</button>
+      <label class="rounds">Tur sayısı
+        <select id="rounds"><option value="6">6 (kısa)</option><option value="10" selected>10</option><option value="15">15 (uzun)</option></select>
+      </label>
+    </div>
+    <div class="menu-btns"><button class="btn go big" id="start" type="button">▶ Oyuna başla</button><button class="btn big" id="resume" type="button" hidden>⏯ Kayıtlı oyuna devam</button></div>
+    <details class="how"><summary>Nasıl oynanır?</summary>
+      <ul>
+        <li>Sırası gelen zar atar, piyonu o kadar ilerler.</li>
+        <li><b class="c-blue">Mavi</b> kare +3 altın, <b class="c-red">kırmızı</b> kare −3 altın verir. <b class="c-yel">?</b> karesinde sürpriz kart çekilir, <b class="c-pur">hediye</b> karesinden eşya çıkar.</li>
+        <li><b>Kasırga</b> karesi seni rastgele bir oyuncuyla yer değiştirir!</li>
+        <li>Adada iki parlayan <b>yıldız</b> var. Yanından geçerken 10 altının varsa yıldızı alabilirsin; sonra yıldız başka yere uçar. Liman'dan geçerken 20 altına yıldız da satın alabilirsin.</li>
+        <li>Her turun sonunda herkes sırayla bir mini oyun oynar; kazananlar altın alır.</li>
+        <li>Oyun bitince en çok yıldızı olan kazanır (eşitlikte altın sayılır).</li>
+      </ul>
+    </details>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

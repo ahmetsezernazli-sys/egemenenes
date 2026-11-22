@@ -687,11 +687,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← Orman, karanlık mağara ve eski kule; 18 oda, anahtarlar, sandıklar, demirci dükkânı.
 │                         Üç boss (Dev Mantar, Taş Dev, Gölge Büyücüsü), kayıt, müzik, dokunmatik tuşlar.
-└── gokkusagi-adasi/    ← İki kişilik piksel platform-bulmaca: Pıtır ve Tombul gökkuşağının 3 parçasını arıyor.
+├── gokkusagi-adasi/    ← İki kişilik piksel platform-bulmaca: Pıtır ve Tombul gökkuşağının 3 parçasını arıyor.
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← 3 dünya, 12 bölüm (levels.js); kutu, düğme-kapı, yay, kayan raf, asansör, çatlak taş, fırlatma.
+│                         Hikâye ekranları, yıldızlar, kayıt, tek kişi modu (karakter değiştir), iki dokunmatik tuş takımı.
+└── ada-macerasi/       ← Tüm aile için resimli masa oyunu: 2-4 oyuncu (bilgisayar da olabilir), zar, altın, yıldız.
     ├── index.html
     ├── style.css
-    └── game.js         ← 3 dünya, 12 bölüm (levels.js); kutu, düğme-kapı, yay, kayan raf, asansör, çatlak taş, fırlatma.
-                          Hikâye ekranları, yıldızlar, kayıt, tek kişi modu (karakter değiştir), iki dokunmatik tuş takımı.
+    └── game.js         ← 36 karelik ada (kısa yol, köprü), sürpriz kartlar, hediye eşyaları, kasırga, Liman dükkânı, iki yıldız.
+                          4 mini oyun (Balon Patlat, Hedef Vur, Meyve Say, Balonu Şişir), kayıttan devam, final kürsüsü.
 ```
 
 ## Bilgisayarda oynamak
