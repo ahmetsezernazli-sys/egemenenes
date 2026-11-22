@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Parti Şenliği · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Tüm aile için tek tuşlu parti turnuvası: 2-4 kişi aynı anda oynar. Koşu, Balon Şişir, Engel Atla, Balık Tut, Tam 5 Saniye, Cevizden Kaç, Kule Yap ve Sumo Arabaları. Küçükler için kolay ayarı, bilgisayar oyuncuları ve kürsü töreni.">
+  <meta name="theme-color" content="#7A3AB8">
+  <meta property="og:title" content="Parti Şenliği">
+  <meta property="og:description" content="Herkese bir tuş, sekiz çılgın mini oyun!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%237A3AB8'/%3E%3Cpath d='M8 1l5 11H3z' fill='%23FFD23F'/%3E%3Ccircle cx='8' cy='1.5' r='1.5' fill='%23FF5A8A'/%3E%3Ccircle cx='5' cy='9' r='1' fill='%23E8463F'/%3E%3Ccircle cx='10' cy='8' r='1' fill='%232E86DE'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Parti Şenliği</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="mute" type="button" aria-label="Sesi kapat" aria-pressed="false">♪</button>
+      <button class="icon-btn" id="menuBtn" type="button" aria-label="Ana menü">☰</button>
+    </div>
+  </header>
+  <main class="screen" id="screen">
+    <div class="stage" id="stage">
+      <canvas id="cv" width="960" height="600" aria-label="Parti sahnesi"></canvas>
+      <div class="card" id="card" hidden><div class="cin" id="cin"></div></div>
+    </div>
+  </main>
+</div>
+
+<div class="tbtns" id="tbtns"></div>
+
+<div class="overlay" id="setup">
+  <div class="logo"><canvas id="logoCv" width="420" height="140" aria-hidden="true"></canvas><h2>Parti Şenliği</h2><p>Herkese bir tuş · sekiz çılgın oyun</p></div>
+  <div class="box">
+    <div id="rows" class="rows"></div>
+    <div class="srow"><button class="btn ghost" id="addP" type="button">＋ Oyuncu ekle</button>
+      <label class="len">Turnuva <select id="len"><option value="5">5 oyun</option><option value="8" selected>8 oyun</option></select></label></div>
+    <div class="menu-btns"><button class="btn go big" id="start" type="button">🎉 Şenliği başlat</button></div>
+    <p class="hint">Bilgisayarda tuşlar: 1. oyuncu <b>A</b>, 2. oyuncu <b>L</b>, 3. oyuncu <b>Boşluk</b>, 4. oyuncu <b>↑</b>. Tablette herkesin köşesinde kocaman bir düğmesi var.</p>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

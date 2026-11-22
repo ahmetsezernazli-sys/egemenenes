@@ -707,11 +707,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← Haritalar: Yeşil Vadi, Nehir Geçidi, Çöl Vahası, Karlı Dağlar (iki yol), Bataklık, Ejderha Kalesi (uçan yol).
 │                         Kule yerleri yola göre otomatik; dalgalar genWaves ile; yıldızlar kalan cana göre; kayıt.
-└── mutfak-kardesler/   ← İki kişilik ortak yemek oyunu: salata, hamburger, çorba, pizza; sipariş yetiştir.
+├── mutfak-kardesler/   ← İki kişilik ortak yemek oyunu: salata, hamburger, çorba, pizza; sipariş yetiştir.
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← 6 mutfak (16×9 karo dizgileri), bölünmüş mutfaklarda malzeme tezgâhın üstünden uzatılır.
+│                         Klavye (WASD+E/Q, oklar+Enter/Shift), iki dokunmatik kumanda kolu, tek kişi modu, yıldızlar.
+└── parti-senligi/      ← Tüm aile için tek tuşlu parti turnuvası: 2-4 oyuncu aynı anda (A, L, Boşluk, ↑ ya da köşe düğmeleri).
     ├── index.html
     ├── style.css
-    └── game.js         ← 6 mutfak (16×9 karo dizgileri), bölünmüş mutfaklarda malzeme tezgâhın üstünden uzatılır.
-                          Klavye (WASD+E/Q, oklar+Enter/Shift), iki dokunmatik kumanda kolu, tek kişi modu, yıldızlar.
+    └── game.js         ← 8 mini oyun: Koşu, Balon Şişir, Engel Atla, Balık Tut, Tam 5 Saniye, Cevizden Kaç, Kule Yap, Sumo.
+                          Oyuncu başına Kolay ayarı, bilgisayar oyuncuları, puan tablosu ve kürsü töreni.
 ```
 
 ## Bilgisayarda oynamak
