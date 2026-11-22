@@ -712,11 +712,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← 6 mutfak (16×9 karo dizgileri), bölünmüş mutfaklarda malzeme tezgâhın üstünden uzatılır.
 │                         Klavye (WASD+E/Q, oklar+Enter/Shift), iki dokunmatik kumanda kolu, tek kişi modu, yıldızlar.
-└── parti-senligi/      ← Tüm aile için tek tuşlu parti turnuvası: 2-4 oyuncu aynı anda (A, L, Boşluk, ↑ ya da köşe düğmeleri).
+├── parti-senligi/      ← Tüm aile için tek tuşlu parti turnuvası: 2-4 oyuncu aynı anda (A, L, Boşluk, ↑ ya da köşe düğmeleri).
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← 8 mini oyun: Koşu, Balon Şişir, Engel Atla, Balık Tut, Tam 5 Saniye, Cevizden Kaç, Kule Yap, Sumo.
+│                         Oyuncu başına Kolay ayarı, bilgisayar oyuncuları, puan tablosu ve kürsü töreni.
+└── denizalti-macerasi/ ← Egemen için sesli okyanus keşfi: denizaltıyla 3600×1800 dünyayı gez, 20 canlının fotoğrafını çek.
     ├── index.html
     ├── style.css
-    └── game.js         ← 8 mini oyun: Koşu, Balon Şişir, Engel Atla, Balık Tut, Tam 5 Saniye, Cevizden Kaç, Kule Yap, Sumo.
-                          Oyuncu başına Kolay ayarı, bilgisayar oyuncuları, puan tablosu ve kürsü töreni.
+    └── game.js         ← Resif, açık deniz, karanlık derinlik (fener gerekir); istiridyelerden inci, garajda fener/turbo/boya.
+                          Keşif albümü, sesli bilgiler, mini harita, kayıt.
 ```
 
 ## Bilgisayarda oynamak
