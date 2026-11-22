@@ -702,11 +702,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← 5 ürün, 3 hayvan, 5 süs, 6 tarla (yıldızla açılır), müşteri siparişleri, dükkân, gece-gündüz.
 │                         Eğitim adımları (el işareti + ses), kayıt; kapalıyken de büyür (en fazla 1 saat).
-└── kale-muhafizlari/   ← Enes için kule savunma: 4 kule (3 seviye), 6 düşman türü, meteor gücü, 6 harita.
+├── kale-muhafizlari/   ← Enes için kule savunma: 4 kule (3 seviye), 6 düşman türü, meteor gücü, 6 harita.
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← Haritalar: Yeşil Vadi, Nehir Geçidi, Çöl Vahası, Karlı Dağlar (iki yol), Bataklık, Ejderha Kalesi (uçan yol).
+│                         Kule yerleri yola göre otomatik; dalgalar genWaves ile; yıldızlar kalan cana göre; kayıt.
+└── mutfak-kardesler/   ← İki kişilik ortak yemek oyunu: salata, hamburger, çorba, pizza; sipariş yetiştir.
     ├── index.html
     ├── style.css
-    └── game.js         ← Haritalar: Yeşil Vadi, Nehir Geçidi, Çöl Vahası, Karlı Dağlar (iki yol), Bataklık, Ejderha Kalesi (uçan yol).
-                          Kule yerleri yola göre otomatik; dalgalar genWaves ile; yıldızlar kalan cana göre; kayıt.
+    └── game.js         ← 6 mutfak (16×9 karo dizgileri), bölünmüş mutfaklarda malzeme tezgâhın üstünden uzatılır.
+                          Klavye (WASD+E/Q, oklar+Enter/Shift), iki dokunmatik kumanda kolu, tek kişi modu, yıldızlar.
 ```
 
 ## Bilgisayarda oynamak

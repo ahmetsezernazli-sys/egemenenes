@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mutfak Kardeşler · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="İki kişilik ortak yemek oyunu: Egemen ile Enes aşçı olur, hayvan müşterilere salata, hamburger, çorba ve pizza hazırlar. Doğra, pişir, tabağa koy, servis et! 6 mutfak, yıldızlar, tek kişi modu ve dokunmatik kontroller.">
+  <meta name="theme-color" content="#E8463F">
+  <meta property="og:title" content="Mutfak Kardeşler">
+  <meta property="og:description" content="Birlikte doğra, pişir, servis et!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23E8463F'/%3E%3Cpath d='M4 9a4 4 0 118 0z' fill='%23fff'/%3E%3Ccircle cx='5' cy='6' r='2.5' fill='%23fff'/%3E%3Ccircle cx='11' cy='6' r='2.5' fill='%23fff'/%3E%3Ccircle cx='8' cy='4.5' r='3' fill='%23fff'/%3E%3Crect x='4' y='9' width='8' height='3' fill='%23ddd'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Mutfak Kardeşler</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="mute" type="button" aria-label="Sesi kapat" aria-pressed="false">♪</button>
+      <button class="icon-btn" id="pauseBtn" type="button" aria-label="Duraklat">❚❚</button>
+      <button class="icon-btn" id="menuBtn" type="button" aria-label="Mutfaklar">☰</button>
+    </div>
+  </header>
+  <main class="screen" id="screen">
+    <div class="stage" id="stage">
+      <canvas id="cv" width="960" height="600" aria-label="Mutfak"></canvas>
+      <button class="swap" id="swap" type="button" hidden>⇄ Aşçı değiştir</button>
+    </div>
+  </main>
+  <div class="pads" id="pads">
+    <div class="pad p1" data-p="0"><span class="who">Egemen</span><div class="stick" data-p="0"><span></span></div><div class="pbtns"><button class="k grab" data-k="grab" type="button" aria-label="Al ya da bırak">✋</button><button class="k use" data-k="use" type="button" aria-label="Doğra">🔪</button></div></div>
+    <div class="pad p2" data-p="1"><span class="who">Enes</span><div class="pbtns"><button class="k use" data-k="use" type="button" aria-label="Doğra">🔪</button><button class="k grab" data-k="grab" type="button" aria-label="Al ya da bırak">✋</button></div><div class="stick" data-p="1"><span></span></div></div>
+  </div>
+</div>
+
+<div class="overlay" id="title">
+  <div class="logo"><canvas id="logoCv" width="360" height="160" aria-hidden="true"></canvas><h2>Mutfak Kardeşler</h2><p>Birlikte doğra · pişir · servis et!</p></div>
+  <div class="names">
+    <label>1. aşçı <input id="n1" maxlength="10" value="Egemen"></label>
+    <label>2. aşçı <input id="n2" maxlength="10" value="Enes"></label>
+  </div>
+  <div class="mode" role="group" aria-label="Oyuncu sayısı"><button type="button" class="mbtn" id="m2" aria-pressed="true">👫 İki kişi</button><button type="button" class="mbtn" id="m1" aria-pressed="false">🧒 Tek kişi</button></div>
+  <div class="menu-btns"><button class="pbtn" id="play" type="button">▶ Mutfağa gir</button></div>
+  <p class="keys" id="keys"></p>
+</div>
+
+<div class="overlay" id="levels" hidden>
+  <div class="panel wide">
+    <h2>Mutfaklar</h2>
+    <div class="lvls" id="lvlList"></div>
+    <div class="menu-btns"><button class="pbtn ghost" id="toTitle" type="button">Ana menü</button></div>
+  </div>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="panel">
+    <h2 id="endTitle">Servis bitti!</h2>
+    <div class="stars" id="endStars"></div>
+    <p class="tip" id="endTx"></p>
+    <div class="menu-btns"><button class="pbtn" id="endNext" type="button">Sonraki ▶</button><button class="pbtn ghost" id="endAgain" type="button">↻ Tekrar</button><button class="pbtn ghost" id="endMap" type="button">☰ Mutfaklar</button></div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
