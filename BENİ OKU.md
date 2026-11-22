@@ -692,11 +692,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← 3 dünya, 12 bölüm (levels.js); kutu, düğme-kapı, yay, kayan raf, asansör, çatlak taş, fırlatma.
 │                         Hikâye ekranları, yıldızlar, kayıt, tek kişi modu (karakter değiştir), iki dokunmatik tuş takımı.
-└── ada-macerasi/       ← Tüm aile için resimli masa oyunu: 2-4 oyuncu (bilgisayar da olabilir), zar, altın, yıldız.
+├── ada-macerasi/       ← Tüm aile için resimli masa oyunu: 2-4 oyuncu (bilgisayar da olabilir), zar, altın, yıldız.
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← 36 karelik ada (kısa yol, köprü), sürpriz kartlar, hediye eşyaları, kasırga, Liman dükkânı, iki yıldız.
+│                         4 mini oyun (Balon Patlat, Hedef Vur, Meyve Say, Balonu Şişir), kayıttan devam, final kürsüsü.
+└── minik-ciftlik/      ← Egemen için sesli anlatımlı çiftlik: ek, sula, topla; hayvanları besle; pazarda sipariş ver.
     ├── index.html
     ├── style.css
-    └── game.js         ← 36 karelik ada (kısa yol, köprü), sürpriz kartlar, hediye eşyaları, kasırga, Liman dükkânı, iki yıldız.
-                          4 mini oyun (Balon Patlat, Hedef Vur, Meyve Say, Balonu Şişir), kayıttan devam, final kürsüsü.
+    └── game.js         ← 5 ürün, 3 hayvan, 5 süs, 6 tarla (yıldızla açılır), müşteri siparişleri, dükkân, gece-gündüz.
+                          Eğitim adımları (el işareti + ses), kayıt; kapalıyken de büyür (en fazla 1 saat).
 ```
 
 ## Bilgisayarda oynamak
