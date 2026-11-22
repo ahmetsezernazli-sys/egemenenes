@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-dzk{background:#E7C27F}
+    .cover-dzk svg{width:100%;height:100%}
     .cover-bzt{background:#C9D7E8}
     .cover-bzt svg{width:100%;height:100%}
     .cover-mdu{background:#120A30}
@@ -387,7 +389,7 @@
   </a>
 
   <nav class="groups" aria-label="Oyun grupları">
-    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>36</b></a>
+    <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>37</b></a>
     <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>37</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>36</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>36</b></a>
@@ -396,9 +398,36 @@
 
   <main class="groups-main">
     <section class="group g-egemen" id="egemen" aria-labelledby="h-egemen">
-      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 36 oyun</p></div>
+      <div class="group-head"><h2 id="h-egemen"><i aria-hidden="true"></i>Egemen için</h2><p>5 yaş · okuma gerekmez, kaybetmek yok · 37 oyun</p></div>
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
+        <a class="game" href="dinozor-kazisi/index.html">
+          <div class="cover is-new cover-dzk" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#E7C27F"/>
+              <rect x="0" y="62" width="164" height="40" fill="#B9874A"/>
+              <ellipse cx="44" cy="76" rx="34" ry="14" fill="#8F6232"/>
+              <path d="M24 76l36-8" stroke="#F4ECD8" stroke-width="6" stroke-linecap="round"/><circle cx="22" cy="77" r="4" fill="#F4ECD8"/><circle cx="62" cy="67" r="4" fill="#F4ECD8"/>
+              <g transform="translate(70 4) scale(.22)">
+                <path d="M20 112 C70 96 120 98 160 104 L162 136 C118 134 70 128 22 124 Z" fill="#6FAE4A" stroke="#3F7A25" stroke-width="5"/>
+                <path d="M176 146 L204 146 L214 196 L234 224 L234 234 L198 234 L196 222 L186 200 Z M216 150 L236 150 L244 192 L258 222 L258 232 L230 232 L230 222 L222 196 Z" fill="#6FAE4A" stroke="#3F7A25" stroke-width="5"/>
+                <ellipse cx="200" cy="122" rx="58" ry="40" fill="#6FAE4A" stroke="#3F7A25" stroke-width="5"/>
+                <ellipse cx="205" cy="131" rx="42" ry="9" fill="#C9E2A0"/>
+                <circle cx="180" cy="110" r="7" fill="#3F7A25" opacity=".4"/><circle cx="212" cy="104" r="5" fill="#3F7A25" opacity=".4"/>
+                <path d="M236 102 L262 70 L286 84 L258 118 Z" fill="#6FAE4A" stroke="#3F7A25" stroke-width="5"/>
+                <path d="M258 44 C290 34 330 38 350 52 C358 58 356 72 348 78 L344 92 L320 90 L314 100 L298 96 L292 104 L268 96 C254 84 250 60 258 44 Z" fill="#6FAE4A" stroke="#3F7A25" stroke-width="5"/>
+                <circle cx="300" cy="58" r="8" fill="#fff"/><circle cx="302" cy="58" r="4.5" fill="#2A2540"/>
+              </g>
+              <g transform="translate(128 68) rotate(-30)"><rect x="-3" y="-20" width="6" height="18" fill="#C98A4B"/><rect x="-7" y="-4" width="14" height="5" fill="#E5484D"/><path d="M-6 1h12v6h-12z" fill="#4A3220"/></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Dinozor Kazısı</h3>
+            <p>Fırçayla kumu temizle, gömülü kemikleri bul; müzede iskeleti birleştir ve dinozoru canlandır! Altı dinozor, sesli anlatım ve dinozor müzesi.</p>
+            <div class="tags"><span>Egemen için</span><span>Sesli</span><span>Dinozor</span></div>
+          </div>
+        </a>
         <a class="game" href="dondurmaci/index.html">
           <div class="cover cover-ddm" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
@@ -2784,8 +2813,7 @@
       <div class="grid" id="grid-aile">
 <!-- aile:yeni oyun buraya, en üste -->
         <a class="game" href="buz-tasi/index.html">
-          <div class="cover is-new cover-bzt" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-bzt" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <rect width="164" height="102" fill="#C9D7E8"/>
               <rect x="6" y="14" width="152" height="74" fill="#EEF7FD" stroke="#8EA9C1" stroke-width="2"/>
