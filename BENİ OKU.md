@@ -697,11 +697,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← 36 karelik ada (kısa yol, köprü), sürpriz kartlar, hediye eşyaları, kasırga, Liman dükkânı, iki yıldız.
 │                         4 mini oyun (Balon Patlat, Hedef Vur, Meyve Say, Balonu Şişir), kayıttan devam, final kürsüsü.
-└── minik-ciftlik/      ← Egemen için sesli anlatımlı çiftlik: ek, sula, topla; hayvanları besle; pazarda sipariş ver.
+├── minik-ciftlik/      ← Egemen için sesli anlatımlı çiftlik: ek, sula, topla; hayvanları besle; pazarda sipariş ver.
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← 5 ürün, 3 hayvan, 5 süs, 6 tarla (yıldızla açılır), müşteri siparişleri, dükkân, gece-gündüz.
+│                         Eğitim adımları (el işareti + ses), kayıt; kapalıyken de büyür (en fazla 1 saat).
+└── kale-muhafizlari/   ← Enes için kule savunma: 4 kule (3 seviye), 6 düşman türü, meteor gücü, 6 harita.
     ├── index.html
     ├── style.css
-    └── game.js         ← 5 ürün, 3 hayvan, 5 süs, 6 tarla (yıldızla açılır), müşteri siparişleri, dükkân, gece-gündüz.
-                          Eğitim adımları (el işareti + ses), kayıt; kapalıyken de büyür (en fazla 1 saat).
+    └── game.js         ← Haritalar: Yeşil Vadi, Nehir Geçidi, Çöl Vahası, Karlı Dağlar (iki yol), Bataklık, Ejderha Kalesi (uçan yol).
+                          Kule yerleri yola göre otomatik; dalgalar genWaves ile; yıldızlar kalan cana göre; kayıt.
 ```
 
 ## Bilgisayarda oynamak

@@ -1,0 +1,43 @@
+:root{--bg:#1C2414;--ink:#FFF6E0;--muted:#CFC4A8;--gold:#FFD23F;--font:"Rubik","Segoe UI",system-ui,sans-serif;--epic:"Cinzel",Georgia,serif;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg)}
+body{color:var(--ink);font:16px/1.4 var(--font);padding:6px 8px 8px;-webkit-tap-highlight-color:transparent;overscroll-behavior:none;min-height:100dvh;
+  background:radial-gradient(120% 90% at 50% 0%,#3A4A26 0%,#1C2414 70%)}
+.app{max-width:1280px;margin-inline:auto;height:calc(100dvh - 14px);min-height:340px;display:grid;grid-template-rows:auto 1fr;gap:6px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:40px}
+.back{color:var(--muted);text-decoration:none;font-weight:700;font-size:15px;white-space:nowrap}
+.title{margin:0;font:900 clamp(1rem,3vw,1.6rem) var(--epic);color:var(--gold);letter-spacing:1px;text-shadow:0 3px 0 #6A3A0A}
+.bar-actions{display:flex;gap:6px}
+.icon-btn{width:40px;height:40px;border-radius:10px;border:2px solid #6A5A3A;background:#3A3020;color:var(--ink);font:700 17px var(--font);cursor:pointer}
+.icon-btn[aria-pressed="true"]{opacity:.5}
+.screen{position:relative;min-height:0;display:grid;place-items:center}
+.stage{position:relative;width:960px;height:600px;border-radius:10px;overflow:hidden;box-shadow:0 0 0 4px #6A5A3A,0 16px 40px rgba(0,0,0,.6);background:#000;--fs:16px}
+#cv{display:block;width:100%;height:100%;touch-action:manipulation}
+.hint{position:absolute;left:50%;bottom:3%;transform:translateX(-50%);margin:0;max-width:80%;background:rgba(30,24,12,.9);border:2px solid #C9A24A;border-radius:10px;padding:.35em .9em;font:700 calc(var(--fs)*.9)/1.3 var(--font);text-align:center;pointer-events:none}
+.hint[hidden]{display:none}
+.overlay{position:fixed;inset:0;z-index:20;display:grid;place-content:center;justify-items:center;gap:14px;padding:16px;text-align:center;overflow:auto;
+  background:radial-gradient(90% 70% at 50% 20%,rgba(70,90,45,.97),rgba(16,20,10,.98))}
+.overlay[hidden]{display:none}
+.logo canvas{width:360px;max-width:90vw;height:auto}
+.logo h2{margin:0;font:900 clamp(2rem,7vw,3.6rem) var(--epic);color:var(--gold);text-shadow:0 5px 0 #6A3A0A,0 0 30px rgba(255,210,63,.3)}
+.logo p{margin:.2em 0 0;color:var(--muted);font-weight:700}
+.menu-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.pbtn{font:900 1rem var(--epic);padding:.7em 1.3em;border-radius:12px;border:3px solid #FFE9A0;background:linear-gradient(#E8B830,#B07A10);color:#3A2400;box-shadow:0 5px 0 #6A4A08;cursor:pointer;letter-spacing:.5px}
+.pbtn:active{transform:translateY(4px);box-shadow:0 1px 0 #6A4A08}
+.pbtn.ghost{background:#3A3020;color:var(--ink);border-color:#6A5A3A;box-shadow:0 5px 0 #1C1408}
+.panel{background:rgba(40,32,18,.95);border:4px solid #C9A24A;border-radius:16px;padding:18px;display:grid;gap:12px;min-width:min(420px,92vw)}
+.panel.wide{width:min(900px,94vw)}
+.panel h2{margin:0;font:900 1.5rem var(--epic);color:var(--gold)}
+.maps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mcard{display:grid;gap:4px;padding:6px;border-radius:12px;border:3px solid #6A5A3A;background:#2A2214;color:var(--ink);cursor:pointer;font:700 14px var(--font)}
+.mcard canvas{width:100%;aspect-ratio:8/5;border-radius:8px;display:block}
+.mcard b{font:900 15px var(--epic);color:var(--gold)}
+.mcard .st{color:#FFD23F;letter-spacing:2px}.mcard .st i{color:#5A4A2A;font-style:normal}
+.mcard:disabled{opacity:.45;cursor:not-allowed}
+.mcard.cur{border-color:var(--gold);box-shadow:0 0 0 3px rgba(255,210,63,.3)}
+.stars{font-size:46px;letter-spacing:8px;color:#FFD23F;text-shadow:0 3px 0 #8A5A08}
+.stars i{color:#4A3A1A;font-style:normal;text-shadow:none}
+.tip{margin:0;color:var(--muted);font-weight:700}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media (max-width:640px){.back-tx{display:none}.back{font-size:20px}.maps{grid-template-columns:repeat(2,1fr)}}
+@media (orientation:portrait) and (max-width:700px){.screen{align-content:center;gap:10px}.screen::after{content:"Daha büyük oynamak için telefonu yan çevir ↻";color:var(--muted);font-size:13px;font-weight:700}}

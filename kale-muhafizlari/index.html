@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kale Muhafızları · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için kule savunma oyunu: goblin, kurt, ork, yarasa, trol ve ejderha dalgalarını durdur! Okçu, top, buz ve yıldırım kuleleri kur, üç seviyeye yükselt, meteor yağmuru çağır. 6 harita, yıldızlar ve kayıt.">
+  <meta name="theme-color" content="#2B3A1E">
+  <meta property="og:title" content="Kale Muhafızları">
+  <meta property="og:description" content="Kuleleri kur, dalgaları durdur, kaleyi koru!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%235DB34A'/%3E%3Cpath d='M3 15V6h2v2h2V6h2v2h2V6h2v9z' fill='%23B8B0A8' stroke='%233A2A1A' stroke-width='.8'/%3E%3Cpath d='M8 1v4' stroke='%233A2A1A'/%3E%3Cpath d='M8 1h4l-1 1.5 1 1.5H8z' fill='%23E8463F'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Rubik:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Kale Muhafızları</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="mute" type="button" aria-label="Sesi kapat" aria-pressed="false">♪</button>
+      <button class="icon-btn" id="mapBtn" type="button" aria-label="Harita">☰</button>
+    </div>
+  </header>
+  <main class="screen" id="screen">
+    <div class="stage" id="stage">
+      <canvas id="cv" width="960" height="600" aria-label="Savaş alanı. Taşlara dokunup kule kur."></canvas>
+      <p class="hint" id="hint" hidden></p>
+    </div>
+  </main>
+</div>
+
+<div class="overlay" id="title">
+  <div class="logo"><canvas id="logoCv" width="360" height="170" aria-hidden="true"></canvas><h2>Kale Muhafızları</h2><p>Kuleleri kur · Dalgaları durdur · Kaleyi koru</p></div>
+  <div class="menu-btns"><button class="pbtn" id="play" type="button">⚔ Haritaya git</button></div>
+</div>
+
+<div class="overlay" id="maps" hidden>
+  <div class="panel wide">
+    <h2>Savaş Haritası</h2>
+    <div class="maps" id="mapList"></div>
+    <div class="menu-btns"><button class="pbtn ghost" id="toTitle" type="button">Ana menü</button></div>
+  </div>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="panel">
+    <h2 id="endTitle"></h2>
+    <div class="stars" id="endStars"></div>
+    <p class="tip" id="endTx"></p>
+    <div class="menu-btns"><button class="pbtn" id="endNext" type="button">Sonraki ▶</button><button class="pbtn ghost" id="endAgain" type="button">↻ Tekrar</button><button class="pbtn ghost" id="endMap" type="button">☰ Harita</button></div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -38,6 +38,8 @@
     .cover{aspect-ratio:16/9;display:grid;place-items:center;position:relative;overflow:hidden;
       background:radial-gradient(ellipse 60% 70% at 50% 40%, rgba(217,164,65,.18), transparent 70%), #0B1C1F}
     .cover svg{width:34%;height:auto}
+    .cover-kmh{background:#6CBF4F}
+    .cover-kmh svg{width:100%;height:100%}
     .cover-mcf{background:#7EC8FF}
     .cover-mcf svg{width:100%;height:100%}
     .cover-adm{background:#1F8AC9}
@@ -398,7 +400,7 @@
 
   <nav class="groups" aria-label="Oyun grupları">
     <a class="gchip g-egemen" href="#egemen"><i aria-hidden="true"></i>Egemen için <b>38</b></a>
-    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>38</b></a>
+    <a class="gchip g-enes" href="#enes"><i aria-hidden="true"></i>Enes için <b>39</b></a>
     <a class="gchip g-ikisi" href="#ikisi"><i aria-hidden="true"></i>İkisi birlikte <b>37</b></a>
     <a class="gchip g-aile" href="#aile"><i aria-hidden="true"></i>Tüm aile <b>37</b></a>
     <a class="gchip g-ders" href="ders/index.html">📚 Çalışma Köşesi</a>
@@ -410,8 +412,7 @@
       <div class="grid" id="grid-egemen">
 <!-- egemen:yeni oyun buraya, en üste -->
         <a class="game" href="minik-ciftlik/index.html">
-          <div class="cover is-new cover-mcf" aria-hidden="true">
-            <span class="new">Yeni</span>
+          <div class="cover cover-mcf" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
               <defs><linearGradient id="mcfs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7EC8FF"/><stop offset="1" stop-color="#D6F1FF"/></linearGradient></defs>
               <rect width="164" height="58" fill="url(#mcfs)"/><circle cx="140" cy="16" r="9" fill="#FFE066"/>
@@ -1282,9 +1283,32 @@
     </section>
 
     <section class="group g-enes" id="enes" aria-labelledby="h-enes">
-      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 38 oyun</p></div>
+      <div class="group-head"><h2 id="h-enes"><i aria-hidden="true"></i>Enes için</h2><p>12 yaş · rekorlar, bölümler, zorluk seviyeleri · 39 oyun</p></div>
       <div class="grid" id="grid-enes">
 <!-- enes:yeni oyun buraya, en üste -->
+        <a class="game" href="kale-muhafizlari/index.html">
+          <div class="cover is-new cover-kmh" aria-hidden="true">
+            <span class="new">Yeni</span>
+            <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none">
+              <rect width="164" height="102" fill="#6CBF4F"/>
+              <path d="M-4 60h44V30h56v52h72" stroke="#B8955A" stroke-width="16" stroke-linejoin="round"/><path d="M-4 60h44V30h56v52h72" stroke="#D9B878" stroke-width="12" stroke-linejoin="round"/>
+              <g stroke="#2A1E12" stroke-width="1.3"><path d="M18 42l2-18h12l2 18z" fill="#A89A88"/><rect x="18" y="20" width="4" height="4" fill="#A89A88"/><rect x="24" y="20" width="4" height="4" fill="#A89A88"/><rect x="30" y="20" width="4" height="4" fill="#A89A88"/><circle cx="26" cy="15" r="3" fill="#F2C49B"/><path d="M23 13l3-6 3 6z" fill="#3FA34D"/></g>
+              <g stroke="#2A1E12" stroke-width="1.3"><path d="M64 70l2-20h12l2 20z" fill="#8A7AB8"/><path d="M66 50l6-10 6 10z" fill="#4A3A80"/><circle cx="72" cy="36" r="4" fill="#E9DCFF"/></g>
+              <path d="M72 36L90 46l-6 2 12 4" stroke="#fff" stroke-width="1.6"/>
+              <g transform="translate(96 54)" stroke="#2A1E12" stroke-width="1.2"><path d="M-6-4h12v10h-12z" fill="#5A6A7A"/><circle cy="-8" r="5" fill="#4E7A3A"/><path d="M-5-9a5 5 0 0110 0z" fill="#8E8E9E"/></g>
+              <g transform="translate(112 82)" stroke="#2A1E12" stroke-width="1.2"><circle cy="-10" r="5" fill="#7CC04A"/><path d="M-4-11l-6-3 5 5zM4-11l6-3-5 5z" fill="#7CC04A"/><ellipse cy="-3" rx="4" ry="4" fill="#8A5A2B"/></g>
+              <g transform="translate(130 40)" stroke="#2A1E12" stroke-width="1"><path d="M0 0q-8-10-14-2 6 0 14 4zM0 0q8-10 14-2-6 0-14 4z" fill="#5B3F8C"/><circle r="3.5" fill="#7A5AB8"/></g>
+              <g stroke="#2A1E12" stroke-width="1.3"><rect x="140" y="64" width="20" height="24" fill="#B8B0A8"/><rect x="140" y="60" width="4" height="4" fill="#B8B0A8"/><rect x="148" y="60" width="4" height="4" fill="#B8B0A8"/><rect x="156" y="60" width="4" height="4" fill="#B8B0A8"/><path d="M146 88v-8a4 4 0 018 0v8z" fill="#5A3A1E"/></g>
+              <path d="M150 60V48l10 3-10 3" stroke="#2A1E12" fill="#2E86DE"/>
+              <circle cx="48" cy="84" r="5" fill="#2A2A34"/><path d="M40 92l-8 6" stroke="#FF8A2E" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="info">
+            <h3>Kale Muhafızları</h3>
+            <p>Kule savunma! Okçu, top, buz ve yıldırım kuleleri kur, üç seviyeye yükselt. Goblin, kurt, zırhlı ork, yarasa, trol ve ejderha dalgalarını durdur; zor anlarda meteor yağdır. 6 harita, 3 yıldız.</p>
+            <div class="tags"><span>Enes için</span><span>Kule savunma</span><span>6 harita</span></div>
+          </div>
+        </a>
         <a class="game" href="kayip-fener/index.html">
           <div class="cover cover-kfn" aria-hidden="true">
             <svg viewBox="0 0 164 102" fill="none" preserveAspectRatio="none" shape-rendering="crispEdges">
