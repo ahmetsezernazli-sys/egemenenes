@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kartopu Savaşı · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="İki kişilik ortak kartopu savaşı: Egemen ile Enes kardan adam ordusuna karşı! Kartopu topla, fırlat, kale duvarlarına saklan. Donan arkadaşını çöz. 8 bölüm, iki dev boss, bonuslar, tek kişi için bilgisayar takım arkadaşı ve dokunmatik kumandalar.">
+  <meta name="theme-color" content="#8FC8F0">
+  <meta property="og:title" content="Kartopu Savaşı">
+  <meta property="og:description" content="Kardan adam ordusuna karşı birlikte savaş!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%238FC8F0'/%3E%3Ccircle cx='8' cy='11' r='4' fill='%23fff'/%3E%3Ccircle cx='8' cy='5.5' r='3' fill='%23fff'/%3E%3Cpath d='M8 5.5l3 .8-3 .5z' fill='%23FF8A2E'/%3E%3Crect x='5.5' y='1' width='5' height='2' fill='%232A2A3A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Kartopu Savaşı</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="mute" type="button" aria-label="Sesi kapat" aria-pressed="false">♪</button>
+      <button class="icon-btn" id="pauseBtn" type="button" aria-label="Duraklat">❚❚</button>
+      <button class="icon-btn" id="menuBtn" type="button" aria-label="Bölümler">☰</button>
+    </div>
+  </header>
+  <main class="screen" id="screen">
+    <div class="stage" id="stage"><canvas id="cv" width="960" height="600" aria-label="Kar arenası"></canvas></div>
+  </main>
+  <div class="pads" id="pads">
+    <div class="pad p1" data-p="0"><span class="who" id="who1">Egemen</span><div class="stick" data-p="0"><span></span></div><button class="k" data-p="0" type="button" aria-label="Kartopu at">❄</button></div>
+    <div class="pad p2" data-p="1"><span class="who" id="who2">Enes</span><button class="k" data-p="1" type="button" aria-label="Kartopu at">❄</button><div class="stick" data-p="1"><span></span></div></div>
+  </div>
+</div>
+
+<div class="overlay" id="title">
+  <div class="logo"><canvas id="logoCv" width="400" height="170" aria-hidden="true"></canvas><h2>Kartopu Savaşı</h2><p>Kardan adam ordusuna karşı birlikte!</p></div>
+  <div class="box">
+    <div class="prow"><span class="dot" style="background:#E8463F"></span><input id="n1" maxlength="10" value="Egemen" aria-label="1. oyuncu adı"><button class="tg" id="e1" type="button" aria-pressed="true">⭐ Kolay</button></div>
+    <div class="prow"><span class="dot" style="background:#2E86DE"></span><input id="n2" maxlength="10" value="Enes" aria-label="2. oyuncu adı"><button class="tg" id="e2" type="button" aria-pressed="false">Normal</button><button class="tg" id="c2" type="button" aria-pressed="false">🙂 İnsan</button></div>
+    <div class="menu-btns"><button class="pbtn" id="play" type="button">❄ Savaşa!</button></div>
+    <p class="keys"><b>1. oyuncu:</b> WASD yürü, F (ya da Boşluk) at · <b>2. oyuncu:</b> oklar yürü, Enter (ya da L) at.<br>Kartopu bitince dur: yerden yenisini toplarsın. Donan arkadaşının yanına git, çözülsün!</p>
+  </div>
+</div>
+
+<div class="overlay" id="levels" hidden>
+  <div class="panel wide"><h2>Bölümler</h2><div class="lvls" id="lvlList"></div><div class="menu-btns"><button class="pbtn ghost" id="toTitle" type="button">Ana menü</button></div></div>
+</div>
+
+<div class="overlay" id="end" hidden>
+  <div class="panel"><h2 id="endTitle"></h2><div class="stars" id="endStars"></div><p class="tip" id="endTx"></p>
+    <div class="menu-btns"><button class="pbtn" id="endNext" type="button">Sonraki ▶</button><button class="pbtn ghost" id="endAgain" type="button">↻ Tekrar</button><button class="pbtn ghost" id="endMap" type="button">☰ Bölümler</button></div></div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

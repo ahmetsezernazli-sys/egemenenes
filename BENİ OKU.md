@@ -722,11 +722,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← Resif, açık deniz, karanlık derinlik (fener gerekir); istiridyelerden inci, garajda fener/turbo/boya.
 │                         Keşif albümü, sesli bilgiler, mini harita, kayıt.
-└── minik-sehir/        ← Enes için izometrik şehir kurma: yol, ev, dükkân, fabrika, park, santral, su, okul, hastane, itfaiye, stadyum.
+├── minik-sehir/        ← Enes için izometrik şehir kurma: yol, ev, dükkân, fabrika, park, santral, su, okul, hastane, itfaiye, stadyum.
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← Aylık simülasyon: nüfus, iş/işsizlik, mutluluk, kirlilik, vergi/bakım; evler 3 seviyeye büyür; yangın olayı.
+│                         15 görev, 5 nüfus aşaması (yeni binalar açılır), arabalar, gece-gündüz, kayıt.
+└── kartopu-savasi/     ← İki kişilik ortak kartopu savaşı: kardan adam dalgaları, donan arkadaşı çözme.
     ├── index.html
     ├── style.css
-    └── game.js         ← Aylık simülasyon: nüfus, iş/işsizlik, mutluluk, kirlilik, vergi/bakım; evler 3 seviyeye büyür; yangın olayı.
-                          15 görev, 5 nüfus aşaması (yeni binalar açılır), arabalar, gece-gündüz, kayıt.
+    └── game.js         ← 8 bölüm (buz gölü, orman, köy, fırtına, zirve) + 2 boss (Dev Kardan Adam, Buz Kralı), bonuslar.
+                          WASD+F / oklar+Enter, iki dokunmatik kumanda, kolay ayarı, bilgisayar takım arkadaşı, yıldızlar.
 ```
 
 ## Bilgisayarda oynamak
