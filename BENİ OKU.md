@@ -727,11 +727,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← Aylık simülasyon: nüfus, iş/işsizlik, mutluluk, kirlilik, vergi/bakım; evler 3 seviyeye büyür; yangın olayı.
 │                         15 görev, 5 nüfus aşaması (yeni binalar açılır), arabalar, gece-gündüz, kayıt.
-└── kartopu-savasi/     ← İki kişilik ortak kartopu savaşı: kardan adam dalgaları, donan arkadaşı çözme.
+├── kartopu-savasi/     ← İki kişilik ortak kartopu savaşı: kardan adam dalgaları, donan arkadaşı çözme.
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← 8 bölüm (buz gölü, orman, köy, fırtına, zirve) + 2 boss (Dev Kardan Adam, Buz Kralı), bonuslar.
+│                         WASD+F / oklar+Enter, iki dokunmatik kumanda, kolay ayarı, bilgisayar takım arkadaşı, yıldızlar.
+└── oyuncak-rallisi/    ← Oyuncak araba yarışı (Tüm aile)
     ├── index.html
     ├── style.css
-    └── game.js         ← 8 bölüm (buz gölü, orman, köy, fırtına, zirve) + 2 boss (Dev Kardan Adam, Buz Kralı), bonuslar.
-                          WASD+F / oklar+Enter, iki dokunmatik kumanda, kolay ayarı, bilgisayar takım arkadaşı, yıldızlar.
+    └── game.js         ← 4 pist (Catmull-Rom), 1-4 kişi + bilgisayar arabaları,
+                          bonuslar, kolay direksiyon yardımı, kupa ve kürsü
 ```
 
 ## Bilgisayarda oynamak

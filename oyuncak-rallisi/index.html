@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Oyuncak Rallisi · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Tüm aile için oyuncak araba yarışı: 1-4 kişi aynı ekranda mutfak masası, bahçe, çocuk odası ve banyo pistlerinde yarışır. Araba kendi gider, sen sağa sola dön ve bonusları kullan: turbo, yağ, kalkan, roket. Kolay direksiyon yardımı, bilgisayar arabaları ve dört pistlik kupa.">
+  <meta name="theme-color" content="#E8463F">
+  <meta property="og:title" content="Oyuncak Rallisi">
+  <meta property="og:description" content="Oyuncak arabalarla evin içinde yarış!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%23F2E6D0'/%3E%3Crect x='3' y='4' width='10' height='8' rx='2' fill='%23E8463F'/%3E%3Crect x='5' y='5.5' width='6' height='3' rx='1' fill='%238FD3FF'/%3E%3Crect x='2' y='4' width='2' height='3' fill='%232A2A3A'/%3E%3Crect x='12' y='4' width='2' height='3' fill='%232A2A3A'/%3E%3Crect x='2' y='9' width='2' height='3' fill='%232A2A3A'/%3E%3Crect x='12' y='9' width='2' height='3' fill='%232A2A3A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Oyuncak Rallisi</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="mute" type="button" aria-label="Sesi kapat" aria-pressed="false">♪</button>
+      <button class="icon-btn" id="pauseBtn" type="button" aria-label="Duraklat">❚❚</button>
+      <button class="icon-btn" id="menuBtn" type="button" aria-label="Ana menü">☰</button>
+    </div>
+  </header>
+  <main class="screen" id="screen">
+    <div class="stage" id="stage"><canvas id="cv" width="960" height="600" aria-label="Yarış pisti"></canvas>
+      <div class="card" id="card" hidden><div class="cin" id="cin"></div></div>
+    </div>
+  </main>
+</div>
+<div class="tpads" id="tpads"></div>
+
+<div class="overlay" id="setup">
+  <div class="logo"><canvas id="logoCv" width="420" height="150" aria-hidden="true"></canvas><h2>Oyuncak Rallisi</h2><p>Evin içinde dört pistlik kupa!</p></div>
+  <div class="box">
+    <div id="rows" class="rows"></div>
+    <div class="srow"><button class="btn ghost" id="addP" type="button">＋ Sürücü ekle</button>
+      <label class="len">Yarış <select id="mode"><option value="cup" selected>🏆 Kupa (4 pist)</option><option value="0">Mutfak Masası</option><option value="1">Bahçe</option><option value="2">Çocuk Odası</option><option value="3">Banyo</option></select></label></div>
+    <div class="menu-btns"><button class="btn go big" id="start" type="button">🏁 Yarışa başla</button></div>
+    <p class="hint">Araba kendi gider. Tuşlar: 1. sürücü <b>A D</b> dön, <b>W</b> bonus · 2. sürücü <b>← →</b>, <b>↑</b> · 3. sürücü <b>J L</b>, <b>I</b> · 4. sürücü <b>V N</b>, <b>B</b>. Tablette herkesin köşesinde düğmeleri var.</p>
+  </div>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
