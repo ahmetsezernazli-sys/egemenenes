@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Minik Şehir · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Enes için izometrik şehir kurma oyunu: yol çek, evler, dükkânlar ve fabrikalar kur; elektrik, su, park, okul, hastane ve itfaiye ile şehrini mutlu et. Evler gökdelene dönüşsün, yangınları söndür, nüfus hedeflerine ulaş. Kayıtlı.">
+  <meta name="theme-color" content="#3E8E44">
+  <meta property="og:title" content="Minik Şehir">
+  <meta property="og:description" content="Kendi şehrini kur, büyüt ve mutlu et!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%235DB34A'/%3E%3Cpath d='M3 14V7h4v7zM8 14V3h5v11z' fill='%23E8EEF4' stroke='%232A2A3A' stroke-width='.8'/%3E%3Cpath d='M9 5h1v1H9zM11 5h1v1h-1zM9 8h1v1H9zM11 8h1v1h-1z' fill='%23FFD23F'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Minik Şehir</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="mute" type="button" aria-label="Sesi kapat" aria-pressed="false">♪</button>
+      <button class="icon-btn" id="menuBtn" type="button" aria-label="Menü">☰</button>
+    </div>
+  </header>
+  <main class="screen" id="screen">
+    <div class="stage" id="stage">
+      <canvas id="cv" width="960" height="600" aria-label="Şehir haritası. Araç seçip karelere dokun; sürükleyerek kaydır."></canvas>
+      <div class="mission" id="mission"></div>
+      <div class="info" id="info" hidden></div>
+      <div class="zoom"><button type="button" id="zin" aria-label="Yakınlaştır">＋</button><button type="button" id="zout" aria-label="Uzaklaştır">－</button><button type="button" id="spd" aria-label="Hız">1×</button></div>
+    </div>
+  </main>
+  <nav class="tools" id="tools" aria-label="İnşaat araçları"></nav>
+</div>
+
+<div class="overlay" id="title">
+  <div class="logo"><canvas id="logoCv" width="420" height="200" aria-hidden="true"></canvas><h2>Minik Şehir</h2><p>Yol çek · Bina kur · Şehrini büyüt</p></div>
+  <div class="menu-btns"><button class="pbtn" id="cont" type="button" hidden>▶ Şehrime dön</button><button class="pbtn" id="newCity" type="button">🏗 Yeni şehir</button></div>
+  <p class="keys">Araç seç, karelere dokun. Haritayı sürükleyerek ya da oklarla kaydır. Yolu sürükleyerek uzun çizebilirsin.</p>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

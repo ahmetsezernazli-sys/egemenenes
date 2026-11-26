@@ -717,11 +717,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← 8 mini oyun: Koşu, Balon Şişir, Engel Atla, Balık Tut, Tam 5 Saniye, Cevizden Kaç, Kule Yap, Sumo.
 │                         Oyuncu başına Kolay ayarı, bilgisayar oyuncuları, puan tablosu ve kürsü töreni.
-└── denizalti-macerasi/ ← Egemen için sesli okyanus keşfi: denizaltıyla 3600×1800 dünyayı gez, 20 canlının fotoğrafını çek.
+├── denizalti-macerasi/ ← Egemen için sesli okyanus keşfi: denizaltıyla 3600×1800 dünyayı gez, 20 canlının fotoğrafını çek.
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← Resif, açık deniz, karanlık derinlik (fener gerekir); istiridyelerden inci, garajda fener/turbo/boya.
+│                         Keşif albümü, sesli bilgiler, mini harita, kayıt.
+└── minik-sehir/        ← Enes için izometrik şehir kurma: yol, ev, dükkân, fabrika, park, santral, su, okul, hastane, itfaiye, stadyum.
     ├── index.html
     ├── style.css
-    └── game.js         ← Resif, açık deniz, karanlık derinlik (fener gerekir); istiridyelerden inci, garajda fener/turbo/boya.
-                          Keşif albümü, sesli bilgiler, mini harita, kayıt.
+    └── game.js         ← Aylık simülasyon: nüfus, iş/işsizlik, mutluluk, kirlilik, vergi/bakım; evler 3 seviyeye büyür; yangın olayı.
+                          15 görev, 5 nüfus aşaması (yeni binalar açılır), arabalar, gece-gündüz, kayıt.
 ```
 
 ## Bilgisayarda oynamak
