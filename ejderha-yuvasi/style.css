@@ -1,0 +1,31 @@
+:root{--ink:#FFFBEE;--gold:#FFD23F;--fun:"Fredoka","Rubik",system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;background:#2A1E5A}
+body{color:var(--ink);font:600 16px/1.35 var(--fun);padding:6px 8px 8px;-webkit-tap-highlight-color:transparent;overscroll-behavior:none;
+  min-height:100dvh;background:radial-gradient(120% 90% at 50% 0%,#7A5AD0 0%,#2A1E5A 70%)}
+.app{max-width:1280px;margin-inline:auto;height:calc(100dvh - 14px);min-height:340px;display:grid;grid-template-rows:auto 1fr;gap:6px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px}
+.back{color:#2A1E5A;text-decoration:none;font-weight:700;font-size:16px;white-space:nowrap;background:rgba(255,255,255,.8);padding:6px 10px;border-radius:12px}
+.title{margin:0;font:700 clamp(1.3rem,3.6vw,2rem) var(--fun);color:#fff;text-shadow:0 3px 0 #C8463F,0 0 14px rgba(0,0,0,.25)}
+.bar-actions{display:flex;gap:6px}
+.icon-btn{width:46px;height:46px;border-radius:14px;border:3px solid #fff;background:#FF8A3D;color:#fff;font:700 20px var(--fun);cursor:pointer;box-shadow:0 3px 0 #A8501A}
+.icon-btn[aria-pressed="true"]{opacity:.55}
+.screen{position:relative;min-height:0;display:grid;place-items:center}
+.stage{position:relative;width:960px;height:600px;border-radius:18px;overflow:hidden;box-shadow:0 0 0 5px #fff,0 14px 34px rgba(0,0,0,.4);background:#3A2A70;--fs:16px}
+#cv{display:block;width:100%;height:100%;touch-action:none;cursor:pointer}
+.tip{position:absolute;left:50%;top:1.6%;transform:translateX(-50%);margin:0;max-width:39%;width:max-content;background:rgba(255,251,238,.95);color:#3A2A1A;border:3px solid #FF8A3D;border-radius:1em;padding:.3em .9em;font:600 calc(var(--fs)*.98)/1.25 var(--fun);text-align:center;pointer-events:none}
+.tip:empty{display:none}
+.overlay{position:fixed;inset:0;z-index:20;display:grid;place-content:center;justify-items:center;gap:16px;padding:20px;text-align:center;
+  background:radial-gradient(90% 70% at 50% 30%,#8A6AE0,#2A1E5A 75%)}
+.overlay[hidden]{display:none}
+.logo canvas{width:360px;max-width:80vw;height:auto}
+.logo h2{margin:0;font:700 clamp(2.4rem,9vw,4.2rem) var(--fun);color:#fff;text-shadow:0 5px 0 #C8463F,0 0 20px rgba(0,0,0,.25)}
+.logo p{margin:0;font-weight:700;color:#FFE08A;font-size:1.2rem}
+.menu-btns{display:flex;gap:10px}
+.pbtn{font:700 1.5rem var(--fun);padding:.55em 1.3em;border-radius:1em;border:4px solid #fff;background:#FF8A3D;color:#fff;box-shadow:0 6px 0 #A8501A;cursor:pointer}
+.pbtn:active{transform:translateY(5px);box-shadow:0 1px 0 #A8501A}
+.reset{background:none;border:0;color:#E8DAFF;text-decoration:underline;font:600 13px var(--fun);cursor:pointer;opacity:.7}
+:focus-visible{outline:4px solid #FFD23F;outline-offset:2px}
+@media (max-width:560px){.back-tx{display:none}.back{font-size:20px}}
+@media (max-height:440px){.logo canvas{width:220px}.logo h2{font-size:2.2rem}.overlay{gap:8px}}
+@media (orientation:portrait) and (max-width:700px){.screen{align-content:center;gap:10px}.screen::after{content:"Daha büyük oynamak için telefonu yan çevir ↻";color:#fff;font-weight:700;text-shadow:0 2px 0 rgba(0,0,0,.25)}}

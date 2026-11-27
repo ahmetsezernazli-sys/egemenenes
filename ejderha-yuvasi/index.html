@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ejderha Yuvası · Egemen ve Enes'in Oyunları</title>
+  <meta name="description" content="Egemen için sesli anlatımlı yavru ejderha bakma oyunu: yumurtayı çatlat, ejderhanı besle, yıka, balonla oyna ve uyut. Sevgi kalpleriyle büyüyen ejderha Ejderha Adası'na uçar, yeni yumurta gelir. 8 ejderhayı topla, şapka ve taç giydir. İlerleme kaydedilir.">
+  <meta name="theme-color" content="#5B3FA8">
+  <meta property="og:title" content="Ejderha Yuvası">
+  <meta property="og:description" content="Yavru ejderhanı büyüt, Ejderha Adası'nı doldur!">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Egemen ve Enes'in Oyunları">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%235B3FA8'/%3E%3Cellipse cx='8' cy='11' rx='4' ry='3.5' fill='%233FBF6A'/%3E%3Ccircle cx='8' cy='6.5' r='4' fill='%233FBF6A'/%3E%3Cpath d='M5 3l.5-2 1.5 1.6M11 3l-.5-2L9 2.6' fill='%23FFD23F'/%3E%3Ccircle cx='6.5' cy='6' r='1.2' fill='%23fff'/%3E%3Ccircle cx='9.5' cy='6' r='1.2' fill='%23fff'/%3E%3Ccircle cx='6.7' cy='6.2' r='.6' fill='%23222'/%3E%3Ccircle cx='9.7' cy='6.2' r='.6' fill='%23222'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <a class="back" href="../index.html" aria-label="Oyunlara dön">← <span class="back-tx">Oyunlar</span></a>
+    <h1 class="title">Ejderha Yuvası</h1>
+    <div class="bar-actions">
+      <button class="icon-btn" id="speak" type="button" aria-label="Tekrar söyle">🔈</button>
+      <button class="icon-btn" id="mute" type="button" aria-label="Sesi kapat" aria-pressed="false">♪</button>
+    </div>
+  </header>
+  <main class="screen" id="screen">
+    <div class="stage" id="stage">
+      <canvas id="cv" width="960" height="600" aria-label="Ejderha yuvası. Ejderhaya ve alttaki büyük düğmelere dokun."></canvas>
+      <p class="tip" id="tip"></p>
+    </div>
+  </main>
+</div>
+
+<div class="overlay" id="title">
+  <div class="logo"><canvas id="logoCv" width="360" height="200" aria-hidden="true"></canvas><h2>Ejderha Yuvası</h2><p>Besle · Yıka · Oyna · Uyut</p></div>
+  <div class="menu-btns"><button class="pbtn" id="play" type="button">▶ Yuvaya git</button></div>
+  <button class="reset" id="reset" type="button" hidden>Baştan başla</button>
+</div>
+
+<script src="game.js"></script>
+
+<script>
+  // sayfa adını tekleştir: /index.html ile / aynı satırda toplansın
+  window.goatcounter = {path: function(p){ return p.replace(/index\.html$/, "") || "/"; }};
+</script>
+<script data-goatcounter="https://egemenenes.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

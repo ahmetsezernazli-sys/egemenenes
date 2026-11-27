@@ -732,11 +732,16 @@ Oyunlar/
 │   ├── style.css
 │   └── game.js         ← 8 bölüm (buz gölü, orman, köy, fırtına, zirve) + 2 boss (Dev Kardan Adam, Buz Kralı), bonuslar.
 │                         WASD+F / oklar+Enter, iki dokunmatik kumanda, kolay ayarı, bilgisayar takım arkadaşı, yıldızlar.
-└── oyuncak-rallisi/    ← Oyuncak araba yarışı (Tüm aile)
+├── oyuncak-rallisi/    ← Oyuncak araba yarışı (Tüm aile)
+│   ├── index.html
+│   ├── style.css
+│   └── game.js         ← 4 pist (Catmull-Rom), 1-4 kişi + bilgisayar arabaları,
+│                         bonuslar, kolay direksiyon yardımı, kupa ve kürsü
+└── ejderha-yuvasi/     ← Sesli yavru ejderha bakma oyunu (Egemen)
     ├── index.html
     ├── style.css
-    └── game.js         ← 4 pist (Catmull-Rom), 1-4 kişi + bilgisayar arabaları,
-                          bonuslar, kolay direksiyon yardımı, kupa ve kürsü
+    └── game.js         ← 8 ejderha türü, 4 bakım mini oyunu (yemek/banyo/balon/uyku),
+                          kalplerle 4 büyüme evresi, Ejderha Adası, şapkalar, kayıt
 ```
 
 ## Bilgisayarda oynamak
